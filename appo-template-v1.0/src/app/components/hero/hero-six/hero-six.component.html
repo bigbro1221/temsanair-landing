@@ -1,0 +1,46 @@
+<section id="home" class="section welcome-area bg-inherit d-flex align-items-center h-100vh">
+    <div class="container">
+        <div class="main-section" style="margin-top: -200px;">
+            <h2 class="text-white text-center text-uppercase">Technology meets <span class="text-color-green">Process knowledge</span></h2>
+<!--            <h2 class="text-white text-center text-uppercase cd-headline clip fw-3">-->
+<!--                <span class="text-white">Temsan</span>-->
+<!--                <span class="cd-words-wrapper ml-2">-->
+<!--                    <b class="text-white is-visible text-color-green">Universe</b>-->
+<!--                    <b class="text-white text-color-green">About</b>-->
+<!--                    <b class="text-white text-color-green">Product Range</b>-->
+<!--                    <b class="text-white text-color-green">Social Responsibility</b>-->
+<!--                </span>-->
+<!--&lt;!&ndash;                Technology meets <span class="text-color-green">Process knowledge</span>&ndash;&gt;-->
+<!--            </h2>-->
+        </div>
+        <div class="wow fadeInUp slow delay-1s" style="width: 70%;position: absolute;top: 30%;left: 15%;">
+            <img src="./assets/temsanair/00.png" alt="">
+        </div>
+    </div>
+    <div class="shapes-container" style="top: 92% !important;">
+        <div class="wave-animation">
+            <!-- Wave Animation -->
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <ng-container *ngIf="!wave">
+                    <g class="parallax">
+                        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(116,192,67,0.7)" />
+                        <use xlink:href="#gentle-wave" x="48" y="1" fill="rgba(116,192,67,0.5)" />
+                        <use xlink:href="#gentle-wave" x="48" y="2" fill="rgba(116,192,67,0.3)" />
+                        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(52,58,64,1)" />
+                    </g>
+                </ng-container>
+                <ng-container *ngIf="wave">
+                    <g class="parallax">
+                        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(116,192,67,0.7)" />
+                        <use xlink:href="#gentle-wave" x="48" y="1" fill="rgba(116,192,67,0.5)" />
+                        <use xlink:href="#gentle-wave" x="48" y="2" fill="rgba(116,192,67,0.3)" />
+                        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(27,26,30,1)" />
+                    </g>
+                </ng-container>
+            </svg>
+        </div>
+    </div>
+</section>

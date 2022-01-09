@@ -1,0 +1,227 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~@angular/cdk/overlay-prebuilt.css';
+/*@import "~@ng-select/ng-select/themes/default.theme.css";*/
+@import "~animate.css/animate.css";
+@font-face {
+    font-family: 'amazing_groteskregular';
+    font-style: normal;
+    font-weight: 400;
+    src: url(./assets/css/fonts/Amazing-Grotesk-Book.otf); /* For IE6-8 */
+    src: local('amazing_groteskregular'),
+    local('Amazing-Grotesk-Book'),
+    url(./assets/css/fonts/Amazing-Grotesk-Book.otf) format('otf')
+}
+
+/*.wow {*/
+/*    visibility: visible !important;*/
+/*}*/
+
+/*@font-face {*/
+/*    font-family: 'amazing_groteskdemi';*/
+/*    font-style: normal;*/
+/*    font-weight: 400;*/
+/*    src: url(./assets/css/fonts/Amazing-Grotesk-Demi.otf); !* For IE6-8 *!*/
+/*    src: local('amazing_groteskdemi'),*/
+/*    local('Amazing-Grotesk-Demi'),*/
+/*    url(./assets/css/fonts/Amazing-Grotesk-Demi.otf) format('otf')*/
+/*}*/
+
+@font-face {
+    font-family: 'Jost-Light';
+    font-style: normal;
+    font-weight: 400;
+    src: url(./assets/css/fonts/Jost/static/Jost-Light.ttf); /* For IE6-8 */
+    src: local('Jost-Light'),
+    local('Jost-Light'),
+    url(./assets/css/fonts/Jost/static/Jost-Light.ttf) format('ttf')
+}
+
+@font-face {
+    font-family: 'Advent Pro', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    src: url(./assets/css/fonts/Advent_Pro/AdventPro-Regular.ttf); /* For IE6-8 */
+    src: local('AdventPro-Regular'),
+    local('AdventPro-Regular'),
+    url(./assets/css/fonts/Advent_Pro/AdventPro-Regular.ttf) format('ttf')
+}
+.text-color-green {
+    color: #74C043 !important;
+}
+.text {
+    font-weight: 600;
+    line-height: 1.8;
+    font-size: 1.125rem;
+    margin: 40px 0 0;
+    font-family: 'Open Sans',sans-serif;
+}
+
+.benifits-text h3{
+    font-size: 2vw;
+}
+.energy_w .text h3,.energy_w_2 .text h3 {
+    font-family: 'Open Sans',sans-serif;
+    margin-top: 3vw;
+    font-size: 1.6vw;
+    margin-bottom: 0.3vw;
+    color: #626262;
+}
+.energy_w .text h2,.energy_w_2 .text h2 {
+    font-family: 'Open Sans',sans-serif;
+    margin-top: 0;
+    font-weight: 600;
+    font-size: 2.4vw;
+    color: #626262;
+    margin-bottom: 0.5vw;
+}
+
+.icon_temper {
+    width: 15vw;
+}
+
+body::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+body::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, .1);
+    border-radius: 5px;
+    transition: .1 .7s;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0) linear-gradient(to right, #e49b91 0%, #f8d9af 100%) repeat scroll 0 0;
+    border-radius: 5px;
+    transition: 2s ease-in;
+}
+
+.energy_ww {
+    width: 100%;
+    background-color: #fff;
+}
+
+.energy_w {
+    background: #fff;
+    margin: 2.5vw auto 0;
+    position: relative;
+    width: 50%;
+}
+.work-slider-wrapper {
+    margin-top: 20% !important;
+}
+.mat-button span:hover {
+    color: #74C043 !important;
+}
+
+.parallax-window {
+    min-height: 400px;
+    background: transparent;
+}
+.parallax-mirror {
+    z-index: 300 !important
+}
+.parallax-img {
+    background-image: url("./assets/temsanair/img_00.jpg");
+    background-position: center,center;
+    background-repeat: no-repeat;
+    background-origin: border-box;
+    background-attachment: fixed;
+    height: 120vh;
+    width: 100%;
+    position: relative;
+}
+
+.parallax-img:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    background: rgba(0,0,0,.35);
+}
+
+.bg-dark {
+    background-color: #1b1a1e !important;
+}
+.img-about-1-dark-step-1 {
+    background: linear-gradient(
+            -45deg, #1e1e1e, #454d55, #30353C, #1b1e21) !important;
+    background-size: 400% 400% !important;
+    -webkit-animation: gradient-bg 15s ease infinite !important;
+    animation: gradient-bg 15s ease infinite;
+    width: 450px;
+    height: 300px;
+    position: absolute;
+    left: -30px;
+    top: 70px;
+}
+.img-about-1-dark-step-2 {
+    width: 363px;
+    height: 230px;
+    right: -30px;
+    position: absolute;
+    background: rgba(116, 192, 67,1);
+    top: 20px;
+}
+.img-about-1 {
+    filter: brightness(0.95);
+    box-shadow: 2px 2px 40px 0 rgb(80 80 80 / 40%);
+    object-position: 0 50%;
+    background-position: 0 50%;
+}
+.img-about-2-dark-step-1 {
+    background: linear-gradient(
+            -45deg, #1e1e1e, #454d55, #30353C, #1b1e21) !important;
+    background-size: 400% 400% !important;
+    -webkit-animation: gradient-bg 15s ease infinite !important;
+    animation: gradient-bg 15s ease infinite;
+    width: 363px;
+    height: 197px;
+    position: absolute;
+    left: 170px;
+    top: 50px;
+}
+.img-about-2-dark-step-2 {
+    width: 440px;
+    height: 300px;
+    right: 70px;
+    position: absolute;
+    background: rgba(116,192,67,1);
+    top: -50px;
+}
+.img-about-2 {
+    filter: brightness(0.95);
+    box-shadow: 2px 2px 40px 0 rgb(80 80 80 / 40%);
+    object-position: 0 50%;
+    background-position: 0 50%;
+}
+.u-layout-col {
+    flex-direction: column;
+    min-height: 100%;
+    flex: 1 1 100%;
+    display: flex;
+}
+.u-border-16 {
+    position: relative;
+}
+.u-border-16-left:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -5%;
+    height: 100%;
+    border: 12px solid #74C043;
+}
+
+/*.u-border-16-left:after {*/
+/*    content: '';*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    right: -5%;*/
+/*    height: 100%;*/
+/*    border: 12px solid #74C043;*/
+/*}*/
+
