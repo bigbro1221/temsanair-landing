@@ -5,7 +5,7 @@
 :: Template Author URI: hridoy1272@gmail.com
 :: Version: 1.0.0
 :: Created: 30 April 2020
-************************************************************ 
+************************************************************
 *
 *
 ******* :: INDEX OF CSS :: *******
@@ -58,7 +58,6 @@
 /* ******************************
 :: 2.0 IMPORT ALL CSS
 ****************************** */
-@import url(bootstrap.min.css);
 @import url(icofont.min.css);
 @import url(all.min.css);
 @import url(animate.min.css);
