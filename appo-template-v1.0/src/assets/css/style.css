@@ -2425,7 +2425,7 @@ a,
 .london .single-blog,
 .london .contact-box .form-group input,
 .london .contact-box .form-group textarea {
-    background: #30353C !important;
+    background: #30353C ;
 }
 
 .london h1, .london h2, .london h3, .london h4, .london h5, .london h6, .london p, .london span, .london .btn, .london i, .london svg, .london .blog-area, .london .blog-area a {

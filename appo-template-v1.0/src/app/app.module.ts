@@ -80,6 +80,7 @@ import { MapComponent } from './components/map/map.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import {MatButtonModule} from "@angular/material/button";
 import { NgxParallaxScrollModule } from 'ngx-parallax-scroll';
+import {Products} from "./components/products/products";
 
 @NgModule({
   declarations: [
@@ -157,7 +158,8 @@ import { NgxParallaxScrollModule } from 'ngx-parallax-scroll';
     FaqComponent,
     FaqPageComponent,
     MapComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    Products
   ],
   imports: [
     BrowserModule,

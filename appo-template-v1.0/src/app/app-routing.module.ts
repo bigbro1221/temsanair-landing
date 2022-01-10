@@ -32,19 +32,18 @@ import { BlogRightSidebarComponent } from './components/blogs/blog-right-sidebar
 import { BlogDetailsLeftSidebarComponent } from './components/blogs/blog-details-left-sidebar/blog-details-left-sidebar.component';
 import { BlogDetailsRightSidebarComponent } from './components/blogs/blog-details-right-sidebar/blog-details-right-sidebar.component';
 import {AboutUsComponent} from "./components/about-us/about-us.component";
+import {Products} from "./components/products/products";
 
 
 const routes: Routes = [
   {path: '', component: ThemeSixComponent},
   {path: 'about', component: AboutUsComponent},
-  {path: 'theme-two', component: ThemeTwoComponent},
-  {path: 'theme-three', component: ThemeThreeComponent},
-  {path: 'theme-four', component: ThemeFourComponent},
-  {path: 'theme-five', component: ThemeFiveComponent},
+  {path: 'product-range', component: Products, children:[
+      {path: 'axial-fan', component: Products},
+      {path: '', redirectTo: 'axial-fan', pathMatch: 'full'},
+      {path: '**', redirectTo: 'axial-fan', pathMatch: 'full'}
+  ]},
   {path: 'theme-six', component: ThemeSixComponent},
-  {path: 'theme-seven', component: ThemeSevenComponent},
-  {path: 'theme-eight', component: ThemeEightComponent},
-  {path: 'theme-nine', component: ThemeNineComponent},
   {path: 'login', component: LoginComponent},
   {path: 'signup', component: SignupComponent},
   {path: 'reset', component: ResetComponent},
@@ -60,12 +59,6 @@ const routes: Routes = [
   {path: 'contact-page', component: ContactPageComponent},
   {path: 'maintenance', component: MaintenanceComponent},
   {path: 'coming-soon', component: ComingSoonComponent},
-  {path: 'blog-two-column', component: BlogTwoColumnComponent},
-  {path: 'blog-three-column', component: BlogThreeColumnComponent},
-  {path: 'blog-left-sidebar', component: BlogLeftSidebarComponent},
-  {path: 'blog-right-sidebar', component: BlogRightSidebarComponent},
-  {path: 'blog-details-left-sidebar', component: BlogDetailsLeftSidebarComponent},
-  {path: 'blog-details-right-sidebar', component: BlogDetailsRightSidebarComponent}
 ];
 
 @NgModule({

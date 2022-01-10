@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgwWowService } from 'ngx-wow';
-import {NavigationEnd, Router} from "@angular/router";
-import {map} from "rxjs/operators";
+import {Router} from "@angular/router";
 declare let $:any;
 @Component({
   selector: 'app-contact',
