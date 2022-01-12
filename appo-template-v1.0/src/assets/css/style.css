@@ -1523,7 +1523,7 @@ a,
     border: none;
     outline: none;
     border-radius: 50%;
-    margin: 5px;
+    /*margin: 5px;*/
 }
 
 .slick-dots .slick-active button,

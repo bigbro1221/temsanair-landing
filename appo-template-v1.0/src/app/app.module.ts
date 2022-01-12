@@ -81,6 +81,9 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import {MatButtonModule} from "@angular/material/button";
 import { NgxParallaxScrollModule } from 'ngx-parallax-scroll';
 import {Products} from "./components/products/products";
+import {HttpClientModule} from "@angular/common/http";
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+
 
 @NgModule({
   declarations: [
@@ -166,8 +169,10 @@ import {Products} from "./components/products/products";
     AppRoutingModule,
     BrowserAnimationsModule,
     NgwWowModule,
+    HttpClientModule,
     NgxParallaxScrollModule,
-    MatButtonModule,
+    SlickCarouselModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

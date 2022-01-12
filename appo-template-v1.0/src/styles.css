@@ -13,20 +13,6 @@
     url(./assets/css/fonts/Amazing-Grotesk-Book.otf) format('otf')
 }
 
-/*.wow {*/
-/*    visibility: visible !important;*/
-/*}*/
-
-/*@font-face {*/
-/*    font-family: 'amazing_groteskdemi';*/
-/*    font-style: normal;*/
-/*    font-weight: 400;*/
-/*    src: url(./assets/css/fonts/Amazing-Grotesk-Demi.otf); !* For IE6-8 *!*/
-/*    src: local('amazing_groteskdemi'),*/
-/*    local('Amazing-Grotesk-Demi'),*/
-/*    url(./assets/css/fonts/Amazing-Grotesk-Demi.otf) format('otf')*/
-/*}*/
-
 @font-face {
     font-family: 'Jost-Light';
     font-style: normal;
@@ -46,15 +32,38 @@
     local('AdventPro-Regular'),
     url(./assets/css/fonts/Advent_Pro/AdventPro-Regular.ttf) format('ttf')
 }
+
+@font-face {
+    font-family: 'Shadows Into Light', cursive;
+    font-style: normal;
+    font-weight: 400;
+    src: url(./assets/css/fonts/ShadowsIntoLight-Regular.ttf); /* For IE6-8 */
+    src: local('ShadowsIntoLight-Regular'),
+    local('ShadowsIntoLight-Regular'),
+    url(./assets/css/fonts/ShadowsIntoLight-Regular.ttf) format('ttf')
+}
+
+@font-face {
+    font-family:'Spartan', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    src: url(./assets/css/fonts/Spartan-VariableFont_wght.ttf); /* For IE6-8 */
+    src: local('Spartan-VariableFont_wght'),
+    local('Spartan-VariableFont_wght'),
+    url(./assets/css/fonts/Spartan-VariableFont_wght.ttf) format('ttf')
+}
+.font-spartan {
+    font-family:'Spartan', sans-serif;
+}
 .text-color-green {
     color: #74C043 !important;
 }
 .text {
-    font-weight: 600;
+    font-weight: 300;
     line-height: 1.8;
     font-size: 1.125rem;
     margin: 40px 0 0;
-    font-family: 'Open Sans',sans-serif;
+    font-family:'Spartan', sans-serif;
 }
 
 .benifits-text h3{
@@ -261,7 +270,7 @@ body::-webkit-scrollbar-thumb {
     overflow:hidden;
 }
 .parallax-img {
-    animation:zoomInParallax 10s linear infinite alternate;
+    animation:zoomInParallax 40s linear infinite alternate;
     background-image: url("./assets/temsanair/img_00.jpg");
     background-size:cover;
     height:68vh;
@@ -277,13 +286,12 @@ body::-webkit-scrollbar-thumb {
     right: 0;
     bottom: 0;
     content: '';
-    animation:zoomInParallax 10s linear infinite alternate-reverse;
+    background: rgba(0,0,0,.35);
 }
 
 .bg-black {
     background: #111 !important;
 }
-
 
 @-webkit-keyframes zoomInParallax {
     0% {
@@ -292,5 +300,107 @@ body::-webkit-scrollbar-thumb {
     100% {
         transform:scale(1.5);
     }
+}
+
+:root {
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+    --varyDarkBlue: hsl(234, 12%, 34%);
+    --grayishBlue: hsl(229, 6%, 66%);
+    --veryLightGray: hsl(0, 0%, 98%);
+    --weight1: 200;
+    --weight2: 400;
+    --weight3: 600;
+}
+
+.attribution {
+    font-size: 11px; text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+.header {
+    text-align: center;
+    line-height: 0.8;
+    margin-bottom: 50px;
+    margin-top: 100px;
+}
+
+.header p {
+    margin: 0 auto;
+    line-height: 2;
+    color: var(--grayishBlue);
+}
+
+.box p {
+    color: var(--grayishBlue);
+}
+
+.box {
+    border-radius: 5px;
+    padding: 30px;
+    margin: 20px;
+}
+
+.mat-elevation-z1-white {
+    box-shadow: 0 2px 1px -1px rgb(255 255 255 / 20%), 0 1px 1px 0 rgb(255 255 255 / 14%), 0 1px 3px 0 rgb(255 255 255 / 12%);
+}
+
+.cyan {
+    border-top: 3px solid var(--cyan);
+}
+.red {
+    border-top: 3px solid var(--red);
+}
+.blue {
+    border-top: 3px solid var(--blue);
+}
+.orange {
+    border-top: 3px solid var(--orange);
+}
+/* slick slider settings*/
+.slick-prev:before, .slick-next:before {
+    color: #74C043 !important;
+}
+.slick-slide {
+    width: 360px !important;
+    height: 430px !important;
+    box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
+    background: #2B2F3E;
+    border-radius: 3px;
+}
+.slide {
+    margin-right: 30px !important;
+    padding: 15px;
+}
+.slick-dots .slick-active button, .testimonial-area .owl-carousel button.owl-dot.active {
+    background-color: #74C043 !important;;
+}
+
+@media (min-width: 950px) {
+    .row1-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .row2-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .box-down {
+        position: relative;
+        top: 150px;
+    }
+    .box {
+        width: 30%;
+        height: 270px;
+        background: #1E1E1E;
+    }
+
 }
 
