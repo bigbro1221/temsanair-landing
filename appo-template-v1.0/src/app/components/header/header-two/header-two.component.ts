@@ -23,14 +23,10 @@ export class HeaderTwoComponent implements OnInit {
   }
 
   onAbout() {
-    // var about = $('#about');
-    // about.on('click', function (e) {
-    //   e.preventDefault();
-      if ((document.getElementById('about-app').clientHeight) > 0) {
-        $('html,body').animate({
-          scrollTop: (document.getElementById('about-app').offsetTop)
-        }, 1000);
-      }
-    // });
+    if ((document.getElementById('about-app').clientHeight) > 0) {
+      $('html,body').animate({
+        scrollTop: (document.getElementById('about-app').offsetTop)
+      }, 1000);
+    }
   }
 }
