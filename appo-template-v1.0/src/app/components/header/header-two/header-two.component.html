@@ -14,78 +14,69 @@
                     <!-- Header Items -->
                     <ul class="navbar-nav header-items ml-auto">
                         <li class="nav-item">
-                            <a style="font-family: 'Advent Pro', sans-serif;" class="nav-link scroll text-color-green" id="home" href="#home">Home</a>
+                            <a style="font-family: 'Advent Pro', sans-serif;" class="nav-link scroll text-color-green" id="home"
+                               routerLink="/">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a style="font-family: 'Advent Pro', sans-serif;" class="nav-link scroll text-color-green" id="about" href="#about">About</a>
+                            <a style="font-family: 'Advent Pro', sans-serif;cursor: pointer" class="nav-link scroll text-color-green" (click)="onAbout()" id="about">About</a>
                         </li>
-<!--                        <li class="nav-item active dropdown">-->
-<!--                            <a class="nav-link dropdown-toggle text-color-green" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">-->
-<!--                                About-->
-<!--                            </a>-->
-<!--                            <div class="dropdown-menu mega-menu px-3 px-md-4 py-md-4">-->
-<!--                                &lt;!&ndash; Shapes Container &ndash;&gt;-->
-<!--                                <div class="shapes-container d-none d-lg-block">-->
-<!--                                    <div class="shape-1"></div>-->
-<!--                                </div>-->
-<!--                                <div class="row">-->
-<!--                                    &lt;!&ndash; Dropdown Headings &ndash;&gt;-->
-<!--                                    <div class="col-lg-3 dropdown-headings d-none d-lg-block">-->
-<!--                                        <span class="fw-6">Appo</span>-->
-<!--                                        <h5 class="text-uppercase my-2">Creative Design</h5>-->
-<!--                                        <p class="slag fw-5">Verified by developers &amp; Truted by tons of customers</p>-->
-<!--                                        <div class="dropdown-btn mt-3">-->
-<!--                                            <a href="#" class="btn btn-bordered">Get Started</a>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                    <div class="col-12 col-md-4 col-lg-3">-->
-<!--                                        &lt;!&ndash; Single Menu &ndash;&gt;-->
-<!--                                        <ul class="single-menu">-->
-<!--                                            <li class="page-title d-inline-block text-uppercase mb-2">Home Variations</li>-->
-<!--                                            <li><a class="dropdown-item" href="/">Homepage - Miami</a></li>-->
-<!--                                            <li><a class="dropdown-item" href="/theme-two">Homepage - Riga</a></li>-->
-<!--                                            <li><a class="dropdown-item" href="/theme-three">Homepage - Tokyo</a></li>-->
-<!--                                            <li><a class="dropdown-item" href="/theme-four">Homepage - Rome</a></li>-->
-<!--                                            <li><a class="dropdown-item" href="/theme-five">Homepage - Paris</a></li>-->
-<!--                                            <li><a class="dropdown-item" href="/theme-six">Homepage - London</a></li>-->
-<!--                                            <li><a class="dropdown-item" href="/theme-seven">Homepage - Seoul</a></li>-->
-<!--                                            <li><a class="dropdown-item" href="/theme-eight">Homepage - Moscow</a></li>-->
-<!--                                        </ul>-->
-<!--                                    </div>-->
-<!--                                    <div class="col-12 col-md-4 col-lg-3">-->
-<!--                                        &lt;!&ndash; Single Menu &ndash;&gt;-->
-<!--                                        <ul class="single-menu">-->
-<!--                                            <li class="page-title d-inline-block text-uppercase mb-2">Inner Pages</li>-->
-<!--                                            <li><a class="dropdown-item" href="/theme-nine">Homepage - Italy <span class="badge badge-pill badge-warning ml-1">New</span></a></li>-->
-<!--                                            <li><a class="dropdown-item" href="/about-page">About Us</a></li>-->
-<!--                                            <li><a class="dropdown-item" href="/pricing-page">Pricing Plans</a></li>-->
-<!--                                            <li><a class="dropdown-item" href="/reviews-page">Testimonials</a></li>-->
-<!--                                            <li><a class="dropdown-item" href="/faq-page">FAQ</a></li>-->
-<!--                                            <li><a class="dropdown-item" href="/login">Login</a></li>-->
-<!--                                            <li><a class="dropdown-item" href="/signup">Register</a></li>-->
-<!--                                            <li><a class="dropdown-item" href="/download-page">Download</a></li>-->
-<!--                                        </ul>-->
-<!--                                    </div>-->
-<!--                                    <div class="col-12 col-md-4 col-lg-3">-->
-<!--                                        &lt;!&ndash; Single Menu &ndash;&gt;-->
-<!--                                        <ul class="single-menu">-->
-<!--                                            <li class="page-title d-inline-block text-uppercase mb-2">Inner Pages</li>-->
-<!--                                            <li><a class="dropdown-item" href="/thank-you">Thank You</a></li>-->
-<!--                                            <li><a class="dropdown-item" href="/reset">Forget Password</a></li>-->
-<!--                                            <li><a class="dropdown-item" href="/newsletter">Newsletter</a></li>-->
-<!--                                            <li><a class="dropdown-item" href="/error-one">Error v1.0</a></li>-->
-<!--                                            <li><a class="dropdown-item" href="/error-two">Error v2.0</a></li>-->
-<!--                                            <li><a class="dropdown-item" href="/contact-page">Contact</a></li>-->
-<!--                                            <li><a class="dropdown-item" href="/maintenance">Maintenance</a></li>-->
-<!--                                            <li><a class="dropdown-item" href="/coming-soon">Coming Soon</a></li>-->
-<!--                                        </ul>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
+                        <li class="nav-item active dropdown">
+                            <a class="nav-link dropdown-toggle text-color-green" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
+                                Product range
+                            </a>
+                            <div class="dropdown-menu mega-menu px-3 px-md-4 py-md-4">
+                                <!-- Shapes Container -->
+                                <div class="shapes-container d-none d-lg-block">
+                                    <div class="shape-1"></div>
+                                </div>
+                                <div class="row">
+                                    <!-- Dropdown Headings -->
+                                    <div class="col-lg-3 dropdown-headings d-none d-lg-block">
+                                        <h5 class="text-uppercase my-2">Products</h5>
+                                    </div>
+                                    <div class="col-12 col-md-4 col-lg-3">
+                                        <!-- Single Menu -->
+                                        <ul class="single-menu">
+                                            <li class="page-title d-inline-block text-uppercase mb-2">Part 1</li>
+                                            <li *ngFor="let p of products1">
+                                                <a class="dropdown-item" (click)="onNavigate(p)">{{p.name}}</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-12 col-md-4 col-lg-3">
+                                        <!-- Single Menu -->
+                                        <ul class="single-menu">
+                                            <li class="page-title d-inline-block text-uppercase mb-2">Part 2</li>
+                                            <li><a class="dropdown-item" href="/theme-nine">Homepage - Italy <span class="badge badge-pill badge-warning ml-1">New</span></a></li>
+                                            <li><a class="dropdown-item" href="/about-page">About Us</a></li>
+                                            <li><a class="dropdown-item" href="/pricing-page">Pricing Plans</a></li>
+                                            <li><a class="dropdown-item" href="/reviews-page">Testimonials</a></li>
+                                            <li><a class="dropdown-item" href="/faq-page">FAQ</a></li>
+                                            <li><a class="dropdown-item" href="/login">Login</a></li>
+                                            <li><a class="dropdown-item" href="/signup">Register</a></li>
+                                            <li><a class="dropdown-item" href="/download-page">Download</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-12 col-md-4 col-lg-3">
+                                        <!-- Single Menu -->
+                                        <ul class="single-menu">
+                                            <li class="page-title d-inline-block text-uppercase mb-2">Part 3</li>
+                                            <li><a class="dropdown-item" href="/thank-you">Thank You</a></li>
+                                            <li><a class="dropdown-item" href="/reset">Forget Password</a></li>
+                                            <li><a class="dropdown-item" href="/newsletter">Newsletter</a></li>
+                                            <li><a class="dropdown-item" href="/error-one">Error v1.0</a></li>
+                                            <li><a class="dropdown-item" href="/error-two">Error v2.0</a></li>
+                                            <li><a class="dropdown-item" href="/contact-page">Contact</a></li>
+                                            <li><a class="dropdown-item" href="/maintenance">Maintenance</a></li>
+                                            <li><a class="dropdown-item" href="/coming-soon">Coming Soon</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+<!--                        <li class="nav-item">-->
+<!--                            <a style="font-family: 'Advent Pro', sans-serif;" class="nav-link scroll text-color-green" href="#features">Product range</a>-->
 <!--                        </li>-->
-                        <li class="nav-item">
-                            <a style="font-family: 'Advent Pro', sans-serif;" class="nav-link scroll text-color-green" href="#features">Product range</a>
-                        </li>
                         <li class="nav-item">
                             <a style="font-family: 'Advent Pro', sans-serif;" class="nav-link scroll text-color-green" href="#pricing">Automation solutions</a>
                         </li>

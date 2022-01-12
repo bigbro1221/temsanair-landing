@@ -122,43 +122,55 @@ body::-webkit-scrollbar-thumb {
 .parallax-mirror {
     z-index: 300 !important
 }
-.parallax-img {
-    background-image: url("./assets/temsanair/img_00.jpg");
-    background-position: center,center;
-    background-repeat: no-repeat;
-    background-origin: border-box;
-    background-attachment: fixed;
-    height: 120vh;
-    width: 100%;
-    position: relative;
-}
-
-.parallax-img:after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    content: '';
-    background: rgba(0,0,0,.35);
-}
+/*.parallax-img {*/
+/*    background-image: url("./assets/temsanair/img_00.jpg");*/
+/*    background-position: center,center;*/
+/*    background-repeat: no-repeat;*/
+/*    background-origin: border-box;*/
+/*    background-size: 100%;*/
+/*    height: 68vh;*/
+/*    width: 100%;*/
+/*    position: relative;*/
+/*}*/
 
 .bg-dark {
     background-color: #1b1a1e !important;
 }
-.img-about-1-dark-step-1 {
+.img-about-assets-dark-step-1 {
     background: linear-gradient(
             -45deg, #1e1e1e, #454d55, #30353C, #1b1e21) !important;
     background-size: 400% 400% !important;
-    -webkit-animation: gradient-bg 15s ease infinite !important;
-    animation: gradient-bg 15s ease infinite;
+    width: 458px;
+    height: 430px;
+    position: absolute;
+    left: -30px;
+    top: 70px;
+}
+.img-about-assets-dark-step-2 {
+    width: 458px;
+    height: 350px;
+    right: -30px;
+    position: absolute;
+    background: rgba(116, 192, 67,1);
+    top: 20px;
+}
+.img-about-assets {
+    filter: brightness(0.95);
+    box-shadow: 2px 2px 40px 0 rgb(80 80 80 / 40%);
+    object-position: 0 50%;
+    background-position: 0 50%;
+}
+.img-about-img_01-dark-step-1 {
+    background: linear-gradient(
+            -45deg, #1e1e1e, #454d55, #30353C, #1b1e21) !important;
+    background-size: 400% 400% !important;
     width: 450px;
     height: 300px;
     position: absolute;
     left: -30px;
     top: 70px;
 }
-.img-about-1-dark-step-2 {
+.img-about-img_01-dark-step-2 {
     width: 363px;
     height: 230px;
     right: -30px;
@@ -166,7 +178,7 @@ body::-webkit-scrollbar-thumb {
     background: rgba(116, 192, 67,1);
     top: 20px;
 }
-.img-about-1 {
+.img-about-img_01 {
     filter: brightness(0.95);
     box-shadow: 2px 2px 40px 0 rgb(80 80 80 / 40%);
     object-position: 0 50%;
@@ -176,8 +188,6 @@ body::-webkit-scrollbar-thumb {
     background: linear-gradient(
             -45deg, #1e1e1e, #454d55, #30353C, #1b1e21) !important;
     background-size: 400% 400% !important;
-    -webkit-animation: gradient-bg 15s ease infinite !important;
-    animation: gradient-bg 15s ease infinite;
     width: 363px;
     height: 197px;
     position: absolute;
@@ -198,6 +208,38 @@ body::-webkit-scrollbar-thumb {
     object-position: 0 50%;
     background-position: 0 50%;
 }
+
+.img-about-img_03-dark-step-1 {
+    background: linear-gradient(
+            -45deg, #1e1e1e, #454d55, #30353C, #1b1e21) !important;
+    background-size: 400% 400% !important;
+    width: 363px;
+    height: 240px;
+    position: absolute;
+    left: 170px;
+    top: 50px;
+}
+.img-about-img_03-dark-step-2 {
+    width: 440px;
+    height: 340px;
+    right: 70px;
+    position: absolute;
+    background: rgba(116,192,67,1);
+    top: -50px;
+}
+.img-about-img_03 {
+    filter: brightness(0.95);
+    box-shadow: 2px 2px 40px 0 rgb(80 80 80 / 40%);
+    object-position: 0 50%;
+    background-position: 0 50%;
+}
+.img-about-img_04-dark-step-1{
+    width: 228px;
+    height: 228px;
+    background-color: #e5e5e5;
+    border-radius: 50%;
+}
+
 .u-layout-col {
     flex-direction: column;
     min-height: 100%;
@@ -215,13 +257,40 @@ body::-webkit-scrollbar-thumb {
     height: 100%;
     border: 12px solid #74C043;
 }
+.container-image {
+    overflow:hidden;
+}
+.parallax-img {
+    animation:zoomInParallax 10s linear infinite alternate;
+    background-image: url("./assets/temsanair/img_00.jpg");
+    background-size:cover;
+    height:68vh;
+    background-repeat: no-repeat;
+    width:100%;
+    position: relative;
+}
 
-/*.u-border-16-left:after {*/
-/*    content: '';*/
-/*    position: absolute;*/
-/*    top: 0;*/
-/*    right: -5%;*/
-/*    height: 100%;*/
-/*    border: 12px solid #74C043;*/
-/*}*/
+.parallax-img:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    animation:zoomInParallax 10s linear infinite alternate-reverse;
+}
+
+.bg-black {
+    background: #111 !important;
+}
+
+
+@-webkit-keyframes zoomInParallax {
+    0% {
+        transform:scale(1);
+    }
+    100% {
+        transform:scale(1.5);
+    }
+}
 

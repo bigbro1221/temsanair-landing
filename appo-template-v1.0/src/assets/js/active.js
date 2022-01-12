@@ -34,11 +34,24 @@ $( document ).ready(function() {
     });
 
     // :: 2.0 STICKY HEADER ACTIVE CODE
-    $window.on('scroll', function () {
+    $(window).on('scroll', function () {
         if ($window.scrollTop() > 100) {
             $('.main-header-area').addClass('navbar-sticky');
         } else {
             $('.main-header-area').removeClass('navbar-sticky');
+        }
+        if (document.getElementById('benifits')) {
+            if ($window.scrollTop() >= document.getElementById('benifits').clientHeight) {
+                $('.main-header-area').addClass('bg-black');
+            }
+            if ($window.scrollTop() <= document.getElementById('benifits').clientHeight) {
+                $('.main-header-area').removeClass('bg-black');
+            }
+        }
+        if (document.getElementById('about-app')) {
+            if ($window.scrollTop() > document.getElementById('about-app').offsetTop) {
+                $('.main-header-area').removeClass('bg-black');
+            }
         }
     });
 
@@ -51,7 +64,7 @@ $( document ).ready(function() {
     var offset = 300;
     var duration = 500;
 
-    $window.on('scroll', function () {
+    $(window).on('scroll', function () {
         if ($(this).scrollTop() > offset) {
             $("#scrollUp").fadeIn(duration);
         } else {
@@ -59,41 +72,9 @@ $( document ).ready(function() {
         }
     });
 
-    $("#scrollUp").on('click', function () {
-        $window.animate({
-            scrollTop: 0
-        }, duration);
-    });
-
-    var home = $('#home');
-
     // SCROLLSPY ACTIVE CODE
     $window.scrollspy({
         target: '#appo-header'
-    });
-
-    home.on('click', function (e) {
-        e.preventDefault();
-        $window.animate({
-            scrollTop:  $(this.hash).offset().top
-        }, 1000);
-    });
-
-    var about = $('#about');
-
-    // SCROLLSPY ACTIVE CODE
-    $window.scrollspy({
-        target: '#appo-header'
-    });
-
-    // :: 5.0 SMOOTH SCROLLING ACTIVE CODE
-    about.on('click', function (e) {
-        e.preventDefault();
-        if ((document.getElementById('about-app').clientHeight) > 0) {
-            $window.animate({
-                scrollTop: (document.getElementById('about-app').clientHeight)
-            }, 1000);
-        }
     });
 
     // :: 6.0 AOS ACTIVE CODE
