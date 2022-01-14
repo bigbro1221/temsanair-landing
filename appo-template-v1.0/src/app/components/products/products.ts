@@ -1,17 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductsData} from "./products-data";
+import Drift from 'drift-zoom';
 declare let $:any;
+
 @Component({
-  // selector: 'products-range',
   templateUrl: './products.html',
 })
 export class Products implements OnInit {
 
   productsData = new ProductsData();
-  products:any = [];
+  products: any = [];
+  productsList: any = [];
+  currList = '';
   slideConfig = {
-    slidesToShow: 3,
-    slidesToScroll: 1,
+    slidesToShow: 2,
+    slidesToScroll: 3,
     dots: true,
     infinite: false,
     arrows: true,
@@ -22,8 +25,13 @@ export class Products implements OnInit {
     draggable:true,
     // fade: true,
     cssEase: 'ease-out',
+    centerPadding: '160px',
+    swipeToSlide: true,
+    swipe: true,
+    mouseWheelMove: true,
+    easing: 'ease',
     lazyLoad: 'ondemand',
-    variableWidth: true,
+    // variableWidth: true,
     // "responsive": [
     //   {
     //     breakpoint: 1024,
@@ -50,23 +58,29 @@ export class Products implements OnInit {
     //   }
     // ]
   };
+
   constructor() { }
 
   ngOnInit(): void {
     this.products = this.productsData.data;
+    this.productsList = this.productsData.productList;
   }
 
   ngAfterViewInit() {
-    for (let img of $('.product-img-slide'+ '.product-text-slide')) {
-
+    for (let z of $('.demo-trigger')) {
+      new Drift(z, {
+        paneContainer: document.querySelector('.img-area'),
+        inlinePane: false,
+        zoomFactor: 4,
+        touchBoundingBox: true,
+        containInline: true,
+        hoverBoundingBox: true,
+      });
     }
-    for (let text of $('.product-text-slide')) {
+    $(".font-spartan").each(function() {
+      $(this).html($(this).text().replace('m3', "m<sup>3</sup>"));
+    });
 
-    }
-
-    console.log($('.slide'))
-    console.log($('.product-img-slide').height())
-    console.log($('.product-text-slide').height())
   }
 
   slickInit(e) {
@@ -84,5 +98,29 @@ export class Products implements OnInit {
 
   beforeChange(e) {
     console.log(e)
+  }
+
+  onChange(value) {
+    console.log(value)
+  }
+
+  onMouse(i) {
+    // console.log(i)
+  }
+
+  onMouseLeave(i: number) {
+    // for (let z of $('.demo-trigger')) {
+    //   new Drift(z, {
+    //     paneContainer: paneContainer,
+    //     inlinePane: false,
+    //     // inlineOffsetY: 900,
+    //     zoomFactor: 4,
+    //     onSow: false,
+    //     onHide: true,
+    //     touchBoundingBox: true,
+    //     containInline: true,
+    //     hoverBoundingBox: true,
+    //   });
+    // }
   }
 }
