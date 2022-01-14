@@ -73,9 +73,9 @@ $( document ).ready(function() {
     });
 
     // SCROLLSPY ACTIVE CODE
-    $window.scrollspy({
-        target: '#appo-header'
-    });
+    // $window.scrollspy({
+    //     target: '#appo-header'
+    // });
 
     // :: 6.0 AOS ACTIVE CODE
     AOS.init();

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgwWowModule } from 'ngx-wow';
+// import {NgSelectModule} from '@ng-select/ng-select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -83,6 +84,9 @@ import { NgxParallaxScrollModule } from 'ngx-parallax-scroll';
 import {Products} from "./components/products/products";
 import {HttpClientModule} from "@angular/common/http";
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import {NgxImageZoomModule} from "ngx-image-zoom";
+import {MatSelectModule} from "@angular/material/select";
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -170,9 +174,13 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     BrowserAnimationsModule,
     NgwWowModule,
     HttpClientModule,
+    NgxImageZoomModule,
+    // NgSelectModule,
     NgxParallaxScrollModule,
     SlickCarouselModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSelectModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

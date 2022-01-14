@@ -366,18 +366,74 @@ body::-webkit-scrollbar-thumb {
     color: #74C043 !important;
 }
 .slick-slide {
-    width: 360px !important;
-    height: 430px !important;
-    box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
+    width: 396px !important;
+    height: 60vh !important;
+    box-shadow: 0 0.1rem 1rem rgb(0 0 0 / 10%);
     background: #2B2F3E;
     border-radius: 3px;
 }
 .slide {
-    margin-right: 30px !important;
+    margin: 0 15px !important;
     padding: 15px;
 }
 .slick-dots .slick-active button, .testimonial-area .owl-carousel button.owl-dot.active {
     background-color: #74C043 !important;;
+}
+
+.demo-area{
+    background:blue;
+    border-radius:8px;
+    padding:20px;
+}
+.demo-area section{
+    padding-top:0;
+}
+
+.demo-trigger {
+    display: inline-block;
+}
+
+.detail {
+    position: relative;
+    width: 100%;
+}
+.drift-bounding-box {
+    width: 100px !important;
+    height: 100px !important;
+}
+
+.mat-form-list .mat-form-field-underline {
+    background-color: #fff;
+}
+
+.mat-select-value {
+    color: #fff;
+}
+
+.mat-form-list .mat-select-arrow {
+    color: #fff;
+}
+.mat-select-arrow {
+    color: #fff;
+}
+.mat-select-placeholder {
+    color: #fff;
+
+}
+.mat-select-panel::-webkit-scrollbar {
+    width: 5px;
+}
+
+.mat-select-panel::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, .1) !important;
+    border-radius: 5px;
+    transition: .1 .7s;
+}
+
+.mat-select-panel::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, .3) !important;
+    border-radius: 5px;
+    transition: .1 .7s;
 }
 
 @media (min-width: 950px) {
@@ -401,6 +457,36 @@ body::-webkit-scrollbar-thumb {
         height: 270px;
         background: #1E1E1E;
     }
-
 }
+
+
+/*@media (max-width: 610px) {*/
+
+/*    .detail, .demo-trigger {*/
+/*        float: none;*/
+/*    }*/
+
+/*    .demo-trigger {*/
+/*        display:block;*/
+/*        width: 50%;*/
+/*        max-width:200px;*/
+/*        margin: 0 auto;*/
+/*    }*/
+
+/*    .detail {*/
+/*        margin: 0;*/
+/*        width: auto;*/
+/*    }*/
+
+/*    p {*/
+/*        margin: 0 auto 1em;*/
+/*    }*/
+
+/*    .responsive-hint {*/
+/*        display: none;*/
+/*    }*/
+/*    h3 {*/
+/*        margin-top:20px;*/
+/*    }*/
+/*}*/
 
