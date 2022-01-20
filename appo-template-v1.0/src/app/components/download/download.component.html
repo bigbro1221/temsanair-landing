@@ -8,9 +8,9 @@
         <div class="row justify-content-center">
             <div class="col-12 col-md-10 col-lg-8">
                 <!-- Download Text -->
-                <div class="download-text text-center wow fadeInUp slow" >
-                    <img src="./assets/temsanair/automat10n.jpg" style="width: 80%;margin-bottom: 20px;" alt="">
-                    <img src="./assets/temsanair/automat10n_icon.png" alt="">
+                <div class="download-text text-center wow fadeInUp" *ngIf="img | async as i">
+                    <img class="mat-elevation-z4" [src]="i.img1" style="width: 80%;margin-bottom: 20px;" alt="">
+                    <img [src]="i.img2" alt="">
                     <p class="my-3" style="font-size: 1.5vw">It’s not about the technology,</p>
                     <p class="d-none d-sm-block my-3 text-color-green" style="font-size: 1.5vw">It’s about intelligence</p>
                     <!-- Store Buttons -->

@@ -8,11 +8,11 @@
                                 (init)="slickInit($event)">
                 <div ngxSlickItem class="p-0 m-0" *ngFor="let img of aboutImgs | async">
                     <div class="main-slide">
-                        <img class="w-100" [src]="'./assets/temsanair/'+img">
+                        <img class="w-100" [src]="http + img">
                         <div class="container wow fadeInUp" style="position:absolute;top:30%;left:10%;align-items:center;z-index: 1">
                             <div class="row align-items-center mb-2">
                                 <div class="col-1">
-                                    <img src="./assets/temsanair/i_about_us.png" alt="">
+                                    <img [src]="http +'i_about_us.png'" alt="">
                                 </div>
                                 <div class="col-3">
                                     <h3> ABOUT <span style="" class="text-color-green">TEMSAN</span></h3>
@@ -134,7 +134,7 @@
                                         <div [ngClass]="{'fadeInLeft':i==1 || i==3,'img-about-2-dark-step-2':i==1,'img-about-img_03-dark-step-2':i==3}" class="img-about-assets-dark-step-2 wow"></div>
                                         <div style="background: rgb(27,26,30);position: relative;">
                                             <img [ngClass]="{'fadeInLeft':i==1 || i==3,'img-about-2':i==1,'img-about-img_03':i==3}" class="mx-auto img-about-assets wow" style="position: relative"
-                                                 [src]="'./assets/temsanair/' +c2.img" alt="">
+                                                 [src]="http + c2.img" alt="">
                                         </div>
                                     </div>
                                 </div>
@@ -149,7 +149,7 @@
                                         <div [ngClass]="{'fadeInRight':i==0 || i==2,'img-about-assets-dark-step-2':i==0,'img-about-img_01-dark-step-2':i==2}" class="wow"></div>
                                         <div style="background: rgb(27,26,30);position: relative;">
                                             <img [ngClass]="{'fadeInRight':i==0 || i==2,'img-about-assets':i==0,'img-about-img_01':i==2}" class="mx-auto wow" style="position: relative"
-                                                 [src]="'./assets/temsanair/' +c2.img" alt="">
+                                                 [src]="http + c2.img" alt="">
                                         </div>
                                     </div>
                                 </div>
@@ -174,10 +174,10 @@
                         <div class="col-6 wow fadeInLeft" *ngIf="i==0">
                             <div class="headings d-flex align-items-center mb-4">
                                 <h3 class="text-capitalize text-color-green">
-                                    <img src="./assets/temsanair/i_list_item.png" style="width: 25px;" alt=""> {{c3.text1}}<br>
-                                    <img src="./assets/temsanair/i_list_item.png" style="width: 25px;" alt=""> {{c3.text2}}<br>
-                                    <img src="./assets/temsanair/i_list_item.png" style="width: 25px;" alt=""> {{c3.text3}}<br>
-                                    <img src="./assets/temsanair/i_list_item.png" style="width: 25px;" alt=""> {{c3.text4}}<br>
+                                    <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text1}}<br>
+                                    <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text2}}<br>
+                                    <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text3}}<br>
+                                    <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text4}}<br>
                                 </h3>
                             </div>
                         </div>
@@ -189,7 +189,7 @@
                                         <div class="img-about-img_01-dark-step-2 wow fadeInRight"></div>
                                         <div style="background: rgb(27,26,30);position: relative;">
                                             <img class="mx-auto img-about-img_01 wow fadeInRight" style="position: relative"
-                                                 [src]="'./assets/temsanair/'+c3.img" alt="">
+                                                 [src]="http + c3.img" alt="">
                                         </div>
                                     </div>
                                 </div>
@@ -203,7 +203,7 @@
                                         <div class="img-about-img_03-dark-step-2 wow fadeInRight"></div>
                                         <div style="background: rgb(27,26,30);position: relative;">
                                             <img class="mx-auto img-about-img_03 wow fadeInRight" style="position: relative"
-                                                 [src]="'./assets/temsanair/'+c3.img" alt="">
+                                                 [src]="http + c3.img" alt="">
                                         </div>
                                     </div>
                                 </div>
@@ -212,13 +212,13 @@
                         <div class="col-6 wow fadeInLeft" *ngIf="i==1">
                             <div class="headings d-flex align-items-center mb-4">
                                 <h3 class="text-capitalize text-color-green">
-                                    <img src="./assets/temsanair/i_list_item.png" style="width: 25px;" alt=""> {{c3.text1}}<br>
-                                    <img src="./assets/temsanair/i_list_item.png" style="width: 25px;" alt=""> {{c3.text2}}<br>
-                                    <img src="./assets/temsanair/i_list_item.png" style="width: 25px;" alt=""> {{c3.text3}}<br>
-                                    <img src="./assets/temsanair/i_list_item.png" style="width: 25px;" alt=""> {{c3.text4}}<br>
-                                    <img src="./assets/temsanair/i_list_item.png" style="width: 25px;" alt=""> {{c3.text5}}<br>
-                                    <img src="./assets/temsanair/i_list_item.png" style="width: 25px;" alt=""> {{c3.text6}}<br>
-                                    <img src="./assets/temsanair/i_list_item.png" style="width: 25px;" alt=""> {{c3.text7}}<br>
+                                    <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text1}}<br>
+                                    <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text2}}<br>
+                                    <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text3}}<br>
+                                    <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text4}}<br>
+                                    <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text5}}<br>
+                                    <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text6}}<br>
+                                    <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text7}}<br>
                                 </h3>
                             </div>
                         </div>

@@ -7,12 +7,12 @@
             <div class="col-12 wow fadeInLeft">
                 <div class="features-text" style="position: relative">
                     <!-- Headings -->
-                    <div class="headings align-items-center">
+                    <div class="headings align-items-center" *ngIf="img | async as i">
                         <div  style="width: 12%;position: absolute;top: 20%;left: 10%;">
-                            <img src="./assets/temsanair/title_ac_unit.png" alt="">
+                            <img [src]="i.img1" alt="">
                         </div>
                         <div class="" style="width: 70%;margin: auto">
-                            <img src="./assets/temsanair/ac_unit.png" alt="">
+                            <img [src]="i.img2" alt="">
                         </div>
                         <div class="clearfix"></div>
                     </div>

@@ -14,7 +14,9 @@ export class Products implements OnInit {
 
   products$: Observable<any>;
   productsList$: Observable<any>;
+  img: Observable<any>;
   url: string = "assets/data/products.json";
+  http: string = 'http://localhost:4200/assets/temsanair/products/';
   currList = '';
   time:number = 0;
   slideConfig = {
@@ -62,16 +64,17 @@ export class Products implements OnInit {
     //   }
     // ]
   };
-  constructor(private http: HttpClient,
+  constructor(private httpClient: HttpClient,
               private dialog: MatDialog,
               private routerSer: RouterService) {
-    this.products$ = this.http.get<any>(this.url).pipe(map(res => {
+    this.img = this.httpClient.get<any>(this.url).pipe(map(res => this.http + res?.main_img));
+    this.products$ = this.httpClient.get<any>(this.url).pipe(map(res => {
       for (let d of res?.data) {
         d.count = d?.text.length + d?.detail1.length + d?.detail2.length + d?.detail3.length + d?.detail4.length;
       }
       return res?.data;
-    } ));
-    this.productsList$ = this.http.get<any>(this.url).pipe(map(res => res?.productList));
+    }));
+    this.productsList$ = this.httpClient.get<any>(this.url).pipe(map(res => res?.productList));
   }
 
   ngOnInit(){
@@ -120,7 +123,7 @@ export class Products implements OnInit {
      let x = offsetX/e.target.clientWidth * 100
      let y = offsetY/e.target.clientHeight * 100
     $('#img_par' + i).removeClass('img-none')
-    $('#img_par' + i).attr('style', 'background-image: url(./assets/temsanair/products/'+p?.img+');background-position: '+x + '% ' + y + '%; width:100%;height:30vh');
+    $('#img_par' + i).attr('style', 'background-image: url('+this.http + p?.img+');background-position: '+x + '% ' + y + '%; width:100%;height:30vh');
     $('#product' + i).attr('style', 'opacity: 0');
     $('#icons' + i).attr('style', 'opacity: 0');
   }

@@ -1,0 +1,8 @@
+{
+  "image1": "00.webp",
+  "image2": {"img1":"temsan_universe.png","img2":"waste_collection.png","img3":"dust_collection.png"},
+  "image3": "about_temsan.jpg",
+  "image4": {"img1":"title_ac_unit.png","img2":"ac_unit.png"},
+  "image5": {"img1":"automat10n.jpg","img2":"automat10n_icon.png"},
+  "image6": {"img1":"energy.jpg","img2":"icon_temper.png","img3": "temper.jpg"}
+}

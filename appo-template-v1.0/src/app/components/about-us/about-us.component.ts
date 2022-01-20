@@ -14,6 +14,7 @@ declare let $:any;
 export class AboutUsComponent implements OnInit {
 
   url: string = "assets/data/about.json";
+  http: string = 'http://localhost:4200/assets/temsanair/';
 
   slideConfig = {
     slidesToShow: 1,
@@ -42,17 +43,17 @@ export class AboutUsComponent implements OnInit {
   cards3:Observable<any>;
 
   constructor(private ngxService: NgxUiLoaderService,
-              private http: HttpClient) {
+              private httpClient: HttpClient) {
 
   }
 
   ngOnInit(): void {
     window.scrollTo(0, 0);
-    this.aboutImgs = this.http.get<any>(this.url).pipe(map(res => res?.slide_img));
-    this.cardHeader1 = this.http.get<any>(this.url).pipe(map(res => res.card_headers1));
-    this.cards1 = this.http.get<any>(this.url).pipe(map(res => res.cards1));
-    this.cards2 = this.http.get<any>(this.url).pipe(map(res => res.cards2));
-    this.cards3 = this.http.get<any>(this.url).pipe(map(res => res.cards3));
+    this.aboutImgs = this.httpClient.get<any>(this.url).pipe(map(res => res?.slide_img));
+    this.cardHeader1 = this.httpClient.get<any>(this.url).pipe(map(res => res.card_headers1));
+    this.cards1 = this.httpClient.get<any>(this.url).pipe(map(res => res.cards1));
+    this.cards2 = this.httpClient.get<any>(this.url).pipe(map(res => res.cards2));
+    this.cards3 = this.httpClient.get<any>(this.url).pipe(map(res => res.cards3));
   }
 
   ngAfterViewInit() {

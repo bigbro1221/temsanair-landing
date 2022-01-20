@@ -1,5 +1,5 @@
 <section id="benifits" class="section benifits-area ptb_100"  style="background: rgba(52,58,64,1);">
-    <div class="container">
+    <div class="container" *ngIf="img | async as i">
         <div class="row align-items-center wow fadeInUp slow">
             <!-- Welcome Intro Start -->
             <div class="col-5">
@@ -22,7 +22,7 @@
             <div class="col mx-auto pt-md-0">
                 <!-- Welcome Thumb -->
                 <div class="welcome-thumb">
-                    <img style="width: 120%;max-width: 120%" src="./assets/temsanair/temsan_universe.png" alt="">
+                    <img style="width: 120%;max-width: 120%" [src]="i.img1" alt="">
                 </div>
             </div>
         </div>
@@ -32,7 +32,7 @@
                 <div class="benifits-item p-3">
                     <!-- Benifits Text -->
                     <div class="feature-icon float-left">
-                        <img style="width: 100px;" src="./assets/temsanair/waste_collection.png" alt="">
+                        <img style="width: 100px;" [src]="i.img2" alt="">
                     </div>
                     <div class="benifits-text ml-3 float-left">
                         <h3 class="mb-2"><span class="text-color-green">WASTE</span> <br>Collection</h3>
@@ -46,7 +46,7 @@
             <div class="col-12 col-sm-6 col-md-6">
                 <div class="benifits-item p-3">
                     <div class="feature-icon float-left">
-                        <img style="width: 100px;" src="./assets/temsanair/dust_collection.png" alt="">
+                        <img style="width: 100px;" [src]="i.img3" alt="">
                     </div>
                     <!-- Benifits Text -->
                     <div class="benifits-text ml-3  float-left">

@@ -20,8 +20,8 @@
             </div>
             <div class="col-12 col-lg-6">
                 <!-- About Thumb -->
-                <div class="about-thumb text-center d-none d-lg-block">
-                    <img src="assets/temsanair/about_temsan.jpg" class="mat-elevation-z4" alt="">
+                <div class="about-thumb text-center d-none d-lg-block" *ngIf="img | async as i">
+                    <img [src]="i" class="mat-elevation-z4" alt="">
                 </div>
             </div>
         </div>

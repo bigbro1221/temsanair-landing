@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {NgwWowService} from "ngx-wow";
+import {Observable} from "rxjs";
+import {HttpClient} from "@angular/common/http";
+import {map} from "rxjs/operators";
 
 @Component({
   selector: 'app-download',
@@ -7,10 +10,18 @@ import {NgwWowService} from "ngx-wow";
   styleUrls: ['./download.component.css']
 })
 export class DownloadComponent implements OnInit {
+  img: Observable<any>;
+  url: string = "assets/data/main.json";
+  http: string = 'http://localhost:4200/assets/temsanair/';
+  constructor(private wow: NgwWowService,
+              private httpClient: HttpClient) { this.wow.init() }
 
-  constructor(private wow: NgwWowService) { this.wow.init() }
-
-  ngOnInit(): void {
+  ngOnInit() {
+    this.img = this.httpClient.get<any>(this.url).pipe(map(res=> {
+      res.image5.img1 = this.http + res.image5.img1
+      res.image5.img2 = this.http + res.image5.img2
+      return res.image5;
+    }))
   }
 
 }

@@ -3,8 +3,8 @@
     <div class="all-area">
         <app-header-two></app-header-two>
 <!--        <app-hero-six></app-hero-six>-->
-        <div class="product-img wow fadeInUp">
-            <img src="./assets/temsanair/products/title_product_range2.png" style="width: 100%;margin-top: 120px;" alt="">
+        <div class="product-img wow fadeInUp" *ngIf="img | async as i">
+            <img [src]="i" style="width: 100%;margin-top: 120px;" alt="">
         </div>
         <div class="d-flex justify-content-center mt-2 mb-4 wow fadeInUp">
             <mat-form-field class="mat-form-list" style="width: 30%;">
@@ -26,22 +26,24 @@
                                     (breakpoint)="breakpoint($event)"
                                     (afterChange)="afterChange($event)"
                                     (beforeChange)="beforeChange($event)">
-                    <div ngxSlickItem class="slide" (mouseleave)="onMouseLeave(i, p)" [class]="'area'+i" *ngFor="let p of products$| async; trackBy: identify; let i = index;">
+                    <div ngxSlickItem class="slide" (mouseleave)="onMouseLeave(i, p)" [class]="'area'+i" *ngFor="let p of products$| async;
+                     trackBy: identify; let i = index;">
                         <div class="slick-container">
                             <div class="product-img-slide mb-1" style="overflow: hidden">
                               <figure class="zoom" [id]="'img_par' +i" (mousemove)="onMouse($event, i,p)" (mouseleave)="onMouseLeave(i, p)">
-                                <img (click)="onClickZoom()" (mouseleave)="onMouseProLeave(i, p)" (mousemove)="onMouseProduct($event, i,p)" [id]="'img' +i" [src]="'./assets/temsanair/products/mini/'+p?.img_mini" />
+                                <img (click)="onClickZoom()" (mouseleave)="onMouseProLeave(i, p)" (mousemove)="onMouseProduct($event, i,p)"
+                                     [id]="'img' +i" [src]="http + 'mini/'+ p?.img_mini" />
                               </figure>
                               <div class="icons float-right" [id]="'icons'+i">
-                                <img class="d-block mb-1"  src="./assets/temsanair/products/i_after_sales.png" style="width: 80px;position: relative;right: 50px;" alt="">
-                                <img class="d-block" src="./assets/temsanair/products/i_material_design.png" style="width: 80px;" alt="">
+                                <img class="d-block mb-1"  [src]="http + 'i_after_sales.png'" style="width: 80px;position: relative;right: 50px;" alt="">
+                                <img class="d-block" [src]="http + 'i_material_design.png'" style="width: 80px;" alt="">
                               </div>
                             </div>
                             <div class="product-text-slide" [id]="'product' + i">
                                 <h5 class="text-center">
                                     <span class="text-color-green text-uppercase">{{p?.title}}</span> <br>
                                     <span class="text-uppercase">{{p?.sub_title}}</span>
-                                    <img src="./assets/temsanair/products/bg_detail.png" alt="">
+                                    <img [src]="http + 'bg_detail.png'" alt="">
                                 </h5>
                                 <p class="px-2 m-0 font-spartan" [id]="'text'+i">
                                     {{p?.text}}
