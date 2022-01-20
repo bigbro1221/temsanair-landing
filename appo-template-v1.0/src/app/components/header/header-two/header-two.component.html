@@ -2,33 +2,20 @@
     <div id="appo-header" class="main-header-area nav-white">
         <div class="container-fluid">
             <nav class="navbar navbar-expand-md navbar-light">
-                <!-- Logo -->
-                <a class="navbar-brand" routerLink="/">
+                <a class="navbar-brand" mat-button routerLink="/">
                     <img class="logo" src="./assets/temsanair/logo.png" alt="">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#appo-menu">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <!-- Appo Menu -->
                 <div class="collapse navbar-collapse" id="appo-menu">
-                    <!-- Header Items -->
                     <ul class="navbar-nav header-items ml-auto">
-                        <li class="nav-item">
-                            <a style="font-family: 'Advent Pro', sans-serif;" class="nav-link scroll text-color-green" id="home"
-                               routerLink="/">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a style="font-family: 'Advent Pro', sans-serif;cursor: pointer" class="nav-link scroll text-color-green" (click)="onAbout()" id="about">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a style="font-family: 'Advent Pro', sans-serif;cursor: pointer" class="nav-link scroll text-color-green" routerLink="/product-range" id="product-range">Product Range</a>
-                        </li>
-                        <li class="nav-item">
-                            <a style="font-family: 'Advent Pro', sans-serif;" class="nav-link scroll text-color-green" href="#pricing">Automation solutions</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a style="font-family: 'Advent Pro', sans-serif;" class="nav-link text-color-green" href="#contact" id="navbarDropdown-2" role="button" data-toggle="dropdown">
-                                Contact
+                        <li class="nav-item" *ngFor="let u of urls; let i = index;">
+                            <a style="font-family: 'Advent Pro', sans-serif; cursor: pointer;"
+                               [routerLinkActiveOptions]="{exact: true}"
+                               routerLinkActive="active-link" [routerLink]="u.url" (click)="onNavigate(u,i)"
+                               class="wow fadeInUp nav-link scroll text-color-green" [id]="'url'+i">
+                                {{u.name}}
                             </a>
                         </li>
                     </ul>

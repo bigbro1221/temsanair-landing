@@ -1,0 +1,28 @@
+<button [mat-dialog-close] mat-icon-button style="position: absolute;top: 10px;right: 20px;border: none !important;">
+  <mat-icon style="vertical-align: middle;color: #fff;">close</mat-icon>
+</button>
+<h3 class="text-center mb-3 text-white">
+  <span class="text-color-green">{{obj?.title}}</span> <br>
+  {{obj?.sub_title}}
+</h3>
+<div class="row">
+  <div class="col-6">
+    <img [src]="'./assets/temsanair/products/' +obj?.img" style="" alt="">
+  </div>
+  <div class="col-6">
+    <div class="product-dialog-text p-3" [id]="'product' + obj.i">
+      <h5 class="text-center text-white">
+        <span class="text-color-green">{{obj?.title}}</span> <br>
+        {{obj?.sub_title}}
+        <img src="./assets/temsanair/products/bg_detail.png" alt="">
+      </h5>
+      <p class="px-2 m-0 font-spartan text-white" [id]="'text'+obj.i">
+        {{obj?.text}}
+        <span *ngIf="obj?.detail1 != ''"><br>{{obj?.detail1}}</span>
+        <span *ngIf="obj?.detail2 != ''">{{obj?.detail2}} <br></span>
+        <span *ngIf="obj?.detail3 != ''">{{obj?.detail3}} <br></span>
+        <span *ngIf="obj?.detail4 != ''">{{obj?.detail4}} <br></span>
+      </p>
+    </div>
+  </div>
+</div>

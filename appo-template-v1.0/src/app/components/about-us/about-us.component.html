@@ -1,247 +1,231 @@
-<div class="london bg-dark">
-    <app-scrollup></app-scrollup>
-    <div class="all-area">
-        <app-header-two></app-header-two>
-        <app-hero-six></app-hero-six>
-        <section class="section about-us ptb_100" style="background: rgba(27,26,30,1)">
-            <section style="background: rgb(217,217,217)">
-                <div class="container-fluid">
+    <div class="london bg-dark">
+        <app-scrollup></app-scrollup>
+        <div class="all-area">
+            <app-header-two></app-header-two>
+            <ngx-slick-carousel class="carousel about-us"
+                                #slickModal="slick-carousel"
+                                [config]="slideConfig"
+                                (init)="slickInit($event)">
+                <div ngxSlickItem class="p-0 m-0" *ngFor="let img of aboutImgs | async">
+                    <div class="main-slide">
+                        <img class="w-100" [src]="'./assets/temsanair/'+img">
+                        <div class="container wow fadeInUp" style="position:absolute;top:30%;left:10%;align-items:center;z-index: 1">
+                            <div class="row align-items-center mb-2">
+                                <div class="col-1">
+                                    <img src="./assets/temsanair/i_about_us.png" alt="">
+                                </div>
+                                <div class="col-3">
+                                    <h3> ABOUT <span style="" class="text-color-green">TEMSAN</span></h3>
+                                </div>
+                                <div class="col-8">
+<!--                                    <img src="./assets/temsanair/line_title.png" style="height: 1px;width: 100%;" alt="">-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container wow fadeInUp" style="position:absolute;top:40%;left:10%;align-items:center;z-index: 1">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="headings d-flex align-items-center mb-4">
+                                        <h2 class="text-capitalize" style="font-family: 'Roboto',sans-serif;color: #fff;font-weight: 300;">
+                                            WHAT<span class="ml-2 text-color-green">TEMSAN IS?</span> <br>
+                                            WHAT<span class="ml-2 text-color-green">TEMSAN IS NOT?</span>
+                                        </h2>
+                                    </div>
+                                    <p class="mt-3 mb-1 text" style="color:#fff">
+                                        A deeper perspective of our attitude
+                                        towards the industry, <br>
+                                        human empowerment, quality, discipline and
+                                        more... Read further <br> to see how we exist,
+                                        and why we do...
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ngx-slick-carousel>
+                            <!--            <div #element class="parallax-img">-->
+<!--                <div class="container wow fadeInUp" style="position:relative;top:200px;align-items:center;z-index: 1">-->
+<!--                    <div class="row align-items-center mb-2">-->
+<!--                        <div class="col-1">-->
+<!--                            <img src="./assets/temsanair/i_about_us.png" alt="">-->
+<!--                        </div>-->
+<!--                        <div class="col-3">-->
+<!--                            <h3> ABOUT <span style="" class="text-color-green">TEMSAN</span></h3>-->
+<!--                        </div>-->
+<!--                        <div class="col-8">-->
+<!--                            <img src="./assets/temsanair/line_title.png" style="height: 1px;width: 100%;" alt="">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="row">-->
+<!--                        <div class="col">-->
+<!--                            <div class="headings d-flex align-items-center mb-4">-->
+<!--                                <h2 class="text-capitalize" style="font-family: 'Roboto',sans-serif;color: #fff;font-weight: 300;">-->
+<!--                                    WHAT<span class="ml-2 text-color-green">TEMSAN IS?</span> <br>-->
+<!--                                    WHAT<span class="ml-2 text-color-green">TEMSAN IS NOT?</span>-->
+<!--                                </h2>-->
+<!--                            </div>-->
+<!--                            <p class="mt-3 mb-1 text" style="color:#fff">-->
+<!--                                A deeper perspective of our attitude-->
+<!--                                towards the industry, <br>-->
+<!--                                human empowerment, quality, discipline and-->
+<!--                                more... Read further <br> to see how we exist,-->
+<!--                                and why we do...-->
+<!--                            </p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+            <section class="section about-us" style="background: rgba(27,26,30,1);padding: 40px 0;">
+                <section>
+                    <div class="container-fluid my-4" style="padding-left: 100px;padding-right: 100px;">
+                        <div class="shapes-container">
+                            <div class="shape-1"></div>
+                        </div>
+                        <div class="row" style="">
+                            <div *ngFor="let h of cardHeader1 | async;let i = index;"
+                                 [ngClass]="{'col-9':i==0,'col-3':i==1,'fadeInLeft':i==0,'fadeInRight':i==1}"
+                                 class="wow" style="">
+                                <h4 class="text-center text-color-green" style="font-family: 'Spartan', sans-serif;font-style: italic;">
+                                    {{h}}
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="row" style="position:relative;z-index: 1;">
+                            <div class="col-3 wow fadeInUp" *ngFor="let c of cards1 | async;let i = index">
+                                <div [ngClass]="{'cyan': i == 0, 'red' : i == 1, 'blue' : i == 2, 'orange' : i == 3 }" class="mat-elevation-z2 about-card">
+                                    <p *ngIf="c.text1 !=''" class="text-white">
+                                        {{c.text1}}
+                                    </p>
+                                    <p *ngIf="c.text2 !=''">
+                                        {{c.text2}}
+                                    </p>
+                                    <p *ngIf="c.text3 !=''">
+                                        {{c.text3}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="container" *ngFor="let c2 of cards2 | async; let i = index" style="position: relative;z-index: 1;">
+                    <div *ngIf="i==0" class="shapes-container">
+                        <div class="shape bg-shape" style="top: 3rem;"></div>
+                    </div>
                     <div class="row align-items-center">
-                        <div class="col-6 wow fadeInLeft slow" style="padding-left: 100px;">
+                        <div *ngIf="i==0 || i==2" [ngClass]="{'fadeInLeft':i==0|| i==2}"
+                             class="col-6 wow">
                             <div class="headings d-flex align-items-center mb-4">
-                                <h2 class="text-capitalize" style="font-family: 'Roboto',sans-serif;color: #000;font-weight: 300;">
-                                    WHAT<span class="ml-2 text-color-green">TEMSAN IS?</span> <br>
-                                    WHAT<span class="ml-2 text-color-green">TEMSAN IS NOT?</span>
+                                <h2 class="text-capitalize">
+                                    <span class="ml-2 text-color-green">{{c2.header1}}</span>
+                                    {{c2.header2}}
                                 </h2>
                             </div>
-                            <p class="mt-3 mb-1 text" style="color:#000">
-                                A deeper perspective of our attitude
-                                towards the industry, human
-                                empowerment, quality, discipline and
-                                more... Read further to see how we exist,
-                                and why we do...
+                            <p class="my-3 text" style="margin-top: 0 !important;">
+                                {{c2.text}}
                             </p>
-                            <h1 style="font-size: 8.125rem;font-weight: 300;margin: 0 auto 0 0;color:#000;">
-                                about
-                            </h1>
                         </div>
-                        <div class="col-6 col-md-6 mx-auto mb-5 wow slow fadeInRight" style="padding-right: 100px;">
-                            <div style="position: relative;">
-                                <img class="mx-auto" style="position: relative" src="./assets/temsanair/about_temsan.jpg" alt="">
+                        <div *ngIf="i==1 || i==3" [ngClass]="{'fadeInLeft':i==1 || i==3}"
+                          class="col-6 mx-auto mb-5">
+                            <div class="u-layout-col">
+                                <div style="border: 21px solid transparent">
+                                    <div style="position: relative; flex: 1; max-width: 100%;padding-left: 20px;padding-right: 20px">
+                                        <div [ngClass]="{'fadeInLeft':i==1 || i==3,'img-about-2-dark-step-1':i==1,'img-about-img_03-dark-step-1':i==3}" class="img-about-assets-dark-step-1 wow"></div>
+                                        <div [ngClass]="{'fadeInLeft':i==1 || i==3,'img-about-2-dark-step-2':i==1,'img-about-img_03-dark-step-2':i==3}" class="img-about-assets-dark-step-2 wow"></div>
+                                        <div style="background: rgb(27,26,30);position: relative;">
+                                            <img [ngClass]="{'fadeInLeft':i==1 || i==3,'img-about-2':i==1,'img-about-img_03':i==3}" class="mx-auto img-about-assets wow" style="position: relative"
+                                                 [src]="'./assets/temsanair/' +c2.img" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div *ngIf="i==0 || i==2" [ngClass]="{'fadeInRight':i==0 || i==2}"
+                             class="col-6 mx-auto mb-5">
+                            <div class="u-layout-col">
+                                <div style="border: 21px solid transparent">
+                                    <div style="position: relative; flex: 1; max-width: 100%;padding-left: 20px;padding-right: 20px">
+                                        <div [ngClass]="{'fadeInRight':i==0 || i==2,'img-about-assets-dark-step-1':i==0,'img-about-img_01-dark-step-1':i==2}" class="wow"></div>
+                                        <div [ngClass]="{'fadeInRight':i==0 || i==2,'img-about-assets-dark-step-2':i==0,'img-about-img_01-dark-step-2':i==2}" class="wow"></div>
+                                        <div style="background: rgb(27,26,30);position: relative;">
+                                            <img [ngClass]="{'fadeInRight':i==0 || i==2,'img-about-assets':i==0,'img-about-img_01':i==2}" class="mx-auto wow" style="position: relative"
+                                                 [src]="'./assets/temsanair/' +c2.img" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div *ngIf="i==1 || i==3" [ngClass]="{'fadeInRight':i==1 || i==3}"
+                             class="col-6 wow">
+                            <div class="headings d-flex align-items-center mb-4">
+                                <h2 class="text-capitalize">
+                                    <span class="ml-2 text-color-green">{{c2.header1}}</span>
+                                    {{c2.header2}}
+                                </h2>
+                            </div>
+                            <p class="my-3 text" style="margin-top: 0 !important;">
+                                {{c2.text}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="container" style="position: relative;">
+                    <div class="row align-items-center" *ngFor="let c3 of cards3 | async;let i = index">
+                        <div class="col-6 wow fadeInLeft" *ngIf="i==0">
+                            <div class="headings d-flex align-items-center mb-4">
+                                <h3 class="text-capitalize text-color-green">
+                                    <img src="./assets/temsanair/i_list_item.png" style="width: 25px;" alt=""> {{c3.text1}}<br>
+                                    <img src="./assets/temsanair/i_list_item.png" style="width: 25px;" alt=""> {{c3.text2}}<br>
+                                    <img src="./assets/temsanair/i_list_item.png" style="width: 25px;" alt=""> {{c3.text3}}<br>
+                                    <img src="./assets/temsanair/i_list_item.png" style="width: 25px;" alt=""> {{c3.text4}}<br>
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="col-6 mx-auto mb-5" *ngIf="i==0">
+                            <div class="u-layout-col">
+                                <div style="border: 21px solid transparent">
+                                    <div style="position: relative; flex: 1; max-width: 100%;padding-left: 20px;padding-right: 20px">
+                                        <div class="img-about-img_01-dark-step-1 wow fadeInRight"></div>
+                                        <div class="img-about-img_01-dark-step-2 wow fadeInRight"></div>
+                                        <div style="background: rgb(27,26,30);position: relative;">
+                                            <img class="mx-auto img-about-img_01 wow fadeInRight" style="position: relative"
+                                                 [src]="'./assets/temsanair/'+c3.img" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 mx-auto mb-5" *ngIf="i==1">
+                            <div class="u-layout-col">
+                                <div style="border: 21px solid transparent">
+                                    <div style="position: relative; flex: 1; max-width: 100%;padding-left: 20px;padding-right: 20px">
+                                        <div class="img-about-img_03-dark-step-1 wow fadeInRight"></div>
+                                        <div class="img-about-img_03-dark-step-2 wow fadeInRight"></div>
+                                        <div style="background: rgb(27,26,30);position: relative;">
+                                            <img class="mx-auto img-about-img_03 wow fadeInRight" style="position: relative"
+                                                 [src]="'./assets/temsanair/'+c3.img" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 wow fadeInLeft" *ngIf="i==1">
+                            <div class="headings d-flex align-items-center mb-4">
+                                <h3 class="text-capitalize text-color-green">
+                                    <img src="./assets/temsanair/i_list_item.png" style="width: 25px;" alt=""> {{c3.text1}}<br>
+                                    <img src="./assets/temsanair/i_list_item.png" style="width: 25px;" alt=""> {{c3.text2}}<br>
+                                    <img src="./assets/temsanair/i_list_item.png" style="width: 25px;" alt=""> {{c3.text3}}<br>
+                                    <img src="./assets/temsanair/i_list_item.png" style="width: 25px;" alt=""> {{c3.text4}}<br>
+                                    <img src="./assets/temsanair/i_list_item.png" style="width: 25px;" alt=""> {{c3.text5}}<br>
+                                    <img src="./assets/temsanair/i_list_item.png" style="width: 25px;" alt=""> {{c3.text6}}<br>
+                                    <img src="./assets/temsanair/i_list_item.png" style="width: 25px;" alt=""> {{c3.text7}}<br>
+                                </h3>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <section>
-                <div class="container my-4">
-                    <div class="row1-container">
-                        <div class="box box-down cyan mat-elevation-z1-white" style="position: relative;">
-                            <div class="wow rollIn hover-animation" style="border-radius: 50%;width: 250px; height:250px;background-color: #74C043;position: absolute;top: -85%;">
-                                <h4 class="text-center" style="font-family: 'Shadows Into Light', cursive;font-style: italic;position: absolute;top: 25%;left: 2%;">
-                                    Combining your <br> experience with ours <br>
-                                    leads and will lead <br>
-                                    to perfection
-                                </h4>
-                            </div>
-                            <p class="wow fadeInUp text-white">The major aim is to ensure that your textile mill produces at the highest efficiency. As one of the biggest manufacturers we offer complete process solution in textile humidification system, highest reliability for efficiently performance, energy saving and quality of your mill.</p>
-                        </div>
-
-                        <div class="box red wow fadeInDown mat-elevation-z1-white">
-                            <p class="text-white">Since 1960 we combine the Know-How concept and dedication to follow the cutting edge technologies to provide flawless humidification systems. Thanks to our agencies all over the world, we are just next to you, resulting with effective and quick service solutions.</p>
-                        </div>
-
-                        <div class="box box-down blue mat-elevation-z1-white" style="position: relative;">
-                            <div class="wow rollIn" style="border-radius: 50%;width: 150px; height:150px;background-color: #74C043;position: absolute;top: -50%;left: 25%;">
-                                <h4 class="" style="font-family: 'Shadows Into Light', cursive;font-style: italic;position: absolute;top: 40%;left: 2%;">
-                                    We are not...
-                                </h4>
-                            </div>
-                            <p class="wow fadeInUp text-white" style="">
-                                - Just a machine manufacturer, <br>
-                                but fabric manufacturer at the same time. <br>
-                                - A solution partner, but we are a lifetime partner. <br>
-                                - Close to you, we are right next to you. <br>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row2-container">
-                        <div class="box orange wow fadeInUp mat-elevation-z1-white">
-                            <p class="text-white">Our project department and R&D center design, develop and improve to answer your special requirements. With the support of our professional development team and collaborations with universities, our design and automation innovations we are always one step ahead. This has already been tested by numerous amount of applications since almost 60 years.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <div class="my-3 container-image">
-                <div class="parallax-img">
-                </div>
-            </div>
-            <div class="container" style="">
-                <div class="row align-items-center">
-                    <div class="col-6 col-lg-6 wow slow fadeInLeft">
-                        <div class="headings d-flex align-items-center mb-4">
-                            <h2 class="text-capitalize">
-                                <span class="ml-2 text-color-green">THE MOST</span>
-                                VALUABLE ASSET
-                            </h2>
-                        </div>
-                        <p class="my-3 text" style="margin-top: 0 !important;">
-                            The group companies of Temsan has more than 1000 employees, all skilled to provide quality output in every phase. As the most valuable asset of our company, we are always looking forward to finding new ways to improve dedication. Dedication to quality, time management, efficiency and perfection.
-                            <br>
-                            Each and every employee in our group of companies are being educated for a more sustainable workflow. Our main aim as a leading global manufacturer is to develop our brand to a further extend and to continue to be the role model of the industry.
-                        </p>
-                    </div>
-                    <div class="col-6 col-md-6 mx-auto mb-5 mb-lg-0">
-                        <div class="u-layout-col">
-                            <div style="border: 21px solid transparent">
-                                <div style="position: relative; flex: 1; max-width: 100%;padding-left: 20px;padding-right: 20px">
-                                    <div class="img-about-assets-dark-step-1 wow slow fadeInRight delay-1s"></div>
-                                    <div class="img-about-assets-dark-step-2 wow slow fadeInRight delay-1s"></div>
-                                    <div style="background: rgb(27,26,30);position: relative;">
-                                        <img class="mx-auto img-about-assets wow slow fadeInRight delay-1s" style="position: relative" src="./assets/temsanair/assets.png" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-6 mx-auto mb-5 mb-lg-0" style="margin-top: 75px;">
-                        <div class="u-layout-col" style="position: relative;right: 40px;">
-                            <div style="border: 21px solid transparent">
-                                <div style="position: relative; flex: 1; max-width: 100%;padding-left: 20px;padding-right: 20px">
-                                    <div class="img-about-2-dark-step-1 wow slow fadeInLeft delay-1s"></div>
-                                    <div class="img-about-2-dark-step-2 wow slow fadeInLeft delay-1s"></div>
-                                    <img class="mx-auto img-about-2 wow slow fadeInLeft delay-1s" style="position: relative" src="./assets/temsanair/img_02.jpg" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-lg-6 wow slow fadeInRight delay-1s" style="margin-top: 80px;position: relative;">
-                        <div class="headings d-flex align-items-center mb-4">
-                            <h2 class="text-capitalize">
-                                WE ARE<span class="ml-2 text-color-green">EFFICIENT</span>
-                                <span class="ml-2 text-color-green">TOGETHER</span>
-                            </h2>
-                        </div>
-                        <p class="text" style="font-weight: normal !important;">
-                            Our relation with the concept of efficiency can be described with the word ‘Obsession'. Each and every step we take is focused on quality are accompanied with efficiency. But is that enough?<br>
-                            Efficiency cannot be achieved alone. We are only efficient when we act together. <br>
-                            It all depends to actions of all players in this game. We design, manufacture, install our products and cooperate with our clients to run them in the most efficient way. This is about the future of sustainability. This is about our core values.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container" style="position: relative;">
-                <div class="row align-items-center">
-                    <div class="col-6 col-lg-6 wow slow fadeInLeft">
-                        <div class="headings d-flex align-items-center mb-4">
-                            <h2 class="text-capitalize">
-                                <span class="ml-2 text-color-green">TEMSAN</span>
-                                DISCIPLINE
-                            </h2>
-                        </div>
-                        <p class="my-3 text" style="margin-top: 0 !important;">
-                            It is the discipline; what brings perfection. As Temsan, we are truly dedicated to bringing our products on time, above the expected quality with a maximized efficiency. Each and every segment of our employees embrace this notion and work within a totally disciplined way. It is not obligatory, it is within our soul. We live, work, communicate and manufacture in this way.
-                        </p>
-                    </div>
-                    <div class="col-6 col-md-6 mx-auto mb-5 mb-lg-0">
-                        <div class="u-layout-col">
-                            <div style="border: 21px solid transparent">
-                                <div style="position: relative; flex: 1; max-width: 100%;padding-left: 20px;padding-right: 20px">
-                                    <div class="img-about-img_01-dark-step-1 wow slow fadeInRight delay-1s"></div>
-                                    <div class="img-about-img_01-dark-step-2 wow slow fadeInRight delay-1s"></div>
-                                    <div style="background: rgb(27,26,30);position: relative;">
-                                        <img class="mx-auto img-about-img_01 wow slow fadeInRight delay-1s" style="position: relative" src="./assets/temsanair/img_01.jpg" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-6 mx-auto mb-5 mb-lg-0" style="margin-top: 75px;">
-                        <div class="u-layout-col" style="position: relative;right: 40px;">
-                            <div style="border: 21px solid transparent">
-                                <div style="position: relative; flex: 1; max-width: 100%;padding-left: 20px;padding-right: 20px">
-                                    <div class="img-about-img_03-dark-step-1 wow slow fadeInLeft delay-1s"></div>
-                                    <div class="img-about-img_03-dark-step-2 wow slow fadeInLeft delay-1s"></div>
-                                    <div style="position: relative;background-color: rgb(27,26,30)">
-                                        <img class="mx-auto img-about-img_03 wow slow fadeInLeft delay-1s" style="position: relative" src="./assets/temsanair/img_03.png" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-lg-6 wow slow fadeInRight delay-1s" style="margin-top: 80px;position: relative;">
-                        <div class="headings d-flex align-items-center mb-4">
-                            <h2 class="text-capitalize">
-                                <span class="ml-2 text-color-green">BETTER</span>
-                                TOGETHER
-                            </h2>
-                        </div>
-                        <p class="text" style="font-weight: normal !important;">
-                            This notion is our priority. That is why we value to be on your side. After installing our products to your facility, our team delivers an on-site education for your employees to get the maximum of your Temsan product. Our after sales team regularly visits your site for maintenance and update educations. We love our products running in maximum efficiency. We love being together, because it is better together.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container" style="position: relative;">
-                <div class="row align-items-center">
-                    <div class="col-6 col-lg-6 wow slow fadeInLeft">
-                        <div class="headings d-flex align-items-center mb-4">
-                            <h2 class="text-capitalize text-color-green">
-                                <img src="./assets/temsanair/i_list_item.png" style="width: 25px;" alt=""> Automation control and fast solutions with remote conneciton <br>
-                                <img src="./assets/temsanair/i_list_item.png" style="width: 25px;" alt=""> Periodic customer visits <br>
-                                <img src="./assets/temsanair/i_list_item.png" style="width: 25px;" alt=""> Reliable and original spare parts <br>
-                                <img src="./assets/temsanair/i_list_item.png" style="width: 25px;" alt=""> Fast service
-                            </h2>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-6 mx-auto mb-5 mb-lg-0">
-                        <div class="u-layout-col">
-                            <div style="border: 21px solid transparent">
-                                <div style="position: relative; flex: 1; max-width: 100%;padding-left: 20px;padding-right: 20px">
-                                    <div class="img-about-img_01-dark-step-1 wow slow fadeInRight delay-1s"></div>
-                                    <div class="img-about-img_01-dark-step-2 wow slow fadeInRight delay-1s"></div>
-                                    <div style="background: rgb(27,26,30);position: relative;">
-                                        <img class="mx-auto img-about-img_01 wow slow fadeInRight delay-1s" style="position: relative" src="./assets/temsanair/img_04.png" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-6 mx-auto mb-5 mb-lg-0" style="margin-top: 75px;">
-                        <div class="u-layout-col" style="position: relative;right: 40px;">
-                            <div style="border: 21px solid transparent">
-                                <div style="position: relative; flex: 1; max-width: 100%;padding-left: 20px;padding-right: 20px">
-                                    <div class="img-about-img_03-dark-step-1 wow slow fadeInLeft delay-1s"></div>
-                                    <div class="img-about-img_03-dark-step-2 wow slow fadeInLeft delay-1s"></div>
-                                    <div style="position: relative;background-color: rgb(27,26,30)">
-                                        <img class="mx-auto img-about-img_03 wow slow fadeInLeft delay-1s" style="position: relative" src="./assets/temsanair/img_04.png" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-lg-6 wow slow fadeInRight delay-1s" style="margin-top: 80px;position: relative;">
-                        <div class="headings d-flex align-items-center mb-4">
-                            <h2 class="text-capitalize text-color-green">
-                                <img src="./assets/temsanair/i_list_item.png" style="width: 25px;" alt=""> Optimum Design <br>
-                                <img src="./assets/temsanair/i_list_item.png" style="width: 25px;" alt=""> Energy-saving <br>
-                                <img src="./assets/temsanair/i_list_item.png" style="width: 25px;" alt=""> High Efficiency <br>
-                                <img src="./assets/temsanair/i_list_item.png" style="width: 25px;" alt=""> Long life <br>
-                                <img src="./assets/temsanair/i_list_item.png" style="width: 25px;" alt=""> Cheap Maintenance Cost <br>
-                                <img src="./assets/temsanair/i_list_item.png" style="width: 25px;" alt=""> Easy to Use <br>
-                                <img src="./assets/temsanair/i_list_item.png" style="width: 25px;" alt=""> After sales services
-                            </h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <app-footer></app-footer>
+            <app-footer></app-footer>
+        </div>
     </div>
-</div>
-<!--<div class="my-3">-->
-<!--    <div class="parallax-img"></div>-->
-<!--</div>-->
 

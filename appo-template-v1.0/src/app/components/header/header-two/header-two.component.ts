@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
+import {RouterService} from "../../../services/router.service";
 declare let $:any;
 @Component({
   selector: 'app-header-two',
@@ -8,18 +9,20 @@ declare let $:any;
 })
 export class HeaderTwoComponent implements OnInit {
 
-  products1 = [
-    {name:'Axial Fan', url:'axial-fan'}
+  urls = [
+    {name:'Home', url:''},
+    {name:'About', url:'/about'},
+    {name:'Product Range', url:'/product-range'},
+    {name:'Automation solutions', url:'/automation-solutions'}
   ];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,private routerSer: RouterService) { }
 
   ngOnInit(): void {
   }
 
-
-  onNavigate(p) {
-    this.router.navigateByUrl('/product-range/' + p.url)
+  onNavigate(u, i) {
+    this.routerSer.setUrl(u.url);
   }
 
   onAbout() {

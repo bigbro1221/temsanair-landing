@@ -1,2 +1,9 @@
-<router-outlet></router-outlet>
+<!--<div style="position: relative">-->
+  <ngx-ui-loader [loaderId]="'loader-01'"></ngx-ui-loader>
+<!--</div>-->
+
+<div ngxUiLoaderBlurred blur="10">
+  <!-- This page content will be blurred/frosted when foreground loader is showed -->
+  <router-outlet></router-outlet>
+</div>
 
