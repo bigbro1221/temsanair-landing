@@ -1,6 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import {ProductsData} from "./products-data";
-import Drift from 'drift-zoom';
+import { Component, OnInit} from '@angular/core';
+import {Observable} from "rxjs";
+import {HttpClient} from "@angular/common/http";
+import {map} from "rxjs/operators";
+import {MatDialog} from "@angular/material/dialog";
+import {ProductDialog} from "./product-dialog";
+import {RouterService} from "../../services/router.service";
 declare let $:any;
 
 @Component({
@@ -8,14 +12,15 @@ declare let $:any;
 })
 export class Products implements OnInit {
 
-  productsData = new ProductsData();
-  products: any = [];
-  productsList: any = [];
+  products$: Observable<any>;
+  productsList$: Observable<any>;
+  url: string = "assets/data/products.json";
   currList = '';
+  time:number = 0;
   slideConfig = {
-    slidesToShow: 2,
-    slidesToScroll: 3,
-    dots: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    dots: false,
     infinite: false,
     arrows: true,
     autoplay: false,
@@ -23,7 +28,6 @@ export class Products implements OnInit {
     adaptiveHeight: true,
     autoplaySpeed: 2000,
     draggable:true,
-    // fade: true,
     cssEase: 'ease-out',
     centerPadding: '160px',
     swipeToSlide: true,
@@ -58,69 +62,97 @@ export class Products implements OnInit {
     //   }
     // ]
   };
+  constructor(private http: HttpClient,
+              private dialog: MatDialog,
+              private routerSer: RouterService) {
+    this.products$ = this.http.get<any>(this.url).pipe(map(res => {
+      for (let d of res?.data) {
+        d.count = d?.text.length + d?.detail1.length + d?.detail2.length + d?.detail3.length + d?.detail4.length;
+      }
+      return res?.data;
+    } ));
+    this.productsList$ = this.http.get<any>(this.url).pipe(map(res => res?.productList));
+  }
 
-  constructor() { }
+  ngOnInit(){
+    window.scrollTo(0, 0);
+  }
 
-  ngOnInit(): void {
-    this.products = this.productsData.data;
-    this.productsList = this.productsData.productList;
+  identify(index, item) {
+    return item.type;
   }
 
   ngAfterViewInit() {
-    for (let z of $('.demo-trigger')) {
-      new Drift(z, {
-        paneContainer: document.querySelector('.img-area'),
-        inlinePane: false,
-        zoomFactor: 4,
-        touchBoundingBox: true,
-        containInline: true,
-        hoverBoundingBox: true,
-      });
-    }
-    $(".font-spartan").each(function() {
-      $(this).html($(this).text().replace('m3', "m<sup>3</sup>"));
-    });
-
+    setTimeout(()=> {
+      this.products$.subscribe(item => {
+        for(let p = 0; p < item.length; p++) {
+          if ($('#text' + p).text().includes('m3')) {
+            $('#text' + p).html($('#text' + p).text().replace('m3', "m<sup>3</sup>"));
+          }
+          if ($('#text' + p).text().includes('m2')) {
+            $('#text' + p).html($('#text' + p).text().replace('m2', "m<sup>2</sup>"));
+          }
+        }
+      })
+    },100)
   }
 
   slickInit(e) {
-    console.log(e)
   }
 
   breakpoint(e) {
-    console.log(e)
   }
 
   afterChange(e) {
-    console.log(e)
-    
   }
 
   beforeChange(e) {
-    console.log(e)
   }
 
-  onChange(value) {
-    console.log(value)
+  productChange(e,slick) {
+    slick.slickGoTo(+this.currList - 1)
   }
 
-  onMouse(i) {
-    // console.log(i)
+  onMouse(e, i, p) {
+    let offsetX,offsetY;
+     e.offsetX ? offsetX = e.offsetX : offsetX = e.pageX
+     e.offsetY ? offsetY = e.offsetY : offsetX = e.pageX
+     let x = offsetX/e.target.clientWidth * 100
+     let y = offsetY/e.target.clientHeight * 100
+    $('#img_par' + i).removeClass('img-none')
+    $('#img_par' + i).attr('style', 'background-image: url(./assets/temsanair/products/'+p?.img+');background-position: '+x + '% ' + y + '%; width:100%;height:30vh');
+    $('#product' + i).attr('style', 'opacity: 0');
+    $('#icons' + i).attr('style', 'opacity: 0');
   }
 
-  onMouseLeave(i: number) {
-    // for (let z of $('.demo-trigger')) {
-    //   new Drift(z, {
-    //     paneContainer: paneContainer,
-    //     inlinePane: false,
-    //     // inlineOffsetY: 900,
-    //     zoomFactor: 4,
-    //     onSow: false,
-    //     onHide: true,
-    //     touchBoundingBox: true,
-    //     containInline: true,
-    //     hoverBoundingBox: true,
-    //   });
-    // }
+  onMouseProduct(e, i, p) {
+    $('#img' + i).attr('style', 'opacity: 0');
+  }
+
+
+  onMouseProLeave(i, p) {
+    $('#img' + i).attr('style', 'opacity: 1');
+  }
+
+  onMouseLeave(i, p) {
+    $('#img_par' + i).addClass('img-none');
+    $('#img_par' + i).attr('style', 'width:auto');
+    $('#product' + i).attr('style', 'opacity: 1');
+    $('#icons' + i).attr('style', 'opacity: 1');
+  }
+
+  onRead(p, i) {
+    const dg = this.dialog.open(ProductDialog, {width: '800px', panelClass: 'modal-window-add-edit'});
+    dg.componentInstance.dialog = dg;
+    dg.componentInstance.obj = p;
+    dg.componentInstance.obj.i = i;
+  }
+
+  onClickZoom() {
+    this.routerSer.setZoom(true);
+  }
+
+  onImgLeave() {
+    this.routerSer.setZoom(false);
   }
 }

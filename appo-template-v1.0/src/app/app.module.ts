@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgwWowModule } from 'ngx-wow';
-// import {NgSelectModule} from '@ng-select/ng-select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -84,10 +83,30 @@ import { NgxParallaxScrollModule } from 'ngx-parallax-scroll';
 import {Products} from "./components/products/products";
 import {HttpClientModule} from "@angular/common/http";
 import { SlickCarouselModule } from 'ngx-slick-carousel';
-import {NgxImageZoomModule} from "ngx-image-zoom";
 import {MatSelectModule} from "@angular/material/select";
 import {FormsModule} from "@angular/forms";
+import {ProductDialog} from "./components/products/product-dialog";
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatIconModule} from "@angular/material/icon";
+import {
+  NgxUiLoaderModule,
+  NgxUiLoaderConfig,
+  SPINNER,
+  POSITION,
+  PB_DIRECTION, NgxUiLoaderRouterModule,
+} from "ngx-ui-loader";
+import {AutomationSolutions} from "./components/automation-solutions/automation-solutions";
 
+const ngxUiLoaderConfig: NgxUiLoaderConfig = {
+  bgsColor: "yellow",
+  bgsPosition: POSITION.topCenter,
+  bgsSize: 40,
+  overlayColor: 'rgba(0,0,0,1)',
+  bgsType: SPINNER.cubeGrid, // background spinner type
+  fgsType: SPINNER.ballSpinClockwiseFadeRotating, // foreground spinner type
+  pbDirection: PB_DIRECTION.leftToRight, // progress bar direction
+  pbThickness: 5, // progress bar thickness
+};
 
 @NgModule({
   declarations: [
@@ -166,7 +185,9 @@ import {FormsModule} from "@angular/forms";
     FaqPageComponent,
     MapComponent,
     AboutUsComponent,
-    Products
+    Products,
+    AutomationSolutions,
+    ProductDialog
   ],
   imports: [
     BrowserModule,
@@ -174,13 +195,17 @@ import {FormsModule} from "@angular/forms";
     BrowserAnimationsModule,
     NgwWowModule,
     HttpClientModule,
-    NgxImageZoomModule,
+
     // NgSelectModule,
     NgxParallaxScrollModule,
     SlickCarouselModule,
     MatButtonModule,
     MatSelectModule,
-    FormsModule
+    MatDialogModule,
+    FormsModule,
+    MatIconModule,
+    NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
+    NgxUiLoaderRouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
