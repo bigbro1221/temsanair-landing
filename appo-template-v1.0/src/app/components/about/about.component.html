@@ -21,7 +21,11 @@
             <div class="col-12 col-lg-6">
                 <!-- About Thumb -->
                 <div class="about-thumb text-center d-none d-lg-block" *ngIf="img | async as i">
-                    <img [src]="i" class="mat-elevation-z4" alt="">
+                    <picture>
+                        <source type="image/webp" [srcset]="http + i.imgw1">
+                        <source type="image/jpg" [srcset]="http + i.img1">
+                        <img [src]="i.img1" class="mat-elevation-z4" alt="">
+                    </picture>
                 </div>
             </div>
         </div>

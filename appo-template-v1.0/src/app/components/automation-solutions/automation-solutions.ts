@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
+import {map} from "rxjs/operators";
 declare let $:any;
 
 @Component({
@@ -8,17 +9,20 @@ declare let $:any;
 })
 export class AutomationSolutions implements OnInit {
 
-  products$: Observable<any>;
-  productsList$: Observable<any>;
-  url: string = "assets/data/products.json";
   currList = '';
+  img: Observable<any>;
+  url: string = "assets/data/auto-solutions.json";
+  http: string = 'http://localhost:4200/assets/temsanair/';
   time:number = 0;
 
-  constructor(private http: HttpClient) {
+  constructor(private httpClient: HttpClient) {
   }
 
   ngOnInit(){
       window.scrollTo(0, 0);
+    this.img = this.httpClient.get<any>(this.url).pipe(map(res=> {
+      return res.image6;
+    }))
   }
 
 

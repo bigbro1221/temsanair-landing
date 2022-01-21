@@ -1,9 +1,10 @@
 {
-  "main_img": "title_product_range2.png",
+  "main_img": {"imgw":"title_product_range2.webp","img":"title_product_range2.png"},
   "data":  [
     {
       "title": "Axial fan",
       "sub_title": "AKSTS160-03",
+      "imgw":"axial_fan.webp",
       "img":"axial_fan.png",
       "img_mini":"axial_fan-mini.png",
       "text":"Axial fans are designed that Ø1000, Ø1250, Ø1400, Ø1600 diameter sizes to circulation of dry and humidity air in the system.",
@@ -16,6 +17,7 @@
     {
       "title": "Radial fan (Down Direction)",
       "sub_title": "RDY50A-AŞAĞI BAKAN",
+      "imgw":"radial-fan-down-direction.webp",
       "img":"radial-fan-down-direction.png",
       "img_mini":"radial-fan-down-direction-mini.png",
       "text":"To enable the high pressures airflow with a power specification matching to operation for every requirement. High efficiency with special impeller design. Available with intake on both sides.",
@@ -28,6 +30,7 @@
     {
       "title": "Radial FAN (Up Direction)",
       "sub_title": "RDY50Y-YUKARI BAKAN",
+      "imgw":"radial-fan-up-direction.webp",
       "img":"radial-fan-up-direction.png",
       "img_mini":"radial-fan-up-direction-mini.png",
       "text":"To enable the high pressures airflow with a power specification matching to operation for every requirement. High efficiency with special impeller design. Available with intake on both sides.",
@@ -40,6 +43,7 @@
     {
       "title": "High capacity material transport fan",
       "sub_title": "PNF-01",
+      "imgw":"1_high-capacity-material-transport-fan.webp",
       "img":"1_high-capacity-material-transport-fan.png",
       "img_mini":"1_high-capacity-material-transport-fan-mini.png",
       "text":"To enable the high pressure airflow at the Pneumafil line which is available with intake on one side. High efficiency with special impeller design.",
@@ -52,6 +56,7 @@
     {
       "title": "PRE-FILTER (Top Suction)",
       "sub_title": "OF200Y-04",
+      "imgw":"prefilter-top-suction.webp",
       "img":"prefilter-top-suction.png",
       "img_mini":"prefilter-top-suction-mini.png",
       "text":"Prefilter is used for coarse waste material filtration with the different sizes like Ø1300, Ø2000, Ø2500, Ø3000(Weaving Unit), Ø3500(Weaving Unit). No fiber contamination with the optimum velocity selection.",
@@ -64,6 +69,7 @@
     {
       "title": "ROTARY FILTER",
       "sub_title": "",
+      "imgw":"1_rotary-filter.webp",
       "img":"1_rotary-filter.png",
       "img_mini":"1_rotary-filter-mini.png",
       "text":"Rotary filter is a system element that filters dust and fibres in the air. that is collected from the hall and machine exhausts.",
@@ -76,6 +82,7 @@
     {
       "title": "PERPENDICULAR FILTER",
       "sub_title": "DKF115",
+      "imgw":"perpendicular-filter.webp",
       "img":"perpendicular-filter.png",
       "img_mini":"perpendicular-filter-mini.png",
       "text":"Pre-filtering of fiber material with the radial fan suction at the specific and low capacity applications.",
@@ -88,6 +95,7 @@
     {
       "title": "FIBRE COMPACTOR (Big)",
       "sub_title": "KMP-01",
+      "imgw":"fibre-compactor-big.webp",
       "img":"fibre-compactor-big.png",
       "img_mini":"fibre-compactor-big-mini.png",
       "text":"To separate and clean dust and waste. With 80-150kg/h waste capacity. Brush and brushless screw design with respect to waste material. With Temsan Pressure Switch Control for high efficieny and energy saving. Maximum 250kg/h waste capacity.",
@@ -100,6 +108,7 @@
     {
       "title": "WASTE SILO",
       "sub_title": "TTP-03",
+      "imgw":"waste-collection-waste-sylo.webp",
       "img":"waste-collection-waste-sylo.png",
       "img_mini":"waste-collection-waste-sylo-mini.png",
       "text":"3 fibre compactor can be connected to each silo (15m3 waste capacity). Waste materials are automatically collected at the silos with the less labor cost. Spray nozzle fire protection. Level control sensor Inverter control feeding.",
@@ -112,6 +121,7 @@
     {
       "title": "FIBRE SEPARATOR (CONDENSER)",
       "sub_title": "KNDN-01",
+      "imgw":"fibre-separator-condenser.webp",
       "img":"fibre-separator-condenser.png",
       "img_mini":"fibre-separator-condenser-mini.png",
       "text":"To transport cotton and synthetic fibers in the form of tuft with high efficiency.",
@@ -124,6 +134,7 @@
     {
       "title": "WASTE SEPARATOR",
       "sub_title": "BKNDN-01",
+      "imgw":"high-capacity-waste-separator.webp",
       "img":"high-capacity-waste-separator.png",
       "img_mini":"high-capacity-waste-separator-mini.png",
       "text":"High air Volume Fibre Separation for waste units depending on the lower waste production.",
@@ -136,6 +147,7 @@
     {
       "title": "AUTOMATIC DUST COLLECTION UNIT",
       "sub_title": "TT10-BRP",
+      "imgw":"automatic-dust-collection-machine.webp",
       "img":"automatic-dust-collection-machine.png",
       "img_mini":"automatic-dust-collection-machine-mini.png",
       "text":"To collect dust particles from dust room and compressed by the means of screw with gearbox. Working with Automation and Perfect cleaning with micro filter (without labor cost)",
@@ -148,6 +160,7 @@
     {
       "title": "DUST BRICK PRESS",
       "sub_title": "BRP-RMB-01",
+      "imgw":"brick-press.webp",
       "img":"brick-press.png",
       "img_mini":"brick-press-mini.png",
       "text":"Temsan dust brick maker machine is the last point of our dust collection system which basically change the formation of the dust to solid by using pressure. The dust is subjected to pressure only and becomes the compressed brick-like shape. Temsan both have automatic and manual feeding version of this machine. Automatic feeding one is compatible with Temsan's dust collection system and manual feeding version is fed by worker.",
@@ -160,6 +173,7 @@
     {
       "title": "CONVEYOR BAND SYSTEM WITH THE FIBRE COMPACTOR",
       "sub_title": "CTTB-01",
+      "imgw":"conveyor-band-system-with-the-fibre-compactor.webp",
       "img":"conveyor-band-system-with-the-fibre-compactor.png",
       "img_mini":"conveyor-band-system-with-the-fibre-compactor-mini.png",
       "text":"Using conveyor system instead of labors for long distances to decrease high cost and power consumption at the single type of waste. Also using for mixing of different type of waste.",
@@ -172,6 +186,7 @@
     {
       "title": "HYDRAULIC BALE PRESS",
       "sub_title": "BP-01",
+      "imgw":"manual-bale-press.webp",
       "img":"manual-bale-press.png",
       "img_mini":"manual-bale-press-mini.png",
       "text":"The purpose of baling cotton, wool and fibre\ntype materials in the textile waste collection.",
@@ -184,6 +199,7 @@
     {
       "title": "HOUSING TYPE PACKAGE FILTER",
       "sub_title": "",
+      "imgw":"packet-type-filter.webp",
       "img":"packet-type-filter.png",
       "img_mini":"packet-type-filter-mini.png",
       "text":"To separate the waste and in textile plant.Prefabricated Filter Unit in galvanized sheet metal for applications without civil work and costs.With Temsan Pressure Switch Control for safety control.",
@@ -196,6 +212,7 @@
     {
       "title": "HOUSING TYPE PACKAGE A/C",
       "sub_title": "",
+      "imgw":"packet-type-ac.webp",
       "img":"packet-type-ac.png",
       "img_mini":"packet-type-ac-mini.png",
       "text":"Prefabricated AC Unit in puff panel and steel profile for applications without civil work and cost.Air Washer materials are chromium against corrosion.",
@@ -208,6 +225,7 @@
     {
       "title": "AIR WASHER (Prefabricated)",
       "sub_title": "KRM-HVZ-01",
+      "imgw":"air-washer-prefabricated.webp",
       "img":"air-washer-prefabricated.png",
       "img_mini":"air-washer-prefabricated-mini.png",
       "text":"Optimum humidifying cell design for accurate humidity control with separator and eliminator. Stainless steel (304 SS quality-1,5&2,5mm) washer tank design for packet type AC.",
@@ -220,6 +238,7 @@
     {
       "title": "ROTARY WATER FILTER",
       "sub_title": "HVZ-FLTR-01",
+      "imgw":"rotary-water-filter.webp",
       "img":"rotary-water-filter.png",
       "img_mini":"rotary-water-filter-mini.png",
       "text":"Water filter system (304 SS material) is the part of air washer which has to clean the washer tank water and decreasing water pollution.Water filter also are increased the working life of washer tank, pipes, water spray nozzle.",
@@ -232,6 +251,7 @@
     {
       "title": "MATERIAL TRANSPORT FAN",
       "sub_title": "KMPF40-01",
+      "imgw":"waste-conveyor-fan.webp",
       "img":"waste-conveyor-fan.png",
       "img_mini":"waste-conveyor-fan-mini.png",
       "text":"Suitable to convey dust, fibres, waste in textile,plastic and paper industrywith the different impeller options like Steel and Aluminum in the high efficiency.",
@@ -244,6 +264,7 @@
     {
       "title": "DUST FAN",
       "sub_title": "TF40L-03",
+      "imgw":"dust-fan.webp",
       "img":"dust-fan.png",
       "img_mini":"dust-fan-mini.png",
       "text":"Suitable to convey dust waste in textile industry. Steel impeller with widely capacity range and high efficiency.",
@@ -256,6 +277,7 @@
     {
       "title": "BTF FAN",
       "sub_title": "TV500",
+      "imgw":"tv-fan.webp",
       "img":"tv-fan.png",
       "img_mini":"tv-fan-mini.png",
       "text":"These types of fan are giving to specialize for machinery which is need different pressure and air flow capacity.",
@@ -268,6 +290,7 @@
     {
       "title": "RADIAL FAN (Comber Fan)",
       "sub_title": "RDY25-02",
+      "imgw":"radial-fan-comber-fan.webp",
       "img":"radial-fan-comber-fan.png",
       "img_mini":"radial-fan-comber-fan-mini.png",
       "text":"To enable the high pressures airflow at the Comber line  and available with intake on one side. High efficiency with special impeller design.",
@@ -280,6 +303,7 @@
     {
       "title": "DUST COLLECTOR",
       "sub_title": "TK2",
+      "imgw":"dust-collector-paddle.webp",
       "img":"dust-collector-paddle.png",
       "img_mini":"dust-collector-paddle-mini.png",
       "text":"To enable the high pressure airflow at the Comber line and avaible with intake on the side. High efficiency with special impeller design.",
@@ -292,6 +316,7 @@
     {
       "title": "DAMPERS",
       "sub_title": "DM-2985x1400",
+      "imgw":"damper.webp",
       "img":"damper.png",
       "img_mini":"damper-mini.png",
       "text":"Automatic control with servo motor Anodized(30micron) aluminum against to corrosion and designed to perfectly regulate the volume of air within the system for zero air resistance.",
@@ -304,6 +329,7 @@
     {
       "title": "DOORS",
       "sub_title": "KKP-06 / KKPB-06 / KKPK-06",
+      "imgw":"doors.webp",
       "img":"doors.png",
       "img_mini":"doors-mini.png",
       "text":"Standard Doors 1,5mm steel sheet double walled, with heatinsulation and electrostatic powder paint coated.Pressurized Room Doors 1,5mm steel sheet double walled, with heat insulation, electrostatic powder coated and pressure gasket.SS Doors 1,5mm stainless steel (304 Quality) sheet double walled, with heat insulation.",
@@ -316,6 +342,7 @@
     {
       "title": "GROUND SLOTS",
       "sub_title": "SLT01-1 / SLT04-2 / SLTD-05",
+      "imgw":"slots.webp",
       "img":"slots.png",
       "img_mini":"slots-mini.png",
       "text":"SLT01-1  Stainless steel and galvanized sheet options.Design is making with respect to air flow capacity and ground floor concrete level.SLT04-2 Stainless steel and galvanized sheet options. Design is making with respect to air flow capacity and ground floor concrete level.SLTD-05 In weaving unit, funnel type aluminum slots with electrostatic powder coating is using. Design is making to specially for Weaving Units according to optimum air velocity.",
@@ -328,6 +355,7 @@
     {
       "title": "DIFFUSER FOR WEAVING UNITS",
       "sub_title": "DDFZR-2300x140",
+      "imgw":"local-supply-air-duct-diffuser-for-weaving-unit.webp",
       "img":"local-supply-air-duct-diffuser-for-weaving-unit.png",
       "img_mini":"local-supply-air-duct-diffuser-for-weaving-unit-mini.png",
       "text":"Outer frame made by aluminum, diffusers galvanized sheet metals, adjustable from two points for air volume and direction.",
@@ -340,6 +368,7 @@
     {
       "title": "DUCT TYPE DIFFUSER",
       "sub_title": "AKSTS160-033",
+      "imgw":"duck_type_diffuser.webp",
       "img":"duck_type_diffuser.png",
       "img_mini":"duck_type_diffuser-mini.png",
       "text":"It is used for low speed air supplying in the Nonwoven facilities.",
@@ -352,6 +381,7 @@
     {
       "title": "AIR DISTRIBUTING PLATES",
       "sub_title": "SPLYT",
+      "imgw":"air-distributing-plate.webp",
       "img":"air-distributing-plate.png",
       "img_mini":"air-distributing-plate-mini.png",
       "text":"Designed to supply and circulate air evenly with highest flow efficiency. For the homogeneous air distribution, adjustable system, plate made of galvanized sheet.",
@@ -364,6 +394,7 @@
     {
       "title": "SERPENTINES",
       "sub_title": "SR-2000x600",
+      "imgw":"serpentines.webp",
       "img":"serpentines.png",
       "img_mini":"serpentines-mini.png",
       "text":"Using for heating of air which is taking from damper with sending of hot water or vapor the at cold weather conditions.",
@@ -376,6 +407,7 @@
     {
       "title": "SLIDING DAMPERS",
       "sub_title": "YKLP28-01",
+      "imgw":"y-type-sliding-damper.webp",
       "img":"y-type-sliding-damper.png",
       "img_mini":"y-type-sliding-damper-mini.png",
       "text":"With Pneumatic actuator and cylinder.This type sliding damper is used in the waste collection systems to shut off a line and control the waste flow.",
@@ -388,6 +420,7 @@
     {
       "title": "ROVING OPENER",
       "sub_title": "FA-04",
+      "imgw":"roving-opener.webp",
       "img":"roving-opener.png",
       "img_mini":"roving-opener-mini.png",
       "text":"To open roving on bobbin. Roller speed adjustment with inverter controlled fan motor according to number of roving. 6 suction inlet with 20000pa from each of them.",
@@ -400,6 +433,7 @@
     {
       "title": "BATCHING UNIT (Inclined)",
       "sub_title": "DS220E",
+      "imgw":"batching-unit-inclined.webp",
       "img":"batching-unit-inclined.png",
       "img_mini":"batching-unit-inclined-mini.png",
       "text":"These machines that allow the fabric which are coming out of weaving looms to be wrapped in a manner that is compatible with the machine\nspeed without curling the edges. The diameter sizes are various and desired size can be chosen. (max 1500 mm). Rolls of chosen diameters are covered with abrasion resistant, less rough rubber band. Winding tension is detected by dense arms and winding speed is detected electronically.",
@@ -412,6 +446,7 @@
     {
       "title": "ELECTRONICAL INSTRUMENTS",
       "sub_title": "",
+      "imgw":"pressure-transmitter.webp",
       "img":"pressure-transmitter.png",
       "img_mini":"pressure-transmitter-mini.png",
       "text":"Temsan's electronical instruments are used for measuring pressure, pressure differe temperature and humidity with high precision.Obtained data can be shared and displayed with Temsan Aircon Automation system simultaneously.",
@@ -424,6 +459,7 @@
     {
       "title": "ELECTRIC PANEL",
       "sub_title": "",
+      "imgw":"1_electric-panel.webp",
       "img":"1_electric-panel.png",
       "img_mini":"1_electric-panel-mini.png",
       "text":"Doors can be opened to 180 degrees, RAL 7035w airing filter, electrostatic powder paint coated, 2mm sheet thickness. Mounting plate was made by Imm hot deep galvanized sheet. Air Circulation with filtering. Front and back frames are welded & other parts are fitted with nuts and bolts. Cooling fan system. ",
@@ -436,6 +472,7 @@
     {
       "title": "AUTOMATION PANEL",
       "sub_title": "",
+      "imgw":"1_automation_panel.webp",
       "img":"1_automation_panel.png",
       "img_mini":"1_automation_panel-mini.png",
       "text":"Door which has double lock and conceal hinged system can be opened to 150 degrees. RAL 7035w airing filter, Electrostatic powder paint coated. Main body and door have lmm sheet thickness. Mounting plate was made by lmm hot deep galvanized sheet. Cooling Fan and Air Filter included.",

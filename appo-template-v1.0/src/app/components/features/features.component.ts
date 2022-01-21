@@ -20,8 +20,6 @@ export class FeaturesComponent implements OnInit {
 
   ngOnInit() {
     this.img = this.httpClient.get<any>(this.url).pipe(map(res=> {
-      res.image4.img1 = this.http + res.image4.img1
-      res.image4.img2 = this.http + res.image4.img2
       return res.image4;
     }))
   }

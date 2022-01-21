@@ -18,8 +18,6 @@ export class DownloadComponent implements OnInit {
 
   ngOnInit() {
     this.img = this.httpClient.get<any>(this.url).pipe(map(res=> {
-      res.image5.img1 = this.http + res.image5.img1
-      res.image5.img2 = this.http + res.image5.img2
       return res.image5;
     }))
   }

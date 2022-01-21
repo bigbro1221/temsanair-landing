@@ -5,6 +5,7 @@ import {map} from "rxjs/operators";
 import {MatDialog} from "@angular/material/dialog";
 import {ProductDialog} from "./product-dialog";
 import {RouterService} from "../../services/router.service";
+import {ProductImgZoom} from "./product-img-zoom";
 declare let $:any;
 
 @Component({
@@ -67,7 +68,7 @@ export class Products implements OnInit {
   constructor(private httpClient: HttpClient,
               private dialog: MatDialog,
               private routerSer: RouterService) {
-    this.img = this.httpClient.get<any>(this.url).pipe(map(res => this.http + res?.main_img));
+    this.img = this.httpClient.get<any>(this.url).pipe(map(res => res?.main_img));
     this.products$ = this.httpClient.get<any>(this.url).pipe(map(res => {
       for (let d of res?.data) {
         d.count = d?.text.length + d?.detail1.length + d?.detail2.length + d?.detail3.length + d?.detail4.length;
@@ -95,6 +96,13 @@ export class Products implements OnInit {
           if ($('#text' + p).text().includes('m2')) {
             $('#text' + p).html($('#text' + p).text().replace('m2', "m<sup>2</sup>"));
           }
+          $('#img' +p).elevateZoom({
+            zoomType: "window",
+            cursor: "crosshair",
+            zoomWindowFadeIn: 500,
+            zoomWindowFadeOut: 750,
+            scrollZoom:true,
+          });
         }
       })
     },100)
@@ -117,31 +125,31 @@ export class Products implements OnInit {
   }
 
   onMouse(e, i, p) {
-    let offsetX,offsetY;
-     e.offsetX ? offsetX = e.offsetX : offsetX = e.pageX
-     e.offsetY ? offsetY = e.offsetY : offsetX = e.pageX
-     let x = offsetX/e.target.clientWidth * 100
-     let y = offsetY/e.target.clientHeight * 100
-    $('#img_par' + i).removeClass('img-none')
-    $('#img_par' + i).attr('style', 'background-image: url('+this.http + p?.img+');background-position: '+x + '% ' + y + '%; width:100%;height:30vh');
-    $('#product' + i).attr('style', 'opacity: 0');
-    $('#icons' + i).attr('style', 'opacity: 0');
+    // let offsetX,offsetY;
+    //  e.offsetX ? offsetX = e.offsetX : offsetX = e.pageX
+    //  e.offsetY ? offsetY = e.offsetY : offsetX = e.pageX
+    //  let x = offsetX/e.target.clientWidth * 100
+    //  let y = offsetY/e.target.clientHeight * 100
+    // $('#img_par' + i).removeClass('img-none')
+    // $('#img_par' + i).attr('style', 'background-image: url('+this.http + p?.imgw+');background-position: '+x + '% ' + y + '%; width:100%;height:40vh');
+    // $('#product' + i).attr('style', 'opacity: 0');
+    // $('#icons' + i).attr('style', 'opacity: 0');
   }
 
   onMouseProduct(e, i, p) {
-    $('#img' + i).attr('style', 'opacity: 0');
+    // $('#img' + i).attr('style', 'opacity: 0');
   }
 
 
   onMouseProLeave(i, p) {
-    $('#img' + i).attr('style', 'opacity: 1');
+    // $('#img' + i).attr('style', 'opacity: 1');
   }
 
   onMouseLeave(i, p) {
-    $('#img_par' + i).addClass('img-none');
-    $('#img_par' + i).attr('style', 'width:auto');
-    $('#product' + i).attr('style', 'opacity: 1');
-    $('#icons' + i).attr('style', 'opacity: 1');
+    // $('#img_par' + i).addClass('img-none');
+    // $('#img_par' + i).attr('style', 'width:auto');
+    // $('#product' + i).attr('style', 'opacity: 1');
+    // $('#icons' + i).attr('style', 'opacity: 1');
   }
 
   onRead(p, i) {
@@ -151,11 +159,17 @@ export class Products implements OnInit {
     dg.componentInstance.obj.i = i;
   }
 
-  onClickZoom() {
-    this.routerSer.setZoom(true);
+  onClickZoom(p, i) {
+    // const dg = this.dialog.open(ProductImgZoom, {width: '800px', panelClass: ['animate__animated','fadeInUp']});
+    // dg.componentInstance.dialog = dg;
+    // dg.componentInstance.obj = p;
+    // dg.componentInstance.obj.i = i;
+    // document.getElementById('img' + i).src = this.http + p.img
+    // $('#img' +i).attr('src', this.http + p?.img)
+    // $('#img' +i).prev().attr('srcset', this.http + p?.img)
   }
 
   onImgLeave() {
-    this.routerSer.setZoom(false);
+    // this.routerSer.setZoom(false);
   }
 }

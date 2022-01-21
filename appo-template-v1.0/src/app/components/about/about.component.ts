@@ -19,7 +19,7 @@ export class AboutComponent implements OnInit {
               private httpClient: HttpClient) { }
 
   ngOnInit() {
-    this.img = this.httpClient.get<any>(this.url).pipe(map(res => this.http + res?.image3));
+    this.img = this.httpClient.get<any>(this.url).pipe(map(res => res?.image3));
   }
 
   onLink() {

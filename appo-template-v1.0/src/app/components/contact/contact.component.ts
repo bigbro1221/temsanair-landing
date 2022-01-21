@@ -21,9 +21,6 @@ export class ContactComponent implements OnInit {
   ngOnInit(): void {
     this.ngw.init();
     this.img = this.httpClient.get<any>(this.url).pipe(map(res=> {
-      res.image6.img1 = this.http + res.image6.img1
-      res.image6.img2 = this.http + res.image6.img2
-      res.image6.img3 = this.http + res.image6.img3
       return res.image6;
     }))
   }

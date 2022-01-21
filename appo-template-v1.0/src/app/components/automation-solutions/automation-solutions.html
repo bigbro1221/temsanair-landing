@@ -7,13 +7,13 @@
             <div class="container wow fadeInUp" style="position:relative;top:200px;z-index: 1">
                 <div class="row align-items-center mb-2">
                     <div class="col-2">
-                        <img src="./assets/temsanair/i_about_us.png" alt="">
+                        <img [src]="http+ 'i_about_us.png'" alt="">
                     </div>
                     <div class="col-4">
                         <h3>TEMSAN<span style="" class="text-color-green"> AUTOMATION</span></h3>
                     </div>
                     <div class="col-6">
-                        <img src="./assets/temsanair/line_title.png" style="height: 1px;width: 100%;" alt="">
+                        <img [src]="http +'line_title.png'" style="height: 1px;width: 100%;" alt="">
                     </div>
                 </div>
                 <h4 class="mt-3"><span class="text-color-green font-weight-bold">
@@ -46,7 +46,11 @@
                     </div>
                     <div class="col-6 wow fadeInRight">
                         <div class="mat-elevation-z4" style="height: 100%; background-color: #1B1A1E;border-radius: 3px;">
-                            <img src="./assets/temsanair/03.png" alt="">
+                            <picture>
+                                <source type="image/webp" [srcset]="http +'03.webp'">
+                                <source type="image/png" [srcset]="http +'03.png'">
+                                <img [src]="http +'03.png'" alt="">
+                            </picture>
                         </div>
                     </div>
                 </div>
@@ -126,14 +130,22 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="wow fadeInUp" style="position: absolute;">
-                            <img src="./assets/temsanair/05.png" alt="">
+                            <picture>
+                                <source type="image/webp" [srcset]="http +'05.webp'">
+                                <source type="image/png" [srcset]="http +'05.png'">
+                                <img [src]="http +'05.png'" alt="">
+                            </picture>
                             <h3 class="text-white">
                                 <span class="text-color-green">AIRCON SCADA</span> <br>
                                 A/C AUTOMATION
                             </h3>
                         </div>
                         <div class="wow zoomIn">
-                            <img src="./assets/temsanair/01.png" alt="">
+                            <picture>
+                                <source type="image/webp" [srcset]="http +'01.webp'">
+                                <source type="image/png" [srcset]="http +'01.png'">
+                                <img [src]="http +'01.png'" alt="">
+                            </picture>
                         </div>
                     </div>
                 </div>
@@ -154,13 +166,13 @@
                             </div>
                             <div style="padding: 20px !important;">
                                 <p>
-                                    <img src="./assets/temsanair/i_list_item.png" style="width: 20px;" alt=""> Pneumofil collection <br>
-                                    <img src="./assets/temsanair/i_list_item.png" style="width: 20px;" alt=""> Roving stripper <br>
-                                    <img src="./assets/temsanair/i_list_item.png" style="width: 20px;" alt=""> Combed long fibres <br>
-                                    <img src="./assets/temsanair/i_list_item.png" style="width: 20px;" alt=""> Combed short fibres <br>
-                                    <img src="./assets/temsanair/i_list_item.png" style="width: 20px;" alt=""> Blowroom-Carding licker-in waste collection <br>
-                                    <img src="./assets/temsanair/i_list_item.png" style="width: 20px;" alt=""> Hard waste collection <br>
-                                    <img src="./assets/temsanair/i_list_item.png" style="width: 20px;" alt=""> Automatic silo system (working with bale press)
+                                    <img [src]="http + 'i_list_item.png'" style="width: 20px;" alt=""> Pneumofil collection <br>
+                                    <img [src]="http + 'i_list_item.png'" style="width: 20px;" alt=""> Roving stripper <br>
+                                    <img [src]="http + 'i_list_item.png'" style="width: 20px;" alt=""> Combed long fibres <br>
+                                    <img [src]="http + 'i_list_item.png'" style="width: 20px;" alt=""> Combed short fibres <br>
+                                    <img [src]="http + 'i_list_item.png'" style="width: 20px;" alt=""> Blowroom-Carding licker-in waste collection <br>
+                                    <img [src]="http + 'i_list_item.png'" style="width: 20px;" alt=""> Hard waste collection <br>
+                                    <img [src]="http + 'i_list_item.png'" style="width: 20px;" alt=""> Automatic silo system (working with bale press)
                                 </p>
                             </div>
                         </div>
@@ -175,9 +187,9 @@
                         </div>
                         <div style="padding: 20px !important;">
                             <p>
-                                <img src="./assets/temsanair/i_list_item.png" style="width: 20px;" alt=""> Pressure Transmitter <br>
-                                <img src="./assets/temsanair/i_list_item.png" style="width: 20px;" alt=""> Pressure Switches <br>
-                                <img src="./assets/temsanair/i_list_item.png" style="width: 20px;" alt=""> Temperature and Humidity Sensors <br>
+                                <img [src]="http + 'i_list_item.png'" style="width: 20px;" alt=""> Pressure Transmitter <br>
+                                <img [src]="http + 'i_list_item.png'" style="width: 20px;" alt=""> Pressure Switches <br>
+                                <img [src]="http + 'i_list_item.png'" style="width: 20px;" alt=""> Temperature and Humidity Sensors <br>
                             </p>
                         </div>
                     </div>
@@ -191,9 +203,9 @@
                         </div>
                         <div style="padding: 20px !important;">
                             <p>
-                                <img src="./assets/temsanair/i_list_item.png" style="width: 20px;" alt=""> Automatic dust collection system <br>
-                                <img src="./assets/temsanair/i_list_item.png" style="width: 20px;" alt=""> (Blowroom-Carding-Combing) <br>
-                                <img src="./assets/temsanair/i_list_item.png" style="width: 20px;" alt=""> Automatic dust collection with <br>
+                                <img [src]="http + 'i_list_item.png'" style="width: 20px;" alt=""> Automatic dust collection system <br>
+                                <img [src]="http + 'i_list_item.png'" style="width: 20px;" alt=""> (Blowroom-Carding-Combing) <br>
+                                <img [src]="http + 'i_list_item.png'" style="width: 20px;" alt=""> Automatic dust collection with <br>
                                 compactors (Ring-Winding-Twisting)
                             </p>
                         </div>
@@ -203,7 +215,11 @@
         </div>
         <div class="container-fluid my-4" style="padding-left: 100px; padding-right: 100px;position:relative;">
             <div class="d-flex justify-content-start align-items-center" style="margin-bottom: 120px">
-                <img class="mr-2" src="./assets/temsanair/06.png" alt="">
+                <picture>
+                    <source type="image/webp" [srcset]="http +'06.webp'">
+                    <source type="image/png" [srcset]="http +'06.png'">
+                    <img class="mr-2" [src]="http +'06.png'" alt="">
+                </picture>
                 <h4 class="text-color-green">
                     ELECTRIC & AUTOMATION PANELS
                 </h4>
@@ -242,7 +258,11 @@
                     </div>
                 </div>
                 <div class="col-6 wow fadeInRight">
-                    <img src="./assets/temsanair/02.png" alt="">
+                    <picture>
+                        <source type="image/webp" [srcset]="http +'02.webp'">
+                        <source type="image/png" [srcset]="http +'02.png'">
+                        <img [src]="http +'02.png'" alt="">
+                    </picture>
                 </div>
             </div>
         </div>

@@ -20,9 +20,6 @@ export class PromoTwoComponent implements OnInit {
 
   ngOnInit() {
     this.img = this.httpClient.get<any>(this.url).pipe(map(res=> {
-     res.image2.img1 = this.http + res.image2.img1
-     res.image2.img2 = this.http + res.image2.img2
-     res.image2.img3 = this.http + res.image2.img3
      return res.image2
     }))
   }

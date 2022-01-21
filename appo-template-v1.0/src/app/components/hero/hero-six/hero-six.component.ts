@@ -25,7 +25,7 @@ export class HeroSixComponent implements OnInit {
 
   ngOnInit(): void {
     this.wave = this.router.url == '/about';
-    this.img = this.httpClient.get<any>(this.url).pipe(map(res => this.http + res?.image1));
+    this.img = this.httpClient.get<any>(this.url).pipe(map(res => res?.image1));
   }
 
 }

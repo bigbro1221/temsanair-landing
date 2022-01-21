@@ -6,9 +6,13 @@
                                 #slickModal="slick-carousel"
                                 [config]="slideConfig"
                                 (init)="slickInit($event)">
-                <div ngxSlickItem class="p-0 m-0" *ngFor="let img of aboutImgs | async">
+                <div ngxSlickItem class="p-0 m-0" *ngFor="let i of aboutImgs | async">
                     <div class="main-slide">
-                        <img class="w-100" [src]="http + img">
+                        <picture>
+                            <source type="image/webp" [srcset]="http + i.imgw">
+                            <source type="image/jpg" [srcset]="http + i.img">
+                            <img class="w-100" [src]="http + i.img">
+                        </picture>
                         <div class="container wow fadeInUp" style="position:absolute;top:30%;left:10%;align-items:center;z-index: 1">
                             <div class="row align-items-center mb-2">
                                 <div class="col-1">
@@ -44,38 +48,6 @@
                     </div>
                 </div>
             </ngx-slick-carousel>
-                            <!--            <div #element class="parallax-img">-->
-<!--                <div class="container wow fadeInUp" style="position:relative;top:200px;align-items:center;z-index: 1">-->
-<!--                    <div class="row align-items-center mb-2">-->
-<!--                        <div class="col-1">-->
-<!--                            <img src="./assets/temsanair/i_about_us.png" alt="">-->
-<!--                        </div>-->
-<!--                        <div class="col-3">-->
-<!--                            <h3> ABOUT <span style="" class="text-color-green">TEMSAN</span></h3>-->
-<!--                        </div>-->
-<!--                        <div class="col-8">-->
-<!--                            <img src="./assets/temsanair/line_title.png" style="height: 1px;width: 100%;" alt="">-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="row">-->
-<!--                        <div class="col">-->
-<!--                            <div class="headings d-flex align-items-center mb-4">-->
-<!--                                <h2 class="text-capitalize" style="font-family: 'Roboto',sans-serif;color: #fff;font-weight: 300;">-->
-<!--                                    WHAT<span class="ml-2 text-color-green">TEMSAN IS?</span> <br>-->
-<!--                                    WHAT<span class="ml-2 text-color-green">TEMSAN IS NOT?</span>-->
-<!--                                </h2>-->
-<!--                            </div>-->
-<!--                            <p class="mt-3 mb-1 text" style="color:#fff">-->
-<!--                                A deeper perspective of our attitude-->
-<!--                                towards the industry, <br>-->
-<!--                                human empowerment, quality, discipline and-->
-<!--                                more... Read further <br> to see how we exist,-->
-<!--                                and why we do...-->
-<!--                            </p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
             <section class="section about-us" style="background: rgba(27,26,30,1);padding: 40px 0;">
                 <section>
                     <div class="container-fluid my-4" style="padding-left: 100px;padding-right: 100px;">
@@ -133,8 +105,12 @@
                                         <div [ngClass]="{'fadeInLeft':i==1 || i==3,'img-about-2-dark-step-1':i==1,'img-about-img_03-dark-step-1':i==3}" class="img-about-assets-dark-step-1 wow"></div>
                                         <div [ngClass]="{'fadeInLeft':i==1 || i==3,'img-about-2-dark-step-2':i==1,'img-about-img_03-dark-step-2':i==3}" class="img-about-assets-dark-step-2 wow"></div>
                                         <div style="background: rgb(27,26,30);position: relative;">
-                                            <img [ngClass]="{'fadeInLeft':i==1 || i==3,'img-about-2':i==1,'img-about-img_03':i==3}" class="mx-auto img-about-assets wow" style="position: relative"
-                                                 [src]="http + c2.img" alt="">
+                                            <picture>
+                                                <source type="image/webp" [srcset]="http + c2.imgw">
+                                                <source [type]="'image/'+(i==1 ? 'jpg' : 'png')" [srcset]="http + c2.img">
+                                                <img [ngClass]="{'fadeInLeft':i==1 || i==3,'img-about-2':i==1,'img-about-img_03':i==3}" class="mx-auto img-about-assets wow" style="position: relative"
+                                                     [src]="http + c2.img" alt="">
+                                            </picture>
                                         </div>
                                     </div>
                                 </div>
@@ -148,8 +124,14 @@
                                         <div [ngClass]="{'fadeInRight':i==0 || i==2,'img-about-assets-dark-step-1':i==0,'img-about-img_01-dark-step-1':i==2}" class="wow"></div>
                                         <div [ngClass]="{'fadeInRight':i==0 || i==2,'img-about-assets-dark-step-2':i==0,'img-about-img_01-dark-step-2':i==2}" class="wow"></div>
                                         <div style="background: rgb(27,26,30);position: relative;">
-                                            <img [ngClass]="{'fadeInRight':i==0 || i==2,'img-about-assets':i==0,'img-about-img_01':i==2}" class="mx-auto wow" style="position: relative"
-                                                 [src]="http + c2.img" alt="">
+                                            <picture>
+                                                <source type="image/webp" [srcset]="http + c2.imgw">
+                                                <source [type]="'image/'+(i==0 ? 'png' : 'jpg')" [srcset]="http + c2.img">
+                                                <img [ngClass]="{'fadeInRight':i==0 || i==2,'img-about-assets':i==0,'img-about-img_01':i==2}"
+                                                     class="mx-auto wow" style="position: relative"
+                                                     [src]="http + c2.img" alt="">
+                                            </picture>
+
                                         </div>
                                     </div>
                                 </div>
@@ -188,8 +170,12 @@
                                         <div class="img-about-img_01-dark-step-1 wow fadeInRight"></div>
                                         <div class="img-about-img_01-dark-step-2 wow fadeInRight"></div>
                                         <div style="background: rgb(27,26,30);position: relative;">
-                                            <img class="mx-auto img-about-img_01 wow fadeInRight" style="position: relative"
-                                                 [src]="http + c3.img" alt="">
+                                            <picture>
+                                                <source type="image/webp" [srcset]="http + c3.imgw">
+                                                <source type="image/png" [srcset]="http + c3.img">
+                                                <img class="mx-auto img-about-img_01 wow fadeInRight" style="position: relative"
+                                                     [src]="http + c3.img" alt="">
+                                            </picture>
                                         </div>
                                     </div>
                                 </div>
@@ -202,8 +188,12 @@
                                         <div class="img-about-img_03-dark-step-1 wow fadeInRight"></div>
                                         <div class="img-about-img_03-dark-step-2 wow fadeInRight"></div>
                                         <div style="background: rgb(27,26,30);position: relative;">
-                                            <img class="mx-auto img-about-img_03 wow fadeInRight" style="position: relative"
-                                                 [src]="http + c3.img" alt="">
+                                            <picture>
+                                                <source type="image/webp" [srcset]="http + c3.imgw">
+                                                <source type="image/png" [srcset]="http + c3.img">
+                                                <img class="mx-auto img-about-img_03 wow fadeInRight" style="position: relative"
+                                                     [src]="http + c3.img" alt="">
+                                            </picture>
                                         </div>
                                     </div>
                                 </div>
