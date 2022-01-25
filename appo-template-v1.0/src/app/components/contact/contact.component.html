@@ -1,10 +1,14 @@
-<section id="contact" class="contact-area bg-gray ptb_100">
-        <div class="energy_ww">
+<section id="contact" class="contact-area bg-gray ptb_100" *ngIf="img | async as i">
+    <div class="energy_ww wow fadeInUp">
             <div class="energy_w clearfix">
                 <div class="row">
                     <div class="col">
                         <div id="img-wow" class="img wow slow fadeInLeft">
-                            <img src="./assets/temsanair/energy.jpg" alt="">
+                            <picture>
+                                <source type="image/webp" [srcset]="http + i.imgw1">
+                                <source type="image/jpg" [srcset]="http + i.img1">
+                                <img [src]="i.img1" alt="">
+                            </picture>
                         </div>
                     </div>
                     <div class="col">
@@ -30,7 +34,7 @@
                 </div>
             </div>
         </div>
-    <div class="energy_ww my-5">
+    <div class="energy_ww my-5 wow fadeInUp">
         <div class="row">
             <div class="col-9 energy_w_2 d-flex justify-content-center">
                 <div class="text" style="margin-top: 0 !important;">
@@ -43,13 +47,20 @@
                         <span class="text-color-green">The world!</span>
                     </h2>
                     <div >
-                        <img class="icon_temper" src="./assets/temsanair/icon_temper.png" alt="">
+                        <picture>
+                            <source type="image/png" [srcset]="http + i.img2">
+                            <img class="icon_temper" [src]="i.img2" alt="">
+                        </picture>
                     </div>
                 </div>
             </div>
             <div class="col-3">
                 <div class="img wow slow fadeInRight">
-                    <img src="./assets/temsanair/temper.jpg" alt="">
+                    <picture>
+                        <source type="image/webp" [srcset]="http + i.imgw3">
+                        <source type="image/jpg" [srcset]="http + i.img3">
+                        <img [src]="i.img3" alt="">
+                    </picture>
                 </div>
             </div>
         </div>

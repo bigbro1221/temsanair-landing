@@ -1,0 +1,32 @@
+{
+  "image1": {"imgw1":"00.webp","img1": "00.png"},
+  "image2": {
+    "imgw1":"temsan_universe.webp",
+    "img1":"temsan_universe.png",
+    "imgw2":"waste_collection.webp",
+    "img2":"waste_collection.png",
+    "imgw3":"dust_collection.webp",
+    "img3":"dust_collection.png"
+  },
+  "image3": {"imgw1":"about_temsan.webp","img1":"about_temsan.jpg"},
+  "image4": {
+    "imgw1":"title_ac_unit.webp",
+    "img1":"title_ac_unit.png",
+    "imgw2":"ac_unit.webp",
+    "img2":"ac_unit.png"
+  },
+  "image5": {
+    "imgw1":"automat10n.webp",
+    "img1":"automat10n.jpg",
+    "imgw2":"automat10n_icon.webp",
+    "img2":"automat10n_icon.png"
+  },
+  "image6": {
+    "imgw1":"energy.webp",
+    "img1":"energy.jpg",
+    "imgw2":"icon_temper.webp",
+    "img2":"icon_temper.png",
+    "imgw3": "temper.webp",
+    "img3": "temper.jpg"
+  }
+}

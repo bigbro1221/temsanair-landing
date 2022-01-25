@@ -4,7 +4,6 @@ import {Router} from "@angular/router";
 import {Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 import {map} from "rxjs/operators";
-import {log} from "util";
 
 @Component({
   selector: 'app-hero-six',
@@ -13,25 +12,20 @@ import {log} from "util";
 })
 export class HeroSixComponent implements OnInit {
   wave:boolean = false;
-  img:Observable<any>
+  img:Observable<any>;
+  url: string = "assets/data/main.json";
+  http: string = 'http://localhost:4200/assets/temsanair/';
   constructor(
     private ngw: NgwWowService,
     private router: Router,
-    private http: HttpClient
+    private httpClient: HttpClient
   ) {
     this.ngw.init();
   }
 
   ngOnInit(): void {
     this.wave = this.router.url == '/about';
-    this.getImage();
-  }
-
-  getImage() {
-    // this.http.get('http://localhost:4200/assets/temsanair/00.webp').subscribe(img=> {
-    //   console.log(img)
-    // })
-
+    this.img = this.httpClient.get<any>(this.url).pipe(map(res => res?.image1));
   }
 
 }

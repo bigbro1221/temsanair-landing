@@ -96,6 +96,7 @@ import {
   PB_DIRECTION, NgxUiLoaderRouterModule,
 } from "ngx-ui-loader";
 import {AutomationSolutions} from "./components/automation-solutions/automation-solutions";
+import {ProductImgZoom} from "./components/products/product-img-zoom";
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   bgsColor: "yellow",
@@ -187,7 +188,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     AboutUsComponent,
     Products,
     AutomationSolutions,
-    ProductDialog
+    ProductDialog,
+    ProductImgZoom,
   ],
   imports: [
     BrowserModule,

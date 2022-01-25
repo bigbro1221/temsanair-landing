@@ -7,12 +7,19 @@
             <div class="col-12 wow fadeInLeft">
                 <div class="features-text" style="position: relative">
                     <!-- Headings -->
-                    <div class="headings align-items-center">
-                        <div  style="width: 12%;position: absolute;top: 20%;left: 10%;">
-                            <img src="./assets/temsanair/title_ac_unit.png" alt="">
+                    <div class="headings align-items-center" *ngIf="img | async as i">
+                        <div style="width: 12%;position: absolute;top: 20%;left: 10%;">
+                            <picture>
+                                <source type="image/png" [srcset]="http + i.img1">
+                                <img [src]="i.img1" alt="">
+                            </picture>
                         </div>
                         <div class="" style="width: 70%;margin: auto">
-                            <img src="./assets/temsanair/ac_unit.png" alt="">
+                            <picture>
+                                <source type="image/webp" [srcset]="http + i.imgw2">
+                                <source type="image/png" [srcset]="http + i.img2">
+                                <img [src]="i.img2" alt="">
+                            </picture>
                         </div>
                         <div class="clearfix"></div>
                     </div>
@@ -22,9 +29,6 @@
                             <br> <span style="color: #fff">combining engineering and</span>
                             <br> <span style="color: #fff">process knowledge.</span>
                         </p>
-                        <a href="" class="text-color-green">
-                            click to see components..
-                        </a>
                     </div>
                 </div>
                 <div class="row features-headers">
@@ -36,97 +40,6 @@
                     <div class="col-2"><h4 class="text-uppercase text-center wow fadeInRight">Nonwoven</h4></div>
                 </div>
             </div>
-<!--            <div class="col-12 col-md-4 col-lg-5 offset-lg-1 wow fadeInRight slow">-->
-<!--                &lt;!&ndash; Featured Items &ndash;&gt;-->
-<!--                <div class="featured-items" style="margin-top: -100px;">-->
-<!--                    <ul>-->
-<!--                        <li>-->
-<!--                            &lt;!&ndash; Single Features Item &ndash;&gt;-->
-<!--                            <div class="single-features media p-3">-->
-<!--                                &lt;!&ndash; Features Title &ndash;&gt;-->
-<!--                                <div class="features-title mr-3">-->
-<!--                                    <img src="assets/img/icon_1.svg" alt="">-->
-<!--                                </div>-->
-<!--                                &lt;!&ndash; Features Text &ndash;&gt;-->
-<!--                                <div class="features-text media-body">-->
-<!--                                    <h3>Ring</h3>-->
-<!--                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, adipisci.</p>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </li>-->
-<!--                        <li>-->
-<!--                            &lt;!&ndash; Single Features Item &ndash;&gt;-->
-<!--                            <div class="single-features media p-3">-->
-<!--                                &lt;!&ndash; Features Title &ndash;&gt;-->
-<!--                                <div class="features-title mr-3">-->
-<!--                                    <img src="assets/img/icon_2.svg" alt="">-->
-<!--                                </div>-->
-<!--                                &lt;!&ndash; Features Text &ndash;&gt;-->
-<!--                                <div class="features-text media-body">-->
-<!--                                    <h3>Open - end</h3>-->
-<!--                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, adipisci.</p>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </li>-->
-<!--                        <li>-->
-<!--                            &lt;!&ndash; Single Features Item &ndash;&gt;-->
-<!--                            <div class="single-features media p-3">-->
-<!--                                &lt;!&ndash; Features Title &ndash;&gt;-->
-<!--                                <div class="features-title mr-3">-->
-<!--                                    <img src="assets/img/icon_3.svg" alt="">-->
-<!--                                </div>-->
-<!--                                &lt;!&ndash; Features Text &ndash;&gt;-->
-<!--                                <div class="features-text media-body">-->
-<!--                                    <h3>Weaving</h3>-->
-<!--                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, adipisci.</p>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </li>-->
-<!--                        <li>-->
-<!--                            &lt;!&ndash; Single Features Item &ndash;&gt;-->
-<!--                            <div class="single-features media p-3">-->
-<!--                                &lt;!&ndash; Features Title &ndash;&gt;-->
-<!--                                <div class="features-title mr-3">-->
-<!--                                    <img src="assets/img/icon_4.svg" alt="">-->
-<!--                                </div>-->
-<!--                                &lt;!&ndash; Features Text &ndash;&gt;-->
-<!--                                <div class="features-text media-body">-->
-<!--                                    <h3>Knitting</h3>-->
-<!--                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, adipisci.</p>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </li>-->
-<!--                        <li>-->
-<!--                            &lt;!&ndash; Single Features Item &ndash;&gt;-->
-<!--                            <div class="single-features media p-3">-->
-<!--                                &lt;!&ndash; Features Title &ndash;&gt;-->
-<!--                                <div class="features-title mr-3">-->
-<!--                                    <img src="assets/img/icon_3.svg" alt="">-->
-<!--                                </div>-->
-<!--                                &lt;!&ndash; Features Text &ndash;&gt;-->
-<!--                                <div class="features-text media-body">-->
-<!--                                    <h3>Vortex</h3>-->
-<!--                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, adipisci.</p>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </li>-->
-<!--                        <li>-->
-<!--                            &lt;!&ndash; Single Features Item &ndash;&gt;-->
-<!--                            <div class="single-features media p-3">-->
-<!--                                &lt;!&ndash; Features Title &ndash;&gt;-->
-<!--                                <div class="features-title mr-3">-->
-<!--                                    <img src="assets/img/icon_1.svg" alt="">-->
-<!--                                </div>-->
-<!--                                &lt;!&ndash; Features Text &ndash;&gt;-->
-<!--                                <div class="features-text media-body">-->
-<!--                                    <h3>Nonwoven</h3>-->
-<!--                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, adipisci.</p>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </li>-->
-<!--                    </ul>-->
-<!--                </div>-->
-<!--            </div>-->
         </div>
     </div>
 </section>
