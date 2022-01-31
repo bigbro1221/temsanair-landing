@@ -12,7 +12,7 @@ import {map} from "rxjs/operators";
 export class DownloadComponent implements OnInit {
   img: Observable<any>;
   url: string = "assets/data/main.json";
-  http: string = 'http://localhost:4200/assets/temsanair/';
+  http: string = './assets/temsanair/';
   constructor(private wow: NgwWowService,
               private httpClient: HttpClient) { this.wow.init() }
 

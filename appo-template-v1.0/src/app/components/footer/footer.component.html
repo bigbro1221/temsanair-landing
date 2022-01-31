@@ -3,14 +3,16 @@
     <div class="footer-top ptb_100">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-sm-6 col-lg-3">
+                <div [ngClass]="{'col-6': showContainer6,'col-12': !showContainer6}" class="col-sm-4 col-lg-4">
                     <!-- Footer Items -->
                     <div class="footer-items">
                         <!-- Logo -->
                         <a class="navbar-brand" href="#">
                             <img class="logo" src="./assets/temsanair/logo.png" alt="">
                         </a>
-                        <h2 class="text-uppercase text-color-green mt-2 mb-3">All In One</h2>
+                        <h2 *ngIf="showContainer1 || showContainer2 || showContainer3" class="text-uppercase text-color-green mt-2 mb-3">All In One</h2>
+                        <h5 *ngIf="showContainer4 || showContainer5" class="text-uppercase text-color-green mt-2 mb-3">All In One</h5>
+                        <h6 *ngIf="showContainer6" class="text-uppercase text-color-green mt-2 mb-3">All In One</h6>
                         <!-- Social Icons -->
                         <div class="social-icons d-flex">
                             <a class="facebook" href="#">
@@ -32,31 +34,53 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 col-lg-3">
+                <div [ngClass]="{'col-3': showContainer6,'col-6': !showContainer6}" class="col-sm-4 col-lg-5">
                     <!-- Footer Items -->
                     <div class="footer-items">
+                        <div class="row">
+                            <div class="col-12">
+                                <h3 *ngIf="showContainer1 || showContainer2 || showContainer3" class="footer-title text-white mb-2">Our partners</h3>
+                                <h4 *ngIf="showContainer4 || showContainer5" class="footer-title text-white mb-2">Our partners</h4>
+                                <h6 *ngIf="showContainer6" class="footer-title text-white mb-2">Our partners</h6>
+                            </div>
+                            <div class="col-6">
+                                <ul>
+                                    <li class="py-2"><a class="text-white-50" href="#">Roza Plastic</a></li>
+                                    <li class="py-2"><a class="text-white-50" href="#">Sieger</a></li>
+                                    <li class="py-2"><a class="text-white-50" href="#">Steinemann</a></li>
+                                    <li class="py-2"><a class="text-white-50" href="#">Asteks</a></li>
+                                    <li class="py-2"><a class="text-white-50" href="#">Rimtex</a></li>
+                                    <li class="py-2"><a class="text-white-50" href="#">Arosa</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-6">
+                                <ul>
+                                    <li class="py-2"><a class="text-white-50" href="#">Fadis</a></li>
+                                    <li class="py-2"><a class="text-white-50" href="#">Balkan</a></li>
+                                    <li class="py-2"><a class="text-white-50" href="#">Lumapat</a></li>
+                                    <li class="py-2"><a class="text-white-50" href="#">Trutschler</a></li>
+                                    <li class="py-2"><a class="text-white-50" href="#">Rieter</a></li>
+                                </ul>
+                            </div>
+                        </div>
                         <!-- Footer Title -->
-                        <h3 class="footer-title text-white mb-2">Useful Links</h3>
-                        <ul>
-                            <li class="py-2"><a class="text-white-50" href="#">Home</a></li>
-                            <li class="py-2"><a class="text-white-50" href="#">About</a></li>
-                            <li class="py-2"><a class="text-white-50" href="#">Product range</a></li>
-                            <li class="py-2"><a class="text-white-50" href="#">Automation solutions</a></li>
-                            <li class="py-2"><a class="text-white-50" href="#">Press room</a></li>
-                        </ul>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 col-lg-3">
+                <div [ngClass]="{'col-3': showContainer6,'col-6': !showContainer6}" class="col-sm-4 col-lg-3">
                     <!-- Footer Items -->
                     <div class="footer-items">
                         <!-- Footer Title -->
-                        <h3 class="footer-title text-white mb-2">Product Help</h3>
+                        <h3 *ngIf="showContainer1 || showContainer2 || showContainer3" class="footer-title text-white mb-2">Contacts</h3>
+                        <h4 *ngIf="showContainer4 || showContainer5" class="footer-title text-white mb-2">Contacts</h4>
+                        <h6 *ngIf="showContainer6" class="footer-title text-white mb-2">Contacts</h6>
                         <ul>
-                            <li class="py-2"><a class="text-white-50" href="#">FAQ</a></li>
-                            <li class="py-2"><a class="text-white-50" href="#">Privacy Policy</a></li>
-                            <li class="py-2"><a class="text-white-50" href="#">Support</a></li>
-                            <li class="py-2"><a class="text-white-50" href="#">Terms &amp; Conditions</a></li>
-                            <li class="py-2"><a class="text-white-50" href="#">Contact</a></li>
+                            <li class="py-2"><span class="text-white-50">Uzbekistan Republic</span></li>
+                            <li class="py-2"><span class="text-white-50">Tashkent City</span></li>
+                            <li class="py-2"><span class="text-white-50">100000, Lashkatbegi str., 29.</span></li>
+                            <li class="py-2"><span class="text-white-50">Tel: (+99871) 2374519</span></li>
+                            <li class="py-2"><a class="text-white-50" href="#">info@temsanair.uz</a></li>
+                            <li class="py-2"><a class="text-white-50" href="#">khusan@temsanair.uz</a></li>
+                            <li class="py-2"><a class="text-white-50" href="#">m.anvar@temsanair.uz</a></li>
                         </ul>
                     </div>
                 </div>

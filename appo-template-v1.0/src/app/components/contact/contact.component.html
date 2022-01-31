@@ -12,7 +12,7 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="text">
+                        <div class="text" [ngClass]="{'m-0':showContainer5}">
                             <h3 class="text-uppercase">Textile<br>
                                 Factories<br>
                                 <span class="text-color-green">Going green</span>
@@ -21,7 +21,7 @@
                                 Let’s <br>
                                 <span class="text-color-green">Save energy</span>
                             </h2>
-                            <p class="" style="color:#000;font-family: 'Advent Pro', sans-serif;">
+                            <p [ngClass]="{'m-0':showContainer5}" class="" style="color:#000;font-family: 'Advent Pro', sans-serif;">
                                 Our main focus has always been <br>
                                 ‘efficiency that is achieved in high quality’.
                             </p>
@@ -35,8 +35,8 @@
             </div>
         </div>
     <div class="energy_ww my-5 wow fadeInUp">
-        <div class="row">
-            <div class="col-9 energy_w_2 d-flex justify-content-center">
+        <div class="row align-items-center">
+            <div [ngClass]="{'col-6': showContainer5 || showContainer6,'col-7': showContainer3 || showContainer4,'col-8': showContainer1 || showContainer2}" class="energy_w_2 d-flex justify-content-center">
                 <div class="text" style="margin-top: 0 !important;">
                     <h3 class="text-uppercase"><span style="color: #666;font-family: 'Advent Thin', sans-serif;">Our corporate</span><br>
                         <span class="text-color-green" style="font-family: 'Jost-MediumItalic',sans-serif;font-style: italic">Social responsibility</span><br>
@@ -54,7 +54,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-3">
+            <div [ngClass]="{'col-6': showContainer5 || showContainer6,'col-5': showContainer3 || showContainer4 ,'col-4': showContainer1 || showContainer2}" class="">
                 <div class="img wow slow fadeInRight">
                     <picture>
                         <source type="image/webp" [srcset]="http + i.imgw3">
@@ -65,48 +65,7 @@
             </div>
         </div>
     </div>
-    <div class="container wow fadeInUp slow">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-10 col-lg-6">
-                <!-- Section Heading -->
-                <div class="section-heading text-center">
-                    <h2 class="text-capitalize">Stay Tuned</h2>
-                    <p class="d-none d-sm-block mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum obcaecati dignissimos quae quo ad iste ipsum officiis deleniti asperiores sit.</p>
-                    <p class="d-block d-sm-none mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum obcaecati.</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <!-- Contact Box -->
-                <div class="contact-box text-center">
-                    <!-- Contact Form -->
-                    <form id="contact-form" method="POST" action="assets/php/mail.php">
-                        <div class="row">
-                            <div class="col-12 col-md-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="name" placeholder="Name" required="required">
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control" name="email" placeholder="Email" required="required">
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="subject" placeholder="Subject" required="required">
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-6">
-                                <div class="form-group">
-                                    <textarea class="form-control" name="message" placeholder="Message" required="required"></textarea>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-bordered mt-3 mt-sm-4" type="submit">Send Message</button>
-                            </div>
-                        </div>
-                    </form>
-                    <p class="form-message"></p>
-                </div>
-            </div>
-        </div>
+    <div class="">
+        <img src="./assets/temsanair/where.png" alt="">
     </div>
 </section>

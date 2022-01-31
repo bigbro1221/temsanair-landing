@@ -2,24 +2,31 @@
     <div class="container" *ngIf="img | async as i">
         <div class="row align-items-center wow fadeInUp slow">
             <!-- Welcome Intro Start -->
-            <div class="col-5">
+            <div [ngClass]="{'col-12': showContainer7,'col-5': !showContainer7}" class="">
                 <div class="welcome-intro">
                     <div class="mt-4" >
-                        <h2 class="text-white text-uppercase" style="font-family: 'Jost-SemiBold', sans-serif;">Welcome to</h2>
-                        <h2 class="text-color-green text-uppercase" style="font-family: 'Jost-SemiBold', sans-serif;">Temsan universe</h2>
+                        <ng-container *ngIf="showContainer1 || showContainer2">
+                            <h2 class="text-white text-uppercase" style="">Welcome to</h2>
+                            <h2 class="text-color-green text-uppercase" style="">Temsan universe</h2>
+                        </ng-container>
+                        <ng-container *ngIf="showContainer3 || showContainer4 || showContainer5 || showContainer6">
+                            <h3 class="text-white text-uppercase" style="">Welcome to</h3>
+                            <h3 class="text-color-green text-uppercase" style="">Temsan universe</h3>
+                        </ng-container>
                     </div>
-                    <div class="text text-white mt-4">
+                    <div [ngClass]="{'mb-4': showContainer1 || showContainer2 || showContainer3 || showContainer4|| showContainer5,'m-0': showContainer6}"
+                         class="text text-white" >
                         <div>
-                            <p style="font-family: 'Jost-SemiBold', sans-serif;">
+                            <p style="">
                                 We are going to develop more technologies while finding
                             </p>
-                            <p style="font-family: 'Jost-SemiBold', sans-serif;">much efficient ways to design, produce, install and run.</p>
-                            <p style="font-family: 'Jost-SemiBold', sans-serif;" class="text-color-green">Long live the universe!</p>
+                            <p style="">much efficient ways to design, produce, install and run.</p>
+                            <p style="" class="text-color-green">Long live the universe!</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col mx-auto pt-md-0">
+            <div [ngClass]="{'col-12': showContainer7,'col-7':!showContainer7}" class="mx-auto pt-md-0">
                 <!-- Welcome Thumb -->
                 <div class="welcome-thumb">
                     <picture>
@@ -32,18 +39,19 @@
         </div>
         <div class="row align-items-center wow fadeInUp slow">
             <!-- Benifits Item -->
-            <div class="col-12 col-sm-6 col-md-6">
-                <div class="benifits-item p-3">
+            <div [ngClass]="{'col-6':showContainer6,'col-12': showContainer1 || showContainer2 || showContainer3 || showContainer4 || showContainer5}" class="col-sm-6 col-md-6">
+                <div class="benifits-item p-3" [ngClass]="{'mat-elevation-z4': showContainer6}">
                     <!-- Benifits Text -->
-                    <div class="feature-icon float-left">
+                    <div [ngClass]="{'float-left': showContainer1 || showContainer2 || showContainer3 || showContainer4 || showContainer5}"
+                         class="feature-icon">
                         <picture>
                             <source type="image/webp" [srcset]="http + i.imgw2">
                             <source type="image/png" [srcset]="http + i.img2">
-                            <img style="width: 100px;" [src]="http + i.img2" alt="">
+                            <img style="width: 100px;margin-right: 10px;" [src]="http + i.img2" alt="">
                         </picture>
                     </div>
-                    <div class="benifits-text ml-3 float-left">
-                        <h3 class="mb-2"><span class="text-color-green">WASTE</span> <br>Collection</h3>
+                    <div class="benifits-text ml-3">
+                        <h3 class="mb-2"><span class="text-color-green text-uppercase">WASTE</span> <br>Collection</h3>
                         <a href="#" class="text-color-green">click to see all products & solutions</a>
                         <p>in waste collection process</p>
                     </div>
@@ -51,18 +59,20 @@
                 </div>
             </div>
             <!-- Benifits Item -->
-            <div class="col-12 col-sm-6 col-md-6">
-                <div class="benifits-item p-3">
-                    <div class="feature-icon float-left">
+            <div [ngClass]="{'col-6':showContainer6,'col-12': showContainer1 || showContainer2 || showContainer3 || showContainer4 || showContainer5}"s
+              class="col-sm-6 col-md-6">
+                <div class="benifits-item p-3" [ngClass]="{'mat-elevation-z4': showContainer6}">
+                    <div class="feature-icon"
+                         [ngClass]="{'float-left': showContainer1 || showContainer2 || showContainer3 || showContainer4 || showContainer5}">
                         <picture>
                             <source type="image/webp" [srcset]="http + i.imgw3">
                             <source type="image/png" [srcset]="http + i.img3">
-                            <img style="width: 100px;" [src]="http + i.img3" alt="">
+                            <img style="width: 100px;margin-right: 10px;" [src]="http + i.img3" alt="">
                         </picture>
                     </div>
                     <!-- Benifits Text -->
-                    <div class="benifits-text ml-3  float-left">
-                        <h3 class="mb-2"><span class="text-color-green">Dust</span> <br>Collection</h3>
+                    <div class="benifits-text ml-3">
+                        <h3 class="mb-2"><span class="text-color-green text-uppercase">Dust</span> <br>Collection</h3>
                         <a href="#" class="text-color-green">click to see all products & solutions</a>
                         <p>in dust collection process</p>
                     </div>

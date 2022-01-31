@@ -4,13 +4,18 @@
     </div>
     <div class="container wow fadeInUp slow" >
         <div class="row align-items-center">
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-sm-6 col-lg-6">
                 <!-- About Text -->
                 <div class="about-text">
                     <!-- Headings -->
                     <div class="headings d-flex align-items-center mb-4">
                         <span class="text-uppercase d-none d-sm-block">About</span>
-                        <h2 class="text-capitalize">WHAT<span class="ml-2 text-color-green">TEMSAN IS?</span>WHAT<span class="ml-2 text-color-green">TEMSAN IS NOT?</span></h2>
+                        <ng-container *ngIf="showContainer1">
+                            <h2 class="text-capitalize">WHAT <span class="ml-2 text-color-green"> TEMSAN IS? </span> WHAT <span class="ml-2 text-color-green"> TEMSAN IS NOT?</span></h2>
+                        </ng-container>
+                        <ng-container *ngIf="showContainer2 || showContainer3 || showContainer4 || showContainer5 || showContainer6">
+                            <h3 class="text-capitalize">WHAT <span class="ml-2 text-color-green"> TEMSAN IS? </span> WHAT <span class="ml-2 text-color-green"> TEMSAN IS NOT?</span></h3>
+                        </ng-container>
                     </div>
                     <p class="my-3">The major aim is to ensure that your textile mill produces at the highest efficiency. As one of the biggest manufacturers we offer complete process solution in textile humidification system, highest reliability for efficiently performance, energy saving and quality of your mill.</p>
                     <p class="d-none d-sm-block my-3">Since 1960 we combine the Know-How concept and dedication to follow the cutting edge technologies to provide flawless humidification systems. Thanks to our agencies all over the world, we are just next to you, resulting with effective and quick service solutions.</p>
@@ -18,9 +23,9 @@
                     <!-- Store Buttons -->
                 </div>
             </div>
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-sm-6 col-lg-6">
                 <!-- About Thumb -->
-                <div class="about-thumb text-center d-none d-lg-block" *ngIf="img | async as i">
+                <div class="about-thumb text-center" *ngIf="img | async as i">
                     <picture>
                         <source type="image/webp" [srcset]="http + i.imgw1">
                         <source type="image/jpg" [srcset]="http + i.img1">

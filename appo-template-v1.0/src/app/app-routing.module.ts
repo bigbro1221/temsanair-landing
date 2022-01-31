@@ -19,11 +19,13 @@ import { ComingSoonComponent } from './components/inner-pages/coming-soon/coming
 import {AboutUsComponent} from "./components/about-us/about-us.component";
 import {Products} from "./components/products/products";
 import {AutomationSolutions} from "./components/automation-solutions/automation-solutions";
+import {Projects} from "./components/projects/projects";
 
 const routes: Routes = [
   {path: '', component: ThemeSixComponent},
   {path: 'about', component: AboutUsComponent},
   {path: 'product-range', component: Products},
+  {path: 'our-projects', component: Projects},
   {path: 'automation-solutions', component: AutomationSolutions},
   // {path: 'theme-six', component: ThemeSixComponent},
   {path: 'login', component: LoginComponent},

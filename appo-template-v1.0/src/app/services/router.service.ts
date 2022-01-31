@@ -8,7 +8,7 @@ import {Router} from "@angular/router";
 export class RouterService {
 
   url = new BehaviorSubject('');
-  isZoom: Subject<boolean> = new Subject<boolean>();
+  zoom: Subject<boolean> = new Subject<any>();
 
   constructor(private router: Router) {
   }
@@ -26,11 +26,11 @@ export class RouterService {
   }
 
   setZoom(val) {
-    this.isZoom.next(val);
+    this.zoom.next(val);
   }
 
   getZoom() {
-    return this.isZoom;
+    return this.zoom;
   }
 }
 

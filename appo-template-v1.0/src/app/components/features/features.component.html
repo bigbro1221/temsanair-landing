@@ -8,7 +8,7 @@
                 <div class="features-text" style="position: relative">
                     <!-- Headings -->
                     <div class="headings align-items-center" *ngIf="img | async as i">
-                        <div style="width: 12%;position: absolute;top: 20%;left: 10%;">
+                        <div [ngStyle]="{'top': showContainer7 ? '0' : '20%'}" style="width: 12%;position: absolute;left: 10%;">
                             <picture>
                                 <source type="image/png" [srcset]="http + i.img1">
                                 <img [src]="i.img1" alt="">
@@ -23,21 +23,47 @@
                         </div>
                         <div class="clearfix"></div>
                     </div>
-                    <div style="position: absolute;bottom: 50px;right: 50px;">
-                        <p class="text-color-green text-features" style="font-size: 1.5vw">Designed to perform, built for
+                    <div [ngStyle]="{'position': showContainer7 ? '' : 'absolute'}"
+                         [ngClass]="{'text-center': showContainer7}"
+                         class="features-img" style="bottom: 50px;right: 30px;">
+                        <p class="text-color-green text-features" style="font-size: 14px">Designed to perform, built for
                             <br> <span style="color: #fff"><span class="text-color-green">efficiency</span>. Lasting solutions,</span>
                             <br> <span style="color: #fff">combining engineering and</span>
                             <br> <span style="color: #fff">process knowledge.</span>
                         </p>
                     </div>
                 </div>
-                <div class="row features-headers">
-                    <div class="col-2"><h4 class="text-uppercase text-center wow fadeInLeft">Ring</h4></div>
-                    <div class="col-2"><h4 class="text-uppercase text-center wow fadeInLeft">Open-End</h4></div>
-                    <div class="col-2"><h4 class="text-uppercase text-center wow fadeInLeft">Weaving</h4></div>
-                    <div class="col-2"><h4 class="text-uppercase text-center wow fadeInRight">Knitting</h4></div>
-                    <div class="col-2"><h4 class="text-uppercase text-center wow fadeInRight">Vortex</h4></div>
-                    <div class="col-2"><h4 class="text-uppercase text-center wow fadeInRight">Nonwoven</h4></div>
+                <div class="row">
+                    <div class="col-2" [ngClass]="{'p-0' : showContainer7}">
+                        <div class="features-headers">
+                            <h4 class="text-uppercase text-center wow fadeInLeft">Ring</h4>
+                        </div>
+                    </div>
+                    <div class="col-2" [ngClass]="{'p-0' : showContainer7}">
+                        <div class="features-headers">
+                            <h4 class="text-uppercase text-center wow fadeInLeft">Open-End</h4>
+                        </div>
+                    </div>
+                    <div class="col-2" [ngClass]="{'p-0' : showContainer7}">
+                        <div class="features-headers">
+                            <h4 class="text-uppercase text-center wow fadeInLeft">Weaving</h4>
+                        </div>
+                    </div>
+                    <div class="col-2" [ngClass]="{'p-0' : showContainer7}">
+                        <div class="features-headers">
+                            <h4 class="text-uppercase text-center wow fadeInRight">Knitting</h4>
+                        </div>
+                    </div>
+                    <div class="col-2" [ngClass]="{'p-0' : showContainer7}">
+                        <div class="features-headers">
+                            <h4 class="text-uppercase text-center wow fadeInRight">Vortex</h4>
+                        </div>
+                    </div>
+                    <div class="col-2" [ngClass]="{'p-0' : showContainer7}">
+                        <div class="features-headers">
+                            <h4 class="text-uppercase text-center wow fadeInRight">Nonwoven</h4>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

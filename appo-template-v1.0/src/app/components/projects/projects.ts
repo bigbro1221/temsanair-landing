@@ -3,16 +3,13 @@ import {Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 import {map} from "rxjs/operators";
 import {MatDialog} from "@angular/material/dialog";
-import {ProductDialog} from "./product-dialog";
 import {RouterService} from "../../services/router.service";
-import {ProductImgZoom} from "./product-img-zoom";
-import {BreakpointObserver, BreakpointState} from "@angular/cdk/layout";
 declare let $:any;
 
 @Component({
-  templateUrl: './products.html',
+  templateUrl: './projects.html',
 })
-export class Products implements OnInit {
+export class Projects implements OnInit {
 
   products$: Observable<any>;
   productsList$: Observable<any>;
@@ -51,7 +48,6 @@ export class Products implements OnInit {
     ]
   };
   constructor(private httpClient: HttpClient,
-              private dialog: MatDialog,
               private routerSer: RouterService) {
     this.img = this.httpClient.get<any>(this.url).pipe(map(res => res?.main_img));
     this.products$ = this.httpClient.get<any>(this.url).pipe(map(res => {
@@ -139,84 +135,7 @@ export class Products implements OnInit {
     }
   }
 
-  identify(index, item) {
-    return item.type;
-  }
-
   ngAfterViewInit() {
-    setTimeout(()=> {
-      this.products$.subscribe(item => {
-        for(let p = 0; p < item.length; p++) {
-          if ($('#text' + p).text().includes('m3')) {
-            $('#text' + p).html($('#text' + p).text().replace('m3', "m<sup>3</sup>"));
-          }
-          if ($('#text' + p).text().includes('m2')) {
-            $('#text' + p).html($('#text' + p).text().replace('m2', "m<sup>2</sup>"));
-          }
-          $('#img' + p).xzoom({
-            tint: '#333',
-            Xoffset: this.showContainer7 ? 0 : 100,
-            Yoffset: 0,
-            zoomWidth:'auto',
-            fadeOut:true,
-            zoomHeight: 'auto',
-            position: this.showContainer7 ? 'bottom' : 'right',
-            defaultScale: .7,
-            mposition:'fullscreen',
-            rootOutput:true,
-          });
-        }
-        if (this.showContainer6 || this.showContainer7) {
-          $('.product-content .slick-prev').attr('style','left: -15px !important;z-index:9999999');
-          $('.product-content .slick-next').attr('style','right: -15px !important;z-index:9999999');
-        }
-      })
-    },100)
   }
 
-  slickInit(e) {
-  }
-
-  breakpoint(e) {
-  }
-
-  afterChange(e) {
-  }
-
-  beforeChange(e) {
-
-  }
-
-  productChange(e,slick) {
-    slick.slickGoTo(+this.currList - 1)
-  }
-
-  onMouse(e, i, p) {
-  }
-
-  onMouseProduct(e, i, p) {
-  }
-
-
-  onMouseProLeave(i, p) {
-  }
-
-  onMouseLeave(i, p) {
-  }
-
-  onRead(p, i) {
-    if (!this.showContainer7) {
-      const dg = this.dialog.open(ProductDialog, {width: '800px', panelClass: 'modal-window-add-edit'});
-      dg.componentInstance.dialog = dg;
-      dg.componentInstance.obj = p;
-      dg.componentInstance.idx = i;
-    }
-  }
-
-  onClickZoom(p, i) {
-  }
-
-  onImgLeave() {
-
-  }
 }

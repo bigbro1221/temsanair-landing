@@ -3,7 +3,7 @@
         <div class="container-fluid">
             <nav class="navbar navbar-expand-md navbar-light">
                 <a class="navbar-brand" mat-button routerLink="/">
-                    <img class="logo" src="./assets/temsanair/logo.png" alt="">
+                    <img class="logo" src="./assets/temsanair/logo1.png" alt="">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#appo-menu">
                     <span class="navbar-toggler-icon"></span>
@@ -11,7 +11,7 @@
                 <div class="collapse navbar-collapse" id="appo-menu">
                     <ul class="navbar-nav header-items ml-auto">
                         <li class="nav-item" *ngFor="let u of urls; let i = index;">
-                            <a style="font-family: 'Advent Pro', sans-serif; cursor: pointer;"
+                            <a style="font-family:'Amazing-Grotesk-Demi',sans-serif; cursor: pointer;"
                                [routerLinkActiveOptions]="{exact: true}"
                                routerLinkActive="active-link" [routerLink]="u.url" (click)="onNavigate(u,i)"
                                class="wow fadeInUp nav-link scroll text-color-green" [id]="'url'+i">

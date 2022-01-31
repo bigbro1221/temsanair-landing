@@ -14,7 +14,7 @@ export class HeroSixComponent implements OnInit {
   wave:boolean = false;
   img:Observable<any>;
   url: string = "assets/data/main.json";
-  http: string = 'http://localhost:4200/assets/temsanair/';
+  http: string = './assets/temsanair/';
   constructor(
     private ngw: NgwWowService,
     private router: Router,

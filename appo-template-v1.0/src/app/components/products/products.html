@@ -3,15 +3,15 @@
     <div class="all-area">
         <app-header-two></app-header-two>
 <!--        <app-hero-six></app-hero-six>-->
-        <div class="product-img wow fadeInUp" *ngIf="img | async as i">
+        <div id="product-test" class="product-img wow fadeInUp" *ngIf="img | async as i">
             <picture>
                 <source type="image/webp" [srcset]="http + i.imgw">
                 <source type="image/jpg" [srcset]="http + i.img">
-                <img [src]="http +i.img" style="width: 100%;margin-top: 120px;" alt="">
+                <img [src]="i.img" style="width: 100%;margin-top: 120px;" alt="">
             </picture>
         </div>
         <div class="d-flex justify-content-center mt-2 mb-4 wow fadeInUp">
-            <mat-form-field class="mat-form-list" style="width: 30%;">
+            <mat-form-field class="mat-form-list" [ngStyle]="{'width': showContainer7 ? '80%' : '30%'}" style="">
                 <mat-label style="color: #fff;">Select Product...</mat-label>
                 <mat-select [(ngModel)]="currList" (selectionChange)="productChange($event,slickModal)">
                     <mat-option style="color: #111;" *ngFor="let p of productsList$| async" [value]="p.value" >
@@ -20,53 +20,89 @@
                 </mat-select>
             </mat-form-field>
         </div>
-        <section>
+        <section class="product-content">
             <div class="container fadeInUp wow">
-                <div class="img-area" style=""></div>
                 <ngx-slick-carousel class="carousel"
+                                    style="margin-bottom: 30px;"
                                     #slickModal="slick-carousel"
                                     [config]="slideConfig"
                                     (init)="slickInit($event)"
                                     (breakpoint)="breakpoint($event)"
                                     (afterChange)="afterChange($event)"
                                     (beforeChange)="beforeChange($event)">
-                    <div ngxSlickItem class="slide" (mouseleave)="onMouseLeave(i, p)" [class]="'area'+i" *ngFor="let p of products$| async;
+                    <div ngxSlickItem class="slide" style="position: relative"
+                         [class]="'area' + i" *ngFor="let p of products$| async;
                      trackBy: identify; let i = index;">
-                        <div class="slick-container">
-                            <div class="product-img-slide mb-1" style="height: 50%">
-                              <figure class="zoom" [id]="'img_par' +i" (mousemove)="onMouse($event, i,p)" (mouseleave)="onMouseLeave(i, p)">
+                        <div class="slick-container" [id]="'slick-container'+i">
+                            <div class="product-img-slide mb-1" style="overflow: hidden;position: relative">
+                              <figure class="zoom" [id]="'img_par' + i">
                                   <picture>
-<!--                                      <source type="image/png" [srcset]="http + 'mini/'+ p?.img_mini">-->
-                                      <img (click)="onClickZoom(p,i)" (mouseleave)="onMouseProLeave(i, p)"
-                                          class="" (mousemove)="onMouseProduct($event, i,p)"
-                                           [id]="'img' +i" [src]="http + 'mini/'+ p?.img_mini"
-                                           [attr.data-zoom-image]="http + p?.imgw"
-                                           alt="" />
+                                      <source type="image/png" [srcset]="http + 'mini/' + p?.img_mini">
+                                      <img (mouseenter)="onClickZoom(p, i)" (mouseout)="onMouseLeave(i, p)"
+                                          class="img-product" [id]="'img' + i" [src]="http + 'mini/'+ p?.img_mini"
+                                           [attr.xoriginal]="http + p?.imgw" alt="" />
                                   </picture>
                               </figure>
-                              <div class="icons float-right" [id]="'icons'+i">
-                                <img class="d-block mb-1"  [src]="http + 'i_after_sales.png'" style="width: 80px;position: relative;right: 50px;" alt="">
-                                <img class="d-block" [src]="http + 'i_material_design.png'" style="width: 80px;" alt="">
+                              <div class="icons" [id]="'icons' + i"
+                                   [ngStyle]="{'right': showContainer1 || showContainer2 || showContainer3 || showContainer4 || showContainer5 || showContainer6 ? '0' : '5%'}"
+                                   style="position: absolute;top: 0;">
+                                <img class="d-block mb-1"
+                                     [src]="http + 'i_after_sales.png'"
+                                     [ngStyle]="{'width': getWidth(),'right': getRight()}"
+                                     style="position: relative;" alt="">
+                                <img class="d-block"
+                                     [ngStyle]="{'width': getWidth()}"
+                                     [src]="http + 'i_material_design.png'" style="" alt="">
                               </div>
                             </div>
                             <div class="product-text-slide" [id]="'product' + i">
-                                <h5 class="text-center">
+                                <h5 *ngIf="showContainer1" class="text-center">
                                     <span class="text-color-green text-uppercase">{{p?.title}}</span> <br>
                                     <span class="text-uppercase">{{p?.sub_title}}</span>
                                     <img [src]="http + 'bg_detail.png'" alt="">
                                 </h5>
-                                <p class="px-2 m-0 font-spartan" [id]="'text'+i">
+                                <h6 *ngIf="showContainer2 || showContainer3 || showContainer4 || showContainer5 || showContainer6 || showContainer7"
+                                    class="text-center" style="position: relative">
+                                    <span class="text-color-green text-uppercase">{{p?.title}}</span> <br>
+                                    <span class="text-uppercase">{{p?.sub_title}}</span>
+                                    <img [src]="http + 'bg_detail.png'" alt="">
+<!--                                    <span style="position: absolute;left: 5px; top:0">{{p.count}}</span>-->
+                                </h6>
+                                <p [style.font-size]="getFontSize()" class="px-2 m-0 product-text"
+                                   style="line-height: 25px;overflow: auto;" [id]="'text' + i">
                                     {{p?.text}}
-                                    <span *ngIf="p?.detail1 != ''"><br>{{p?.detail1}}</span>
+                                    <span *ngIf="p?.detail1 != ''"> <br>{{p?.detail1}} <br></span>
                                     <span *ngIf="p?.detail2 != ''">{{p?.detail2}} <br></span>
                                     <span *ngIf="p?.detail3 != ''">{{p?.detail3}} <br></span>
                                     <span *ngIf="p?.detail4 != ''">{{p?.detail4}} <br></span>
                                 </p>
                             </div>
                         </div>
-                        <button class="d-flex justify-content-end" style="color:#000; !important;background-color: #74C043 !important;"
-                                *ngIf="p?.count > 260" mat-raised-button (click)="onRead(p,i)">Read more
+                     <ng-container *ngIf="showContainer1">
+                        <button class="d-flex justify-content-end" style="color:#000; !important;background-color: #74C043 !important;position: absolute;bottom: 10px"
+                                *ngIf="p?.count > 260" mat-raised-button (click)="onRead(products$, i)">Read more
                         </button>
+                     </ng-container>
+                    <ng-container *ngIf="showContainer2 || showContainer4 || showContainer3">
+                        <button class="d-flex justify-content-end" style="color:#000; !important;background-color: #74C043 !important;position: absolute;bottom: 10px"
+                                *ngIf="p?.count > 150" mat-raised-button (click)="onRead(products$, i)">Read more
+                        </button>
+                    </ng-container>
+                    <ng-container *ngIf="showContainer5">
+                        <button class="d-flex justify-content-end" style="color:#000; !important;background-color: #74C043 !important;position: absolute;bottom: 10px"
+                                *ngIf="p?.count > 130" mat-raised-button (click)="onRead(products$, i)">Read more
+                        </button>
+                    </ng-container>
+                    <ng-container *ngIf="showContainer6">
+                        <button class="d-flex justify-content-end" style="color:#000; !important;background-color: #74C043 !important;position: absolute;bottom: 10px"
+                                *ngIf="p?.count > 260" mat-raised-button (click)="onRead(products$, i)">Read more
+                        </button>
+                    </ng-container>
+<!--                    <ng-container *ngIf="showContainer7">-->
+<!--                        <button class="d-flex justify-content-end" style="color:#000; !important;background-color: #74C043 !important;position: absolute;bottom: 10px"-->
+<!--                                *ngIf="p?.count > 260" mat-raised-button (click)="onRead(p, i)">Read more-->
+<!--                        </button>-->
+<!--                    </ng-container>-->
                     </div>
                 </ngx-slick-carousel>
             </div>

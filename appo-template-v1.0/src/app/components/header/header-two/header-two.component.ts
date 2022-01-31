@@ -13,7 +13,8 @@ export class HeaderTwoComponent implements OnInit {
     {name:'Home', url:''},
     {name:'About', url:'/about'},
     {name:'Product Range', url:'/product-range'},
-    {name:'Automation solutions', url:'/automation-solutions'}
+    {name:'Automation solutions', url:'/automation-solutions'},
+    {name:'Our Projects', url:'/our-projects'}
   ];
 
   constructor(private router: Router,private routerSer: RouterService) { }

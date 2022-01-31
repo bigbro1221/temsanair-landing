@@ -2,6 +2,7 @@
         <app-scrollup></app-scrollup>
         <div class="all-area">
             <app-header-two></app-header-two>
+        <div class="about-us">
             <ngx-slick-carousel class="carousel about-us"
                                 #slickModal="slick-carousel"
                                 [config]="slideConfig"
@@ -11,29 +12,41 @@
                         <picture>
                             <source type="image/webp" [srcset]="http + i.imgw">
                             <source type="image/jpg" [srcset]="http + i.img">
-                            <img class="w-100" [src]="http + i.img">
+                            <img class="w-100 main-slide-img" [src]="http + i.img">
                         </picture>
-                        <div class="container wow fadeInUp" style="position:absolute;top:30%;left:10%;align-items:center;z-index: 1">
+                        <div class="container wow fadeInUp main-slide-text" style="">
                             <div class="row align-items-center mb-2">
-                                <div class="col-1">
-                                    <img [src]="http +'i_about_us.png'" alt="">
+                                <div class="col-1 col-sm-2">
+                                    <img *ngIf="!showContainer5 && !showContainer6 && !showContainer7" class="i-about-us" [src]="http +'i_about_us.png'" alt="">
                                 </div>
-                                <div class="col-3">
-                                    <h3> ABOUT <span style="" class="text-color-green">TEMSAN</span></h3>
+                                <div class="col-3 col-sm-4">
+                                    <h2 *ngIf="showContainer1"> ABOUT <span style="" class="text-color-green">TEMSAN</span></h2>
+                                    <h3 *ngIf="showContainer2 || showContainer3"> ABOUT <span style="" class="text-color-green">TEMSAN</span></h3>
+                                    <h4 *ngIf="showContainer4"> ABOUT <span style="" class="text-color-green">TEMSAN</span></h4>
+                                    <h5 *ngIf="showContainer5 || showContainer6"> ABOUT <span style="" class="text-color-green">TEMSAN</span></h5>
+                                    <h6 *ngIf="showContainer7"> ABOUT <span style="" class="text-color-green">TEMSAN</span></h6>
                                 </div>
-                                <div class="col-8">
-<!--                                    <img src="./assets/temsanair/line_title.png" style="height: 1px;width: 100%;" alt="">-->
+                                <div class="col-8 col-sm-6">
+                                    <!--                                    <img src="./assets/temsanair/line_title.png" style="height: 1px;width: 100%;" alt="">-->
                                 </div>
                             </div>
                         </div>
-                        <div class="container wow fadeInUp" style="position:absolute;top:40%;left:10%;align-items:center;z-index: 1">
+                        <div class="container wow fadeInUp main-slide-sub-text" style="position:absolute;top:40%;left:10%;align-items:center;z-index: 1">
                             <div class="row">
                                 <div class="col">
                                     <div class="headings d-flex align-items-center mb-4">
-                                        <h2 class="text-capitalize" style="font-family: 'Roboto',sans-serif;color: #fff;font-weight: 300;">
+                                        <h2 *ngIf="showContainer1" class="text-capitalize" style="color: #fff;font-weight: 300;">
                                             WHAT<span class="ml-2 text-color-green">TEMSAN IS?</span> <br>
                                             WHAT<span class="ml-2 text-color-green">TEMSAN IS NOT?</span>
                                         </h2>
+                                        <h3 *ngIf="showContainer2" class="text-capitalize" style="color: #fff;font-weight: 300;">
+                                            WHAT<span class="ml-2 text-color-green">TEMSAN IS?</span> <br>
+                                            WHAT<span class="ml-2 text-color-green">TEMSAN IS NOT?</span>
+                                        </h3>
+                                        <h4 *ngIf="showContainer3" class="text-capitalize" style="color: #fff;font-weight: 300;">
+                                            WHAT<span class="ml-2 text-color-green">TEMSAN IS?</span> <br>
+                                            WHAT<span class="ml-2 text-color-green">TEMSAN IS NOT?</span>
+                                        </h4>
                                     </div>
                                     <p class="mt-3 mb-1 text" style="color:#fff">
                                         A deeper perspective of our attitude
@@ -50,172 +63,433 @@
             </ngx-slick-carousel>
             <section class="section about-us" style="background: rgba(27,26,30,1);padding: 40px 0;">
                 <section>
-                    <div class="container-fluid my-4" style="padding-left: 100px;padding-right: 100px;">
+                    <div class="container-fluid my-4"
+                        [ngStyle]="{'padding-left':!showContainer5 && showContainer6! && showContainer7! ? '50px' : '20px','padding-right':!showContainer5 && showContainer6! && showContainer7! ? '50px' : '20px'}"
+                         style="">
                         <div class="shapes-container">
                             <div class="shape-1"></div>
                         </div>
-                        <div class="row" style="">
-                            <div *ngFor="let h of cardHeader1 | async;let i = index;"
-                                 [ngClass]="{'col-9':i==0,'col-3':i==1,'fadeInLeft':i==0,'fadeInRight':i==1}"
-                                 class="wow" style="">
-                                <h4 class="text-center text-color-green" style="font-family: 'Spartan', sans-serif;font-style: italic;">
-                                    {{h}}
-                                </h4>
-                            </div>
-                        </div>
-                        <div class="row" style="position:relative;z-index: 1;">
-                            <div class="col-3 wow fadeInUp" *ngFor="let c of cards1 | async;let i = index">
-                                <div [ngClass]="{'cyan': i == 0, 'red' : i == 1, 'blue' : i == 2, 'orange' : i == 3 }" class="mat-elevation-z2 about-card">
-                                    <p *ngIf="c.text1 !=''" class="text-white">
-                                        {{c.text1}}
-                                    </p>
-                                    <p *ngIf="c.text2 !=''">
-                                        {{c.text2}}
-                                    </p>
-                                    <p *ngIf="c.text3 !=''">
-                                        {{c.text3}}
-                                    </p>
+                        <ng-container *ngIf="showContainer1">
+                            <div class="row" style="">
+                                <div *ngFor="let h of cardHeader1 | async;let i = index;"
+                                     [ngClass]="{'col-9':i==0,'col-3':i==1,'fadeInLeft':i==0,'fadeInRight':i==1}"
+                                     class="wow" style="">
+                                    <h4 *ngIf="showContainer1" class="text-center text-color-green" style="font-style: italic;">
+                                        {{h.title}}
+                                    </h4>
                                 </div>
                             </div>
-                        </div>
+                            <div class="row" style="position:relative;z-index: 1;">
+                                <div class="wow fadeInUp" *ngFor="let c of cards1 | async;let i = index"
+                                     [ngClass]="{'col-3': showContainer1,'d-flex':i==2,'justify-content-center':i==2,'p-20':i==2}">
+                                    <ng-container>
+                                        <div [ngClass]="{'cyan': i == 0, 'red' : i == 1, 'blue' : i == 2, 'orange' : i == 3 }" class="mat-elevation-z2 about-card">
+                                            <p *ngIf="c.text1 !=''" class="text-white">
+                                                {{c.text1}}
+                                            </p>
+                                            <p *ngIf="c.text2 !=''">
+                                                {{c.text2}}
+                                            </p>
+                                            <p *ngIf="c.text3 !=''">
+                                                {{c.text3}}
+                                            </p>
+                                        </div>
+                                    </ng-container>
+                                </div>
+                            </div>
+                        </ng-container>
+                        <ng-container *ngIf="showContainer2 || showContainer3 || showContainer4 || showContainer5 || showContainer6 || showContainer7">
+                            <div class="row">
+                                <div [ngClass]="{'col-12': showContainer6 || showContainer7,'col-6': !showContainer6 && !showContainer7}" class="" style="position: relative">
+                                    <ng-container *ngIf="showContainer7">
+                                        <div *ngFor="let h of cardHeader1 | async;let i = index;"
+                                             class="wow" style="">
+                                            <h6 *ngIf="i==0 && !h.isShow" class="text-center text-color-green" style="font-style: italic;position: relative">
+                                                {{h.title}}
+                                            </h6>
+                                            <h6 *ngIf="i==1 && h.isShow" class="text-center text-color-green" style="font-style: italic;position: relative">
+                                                {{h.title}}
+                                            </h6>
+                                        </div>
+                                        <div class="about-cards owl-carousel">
+                                            <div *ngFor="let c of cards1 | async;let i = index">
+                                                <div [ngClass]="{'cyan': i == 0, 'red' : i == 1, 'blue' : i == 2,'orange': i == 3}"
+                                                     class="mat-elevation-z2 about-card mb-2">
+                                                    <p *ngIf="c.text1 !=''" class="text-white">
+                                                        {{c.text1}}
+                                                    </p>
+                                                    <p [ngClass]="{'mb-0':showContainer5 || showContainer6}" *ngIf="c.text2 !=''" class="text-white">
+                                                        {{c.text2}}
+                                                    </p>
+                                                    <p [ngClass]="{'mb-0':showContainer5 || showContainer6}" *ngIf="c.text3 !=''" class="text-white">
+                                                        {{c.text3}}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ng-container>
+                                    <ng-container *ngIf="!showContainer7">
+                                        <div *ngFor="let h of cardHeader1 | async;let i = index;"
+                                             class="wow" style="">
+                                            <ng-container *ngIf="showContainer2">
+                                                <h1 *ngIf="i<1" class="text-center text-color-green" style="font-style: italic;position: absolute;top: 30%;left: 0;">
+                                                    {{h.title}}
+                                                </h1>
+                                            </ng-container>
+                                            <ng-container *ngIf="showContainer3 || showContainer4 || showContainer5">
+                                                <h2 *ngIf="i<1" class="text-center text-color-green" style="font-style: italic;position: absolute;top: 30%;left: 0;">
+                                                    {{h.title}}
+                                                </h2>
+                                            </ng-container>
+                                            <ng-container *ngIf="showContainer6">
+                                                <h6 *ngIf="i==0" class="text-center text-color-green" style="font-style: italic;position: relative">
+                                                    {{h.title}}
+                                                </h6>
+                                            </ng-container>
+                                        </div>
+                                    </ng-container>
+                                </div>
+                                <ng-container *ngIf="!showContainer7">
+                                    <div [ngClass]="{'col-12': showContainer6,'col-6': !showContainer6}">
+                                        <div *ngFor="let c of cards1 | async;let i = index">
+                                            <div *ngIf="i<3" [ngClass]="{'cyan': i == 0, 'red' : i == 1, 'blue' : i == 2}"
+                                                 class="mat-elevation-z2 about-card mb-2">
+                                                <p *ngIf="c.text1 !=''" class="text-white">
+                                                    {{c.text1}}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div [ngClass]="{'col-12': showContainer6,'col-6': !showContainer6}" class="">
+                                        <div *ngFor="let h of cardHeader1 | async;let i = index;"
+                                             class="wow"
+                                             [ngClass]="{'d-flex': (showContainer6) && i==1,'justify-content-center': (showContainer6) && i==1,'align-items-center': (showContainer6) && i==1,'h-100': (showContainer6) && i==1}" style="">
+                                            <ng-container *ngIf="showContainer2">
+                                                <h2 *ngIf="i==1" class="text-center text-color-green"
+                                                    style="font-style: italic;position: absolute;top: 30%">
+                                                    {{h.title}}
+                                                </h2>
+                                            </ng-container>
+                                            <ng-container *ngIf="showContainer3 || showContainer4 || showContainer5 || showContainer6">
+                                                <h2 *ngIf="i==1" class="text-center text-color-green"
+                                                    [ngStyle]="{'position': !showContainer5 && !showContainer6 ? 'absolute': ''}"
+                                                    style="font-style: italic;position: absolute;top: 30%;left: 0;">
+                                                    {{h.title}}
+                                                </h2>
+                                            </ng-container>
+                                        </div>
+                                    </div>
+                                    <div [ngClass]="{'col-12': showContainer6,'col-6': !showContainer6}" class="">
+                                        <div *ngFor="let c of cards1 | async; let i = index">
+                                            <div *ngIf="i==3" [ngClass]="{'orange': i == 3}"
+                                                 class="mat-elevation-z2 about-card mb-2">
+                                                <p [ngClass]="{'mb-0':showContainer5 || showContainer6}" *ngIf="c.text1 !=''" class="text-white">
+                                                    {{c.text1}}
+                                                </p>
+                                                <p [ngClass]="{'mb-0':showContainer5 || showContainer6}" *ngIf="c.text2 !=''" class="text-white">
+                                                    {{c.text2}}
+                                                </p>
+                                                <p [ngClass]="{'mb-0':showContainer5 || showContainer6}" *ngIf="c.text3 !=''" class="text-white">
+                                                    {{c.text3}}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ng-container>
+                            </div>
+                        </ng-container>
                     </div>
                 </section>
-                <div class="container" *ngFor="let c2 of cards2 | async; let i = index" style="position: relative;z-index: 1;">
+                <div class="container mt-1" *ngFor="let c2 of cards2 | async; let i = index" style="position: relative;z-index: 1;">
                     <div *ngIf="i==0" class="shapes-container">
                         <div class="shape bg-shape" style="top: 3rem;"></div>
                     </div>
                     <div class="row align-items-center">
-                        <div *ngIf="i==0 || i==2" [ngClass]="{'fadeInLeft':i==0|| i==2}"
-                             class="col-6 wow">
-                            <div class="headings d-flex align-items-center mb-4">
-                                <h2 class="text-capitalize">
-                                    <span class="ml-2 text-color-green">{{c2.header1}}</span>
-                                    {{c2.header2}}
-                                </h2>
-                            </div>
-                            <p class="my-3 text" style="margin-top: 0 !important;">
-                                {{c2.text}}
-                            </p>
-                        </div>
-                        <div *ngIf="i==1 || i==3" [ngClass]="{'fadeInLeft':i==1 || i==3}"
-                          class="col-6 mx-auto mb-5">
-                            <div class="u-layout-col">
-                                <div style="border: 21px solid transparent">
-                                    <div style="position: relative; flex: 1; max-width: 100%;padding-left: 20px;padding-right: 20px">
-                                        <div [ngClass]="{'fadeInLeft':i==1 || i==3,'img-about-2-dark-step-1':i==1,'img-about-img_03-dark-step-1':i==3}" class="img-about-assets-dark-step-1 wow"></div>
-                                        <div [ngClass]="{'fadeInLeft':i==1 || i==3,'img-about-2-dark-step-2':i==1,'img-about-img_03-dark-step-2':i==3}" class="img-about-assets-dark-step-2 wow"></div>
-                                        <div style="background: rgb(27,26,30);position: relative;">
-                                            <picture>
-                                                <source type="image/webp" [srcset]="http + c2.imgw">
-                                                <source [type]="'image/'+(i==1 ? 'jpg' : 'png')" [srcset]="http + c2.img">
-                                                <img [ngClass]="{'fadeInLeft':i==1 || i==3,'img-about-2':i==1,'img-about-img_03':i==3}" class="mx-auto img-about-assets wow" style="position: relative"
-                                                     [src]="http + c2.img" alt="">
-                                            </picture>
+                        <ng-container *ngIf="showContainer7">
+                            <div class="col-12" >
+                                <div class="u-layout-col" *ngIf="!read.read1">
+                                    <div style="border: 21px solid transparent">
+                                        <div style="position: relative; flex: 1; max-width: 100%;padding-left: 20px;padding-right: 20px">
+<!--                                            <div [ngClass]="{'fadeInLeft':i==1 || i==3,'img-about-2-dark-step-1':i==1,'img-about-img_03-dark-step-1':i==3}" class="wow"></div>-->
+<!--                                            <div [ngClass]="{'fadeInLeft':i==1 || i==3,'img-about-2-dark-step-2':i==1,'img-about-img_03-dark-step-2':i==3}" class="wow"></div>-->
+                                            <div class="img-about-content" style="position: relative;width: 100% !important;">
+                                                <picture>
+                                                    <source type="image/webp" [srcset]="http + c2.imgw">
+                                                    <source [type]="'image/'+(i==1 ? 'jpg' : 'png')" [srcset]="http + c2.img">
+                                                    <img
+                                                         [ngStyle]="{'background': i==3 ? 'rgb(27,26,30)': ''}"
+                                                         class="mx-auto wow fadeInUp" style="position: relative"
+                                                         [src]="http + c2.img" alt="">
+                                                </picture>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div *ngIf="i==0 || i==2" [ngClass]="{'fadeInRight':i==0 || i==2}"
-                             class="col-6 mx-auto mb-5">
-                            <div class="u-layout-col">
-                                <div style="border: 21px solid transparent">
-                                    <div style="position: relative; flex: 1; max-width: 100%;padding-left: 20px;padding-right: 20px">
-                                        <div [ngClass]="{'fadeInRight':i==0 || i==2,'img-about-assets-dark-step-1':i==0,'img-about-img_01-dark-step-1':i==2}" class="wow"></div>
-                                        <div [ngClass]="{'fadeInRight':i==0 || i==2,'img-about-assets-dark-step-2':i==0,'img-about-img_01-dark-step-2':i==2}" class="wow"></div>
-                                        <div style="background: rgb(27,26,30);position: relative;">
-                                            <picture>
-                                                <source type="image/webp" [srcset]="http + c2.imgw">
-                                                <source [type]="'image/'+(i==0 ? 'png' : 'jpg')" [srcset]="http + c2.img">
-                                                <img [ngClass]="{'fadeInRight':i==0 || i==2,'img-about-assets':i==0,'img-about-img_01':i==2}"
-                                                     class="mx-auto wow" style="position: relative"
-                                                     [src]="http + c2.img" alt="">
-                                            </picture>
-
+                            <div class="col-12">
+                                <div class="mat-elevation-z4" style="background-color: #1B1A1E;border-radius: 3px;position: relative">
+                                    <div style="background-color: #74C043;border-radius: 3px 3px 0 0" class="headings d-flex align-items-center justify-content-center mb-2">
+                                        <h6 style="font-size: 16px" class="text-capitalize text-center">
+                                            <span class="ml-2">{{c2.header1}}</span> {{c2.header2}}
+                                        </h6>
+                                    </div>
+                                    <p class="my-3 text-about p-3" [id]="'text' + i" style="margin-top: 0 !important;"
+                                       [ngStyle]="{'height': getHeight()}">
+                                        <ng-container *ngIf="c2.text1!=null">{{c2.text1}}</ng-container>
+                                        <ng-container *ngIf="c2.text1==null">{{c2.text}}</ng-container>
+                                    </p>
+                                    <button mat-raised-button (click)="onRead(c2, i)"
+                                            class="d-flex justify-content-end read-btn" style="color:#000; !important;background-color: #74C043 !important;position: relative;bottom: 10px;left: 10px;"> Read more
+                                    </button>
+                                </div>
+                            </div>
+                        </ng-container>
+                        <ng-container *ngIf="!showContainer7">
+                            <div *ngIf="i==0 || i==2"
+                                 [ngClass]="{'fadeInLeft':i==0 || i==2,'col-12': !showContainer1 && !showContainer2 && (i==0 || i==2) && c2.isRead,'col-6': !c2.isRead || !showContainer5 && !showContainer6 && !showContainer7}"
+                                 class="wow mb-2">
+                                <div class="mat-elevation-z4" style="background-color: #1B1A1E;border-radius: 3px;position: relative">
+                                    <div style="background-color: #74C043;border-radius: 3px 3px 0 0" class="headings d-flex align-items-center justify-content-center"
+                                         [ngClass]="{'mb-2': showContainer2 || showContainer3 || showContainer4 || showContainer5 || showContainer6 || showContainer7 ,'mb-4':showContainer1}">
+                                        <h4 *ngIf="showContainer1 || showContainer2" class="text-capitalize text-center" style="font-size: 22px;">
+                                            <span class="ml-2">{{c2.header1}}</span> {{c2.header2}}
+                                        </h4>
+                                        <h5 *ngIf="showContainer4 || showContainer3" class="text-capitalize text-center" [ngStyle]="{'font-size': showContainer3 ? '20px': '18px'}" style="padding: 10px 0 5px;">
+                                            <span class="ml-2">{{c2.header1}}</span> {{c2.header2}}
+                                        </h5>
+                                        <h6 *ngIf="showContainer5 || showContainer6 || showContainer7" [ngStyle]="{'font-size': showContainer7 ? '16px': ''}" class="text-capitalize text-center">
+                                            <span class="ml-2">{{c2.header1}}</span> {{c2.header2}}
+                                        </h6>
+                                    </div>
+                                    <p class="my-3 text-about p-3" [id]="'text' + i" style="margin-top: 0 !important;"
+                                       [ngStyle]="{'height': getHeight()}">
+                                        <ng-container *ngIf="c2.text1!=null">{{c2.text1}}</ng-container>
+                                        <ng-container *ngIf="c2.text1==null">{{c2.text}}</ng-container>
+                                    </p>
+                                    <button *ngIf="showContainer3 || showContainer4 || showContainer5 || showContainer6 || showContainer7" mat-raised-button (click)="onRead(c2, i)"
+                                            class="d-flex justify-content-end read-btn" style="color:#000; !important;background-color: #74C043 !important;position: relative;bottom: 10px;left: 10px;"> Read more
+                                    </button>
+                                </div>
+                            </div>
+                            <div *ngIf="(i==1 || i==3) && !c2.isRead" [ngClass]="{'fadeInLeft':i==1 || i==3,'mb-5': i==1}"
+                                 class="col-6 mx-auto">
+                                <div class="u-layout-col" *ngIf="!read.read1">
+                                    <div style="border: 21px solid transparent">
+                                        <div style="position: relative; flex: 1; max-width: 100%;padding-left: 20px;padding-right: 20px">
+                                            <div [ngClass]="{'fadeInLeft':i==1 || i==3,'img-about-2-dark-step-1':i==1,'img-about-img_03-dark-step-1':i==3}" class="wow"></div>
+                                            <div [ngClass]="{'fadeInLeft':i==1 || i==3,'img-about-2-dark-step-2':i==1,'img-about-img_03-dark-step-2':i==3}" class="wow"></div>
+                                            <div class="img-about-content" style="position: relative;">
+                                                <picture>
+                                                    <source type="image/webp" [srcset]="http + c2.imgw">
+                                                    <source [type]="'image/'+(i==1 ? 'jpg' : 'png')" [srcset]="http + c2.img">
+                                                    <img [ngClass]="{'fadeInLeft':i==1 || i==3,'img-about-2':i==1,'img-about-img_03':i==3}"
+                                                         [ngStyle]="{'background': i==3 ? 'rgb(27,26,30)': ''}"
+                                                         class="mx-auto wow" style="position: relative"
+                                                         [src]="http + c2.img" alt="">
+                                                </picture>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div *ngIf="i==1 || i==3" [ngClass]="{'fadeInRight':i==1 || i==3}"
-                             class="col-6 wow">
-                            <div class="headings d-flex align-items-center mb-4">
-                                <h2 class="text-capitalize">
-                                    <span class="ml-2 text-color-green">{{c2.header1}}</span>
-                                    {{c2.header2}}
-                                </h2>
+                            <div *ngIf="(i==0 || i==2) && !c2.isRead" [ngClass]="{'fadeInRight':i==0 || i==2}"
+                                 class="col-6 mx-auto mb-5">
+                                <div class="u-layout-col">
+                                    <div style="border: 21px solid transparent">
+                                        <div style="position: relative; flex: 1; max-width: 100%;padding-left: 20px;padding-right: 20px">
+                                            <div [ngClass]="{'fadeInRight':i==0 || i==2,'img-about-assets-dark-step-1':i==0,'img-about-img_01-dark-step-1':i==2}" class="wow"></div>
+                                            <div [ngClass]="{'fadeInRight':i==0 || i==2,'img-about-assets-dark-step-2':i==0,'img-about-img_01-dark-step-2':i==2}" class="wow"></div>
+                                            <div class="img-about-content" style="background: rgb(27,26,30);position: relative;">
+                                                <picture>
+                                                    <source type="image/webp" [srcset]="http + c2.imgw">
+                                                    <source [type]="'image/'+(i==0 ? 'png' : 'jpg')" [srcset]="http + c2.img">
+                                                    <img [ngClass]="{'fadeInRight':i==0 || i==2,'img-about-assets':i==0,'img-about-img_01':i==2}"
+                                                         class="mx-auto wow" style="position: relative;"
+                                                         [src]="http + c2.img" alt="">
+                                                </picture>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <p class="my-3 text" style="margin-top: 0 !important;">
-                                {{c2.text}}
-                            </p>
-                        </div>
+                            <div *ngIf="i==1 || i==3" [ngClass]="{'fadeInRight':i==1 || i==3,'col-12': !showContainer1 && !showContainer2 && (i==1 || i==3) && c2.isRead,'col-6': !c2.isRead || !showContainer5 && !showContainer6}"
+                                 class="wow mb-2">
+                                <div class="mat-elevation-z4" style="background-color: #1B1A1E;border-radius: 3px;position: relative">
+                                    <div style="background-color: #74C043;border-radius: 3px 3px 0 0" class="headings d-flex align-items-center justify-content-center" [ngClass]="{'mb-2': showContainer2 || showContainer3 || showContainer4 || showContainer5 || showContainer6,'mb-4':showContainer1}">
+                                        <h4 *ngIf="showContainer1 || showContainer2" class="text-capitalize text-center" style="font-size: 22px;">
+                                            <span class="ml-2">{{c2.header1}}</span> {{c2.header2}}
+                                        </h4>
+                                        <h5 *ngIf="showContainer4 || showContainer3" class="text-capitalize text-center" [ngStyle]="{'font-size': showContainer3 ? '20px': '18px'}" style="padding: 10px 0 5px;">
+                                            <span class="ml-2">{{c2.header1}}</span> {{c2.header2}}
+                                        </h5>
+                                        <h6 *ngIf="showContainer5 || showContainer6" class="text-capitalize text-center">
+                                            <span class="ml-2">{{c2.header1}}</span> {{c2.header2}}
+                                        </h6>
+                                    </div>
+                                    <p class="my-3 text-about p-3" [id]="'text' + i"
+                                       [ngStyle]="{'height': getHeight()}" style="margin-top: 0 !important;">
+                                        <ng-container *ngIf="c2.text1!=null">{{c2.text1}}</ng-container>
+                                        <ng-container *ngIf="c2.text1==null">{{c2.text}}</ng-container>
+                                    </p>
+                                    <button *ngIf="showContainer5 || showContainer4 || showContainer3 || showContainer6" mat-raised-button (click)="onRead(c2, i)"
+                                            class="d-flex justify-content-end read-btn" style="color:#000; !important;background-color: #74C043 !important;position: relative;bottom: 10px;left: 10px;"> Read more
+                                    </button>
+                                </div>
+                            </div>
+                        </ng-container>
                     </div>
                 </div>
-                <div class="container" style="position: relative;">
+                <div class="container my-2" style="position: relative;">
                     <div class="row align-items-center" *ngFor="let c3 of cards3 | async;let i = index">
-                        <div class="col-6 wow fadeInLeft" *ngIf="i==0">
-                            <div class="headings d-flex align-items-center mb-4">
-                                <h3 class="text-capitalize text-color-green">
-                                    <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text1}}<br>
-                                    <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text2}}<br>
-                                    <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text3}}<br>
-                                    <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text4}}<br>
-                                </h3>
+                        <ng-container *ngIf="!showContainer7">
+                            <div [ngClass]="{'col-12':showContainer7,'col-6': !showContainer7}" class="wow fadeInLeft" *ngIf="i==0">
+                                <div class="headings d-flex align-items-center mat-elevation-z4 p-3" style="background-color: #1B1A1E;border-radius: 3px" [ngClass]="{'mb-2': showContainer2 || showContainer3 || showContainer4,'mb-4': showContainer1}">
+                                    <h3 *ngIf="showContainer1" class="text-capitalize text-color-green">
+                                        <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text1}}<br>
+                                        <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text2}}<br>
+                                        <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text3}}<br>
+                                        <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text4}}<br>
+                                    </h3>
+                                    <h4 *ngIf="showContainer2" class="text-capitalize text-color-green">
+                                        <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text1}}<br>
+                                        <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text2}}<br>
+                                        <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text3}}<br>
+                                        <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text4}}<br>
+                                    </h4>
+                                    <h5 *ngIf="showContainer3 || showContainer4 || showContainer5" class="text-capitalize text-color-green">
+                                        <img [src]="http + 'i_list_item.png'" style="width: 20px;" alt=""> {{c3.text1}}<br>
+                                        <img [src]="http + 'i_list_item.png'" style="width: 20px;" alt=""> {{c3.text2}}<br>
+                                        <img [src]="http + 'i_list_item.png'" style="width: 20px;" alt=""> {{c3.text3}}<br>
+                                        <img [src]="http + 'i_list_item.png'" style="width: 20px;" alt=""> {{c3.text4}}<br>
+                                    </h5>
+                                    <h6 *ngIf="showContainer6 || showContainer7" class="text-capitalize text-color-green">
+                                        <img [src]="http + 'i_list_item.png'" style="width: 15px;" alt=""> {{c3.text1}}<br>
+                                        <img [src]="http + 'i_list_item.png'" style="width: 15px;" alt=""> {{c3.text2}}<br>
+                                        <img [src]="http + 'i_list_item.png'" style="width: 15px;" alt=""> {{c3.text3}}<br>
+                                        <img [src]="http + 'i_list_item.png'" style="width: 15px;" alt=""> {{c3.text4}}<br>
+                                    </h6>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-6 mx-auto mb-5" *ngIf="i==0">
-                            <div class="u-layout-col">
-                                <div style="border: 21px solid transparent">
-                                    <div style="position: relative; flex: 1; max-width: 100%;padding-left: 20px;padding-right: 20px">
-                                        <div class="img-about-img_01-dark-step-1 wow fadeInRight"></div>
-                                        <div class="img-about-img_01-dark-step-2 wow fadeInRight"></div>
-                                        <div style="background: rgb(27,26,30);position: relative;">
-                                            <picture>
-                                                <source type="image/webp" [srcset]="http + c3.imgw">
-                                                <source type="image/png" [srcset]="http + c3.img">
-                                                <img class="mx-auto img-about-img_01 wow fadeInRight" style="position: relative"
-                                                     [src]="http + c3.img" alt="">
-                                            </picture>
+                            <div [ngClass]="{'col-12':showContainer7,'col-6': !showContainer7}" class="mx-auto mb-5" *ngIf="i==0">
+                                <div class="u-layout-col">
+                                    <div style="border: 21px solid transparent">
+                                        <div style="position: relative; flex: 1; max-width: 100%;padding-left: 20px;padding-right: 20px">
+                                            <div class="img-about-img_01-dark-step-1 wow fadeInRight"></div>
+                                            <div class="img-about-img_01-dark-step-2 wow fadeInRight"></div>
+                                            <div class="img-about-content" style="position: relative;">
+                                                <picture>
+                                                    <source type="image/webp" [srcset]="http + c3.imgw">
+                                                    <source type="image/png" [srcset]="http + c3.img">
+                                                    <img class="mx-auto img-about-img_01 wow fadeInRight"
+                                                         style="position: relative;background-color: rgb(27,26,30)"
+                                                         [src]="http + c3.img" alt="">
+                                                </picture>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-6 mx-auto mb-5" *ngIf="i==1">
-                            <div class="u-layout-col">
-                                <div style="border: 21px solid transparent">
-                                    <div style="position: relative; flex: 1; max-width: 100%;padding-left: 20px;padding-right: 20px">
-                                        <div class="img-about-img_03-dark-step-1 wow fadeInRight"></div>
-                                        <div class="img-about-img_03-dark-step-2 wow fadeInRight"></div>
-                                        <div style="background: rgb(27,26,30);position: relative;">
-                                            <picture>
-                                                <source type="image/webp" [srcset]="http + c3.imgw">
-                                                <source type="image/png" [srcset]="http + c3.img">
-                                                <img class="mx-auto img-about-img_03 wow fadeInRight" style="position: relative"
-                                                     [src]="http + c3.img" alt="">
-                                            </picture>
+                            <div [ngClass]="{'col-12':showContainer7,'col-6': !showContainer7}" class="mx-auto"
+                                 *ngIf="i==1">
+                                <div class="u-layout-col">
+                                    <div style="border: 21px solid transparent">
+                                        <div style="position: relative; flex: 1; max-width: 100%;padding-left: 20px;padding-right: 20px">
+                                            <div class="img-about-img_03-dark-step-1 wow fadeInRight"></div>
+                                            <div class="img-about-img_03-dark-step-2 wow fadeInRight"></div>
+                                            <div class="img-about-content" style="position: relative;">
+                                                <picture>
+                                                    <source type="image/webp" [srcset]="http + c3.imgw">
+                                                    <source type="image/png" [srcset]="http + c3.img">
+                                                    <img class="mx-auto img-about-img_03 wow fadeInRight"
+                                                         style="position: relative;background-color: rgb(27,26,30)"
+                                                         [src]="http + c3.img" alt="">
+                                                </picture>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-6 wow fadeInLeft" *ngIf="i==1">
-                            <div class="headings d-flex align-items-center mb-4">
-                                <h3 class="text-capitalize text-color-green">
-                                    <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text1}}<br>
-                                    <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text2}}<br>
-                                    <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text3}}<br>
-                                    <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text4}}<br>
-                                    <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text5}}<br>
-                                    <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text6}}<br>
-                                    <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text7}}<br>
-                                </h3>
+                            <div [ngClass]="{'col-12':showContainer7,'col-6': !showContainer7}" class="wow fadeInLeft" *ngIf="i==1">
+                                <div class="headings d-flex align-items-center mat-elevation-z4 p-3" style="background-color: #1B1A1E;border-radius: 3px" [ngClass]="{'mb-2': showContainer1,'mb-4': showContainer2 || showContainer3 || showContainer4}">
+                                    <h3 *ngIf="showContainer1" class="text-capitalize text-color-green">
+                                        <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text1}}<br>
+                                        <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text2}}<br>
+                                        <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text3}}<br>
+                                        <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text4}}<br>
+                                        <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text5}}<br>
+                                        <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text6}}<br>
+                                        <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text7}}<br>
+                                    </h3>
+                                    <h4 *ngIf="showContainer2" class="text-capitalize text-color-green">
+                                        <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text1}}<br>
+                                        <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text2}}<br>
+                                        <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text3}}<br>
+                                        <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text4}}<br>
+                                        <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text5}}<br>
+                                        <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text6}}<br>
+                                        <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text7}}<br>
+                                    </h4>
+                                    <h5 *ngIf="showContainer3 || showContainer4 || showContainer5" class="text-capitalize text-color-green">
+                                        <img [src]="http + 'i_list_item.png'" style="width: 20px;" alt=""> {{c3.text1}}<br>
+                                        <img [src]="http + 'i_list_item.png'" style="width: 20px;" alt=""> {{c3.text2}}<br>
+                                        <img [src]="http + 'i_list_item.png'" style="width: 20px;" alt=""> {{c3.text3}}<br>
+                                        <img [src]="http + 'i_list_item.png'" style="width: 20px;" alt=""> {{c3.text4}}<br>
+                                        <img [src]="http + 'i_list_item.png'" style="width: 20px;" alt=""> {{c3.text5}}<br>
+                                        <img [src]="http + 'i_list_item.png'" style="width: 20px;" alt=""> {{c3.text6}}<br>
+                                        <img [src]="http + 'i_list_item.png'" style="width: 20px;" alt=""> {{c3.text7}}<br>
+                                    </h5>
+                                    <h6 *ngIf="showContainer6 || showContainer7" class="text-capitalize text-color-green">
+                                        <img [src]="http + 'i_list_item.png'" style="width: 15px;" alt=""> {{c3.text1}}<br>
+                                        <img [src]="http + 'i_list_item.png'" style="width: 15px;" alt=""> {{c3.text2}}<br>
+                                        <img [src]="http + 'i_list_item.png'" style="width: 15px;" alt=""> {{c3.text3}}<br>
+                                        <img [src]="http + 'i_list_item.png'" style="width: 15px;" alt=""> {{c3.text4}}<br>
+                                        <img [src]="http + 'i_list_item.png'" style="width: 15px;" alt=""> {{c3.text5}}<br>
+                                        <img [src]="http + 'i_list_item.png'" style="width: 15px;" alt=""> {{c3.text6}}<br>
+                                        <img [src]="http + 'i_list_item.png'" style="width: 15px;" alt=""> {{c3.text7}}<br>
+                                    </h6>
+                                </div>
                             </div>
-                        </div>
+                        </ng-container>
+                        <ng-container *ngIf="showContainer7">
+                            <div class="col-12 mx-auto wow fadeInUp mb-1">
+                                <div class="u-layout-col">
+                                    <div style="border: 21px solid transparent">
+                                        <div style="position: relative; flex: 1; max-width: 100%;padding-left: 20px;padding-right: 20px">
+<!--                                            <div class="img-about-img_01-dark-step-1 wow fadeInRight"></div>-->
+<!--                                            <div class="img-about-img_01-dark-step-2 wow fadeInRight"></div>-->
+                                            <div class="img-about-content" style="position: relative;width: 100% !important;">
+                                                <picture>
+                                                    <source type="image/webp" [srcset]="http + c3.imgw">
+                                                    <source type="image/png" [srcset]="http + c3.img">
+                                                    <img class="mx-auto img-about-img_01 wow fadeInRight"
+                                                         style="position: relative;background-color: rgb(27,26,30); right: auto !important;"
+                                                         [src]="http + c3.img" alt="">
+                                                </picture>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 wow fadeInUp mb-1">
+                                <div class="headings d-flex align-items-center mat-elevation-z4 p-3" style="background-color: #1B1A1E;border-radius: 3px">
+                                    <h6 class="text-capitalize text-color-green">
+                                        <img [src]="http + 'i_list_item.png'" style="width: 15px;" alt=""> {{c3.text1}}<br>
+                                        <img [src]="http + 'i_list_item.png'" style="width: 15px;" alt=""> {{c3.text2}}<br>
+                                        <img [src]="http + 'i_list_item.png'" style="width: 15px;" alt=""> {{c3.text3}}<br>
+                                        <img [src]="http + 'i_list_item.png'" style="width: 15px;" alt=""> {{c3.text4}}<br>
+                                        <img [src]="http + 'i_list_item.png'" *ngIf="c3.text5 !=''" style="width: 15px;" alt=""> {{c3.text5}}<br>
+                                        <img [src]="http + 'i_list_item.png'" *ngIf="c3.text6 !=''" style="width: 15px;" alt=""> {{c3.text6}}<br>
+                                        <img [src]="http + 'i_list_item.png'" *ngIf="c3.text7 !=''" style="width: 15px;" alt=""> {{c3.text7}}<br>
+                                    </h6>
+                                </div>
+                            </div>
+                        </ng-container>
                     </div>
                 </div>
             </section>
-            <app-footer></app-footer>
+        </div>
+        <app-footer></app-footer>
         </div>
     </div>
+
 

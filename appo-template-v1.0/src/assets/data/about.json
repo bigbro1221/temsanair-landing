@@ -4,7 +4,16 @@
     {"imgw":"automation-main.webp","img":"automation-main.png"},
     {"imgw":"img_00.webp","img":"img_00.jpg"}
   ],
-  "card_headers1": ["Combining your experience with ours leads and will lead to perfection","We are not..."],
+  "card_headers1": [
+    {
+      "title":"Combining your experience with ours leads and will lead to perfection",
+      "isShow": false
+    },
+    {
+      "title": "We are not...",
+      "isShow": false
+    }
+  ],
   "cards1": [
     {
       "text1": "The major aim is to ensure that your textile mill produces at the highest efficiency. As one of the biggest manufacturers we offer complete process solution in textile humidification system, highest reliability for efficiently performance, energy saving and quality of your mill.",

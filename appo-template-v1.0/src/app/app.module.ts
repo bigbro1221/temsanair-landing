@@ -97,6 +97,7 @@ import {
 } from "ngx-ui-loader";
 import {AutomationSolutions} from "./components/automation-solutions/automation-solutions";
 import {ProductImgZoom} from "./components/products/product-img-zoom";
+import {Projects} from "./components/projects/projects";
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   bgsColor: "yellow",
@@ -190,6 +191,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     AutomationSolutions,
     ProductDialog,
     ProductImgZoom,
+    Projects
   ],
   imports: [
     BrowserModule,
@@ -197,7 +199,6 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     BrowserAnimationsModule,
     NgwWowModule,
     HttpClientModule,
-
     // NgSelectModule,
     NgxParallaxScrollModule,
     SlickCarouselModule,
