@@ -26,6 +26,7 @@
     "ngx-slick-carousel": "^0.5.1",
     "ngx-ui-loader": "^11.0.0",
     "ngx-wow": "^2.0.1",
+    "ngx-youtube-player": "^12.0.1",
     "rxjs": "~6.5.4",
     "slick-carousel": "^1.8.1",
     "tslib": "^1.10.0",

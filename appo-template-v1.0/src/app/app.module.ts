@@ -98,6 +98,7 @@ import {
 import {AutomationSolutions} from "./components/automation-solutions/automation-solutions";
 import {ProductImgZoom} from "./components/products/product-img-zoom";
 import {Projects} from "./components/projects/projects";
+import {NgxYoutubePlayerModule} from "ngx-youtube-player";
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   bgsColor: "yellow",
@@ -202,6 +203,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     // NgSelectModule,
     NgxParallaxScrollModule,
     SlickCarouselModule,
+    NgxYoutubePlayerModule.forRoot(),
     MatButtonModule,
     MatSelectModule,
     MatDialogModule,

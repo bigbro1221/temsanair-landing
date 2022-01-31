@@ -4,6 +4,7 @@ import {map} from "rxjs/operators";
 import {Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 import {BreakpointObserver} from "@angular/cdk/layout";
+import {DomSanitizer} from "@angular/platform-browser";
 declare let $:any;
 
 @Component({
@@ -49,11 +50,19 @@ export class AboutUsComponent implements OnInit {
   showContainer5 = false;
   showContainer6 = false;
   showContainer7 = false;
+  show = false;
+  player: YT.Player;
+  id: string = '';
   read: {[k:string]:any} = {read1: false, read2: false, read3: false};
   constructor(private ngxService: NgxUiLoaderService,
               public breakpointObserver: BreakpointObserver,
+              private sanitizer : DomSanitizer,
               private httpClient: HttpClient) {
-    this.aboutImgs = this.httpClient.get<any>(this.url).pipe(map(res => res?.slide_img));
+    this.aboutImgs = this.httpClient.get<any>(this.url).pipe(map(res => {
+      this.show = true;
+      this.id ='Sqik4Dn5ldo'
+     return res?.slide_img;
+    }));
   }
 
   ngOnInit(): void {
@@ -86,6 +95,12 @@ export class AboutUsComponent implements OnInit {
       return res.cards2;
     }));
     this.cards3 = this.httpClient.get<any>(this.url).pipe(map(res => res.cards3));
+  }
+
+  savePlayer(player) {
+    this.player = player;
+  }
+  onStateChange(event) {
   }
 
   ngOnChanges() {

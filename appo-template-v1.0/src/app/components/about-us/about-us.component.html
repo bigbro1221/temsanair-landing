@@ -61,6 +61,20 @@
                     </div>
                 </div>
             </ngx-slick-carousel>
+            <ng-container *ngIf="id != ''">
+                <!--            video player          -->
+                    <h4 *ngIf="showContainer1 || showContainer2 || showContainer3" class="text-color-green text-capitalize my-4 text-center">About Temsan video</h4>
+                    <h5 *ngIf="showContainer4 || showContainer5 || showContainer6" class="text-color-green text-capitalize my-4 text-center">About Temsan video</h5>
+                    <h6 *ngIf="showContainer7" class="text-color-green text-capitalize my-4 text-center">About Temsan video</h6>
+                <div class="d-flex justify-content-center">
+                    <youtube-player
+                      [videoId]="id"
+                      (ready)="savePlayer($event)"
+                      (change)="onStateChange($event)"
+                    ></youtube-player>
+                </div>
+            </ng-container>
+            <!--            video player          -->
             <section class="section about-us" style="background: rgba(27,26,30,1);padding: 40px 0;">
                 <section>
                     <div class="container-fluid my-4"
