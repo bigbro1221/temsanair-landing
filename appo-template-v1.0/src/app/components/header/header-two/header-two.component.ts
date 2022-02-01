@@ -16,8 +16,34 @@ export class HeaderTwoComponent implements OnInit {
     {name:'Automation solutions', url:'/automation-solutions'},
     {name:'Our Projects', url:'/our-projects'}
   ];
+  showContainer1:boolean =false;
+  showContainer2:boolean =false;
+  showContainer3:boolean =false;
+  showContainer4:boolean =false;
+  showContainer5:boolean =false;
+  showContainer6:boolean = false;
+  showContainer7:boolean = false;
+  showContainer8:boolean = false;
 
-  constructor(private router: Router,private routerSer: RouterService) { }
+  constructor(private router: Router,private routerSer: RouterService) {
+    if ($(window).width() >= 1280) {
+      this.showContainer1 = true;
+    } else if ($(window).width() >= 1024) {
+      this.showContainer2 = true;
+    } else if ($(window).width() >= 912) {
+      this.showContainer3 = true;
+    } else if ($(window).width() >= 820) {
+      this.showContainer4 = true;
+    } else if ($(window).width() >= 768) {
+      this.showContainer5 = true;
+    } else if ($(window).width() >= 540) {
+      this.showContainer6 = true;
+    } else if ($(window).width() >= 414) {
+      this.showContainer7 = true;
+    } else if ($(window).width() >= 375) {
+      this.showContainer8 = true;
+    }
+  }
 
   ngOnInit(): void {
   }

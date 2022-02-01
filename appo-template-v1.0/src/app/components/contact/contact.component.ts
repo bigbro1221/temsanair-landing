@@ -22,6 +22,7 @@ export class ContactComponent implements OnInit {
   showContainer4 = false;
   showContainer5 = false;
   showContainer6 = false;
+  showContainer7 = false;
 
   constructor(private ngw: NgwWowService,
               private httpClient: HttpClient) {
@@ -37,6 +38,8 @@ export class ContactComponent implements OnInit {
       this.showContainer5 = true;
     } else if ($(window).width() >= 414) {
       this.showContainer6 = true;
+    } else if ($(window).width() >= 375) {
+      this.showContainer7 = true;
     }
 
   }

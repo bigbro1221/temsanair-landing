@@ -3,7 +3,7 @@
     <div class="footer-top ptb_100">
         <div class="container">
             <div class="row">
-                <div [ngClass]="{'col-6': showContainer6,'col-12': !showContainer6}" class="col-sm-4 col-lg-4">
+                <div [ngClass]="{'col-6': !showContainer6,'col-4': showContainer6}" class="col-sm-4 col-lg-4">
                     <!-- Footer Items -->
                     <div class="footer-items">
                         <!-- Logo -->
@@ -12,7 +12,7 @@
                         </a>
                         <h2 *ngIf="showContainer1 || showContainer2 || showContainer3" class="text-uppercase text-color-green mt-2 mb-3">All In One</h2>
                         <h5 *ngIf="showContainer4 || showContainer5" class="text-uppercase text-color-green mt-2 mb-3">All In One</h5>
-                        <h6 *ngIf="showContainer6" class="text-uppercase text-color-green mt-2 mb-3">All In One</h6>
+                        <h6 *ngIf="showContainer6 || showContainer7 || showContainer8" class="text-uppercase text-color-green mt-2 mb-3">All In One</h6>
                         <!-- Social Icons -->
                         <div class="social-icons d-flex">
                             <a class="facebook" href="#">
@@ -34,54 +34,75 @@
                         </div>
                     </div>
                 </div>
-                <div [ngClass]="{'col-3': showContainer6,'col-6': !showContainer6}" class="col-sm-4 col-lg-5">
+                <div [ngStyle]="{'height': showContainer7 || showContainer8 ? '18vh' : ''}" [ngClass]="{'col-4': showContainer6 || showContainer7 || showContainer8,'col-6': !showContainer6}" class="col-sm-4 col-lg-5">
                     <!-- Footer Items -->
                     <div class="footer-items">
                         <div class="row">
                             <div class="col-12">
                                 <h3 *ngIf="showContainer1 || showContainer2 || showContainer3" class="footer-title text-white mb-2">Our partners</h3>
                                 <h4 *ngIf="showContainer4 || showContainer5" class="footer-title text-white mb-2">Our partners</h4>
-                                <h6 *ngIf="showContainer6" class="footer-title text-white mb-2">Our partners</h6>
+                                <h6 *ngIf="showContainer6 || showContainer7 || showContainer8" class="footer-title text-white mb-2">Our partners</h6>
                             </div>
                             <div class="col-6">
                                 <ul>
-                                    <li class="py-2"><a class="text-white-50" href="#">Roza Plastic</a></li>
-                                    <li class="py-2"><a class="text-white-50" href="#">Sieger</a></li>
-                                    <li class="py-2"><a class="text-white-50" href="#">Steinemann</a></li>
-                                    <li class="py-2"><a class="text-white-50" href="#">Asteks</a></li>
-                                    <li class="py-2"><a class="text-white-50" href="#">Rimtex</a></li>
-                                    <li class="py-2"><a class="text-white-50" href="#">Arosa</a></li>
+                                    <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" href="#">Roza Plastic</a></li>
+                                    <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" href="#">Sieger</a></li>
+                                    <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" href="#">Steinemann</a></li>
+                                    <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" href="#">Asteks</a></li>
+                                    <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" href="#">Rimtex</a></li>
+                                    <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" href="#">Arosa</a></li>
                                 </ul>
                             </div>
                             <div class="col-6">
                                 <ul>
-                                    <li class="py-2"><a class="text-white-50" href="#">Fadis</a></li>
-                                    <li class="py-2"><a class="text-white-50" href="#">Balkan</a></li>
-                                    <li class="py-2"><a class="text-white-50" href="#">Lumapat</a></li>
-                                    <li class="py-2"><a class="text-white-50" href="#">Trutschler</a></li>
-                                    <li class="py-2"><a class="text-white-50" href="#">Rieter</a></li>
+                                    <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" href="#">Fadis</a></li>
+                                    <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" href="#">Balkan</a></li>
+                                    <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" href="#">Lumapat</a></li>
+                                    <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" href="#">Trutschler</a></li>
+                                    <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" href="#">Rieter</a></li>
                                 </ul>
                             </div>
                         </div>
                         <!-- Footer Title -->
                     </div>
                 </div>
-                <div [ngClass]="{'col-3': showContainer6,'col-6': !showContainer6}" class="col-sm-4 col-lg-3">
+                <div [ngClass]="{'col-4': showContainer6,'col-6': !showContainer6, 'col-12': showContainer7 || showContainer8}" class="col-sm-4 col-lg-3">
                     <!-- Footer Items -->
                     <div class="footer-items">
                         <!-- Footer Title -->
                         <h3 *ngIf="showContainer1 || showContainer2 || showContainer3" class="footer-title text-white mb-2">Contacts</h3>
                         <h4 *ngIf="showContainer4 || showContainer5" class="footer-title text-white mb-2">Contacts</h4>
-                        <h6 *ngIf="showContainer6" class="footer-title text-white mb-2">Contacts</h6>
-                        <ul>
-                            <li class="py-2"><span class="text-white-50">Uzbekistan Republic</span></li>
-                            <li class="py-2"><span class="text-white-50">Tashkent City</span></li>
-                            <li class="py-2"><span class="text-white-50">100000, Lashkatbegi str., 29.</span></li>
-                            <li class="py-2"><span class="text-white-50">Tel: (+99871) 2374519</span></li>
-                            <li class="py-2"><a class="text-white-50" href="#">info@temsanair.uz</a></li>
-                            <li class="py-2"><a class="text-white-50" href="#">khusan@temsanair.uz</a></li>
-                            <li class="py-2"><a class="text-white-50" href="#">m.anvar@temsanair.uz</a></li>
-                        </ul>
+                        <h6 *ngIf="showContainer6 || showContainer7 || showContainer8" class="footer-title text-white mb-2">Contacts</h6>
+                        <ng-container *ngIf="!showContainer7 && !showContainer8">
+                            <ul>
+                                <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><span class="text-white-50">Uzbekistan Republic</span></li>
+                                <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><span class="text-white-50">Tashkent City</span></li>
+                                <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><span class="text-white-50">100000, Lashkatbegi str., 29.</span></li>
+                                <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><span class="text-white-50">Tel: (+99871) 2374519</span></li>
+                                <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" href="#">info@temsanair.uz</a></li>
+                                <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" href="#">khusan@temsanair.uz</a></li>
+                                <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" href="#">m.anvar@temsanair.uz</a></li>
+                            </ul>
+                        </ng-container>
+                        <ng-container *ngIf="showContainer7 || showContainer8">
+                            <div class="row">
+                                <div class="col-6">
+                                    <ul>
+                                        <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><span class="text-white-50">Uzbekistan Republic</span></li>
+                                        <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><span class="text-white-50">Tashkent City</span></li>
+                                        <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><span class="text-white-50">100000, Lashkatbegi str., 29.</span></li>
+                                    </ul>
+                                </div>
+                                <div class="col-6">
+                                    <ul>
+                                        <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><span class="text-white-50">Tel: (+99871) 2374519</span></li>
+                                        <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" href="#">info@temsanair.uz</a></li>
+                                        <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" href="#">khusan@temsanair.uz</a></li>
+                                        <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" href="#">m.anvar@temsanair.uz</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </ng-container>
                     </div>
                 </div>
             </div>

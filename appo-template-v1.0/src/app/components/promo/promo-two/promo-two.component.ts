@@ -22,6 +22,7 @@ export class PromoTwoComponent implements OnInit {
   showContainer5 = false;
   showContainer6 = false;
   showContainer7 = false;
+  showContainer8 = false;
   constructor(
     private httpClient: HttpClient,
     public breakpointObserver: BreakpointObserver
@@ -40,6 +41,8 @@ export class PromoTwoComponent implements OnInit {
       this.showContainer6 = true;
     } else if ($(window).width() >= 414) {
       this.showContainer7 = true;
+    } else if ($(window).width() >= 375) {
+      this.showContainer8 = true;
     }
   }
 

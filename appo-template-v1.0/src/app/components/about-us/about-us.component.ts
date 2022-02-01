@@ -50,6 +50,7 @@ export class AboutUsComponent implements OnInit {
   showContainer5 = false;
   showContainer6 = false;
   showContainer7 = false;
+  showContainer8 = false;
   show = false;
   player: YT.Player;
   id: string = '';
@@ -80,6 +81,8 @@ export class AboutUsComponent implements OnInit {
       this.showContainer6 = true;
     } else if ($(window).width() >= 414) {
       this.showContainer7 = true;
+    } else if ($(window).width() >= 375) {
+      this.showContainer8 = true;
     }
     window.scrollTo(0, 0);
       this.cards1 = this.httpClient.get<any>(this.url).pipe(map(res => {
@@ -87,7 +90,7 @@ export class AboutUsComponent implements OnInit {
       }));
     this.cardHeader1 = this.httpClient.get<any>(this.url).pipe(map(res => res.card_headers1));
     this.cards2 = this.httpClient.get<any>(this.url).pipe(map(res=> {
-      if (this.showContainer3 || this.showContainer4 || this.showContainer5 || this.showContainer6 || this.showContainer7) {
+      if (this.showContainer3 || this.showContainer4 || this.showContainer5 || this.showContainer6 || this.showContainer7 || this.showContainer8) {
         for (let c2 of res.cards2) {
           c2.text1 = c2.text.substr(0,150) + '...';
         }
@@ -116,6 +119,8 @@ export class AboutUsComponent implements OnInit {
       return '24vh';
     } else if (this.showContainer7) {
       return '10vh';
+    } else if (this.showContainer8) {
+      return '14vh';
     }
   }
 
@@ -151,9 +156,14 @@ export class AboutUsComponent implements OnInit {
             smartSpeed: 1000,
             nav: false
           },
+          375: {
+            items: 1,
+            smartSpeed: 1000,
+            nav: false
+          },
         }
       }).on("dragged.owl.carousel", function (event) {
-          if (_this.showContainer7){
+          if (_this.showContainer7 || _this.showContainer8){
             _this.cardHeader1 = _this.httpClient.get<any>(_this.url).pipe(map(res => {
               for (let h1 of res.card_headers1) {
                 h1.isShow = event.page.index == 3;
@@ -163,7 +173,7 @@ export class AboutUsComponent implements OnInit {
           }
       });
       $('.about-cards.owl-carousel').find('.owl-dots .owl-dot').click(function (e) {
-        if (_this.showContainer7){
+        if (_this.showContainer7 || _this.showContainer8){
           _this.cardHeader1 = _this.httpClient.get<any>(_this.url).pipe(map(res => {
             for (let h1 of res.card_headers1) {
               h1.isShow = e.pointerId == 4;

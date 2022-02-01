@@ -2,7 +2,7 @@
     <div class="container" *ngIf="img | async as i">
         <div class="row align-items-center wow fadeInUp slow">
             <!-- Welcome Intro Start -->
-            <div [ngClass]="{'col-12': showContainer7,'col-5': !showContainer7}" class="">
+            <div [ngClass]="{'col-12': showContainer7 || showContainer8,'col-5': !showContainer7 && !showContainer8}" class="">
                 <div class="welcome-intro">
                     <div class="mt-4" >
                         <ng-container *ngIf="showContainer1 || showContainer2">
@@ -12,6 +12,10 @@
                         <ng-container *ngIf="showContainer3 || showContainer4 || showContainer5 || showContainer6">
                             <h3 class="text-white text-uppercase" style="">Welcome to</h3>
                             <h3 class="text-color-green text-uppercase" style="">Temsan universe</h3>
+                        </ng-container>
+                        <ng-container *ngIf="showContainer7 || showContainer8">
+                            <h6 class="text-white text-uppercase" style="">Welcome to</h6>
+                            <h6 class="text-color-green text-uppercase" style="">Temsan universe</h6>
                         </ng-container>
                     </div>
                     <div [ngClass]="{'mb-4': showContainer1 || showContainer2 || showContainer3 || showContainer4|| showContainer5,'m-0': showContainer6}"
@@ -26,7 +30,7 @@
                     </div>
                 </div>
             </div>
-            <div [ngClass]="{'col-12': showContainer7,'col-7':!showContainer7}" class="mx-auto pt-md-0">
+            <div [ngClass]="{'col-12': showContainer7 || showContainer8,'col-7':!showContainer7 && !showContainer8}" class="mx-auto pt-md-0">
                 <!-- Welcome Thumb -->
                 <div class="welcome-thumb">
                     <picture>
@@ -50,8 +54,8 @@
                             <img style="width: 100px;margin-right: 10px;" [src]="http + i.img2" alt="">
                         </picture>
                     </div>
-                    <div class="benifits-text ml-3">
-                        <h3 class="mb-2"><span class="text-color-green text-uppercase">WASTE</span> <br>Collection</h3>
+                    <div [ngClass]="{'ml-3': !showContainer7 && !showContainer6 && !showContainer8}" class="benifits-text">
+                        <h3 [ngStyle]="{'font-size': showContainer7 || showContainer8 ? '16px' : ''}" class="mb-2"><span class="text-color-green text-uppercase">WASTE</span> <br>Collection</h3>
                         <a href="#" class="text-color-green">click to see all products & solutions</a>
                         <p>in waste collection process</p>
                     </div>
@@ -71,8 +75,8 @@
                         </picture>
                     </div>
                     <!-- Benifits Text -->
-                    <div class="benifits-text ml-3">
-                        <h3 class="mb-2"><span class="text-color-green text-uppercase">Dust</span> <br>Collection</h3>
+                    <div [ngClass]="{'ml-3': !showContainer7 && !showContainer8 && !showContainer6}" class="benifits-text">
+                        <h3 [ngStyle]="{'font-size': showContainer7 ? '16px' : ''}" class="mb-2"><span class="text-color-green text-uppercase">Dust</span> <br>Collection</h3>
                         <a href="#" class="text-color-green">click to see all products & solutions</a>
                         <p>in dust collection process</p>
                     </div>

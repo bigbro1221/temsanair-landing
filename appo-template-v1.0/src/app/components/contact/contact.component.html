@@ -12,7 +12,7 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="text" [ngClass]="{'m-0':showContainer5}">
+                        <div class="text" [ngClass]="{'m-0':showContainer5 || showContainer6 || showContainer7}">
                             <h3 class="text-uppercase">Textile<br>
                                 Factories<br>
                                 <span class="text-color-green">Going green</span>
@@ -21,7 +21,7 @@
                                 Let’s <br>
                                 <span class="text-color-green">Save energy</span>
                             </h2>
-                            <p [ngClass]="{'m-0':showContainer5}" class="" style="color:#000;font-family: 'Advent Pro', sans-serif;">
+                            <p [ngClass]="{'m-0':showContainer5 || showContainer6 || showContainer7}" class="" style="color:#000;font-family: 'Advent Pro', sans-serif;">
                                 Our main focus has always been <br>
                                 ‘efficiency that is achieved in high quality’.
                             </p>
@@ -36,7 +36,8 @@
         </div>
     <div class="energy_ww my-5 wow fadeInUp">
         <div class="row align-items-center">
-            <div [ngClass]="{'col-6': showContainer5 || showContainer6,'col-7': showContainer3 || showContainer4,'col-8': showContainer1 || showContainer2}" class="energy_w_2 d-flex justify-content-center">
+            <div [ngClass]="{'col-6': showContainer5 || showContainer6 || showContainer7,'col-7': showContainer3 || showContainer4,'col-8': showContainer1 || showContainer2}"
+                 class="energy_w_2 d-flex justify-content-center">
                 <div class="text" style="margin-top: 0 !important;">
                     <h3 class="text-uppercase"><span style="color: #666;font-family: 'Advent Thin', sans-serif;">Our corporate</span><br>
                         <span class="text-color-green" style="font-family: 'Jost-MediumItalic',sans-serif;font-style: italic">Social responsibility</span><br>
@@ -54,7 +55,7 @@
                     </div>
                 </div>
             </div>
-            <div [ngClass]="{'col-6': showContainer5 || showContainer6,'col-5': showContainer3 || showContainer4 ,'col-4': showContainer1 || showContainer2}" class="">
+            <div [ngClass]="{'col-6': showContainer5 || showContainer6 || showContainer7,'col-5': showContainer3 || showContainer4 ,'col-4': showContainer1 || showContainer2}" class="">
                 <div class="img wow slow fadeInRight">
                     <picture>
                         <source type="image/webp" [srcset]="http + i.imgw3">
@@ -65,7 +66,7 @@
             </div>
         </div>
     </div>
-    <div class="">
+    <div class="wow zoomIn">
         <img src="./assets/temsanair/where.png" alt="">
     </div>
 </section>

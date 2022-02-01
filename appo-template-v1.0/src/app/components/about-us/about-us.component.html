@@ -17,14 +17,14 @@
                         <div class="container wow fadeInUp main-slide-text" style="">
                             <div class="row align-items-center mb-2">
                                 <div class="col-1 col-sm-2">
-                                    <img *ngIf="!showContainer5 && !showContainer6 && !showContainer7" class="i-about-us" [src]="http +'i_about_us.png'" alt="">
+                                    <img *ngIf="!showContainer5 && !showContainer6 && !showContainer7 && !showContainer8" class="i-about-us" [src]="http +'i_about_us.png'" alt="">
                                 </div>
                                 <div class="col-3 col-sm-4">
                                     <h2 *ngIf="showContainer1"> ABOUT <span style="" class="text-color-green">TEMSAN</span></h2>
                                     <h3 *ngIf="showContainer2 || showContainer3"> ABOUT <span style="" class="text-color-green">TEMSAN</span></h3>
                                     <h4 *ngIf="showContainer4"> ABOUT <span style="" class="text-color-green">TEMSAN</span></h4>
                                     <h5 *ngIf="showContainer5 || showContainer6"> ABOUT <span style="" class="text-color-green">TEMSAN</span></h5>
-                                    <h6 *ngIf="showContainer7"> ABOUT <span style="" class="text-color-green">TEMSAN</span></h6>
+                                    <h6 *ngIf="showContainer7 || showContainer8"> ABOUT <span style="" class="text-color-green">TEMSAN</span></h6>
                                 </div>
                                 <div class="col-8 col-sm-6">
                                     <!--                                    <img src="./assets/temsanair/line_title.png" style="height: 1px;width: 100%;" alt="">-->
@@ -47,6 +47,14 @@
                                             WHAT<span class="ml-2 text-color-green">TEMSAN IS?</span> <br>
                                             WHAT<span class="ml-2 text-color-green">TEMSAN IS NOT?</span>
                                         </h4>
+                                        <h5 *ngIf="showContainer4 || showContainer5 || showContainer6" class="text-capitalize" style="color: #fff;font-weight: 300;">
+                                            WHAT<span class="ml-2 text-color-green">TEMSAN IS?</span> <br>
+                                            WHAT<span class="ml-2 text-color-green">TEMSAN IS NOT?</span>
+                                        </h5>
+<!--                                        <h6 *ngIf="showContainer7 || showContainer8" class="text-capitalize" style="color: #fff;font-weight: 300;">-->
+<!--                                            WHAT<span class="ml-2 text-color-green">TEMSAN IS?</span> <br>-->
+<!--                                            WHAT<span class="ml-2 text-color-green">TEMSAN IS NOT?</span>-->
+<!--                                        </h6>-->
                                     </div>
                                     <p class="mt-3 mb-1 text" style="color:#fff">
                                         A deeper perspective of our attitude
@@ -65,7 +73,7 @@
                 <!--            video player          -->
                     <h4 *ngIf="showContainer1 || showContainer2 || showContainer3" class="text-color-green text-capitalize my-4 text-center">About Temsan video</h4>
                     <h5 *ngIf="showContainer4 || showContainer5 || showContainer6" class="text-color-green text-capitalize my-4 text-center">About Temsan video</h5>
-                    <h6 *ngIf="showContainer7" class="text-color-green text-capitalize my-4 text-center">About Temsan video</h6>
+                    <h6 *ngIf="showContainer7 || showContainer8" class="text-color-green text-capitalize my-4 text-center">About Temsan video</h6>
                 <div class="d-flex justify-content-center">
                     <youtube-player
                       [videoId]="id"
@@ -78,7 +86,7 @@
             <section class="section about-us" style="background: rgba(27,26,30,1);padding: 40px 0;">
                 <section>
                     <div class="container-fluid my-4"
-                        [ngStyle]="{'padding-left':!showContainer5 && showContainer6! && showContainer7! ? '50px' : '20px','padding-right':!showContainer5 && showContainer6! && showContainer7! ? '50px' : '20px'}"
+                        [ngStyle]="{'padding-left':!showContainer5 && showContainer6! && showContainer7! && showContainer8! ? '50px' : '20px','padding-right':!showContainer5 && showContainer6! && showContainer7! && showContainer8! ? '50px' : '20px'}"
                          style="">
                         <div class="shapes-container">
                             <div class="shape-1"></div>
@@ -112,10 +120,10 @@
                                 </div>
                             </div>
                         </ng-container>
-                        <ng-container *ngIf="showContainer2 || showContainer3 || showContainer4 || showContainer5 || showContainer6 || showContainer7">
+                        <ng-container *ngIf="showContainer2 || showContainer3 || showContainer4 || showContainer5 || showContainer6 || showContainer7 || showContainer8">
                             <div class="row">
-                                <div [ngClass]="{'col-12': showContainer6 || showContainer7,'col-6': !showContainer6 && !showContainer7}" class="" style="position: relative">
-                                    <ng-container *ngIf="showContainer7">
+                                <div [ngClass]="{'col-12': showContainer6 || showContainer7 || showContainer8,'col-6': !showContainer6 && !showContainer7 && !showContainer8}" class="" style="position: relative">
+                                    <ng-container *ngIf="showContainer7 || showContainer8">
                                         <div *ngFor="let h of cardHeader1 | async;let i = index;"
                                              class="wow" style="">
                                             <h6 *ngIf="i==0 && !h.isShow" class="text-center text-color-green" style="font-style: italic;position: relative">
@@ -132,17 +140,17 @@
                                                     <p *ngIf="c.text1 !=''" class="text-white">
                                                         {{c.text1}}
                                                     </p>
-                                                    <p [ngClass]="{'mb-0':showContainer5 || showContainer6}" *ngIf="c.text2 !=''" class="text-white">
+                                                    <p [ngClass]="{'mb-0':showContainer5 || showContainer6 || showContainer7 || showContainer8}" *ngIf="c.text2 !=''" class="text-white">
                                                         {{c.text2}}
                                                     </p>
-                                                    <p [ngClass]="{'mb-0':showContainer5 || showContainer6}" *ngIf="c.text3 !=''" class="text-white">
+                                                    <p [ngClass]="{'mb-0':showContainer5 || showContainer6 || showContainer7 || showContainer8}" *ngIf="c.text3 !=''" class="text-white">
                                                         {{c.text3}}
                                                     </p>
                                                 </div>
                                             </div>
                                         </div>
                                     </ng-container>
-                                    <ng-container *ngIf="!showContainer7">
+                                    <ng-container *ngIf="!showContainer7 && !showContainer8">
                                         <div *ngFor="let h of cardHeader1 | async;let i = index;"
                                              class="wow" style="">
                                             <ng-container *ngIf="showContainer2">
@@ -163,7 +171,7 @@
                                         </div>
                                     </ng-container>
                                 </div>
-                                <ng-container *ngIf="!showContainer7">
+                                <ng-container *ngIf="!showContainer7 && !showContainer8">
                                     <div [ngClass]="{'col-12': showContainer6,'col-6': !showContainer6}">
                                         <div *ngFor="let c of cards1 | async;let i = index">
                                             <div *ngIf="i<3" [ngClass]="{'cyan': i == 0, 'red' : i == 1, 'blue' : i == 2}"
@@ -219,7 +227,7 @@
                         <div class="shape bg-shape" style="top: 3rem;"></div>
                     </div>
                     <div class="row align-items-center">
-                        <ng-container *ngIf="showContainer7">
+                        <ng-container *ngIf="showContainer7 || showContainer8">
                             <div class="col-12" >
                                 <div class="u-layout-col" *ngIf="!read.read1">
                                     <div style="border: 21px solid transparent">
@@ -258,20 +266,22 @@
                                 </div>
                             </div>
                         </ng-container>
-                        <ng-container *ngIf="!showContainer7">
+                        <ng-container *ngIf="!showContainer7 && !showContainer8">
                             <div *ngIf="i==0 || i==2"
-                                 [ngClass]="{'fadeInLeft':i==0 || i==2,'col-12': !showContainer1 && !showContainer2 && (i==0 || i==2) && c2.isRead,'col-6': !c2.isRead || !showContainer5 && !showContainer6 && !showContainer7}"
+                                 [ngClass]="{'fadeInLeft':i==0 || i==2,'col-12': !showContainer1 && !showContainer2 && (i==0 || i==2) && c2.isRead,'col-6': !c2.isRead || !showContainer5 && !showContainer6 && !showContainer7 && !showContainer8}"
                                  class="wow mb-2">
                                 <div class="mat-elevation-z4" style="background-color: #1B1A1E;border-radius: 3px;position: relative">
                                     <div style="background-color: #74C043;border-radius: 3px 3px 0 0" class="headings d-flex align-items-center justify-content-center"
-                                         [ngClass]="{'mb-2': showContainer2 || showContainer3 || showContainer4 || showContainer5 || showContainer6 || showContainer7 ,'mb-4':showContainer1}">
+                                         [ngClass]="{'mb-2': showContainer2 || showContainer3 || showContainer4 || showContainer5 || showContainer6 || showContainer7 || showContainer8,'mb-4':showContainer1}">
                                         <h4 *ngIf="showContainer1 || showContainer2" class="text-capitalize text-center" style="font-size: 22px;">
                                             <span class="ml-2">{{c2.header1}}</span> {{c2.header2}}
                                         </h4>
-                                        <h5 *ngIf="showContainer4 || showContainer3" class="text-capitalize text-center" [ngStyle]="{'font-size': showContainer3 ? '20px': '18px'}" style="padding: 10px 0 5px;">
+                                        <h5 *ngIf="showContainer4 || showContainer3" class="text-capitalize text-center" [ngStyle]="{'font-size': showContainer3 ? '20px': '18px'}"
+                                            style="padding: 10px 0 5px;">
                                             <span class="ml-2">{{c2.header1}}</span> {{c2.header2}}
                                         </h5>
-                                        <h6 *ngIf="showContainer5 || showContainer6 || showContainer7" [ngStyle]="{'font-size': showContainer7 ? '16px': ''}" class="text-capitalize text-center">
+                                        <h6 *ngIf="showContainer5 || showContainer6 || showContainer7 || showContainer8" [ngStyle]="{'font-size': showContainer7 || showContainer8 ? '16px': ''}"
+                                            class="text-capitalize text-center">
                                             <span class="ml-2">{{c2.header1}}</span> {{c2.header2}}
                                         </h6>
                                     </div>
@@ -280,7 +290,7 @@
                                         <ng-container *ngIf="c2.text1!=null">{{c2.text1}}</ng-container>
                                         <ng-container *ngIf="c2.text1==null">{{c2.text}}</ng-container>
                                     </p>
-                                    <button *ngIf="showContainer3 || showContainer4 || showContainer5 || showContainer6 || showContainer7" mat-raised-button (click)="onRead(c2, i)"
+                                    <button *ngIf="showContainer3 || showContainer4 || showContainer5 || showContainer6 || showContainer7 || showContainer8" mat-raised-button (click)="onRead(c2, i)"
                                             class="d-flex justify-content-end read-btn" style="color:#000; !important;background-color: #74C043 !important;position: relative;bottom: 10px;left: 10px;"> Read more
                                     </button>
                                 </div>
@@ -355,8 +365,8 @@
                 </div>
                 <div class="container my-2" style="position: relative;">
                     <div class="row align-items-center" *ngFor="let c3 of cards3 | async;let i = index">
-                        <ng-container *ngIf="!showContainer7">
-                            <div [ngClass]="{'col-12':showContainer7,'col-6': !showContainer7}" class="wow fadeInLeft" *ngIf="i==0">
+                        <ng-container *ngIf="!showContainer7 && !showContainer8">
+                            <div [ngClass]="{'col-12':showContainer7 || showContainer8,'col-6': !showContainer7 && !showContainer8}" class="wow fadeInLeft" *ngIf="i==0">
                                 <div class="headings d-flex align-items-center mat-elevation-z4 p-3" style="background-color: #1B1A1E;border-radius: 3px" [ngClass]="{'mb-2': showContainer2 || showContainer3 || showContainer4,'mb-4': showContainer1}">
                                     <h3 *ngIf="showContainer1" class="text-capitalize text-color-green">
                                         <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text1}}<br>
@@ -384,7 +394,7 @@
                                     </h6>
                                 </div>
                             </div>
-                            <div [ngClass]="{'col-12':showContainer7,'col-6': !showContainer7}" class="mx-auto mb-5" *ngIf="i==0">
+                            <div [ngClass]="{'col-12':showContainer7 || showContainer8,'col-6': !showContainer7 && !showContainer8}" class="mx-auto mb-5" *ngIf="i==0">
                                 <div class="u-layout-col">
                                     <div style="border: 21px solid transparent">
                                         <div style="position: relative; flex: 1; max-width: 100%;padding-left: 20px;padding-right: 20px">
@@ -403,7 +413,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div [ngClass]="{'col-12':showContainer7,'col-6': !showContainer7}" class="mx-auto"
+                            <div [ngClass]="{'col-12':showContainer7 || showContainer8,'col-6': !showContainer7 && !showContainer8}" class="mx-auto"
                                  *ngIf="i==1">
                                 <div class="u-layout-col">
                                     <div style="border: 21px solid transparent">
@@ -423,7 +433,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div [ngClass]="{'col-12':showContainer7,'col-6': !showContainer7}" class="wow fadeInLeft" *ngIf="i==1">
+                            <div [ngClass]="{'col-12':showContainer7 || showContainer8,'col-6': !showContainer7 && !showContainer8}" class="wow fadeInLeft" *ngIf="i==1">
                                 <div class="headings d-flex align-items-center mat-elevation-z4 p-3" style="background-color: #1B1A1E;border-radius: 3px" [ngClass]="{'mb-2': showContainer1,'mb-4': showContainer2 || showContainer3 || showContainer4}">
                                     <h3 *ngIf="showContainer1" class="text-capitalize text-color-green">
                                         <img [src]="http + 'i_list_item.png'" style="width: 25px;" alt=""> {{c3.text1}}<br>
@@ -464,7 +474,7 @@
                                 </div>
                             </div>
                         </ng-container>
-                        <ng-container *ngIf="showContainer7">
+                        <ng-container *ngIf="showContainer7 || showContainer8">
                             <div class="col-12 mx-auto wow fadeInUp mb-1">
                                 <div class="u-layout-col">
                                     <div style="border: 21px solid transparent">

@@ -28,6 +28,7 @@ export class Products implements OnInit {
   showContainer5:boolean =false;
   showContainer6:boolean = false;
   showContainer7:boolean = false;
+  showContainer8:boolean = false;
   slideConfig = {
     slidesToShow: 3,
     slidesToScroll: 1,
@@ -74,6 +75,8 @@ export class Products implements OnInit {
       this.showContainer6 = true;
     } else if ($(window).width() >= 414) {
       this.showContainer7 = true;
+    } else if ($(window).width() >= 375) {
+      this.showContainer8 = true;
     }
     this.productsList$ = this.httpClient.get<any>(this.url).pipe(map(res => res?.productList));
   }
@@ -88,7 +91,7 @@ export class Products implements OnInit {
         }
       }]
     }
-    if (this.showContainer3 || this.showContainer4 || this.showContainer5 || this.showContainer6) {
+    if (this.showContainer3 || this.showContainer4 || this.showContainer5) {
       this.slideConfig.responsive = [{
         breakpoint: 1024,
         settings: {
@@ -97,7 +100,7 @@ export class Products implements OnInit {
         }
       }]
     }
-    if (this.showContainer7) {
+    if (this.showContainer6 || this.showContainer7 || this.showContainer8) {
       this.slideConfig.responsive = [{
         breakpoint: 1024,
         settings: {
@@ -114,7 +117,7 @@ export class Products implements OnInit {
       return '80px';
     } else if (this.showContainer2 || this.showContainer3 || this.showContainer4 || this.showContainer5) {
       return '60px';
-    } else if (this.showContainer6 || this.showContainer7) {
+    } else if (this.showContainer6 || this.showContainer7 || this.showContainer8) {
       return '50px';
     }
   }
@@ -124,7 +127,7 @@ export class Products implements OnInit {
       return '50px';
     } else if (this.showContainer2 || this.showContainer3 || this.showContainer4 || this.showContainer5) {
       return '40px';
-    } else if (this.showContainer6 || this.showContainer7) {
+    } else if (this.showContainer6 || this.showContainer7 || this.showContainer8) {
       return '0';
     }
   }
@@ -134,7 +137,7 @@ export class Products implements OnInit {
       return '14px'
     } else if (this.showContainer2 || this.showContainer3 || this.showContainer4 || this.showContainer5 || this.showContainer6) {
       return '13px';
-    } else if (this.showContainer7) {
+    } else if (this.showContainer7 || this.showContainer8) {
       return '12px';
     }
   }
@@ -155,23 +158,32 @@ export class Products implements OnInit {
           }
           $('#img' + p).xzoom({
             tint: '#333',
-            Xoffset: this.showContainer7 ? 0 : 100,
+            Xoffset: this.showContainer7 || this.showContainer8 ? 0 : 100,
             Yoffset: 0,
             zoomWidth:'auto',
             fadeOut:true,
             zoomHeight: 'auto',
-            position: this.showContainer7 ? 'bottom' : 'right',
+            position: this.showContainer7 || this.showContainer8 ? 'bottom' : 'right',
             defaultScale: .7,
             mposition:'fullscreen',
             rootOutput:true,
           });
         }
-        if (this.showContainer6 || this.showContainer7) {
+        if (this.showContainer6 || this.showContainer7 || this.showContainer8) {
           $('.product-content .slick-prev').attr('style','left: -15px !important;z-index:9999999');
           $('.product-content .slick-next').attr('style','right: -15px !important;z-index:9999999');
         }
       })
     },100)
+    setTimeout(()=> {
+      console.log($('.product-content .carousel .slick-list'))
+      if (this.showContainer8) {
+        $('.product-content .carousel .slick-slide').attr('style','height: 54vh !important');
+      }
+      if (this.showContainer5) {
+        $('.product-content .carousel .slick-slide').attr('style','width: 312px !important');
+      }
+    },500)
   }
 
   slickInit(e) {
@@ -205,7 +217,7 @@ export class Products implements OnInit {
   }
 
   onRead(p, i) {
-    if (!this.showContainer7) {
+    if (!this.showContainer7 && !this.showContainer8) {
       const dg = this.dialog.open(ProductDialog, {width: '800px', panelClass: 'modal-window-add-edit'});
       dg.componentInstance.dialog = dg;
       dg.componentInstance.obj = p;

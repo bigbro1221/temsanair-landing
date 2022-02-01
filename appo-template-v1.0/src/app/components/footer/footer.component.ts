@@ -14,6 +14,7 @@ export class FooterComponent implements OnInit {
   showContainer5:boolean =false;
   showContainer6:boolean =false;
   showContainer7:boolean =false;
+  showContainer8:boolean =false;
 
   constructor() {
     if ($(window).width() >= 1280) {
@@ -28,6 +29,10 @@ export class FooterComponent implements OnInit {
       this.showContainer5 = true;
     } else if ($(window).width() >= 540) {
       this.showContainer6 = true;
+    } else if ($(window).width() >= 414) {
+      this.showContainer7 = true;
+    } else if ($(window).width() >= 375) {
+      this.showContainer8 = true;
     }
   }
 

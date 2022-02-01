@@ -22,6 +22,7 @@ export class FeaturesComponent implements OnInit {
   showContainer5 = false;
   showContainer6 = false;
   showContainer7 = false;
+  showContainer8 = false;
 
   constructor(private wow: NgwWowService,
               private httpClient: HttpClient) {
@@ -40,6 +41,8 @@ export class FeaturesComponent implements OnInit {
       this.showContainer6 = true;
     } else if ($(window).width() >= 414) {
       this.showContainer7 = true;
+    } else if ($(window).width() >= 375) {
+      this.showContainer8 = true;
     }
   }
 
@@ -47,6 +50,9 @@ export class FeaturesComponent implements OnInit {
     this.img = this.httpClient.get<any>(this.url).pipe(map(res=> {
       return res.image4;
     }))
+  }
+  ngAfterViewInit() {
+    $('.features-headers h4').attr('style','font-size: 10px !important');
   }
 
 }

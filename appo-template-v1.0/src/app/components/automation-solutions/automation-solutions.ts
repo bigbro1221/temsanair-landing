@@ -25,6 +25,7 @@ export class AutomationSolutions implements OnInit {
   showContainer5:boolean =false;
   showContainer6:boolean =false;
   showContainer7:boolean =false;
+  showContainer8:boolean =false;
   read: {[k:string]:any} = {read1: false, read2: false, read3: false};
   slideConfig = {
     slidesToShow: 1,
@@ -69,6 +70,8 @@ export class AutomationSolutions implements OnInit {
       this.showContainer6 = true;
     } else if ($(window).width() >= 414) {
       this.showContainer7 = true;
+    } else if ($(window).width() >= 375) {
+      this.showContainer8 = true;
     }
   }
 
@@ -98,6 +101,11 @@ export class AutomationSolutions implements OnInit {
         autoplayTimeout: 3000,
         responsive: {
           414: {
+            items: 1,
+            smartSpeed: 1000,
+            nav: false
+          },
+          375: {
             items: 1,
             smartSpeed: 1000,
             nav: false

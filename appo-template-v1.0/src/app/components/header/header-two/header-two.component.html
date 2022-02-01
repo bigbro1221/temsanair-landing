@@ -2,12 +2,18 @@
     <div id="appo-header" class="main-header-area nav-white">
         <div class="container-fluid">
             <nav class="navbar navbar-expand-md navbar-light">
-                <a class="navbar-brand" mat-button routerLink="/">
-                    <img class="logo" src="./assets/temsanair/logo1.png" alt="">
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#appo-menu">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <div>
+                    <a class="navbar-brand" mat-button routerLink="/">
+                        <img class="logo" src="./assets/temsanair/logo1.png" alt="">
+                    </a>
+                </div>
+                <div>
+                    <button [ngClass]="{'position-absolute': !showContainer1 && showContainer2 && !showContainer3 && !showContainer4}"
+                            [ngStyle]="{'right': !showContainer1 && showContainer2 && !showContainer3 && !showContainer4 ? '0' : ''}"
+                      class="navbar-toggler" type="button" data-toggle="collapse" data-target="#appo-menu">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
                 <div class="collapse navbar-collapse" id="appo-menu">
                     <ul class="navbar-nav header-items ml-auto">
                         <li class="nav-item" *ngFor="let u of urls; let i = index;">

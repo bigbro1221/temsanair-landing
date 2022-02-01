@@ -11,7 +11,7 @@
             </picture>
         </div>
         <div class="d-flex justify-content-center mt-2 mb-4 wow fadeInUp">
-            <mat-form-field class="mat-form-list" [ngStyle]="{'width': showContainer7 ? '80%' : '30%'}" style="">
+            <mat-form-field class="mat-form-list" [ngStyle]="{'width': showContainer5 || showContainer6 || showContainer7 || showContainer8 ? '80%' : '30%'}" style="">
                 <mat-label style="color: #fff;">Select Product...</mat-label>
                 <mat-select [(ngModel)]="currList" (selectionChange)="productChange($event,slickModal)">
                     <mat-option style="color: #111;" *ngFor="let p of productsList$| async" [value]="p.value" >
@@ -20,8 +20,8 @@
                 </mat-select>
             </mat-form-field>
         </div>
-        <section class="product-content">
-            <div class="container fadeInUp wow">
+        <section class="product-content" [ngStyle]="{'height': showContainer8 ? '60vh' : ''}">
+            <div class="container fadeInUp wow" [ngStyle]="{'padding': showContainer6 ? '0 100px' : ''}">
                 <ngx-slick-carousel class="carousel"
                                     style="margin-bottom: 30px;"
                                     #slickModal="slick-carousel"
@@ -61,7 +61,7 @@
                                     <span class="text-uppercase">{{p?.sub_title}}</span>
                                     <img [src]="http + 'bg_detail.png'" alt="">
                                 </h5>
-                                <h6 *ngIf="showContainer2 || showContainer3 || showContainer4 || showContainer5 || showContainer6 || showContainer7"
+                                <h6 *ngIf="showContainer2 || showContainer3 || showContainer4 || showContainer5 || showContainer6 || showContainer7 || showContainer8"
                                     class="text-center" style="position: relative">
                                     <span class="text-color-green text-uppercase">{{p?.title}}</span> <br>
                                     <span class="text-uppercase">{{p?.sub_title}}</span>
