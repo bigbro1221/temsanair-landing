@@ -804,6 +804,9 @@ iframe {
     }
 }
 @media (max-width: 1024px) {
+    .temsan-office-uz h4 {
+        font-size: 17px !important;
+    }
     .automation-setting h4 {
         font-size: 20px;
     }

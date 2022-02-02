@@ -23,14 +23,19 @@ export class ContactComponent implements OnInit {
   showContainer5 = false;
   showContainer6 = false;
   showContainer7 = false;
+  // showContainer8 = true;
 
   constructor(private ngw: NgwWowService,
               private httpClient: HttpClient) {
     if ($(window).width() >= 1280) {
       this.showContainer1 = true
     } else if ($(window).width() >= 1024) {
-      this.showContainer2 = true
-    } else if ($(window).width() >= 820) {
+      this.showContainer2 = true;
+    }
+    // else if ($(window).width() >= 912) {
+    //   // this.showContainer8 = true;
+    // }
+    else if ($(window).width() >= 820) {
       this.showContainer3 = true;
     } else if ($(window).width() >= 768) {
       this.showContainer4 = true;
