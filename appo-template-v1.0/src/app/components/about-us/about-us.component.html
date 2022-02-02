@@ -12,7 +12,7 @@
                         <picture>
                             <source type="image/webp" [srcset]="http + i.imgw">
                             <source type="image/jpg" [srcset]="http + i.img">
-                            <img class="w-100 main-slide-img" [src]="http + i.img">
+                            <img class="main-slide-img" style="width: 100vw;" [src]="http + i.img">
                         </picture>
                         <div class="container wow fadeInUp main-slide-text" style="">
                             <div class="row align-items-center mb-2">
@@ -47,7 +47,7 @@
                                             WHAT<span class="ml-2 text-color-green">TEMSAN IS?</span> <br>
                                             WHAT<span class="ml-2 text-color-green">TEMSAN IS NOT?</span>
                                         </h4>
-                                        <h5 *ngIf="showContainer4 || showContainer5 || showContainer6" class="text-capitalize" style="color: #fff;font-weight: 300;">
+                                        <h5 *ngIf="showContainer4 || showContainer5" class="text-capitalize" style="color: #fff;font-weight: 300;">
                                             WHAT<span class="ml-2 text-color-green">TEMSAN IS?</span> <br>
                                             WHAT<span class="ml-2 text-color-green">TEMSAN IS NOT?</span>
                                         </h5>
@@ -74,7 +74,7 @@
                     <h4 *ngIf="showContainer1 || showContainer2 || showContainer3" class="text-color-green text-capitalize my-4 text-center">About Temsan video</h4>
                     <h5 *ngIf="showContainer4 || showContainer5 || showContainer6" class="text-color-green text-capitalize my-4 text-center">About Temsan video</h5>
                     <h6 *ngIf="showContainer7 || showContainer8" class="text-color-green text-capitalize my-4 text-center">About Temsan video</h6>
-                <div class="d-flex justify-content-center">
+                <div class="d-flex justify-content-center youtube">
                     <youtube-player
                       [videoId]="id"
                       (ready)="savePlayer($event)"

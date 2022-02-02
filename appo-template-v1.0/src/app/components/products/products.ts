@@ -21,6 +21,7 @@ export class Products implements OnInit {
   http: string = './assets/temsanair/products/';
   currList = '';
   time:number = 0;
+  showContainer:boolean =false;
   showContainer1:boolean =false;
   showContainer2:boolean =false;
   showContainer3:boolean =false;
@@ -61,6 +62,9 @@ export class Products implements OnInit {
       }
       return res?.data;
     }));
+    if ($(window).width() >= 1600) {
+      this.showContainer = true
+    }
     if ($(window).width() >= 1280) {
       this.showContainer1 = true;
     } else if ($(window).width() >= 1024) {
@@ -176,7 +180,9 @@ export class Products implements OnInit {
       })
     },100)
     setTimeout(()=> {
-      console.log($('.product-content .carousel .slick-list'))
+      if (this.showContainer) {
+        $('.product-content .slick-slide').attr('style','height: 50vh !important');
+      }
       if (this.showContainer8) {
         $('.product-content .carousel .slick-slide').attr('style','height: 54vh !important');
       }

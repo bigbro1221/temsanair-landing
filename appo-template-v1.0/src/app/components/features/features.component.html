@@ -27,7 +27,7 @@
                     <div [ngStyle]="{'position': showContainer7 || showContainer8 ? '' : 'absolute'}"
                          [ngClass]="{'text-center': showContainer7 || showContainer8}"
                          class="features-img" style="bottom: 50px;right: 30px;">
-                        <p class="text-color-green text-features" style="font-size: 14px">Designed to perform, built for
+                        <p class="text-color-green text-features" [ngStyle]="{'font-size': showContainer ? '16px': '14px'}" style="">Designed to perform, built for
                             <br> <span style="color: #fff"><span class="text-color-green">efficiency</span>. Lasting solutions,</span>
                             <br> <span style="color: #fff">combining engineering and</span>
                             <br> <span style="color: #fff">process knowledge.</span>

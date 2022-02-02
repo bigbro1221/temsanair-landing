@@ -113,7 +113,7 @@ button:focus {
 }
 
 .benifits-text h3{
-    font-size: 2vw;
+    /*font-size: 2vw;*/
 }
 .energy_w .text h3,.energy_w_2 .text h3 {
     font-family: 'Amazing-Grotesk-Demi',sans-serif;
@@ -466,7 +466,7 @@ body::-webkit-scrollbar-thumb {
 .slick-prev:before, .slick-next:before {
     color: #74C043 !important;
 }
-.slick-slide {
+.product-content .slick-slide {
     height: 60vh !important;
     box-shadow: 0 0.1rem 1rem rgb(0 0 0 / 10%);
     background: #2B2F3E;
@@ -488,7 +488,9 @@ body::-webkit-scrollbar-thumb {
     /*height: 100% !important;*/
 }
 .about-us .slick-slide {
-    height: 87vh !important;
+    height: 68vh !important;
+
+    /*width: 100vw;*/
 }
 .about-us .main-slide {
     position: relative;
@@ -599,12 +601,13 @@ body::-webkit-scrollbar-thumb {
     transition: .1 .7s;
 }
 
-.about-card {
+.about-card,.about-card-auto {
     height: 100%;
     padding: 20px;
     border-radius: 3px;
     background-color: #1B1A1E
 }
+
 .main-slide-text {
     position:absolute;
     top:20%;
@@ -643,6 +646,10 @@ body::-webkit-scrollbar-thumb {
     background-color: #1B1A1E;
     bottom: 100px;
 }
+
+.delay-200s{-webkit-animation-delay:200ms;animation-delay:200ms}
+.delay-400s{-webkit-animation-delay:400ms;animation-delay:400ms}
+.delay-600s{-webkit-animation-delay:600ms;animation-delay:600ms}
 
 .automation-card-4 {
     position: relative;
@@ -691,7 +698,7 @@ body::-webkit-scrollbar-thumb {
     background-size:cover;
     background-repeat: no-repeat;
     position: relative;
-    z-index: 11;
+    z-index: 0;
 }
 .header-card {
     position: relative;
@@ -717,7 +724,13 @@ figure.zoom img {
 
 iframe {
     width: 80vw;
-    height: 50vh;
+    height: 80vh;
+}
+
+@media (max-width: 1600px) {
+    .product-content .slick-slide {
+        height: 50vh !important;
+    }
 }
 
 @media (max-width: 1280px) {
@@ -791,9 +804,12 @@ iframe {
     }
 }
 @media (max-width: 1024px) {
+    .automation-setting h4 {
+        font-size: 20px;
+    }
     iframe {
         width: 80vw;
-        height: 60vh;
+        height: 76vh;
     }
     .download-area .shape-2 {
         left: 15% !important;
@@ -813,9 +829,6 @@ iframe {
     .main-slide-img {
         width: 54% !important;
     }
-    .about-us .slick-slide {
-        height: 100% !important;
-    }
     .about-us .text {
         font-size: 14px !important;
     }
@@ -824,6 +837,9 @@ iframe {
     }
     .text {
         font-size: .9rem !important;
+    }
+    .automation-setting .about-card {
+        height: 100%;
     }
     .about-card {
         height: auto !important;
@@ -837,7 +853,7 @@ iframe {
     .img-product {
         width: 80%;
     }
-    .slick-slide {
+    .about-us .slick-slide {
         height: 67vh !important;
     }
     .cdk-overlay-container {
@@ -873,6 +889,12 @@ iframe {
     }
 }
 @media (max-width: 912px) {
+    .about-us .slick-slide {
+        height: 100% !important;
+    }
+    .automation-setting h4 {
+        font-size: 17px;
+    }
     iframe {
         width: 80vw;
         height: 30vh;
@@ -910,7 +932,7 @@ iframe {
         width: 85%;
         right: 18%;
     }
-    .slick-slide {
+   .product-content .slick-slide {
         height: 28vh !important;
     }
     .product-text {
@@ -1000,7 +1022,7 @@ iframe {
         font-size: 18px;
     }
 
-    .slick-slide {
+   .product-content .slick-slide {
         height: 33vh !important;
     }
 
@@ -1050,7 +1072,7 @@ iframe {
     .product-text {
         line-height: 26px !important;
     }
-    .slick-slide {
+   .product-content .slick-slide {
         height: 40vh !important;
     }
     .automation-img {
@@ -1188,7 +1210,7 @@ iframe {
     .product-content.slick-next {
         right: -15px !important;
     }
-    .slick-slide {
+    .product-content .slick-slide {
         width: 312px;
         height: 53vh !important;
     }
@@ -1223,7 +1245,7 @@ iframe {
     }
 }
 @media (max-width: 414px) {
-    .slick-slide {
+   .product-content .slick-slide {
         width: auto;
     }
     .main-section {

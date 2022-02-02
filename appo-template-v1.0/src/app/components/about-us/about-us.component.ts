@@ -43,6 +43,7 @@ export class AboutUsComponent implements OnInit {
   cards1:Observable<any>;
   cards2:Observable<any>;
   cards3:Observable<any>;
+  showContainer = false;
   showContainer1 = false;
   showContainer2 = false;
   showContainer3 = false;
@@ -67,6 +68,9 @@ export class AboutUsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if ($(window).width() >= 1600) {
+      this.showContainer = true
+    }
     if ($(window).width() >= 1280) {
       this.showContainer1 = true
     } else if ($(window).width() >= 1024) {
@@ -182,6 +186,10 @@ export class AboutUsComponent implements OnInit {
           }));
         }
       })
+      if (this.showContainer7) {
+        console.log($('.youtube youtube-player iframe'))
+        $('youtube-player iframe').attr('style','height: 27vh !important')
+      }
     },500)
   }
 
