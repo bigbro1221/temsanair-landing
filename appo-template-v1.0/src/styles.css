@@ -179,7 +179,7 @@ body::-webkit-scrollbar-thumb {
     background: #fff;
     margin: 2.5vw auto 0;
     position: relative;
-    width: 50%;
+    /*width: 50%;*/
 }
 .work-slider-wrapper {
     margin-top: 20% !important;
@@ -906,7 +906,7 @@ iframe {
         width: 80%;
     }
     .energy_w {
-        width: 65%;
+        /*width: 65%;*/
     }
     .img-about-assets-dark-step-1 {
         width: 85%;
@@ -971,7 +971,7 @@ iframe {
     }
 
     .energy_w {
-        width: 70% !important;
+        /*width: 70% !important;*/
     }
 
     .i-about-us {
@@ -1134,7 +1134,7 @@ iframe {
         font-size: 11px !important;
     }
     .energy_w {
-        width: 90% !important;
+        /*width: 90% !important;*/
     }
     .main-slide-img {
         width: 28% !important;
