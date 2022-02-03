@@ -6,7 +6,6 @@ export const environment = {
   production: false,
   fRoot: "http://localhost:4200",
   root: "http://localhost:4200",
-  // port: 9898,
   url: "/",
   baseHref: "/",
 };
