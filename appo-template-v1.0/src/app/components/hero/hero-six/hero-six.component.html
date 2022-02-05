@@ -3,7 +3,7 @@
         <div class="main-section" style="margin-top: -230px;">
             <h2 class="text-white text-center text-uppercase">Technology meets <span class="text-color-green">Process knowledge</span></h2>
         </div>
-        <div class="wow fadeInUp slow" style="width: 70%;position: absolute;top: 30%;left: 15%;" *ngIf="img | async as i">
+        <div class="wow fadeInUp slow main-photo" style="width: 70%;position: absolute;top: 30%;left: 15%;" *ngIf="img | async as i">
             <picture>
                 <source type="image/webp" [srcset]="http + i.imgw1">
                 <source type="image/png" [srcset]="http + i.img1">

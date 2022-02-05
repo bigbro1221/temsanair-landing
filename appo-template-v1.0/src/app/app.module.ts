@@ -99,6 +99,7 @@ import {AutomationSolutions} from "./components/automation-solutions/automation-
 import {ProductImgZoom} from "./components/products/product-img-zoom";
 import {Projects} from "./components/projects/projects";
 import {NgxYoutubePlayerModule} from "ngx-youtube-player";
+import { OwlModule } from 'ngx-owl-carousel';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   bgsColor: "yellow",
@@ -211,6 +212,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     MatIconModule,
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
     NgxUiLoaderRouterModule,
+    OwlModule
   ],
   providers: [],
   bootstrap: [AppComponent]

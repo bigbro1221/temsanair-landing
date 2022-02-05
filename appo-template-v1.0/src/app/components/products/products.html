@@ -21,7 +21,7 @@
             </mat-form-field>
         </div>
         <section class="product-content" [ngStyle]="{'height': showContainer8 ? '60vh' : ''}">
-            <div class="container fadeInUp wow" [ngStyle]="{'padding': showContainer6 ? '0 100px' : ''}">
+            <div  class="product-container fadeInUp wow" style="padding-left: 100px;padding-right: 100px;">
                 <ngx-slick-carousel class="carousel"
                                     style="margin-bottom: 30px;"
                                     #slickModal="slick-carousel"
@@ -56,18 +56,11 @@
                               </div>
                             </div>
                             <div class="product-text-slide" [id]="'product' + i">
-                                <h5 *ngIf="showContainer1" class="text-center">
-                                    <span class="text-color-green text-uppercase">{{p?.title}}</span> <br>
+                                <h5 class="text-center">
+                                    <span class="text-color-green text-uppercase">{{p?.title}}</span><br>
                                     <span class="text-uppercase">{{p?.sub_title}}</span>
                                     <img [src]="http + 'bg_detail.png'" alt="">
                                 </h5>
-                                <h6 *ngIf="showContainer2 || showContainer3 || showContainer4 || showContainer5 || showContainer6 || showContainer7 || showContainer8"
-                                    class="text-center" style="position: relative">
-                                    <span class="text-color-green text-uppercase">{{p?.title}}</span> <br>
-                                    <span class="text-uppercase">{{p?.sub_title}}</span>
-                                    <img [src]="http + 'bg_detail.png'" alt="">
-<!--                                    <span style="position: absolute;left: 5px; top:0">{{p.count}}</span>-->
-                                </h6>
                                 <p [style.font-size]="getFontSize()" class="px-2 m-0 product-text"
                                    style="line-height: 25px;overflow: auto;" [id]="'text' + i">
                                     {{p?.text}}
@@ -78,31 +71,9 @@
                                 </p>
                             </div>
                         </div>
-                     <ng-container *ngIf="showContainer1">
-                        <button class="d-flex justify-content-end" style="color:#000; !important;background-color: #74C043 !important;position: absolute;bottom: 10px"
-                                *ngIf="p?.count > 260" mat-raised-button (click)="onRead(products$, i)">Read more
-                        </button>
-                     </ng-container>
-                    <ng-container *ngIf="showContainer2 || showContainer4 || showContainer3">
-                        <button class="d-flex justify-content-end" style="color:#000; !important;background-color: #74C043 !important;position: absolute;bottom: 10px"
-                                *ngIf="p?.count > 150" mat-raised-button (click)="onRead(products$, i)">Read more
-                        </button>
-                    </ng-container>
-                    <ng-container *ngIf="showContainer5">
-                        <button class="d-flex justify-content-end" style="color:#000; !important;background-color: #74C043 !important;position: absolute;bottom: 10px"
-                                *ngIf="p?.count > 130" mat-raised-button (click)="onRead(products$, i)">Read more
-                        </button>
-                    </ng-container>
-                    <ng-container *ngIf="showContainer6">
-                        <button class="d-flex justify-content-end" style="color:#000; !important;background-color: #74C043 !important;position: absolute;bottom: 10px"
-                                *ngIf="p?.count > 260" mat-raised-button (click)="onRead(products$, i)">Read more
-                        </button>
-                    </ng-container>
-<!--                    <ng-container *ngIf="showContainer7">-->
 <!--                        <button class="d-flex justify-content-end" style="color:#000; !important;background-color: #74C043 !important;position: absolute;bottom: 10px"-->
-<!--                                *ngIf="p?.count > 260" mat-raised-button (click)="onRead(p, i)">Read more-->
+<!--                                *ngIf="p?.count > 260" mat-raised-button (click)="onRead(products$, i)">Read more-->
 <!--                        </button>-->
-<!--                    </ng-container>-->
                     </div>
                 </ngx-slick-carousel>
             </div>
