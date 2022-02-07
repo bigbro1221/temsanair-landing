@@ -27,12 +27,15 @@
               "src/styles.css",
               "node_modules/slick-carousel/slick/slick.scss",
               "node_modules/slick-carousel/slick/slick-theme.scss",
-              "node_modules/xzoom/dist/xzoom.css"
+              "node_modules/xzoom/dist/xzoom.css",
+              "node_modules/owl.carousel/dist/assets/owl.carousel.css",
+              "node_modules/owl.carousel/dist/assets/owl.theme.default.css"
             ],
             "scripts": [
               "src/assets/js/plugins.min.js",
               "src/assets/js/popper.min.js",
               "src/assets/js/jquery.elevatezoom.js",
+              "node_modules/owl.carousel/dist/owl.carousel.js",
               "node_modules/slick-carousel/slick/slick.min.js",
               "node_modules/xzoom/dist/xzoom.min.js",
               "src/assets/js/typed.js",

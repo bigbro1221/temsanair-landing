@@ -42,14 +42,68 @@ export class Products implements OnInit {
     autoplaySpeed: 2000,
     draggable:true,
     cssEase: 'ease-out',
-    centerPadding: '160px',
     swipeToSlide: true,
     swipe: true,
     mouseWheelMove: true,
     easing: 'ease',
     lazyLoad: 'ondemand',
-    // variableWidth: true,
-    "responsive": [
+    responsive: [
+      {
+        breakpoint: 1280,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        }
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        }
+      },
+      {
+        breakpoint: 912,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 820,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 540,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 414,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 375,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      }
     ]
   };
   constructor(private httpClient: HttpClient,
@@ -62,57 +116,53 @@ export class Products implements OnInit {
       }
       return res?.data;
     }));
-    if ($(window).width() >= 1600) {
-      this.showContainer = true
-    }
-    if ($(window).width() >= 1280) {
-      this.showContainer1 = true;
-    } else if ($(window).width() >= 1024) {
-      this.showContainer2 = true;
-    } else if ($(window).width() >= 912) {
-      this.showContainer3 = true;
-    } else if ($(window).width() >= 820) {
-      this.showContainer4 = true;
-    } else if ($(window).width() >= 768) {
-      this.showContainer5 = true;
-    } else if ($(window).width() >= 540) {
-      this.showContainer6 = true;
-    } else if ($(window).width() >= 414) {
-      this.showContainer7 = true;
-    } else if ($(window).width() >= 375) {
-      this.showContainer8 = true;
-    }
     this.productsList$ = this.httpClient.get<any>(this.url).pipe(map(res => res?.productList));
   }
 
   ngOnInit(){
-    if (this.showContainer1 || this.showContainer2) {
-      this.slideConfig.responsive = [{
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-        }
-      }]
+    let _this = this;
+    if ($(window).width() >= 1600) {
+      _this.showContainer = true
     }
-    if (this.showContainer3 || this.showContainer4 || this.showContainer5) {
-      this.slideConfig.responsive = [{
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-        }
-      }]
+    else if ($(window).width() >= 1280) {
+      _this.showContainer1 = true;
+    } else if ($(window).width() >= 1024) {
+      _this.showContainer2 = true;
+    } else if ($(window).width() >= 912) {
+      _this.showContainer3 = true;
+    } else if ($(window).width() >= 820) {
+      _this.showContainer4 = true;
+    } else if ($(window).width() >= 768) {
+      _this.showContainer5 = true;
+    } else if ($(window).width() >= 540) {
+      _this.showContainer6 = true;
+    } else if ($(window).width() >= 414) {
+      _this.showContainer7 = true;
+    } else if ($(window).width() >= 375) {
+      _this.showContainer8 = true;
     }
-    if (this.showContainer6 || this.showContainer7 || this.showContainer8) {
-      this.slideConfig.responsive = [{
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        }
-      }]
-    }
+      $(window).resize(function () {
+      if ($(window).width() >= 1600) {
+        _this.showContainer = true
+      }
+     else if ($(window).width() >= 1280) {
+        _this.showContainer1 = true;
+      } else if ($(window).width() >= 1024) {
+        _this.showContainer2 = true;
+      } else if ($(window).width() >= 912) {
+        _this.showContainer3 = true;
+      } else if ($(window).width() >= 820) {
+        _this.showContainer4 = true;
+      } else if ($(window).width() >= 768) {
+        _this.showContainer5 = true;
+      } else if ($(window).width() >= 540) {
+        _this.showContainer6 = true;
+      } else if ($(window).width() >= 414) {
+        _this.showContainer7 = true;
+      } else if ($(window).width() >= 375) {
+        _this.showContainer8 = true;
+      }
+    })
     window.scrollTo(0, 0);
   }
 
@@ -152,53 +202,79 @@ export class Products implements OnInit {
 
   ngAfterViewInit() {
     setTimeout(()=> {
-      this.products$.subscribe(item => {
-        for(let p = 0; p < item.length; p++) {
-          if ($('#text' + p).text().includes('m3')) {
-            $('#text' + p).html($('#text' + p).text().replace('m3', "m<sup>3</sup>"));
-          }
-          if ($('#text' + p).text().includes('m2')) {
-            $('#text' + p).html($('#text' + p).text().replace('m2', "m<sup>2</sup>"));
-          }
-          $('#img' + p).xzoom({
-            tint: '#333',
-            Xoffset: this.showContainer7 || this.showContainer8 ? 0 : 100,
-            Yoffset: 0,
-            zoomWidth:'auto',
-            fadeOut:true,
-            zoomHeight: 'auto',
-            position: this.showContainer7 || this.showContainer8 ? 'bottom' : 'right',
-            defaultScale: .7,
-            mposition:'fullscreen',
-            rootOutput:true,
-          });
-        }
-        if (this.showContainer6 || this.showContainer7 || this.showContainer8) {
-          $('.product-content .slick-prev').attr('style','left: -15px !important;z-index:9999999');
-          $('.product-content .slick-next').attr('style','right: -15px !important;z-index:9999999');
-        }
-      })
+
     },100)
     setTimeout(()=> {
-      if (this.showContainer) {
-        $('.product-content .slick-slide').attr('style','height: 50vh !important');
-      }
-      if (this.showContainer8) {
-        $('.product-content .carousel .slick-slide').attr('style','height: 54vh !important');
-      }
-      if (this.showContainer5) {
-        $('.product-content .carousel .slick-slide').attr('style','width: 312px !important');
-      }
+
     },500)
   }
 
   slickInit(e) {
+    this.products$.subscribe(item => {
+      for(let p = 0; p < item.length; p++) {
+        if ($('#text' + p).text().includes('m3')) {
+          $('#text' + p).html($('#text' + p).text().replace('m3', "m<sup>3</sup>"));
+        }
+        if ($('#text' + p).text().includes('m2')) {
+          $('#text' + p).html($('#text' + p).text().replace('m2', "m<sup>2</sup>"));
+        }
+        $('#img' + p).xzoom({
+          tint: '#333',
+          Xoffset: this.showContainer7 || this.showContainer8 ? 0 : 20,
+          Yoffset: 0,
+          zoomWidth:'auto',
+          fadeOut:true,
+          zoomHeight: 'auto',
+          position: this.showContainer7 || this.showContainer8 ? 'bottom' : 'right',
+          defaultScale: .7,
+          mposition:'fullscreen',
+          rootOutput:true,
+        });
+      }
+      if (this.showContainer6 || this.showContainer7 || this.showContainer8) {
+        $('.product-content .slick-prev').attr('style','left: -15px !important;z-index:9999999');
+        $('.product-content .slick-next').attr('style','right: -15px !important;z-index:9999999');
+      }
+    })
+    if (this.showContainer) {
+      $('.product-content .slick-slide').attr('style','height: 50vh !important');
+    }
+    if (this.showContainer8) {
+      $('.product-content .carousel .slick-slide').attr('style','height: 54vh !important');
+    }
+    if (this.showContainer5) {
+      $('.product-content .carousel .slick-slide').attr('style','width: 312px !important');
+    }
+    console.log(e)
   }
 
   breakpoint(e) {
+    console.log(e)
   }
 
   afterChange(e) {
+    // let i = 0;
+    // for (let sl of $(e.slick.$slides)) {
+    //   if ($(sl).hasClass('slick-active')) {
+    //     this.products$.subscribe(item => {
+    //       for(let p = 0; p < item.length; p++) {
+    //         $('#img' + p).xzoom({
+    //           tint: '#333',
+    //           Xoffset: this.showContainer7 || this.showContainer8 ? 0 : 100,
+    //           Yoffset: 0,
+    //           zoomWidth:'auto',
+    //           fadeOut:true,
+    //           zoomHeight: 'auto',
+    //           position: this.showContainer7 || this.showContainer8 ? 'bottom' : 'left',
+    //           defaultScale: .7,
+    //           mposition:'fullscreen',
+    //           rootOutput:true,
+    //         });
+    //       }
+    //     })
+    //   }
+    //   i++;
+    // }
   }
 
   beforeChange(e) {

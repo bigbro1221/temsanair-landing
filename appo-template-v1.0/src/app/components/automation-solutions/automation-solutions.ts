@@ -27,33 +27,6 @@ export class AutomationSolutions implements OnInit {
   showContainer7:boolean =false;
   showContainer8:boolean =false;
   read: {[k:string]:any} = {read1: false, read2: false, read3: false};
-  slideConfig = {
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    dots: true,
-    infinite: false,
-    arrows: true,
-    autoplay: false,
-    speed: 1000,
-    adaptiveHeight: true,
-    autoplaySpeed: 3000,
-    draggable:true,
-    cssEase: 'ease-out',
-    centerPadding: '160px',
-    swipeToSlide: true,
-    swipe: true,
-    mouseWheelMove: true,
-    easing: 'ease-in',
-    lazyLoad: 'ondemand',
-    variableWidth: true,
-    responsive : [{
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-      }
-    }]
-  };
 
   constructor(private httpClient: HttpClient) {
     if ($(window).width() >= 1280) {

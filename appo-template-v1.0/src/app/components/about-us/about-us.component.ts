@@ -26,17 +26,16 @@ export class AboutUsComponent implements OnInit {
     arrows: true,
     autoplay: false,
     speed: 1500,
-    adaptiveHeight: true,
+    // adaptiveHeight: true,
     autoplaySpeed: 3000,
     draggable:true,
     cssEase: 'ease-out',
-    centerPadding: '160px',
     swipeToSlide: true,
     swipe: true,
     mouseWheelMove: true,
     easing: 'ease',
     lazyLoad: 'ondemand',
-    variableWidth: true,
+    responsive:[]
   };
   aboutImgs:Observable<any>;
   cardHeader1:Observable<any>;
@@ -60,11 +59,6 @@ export class AboutUsComponent implements OnInit {
               public breakpointObserver: BreakpointObserver,
               private sanitizer : DomSanitizer,
               private httpClient: HttpClient) {
-    this.aboutImgs = this.httpClient.get<any>(this.url).pipe(map(res => {
-      this.show = true;
-      this.id ='Sqik4Dn5ldo'
-     return res?.slide_img;
-    }));
   }
 
   ngOnInit(): void {
@@ -112,6 +106,16 @@ export class AboutUsComponent implements OnInit {
 
   ngOnChanges() {
 
+  }
+
+  slickInit(e) {
+    console.log(e)
+    // this.aboutImgs = this.httpClient.get<any>(this.url).pipe(map(res => {
+    //   // this.show = true;
+    //   // this.id ='Sqik4Dn5ldo'
+    //   console.log(res?.slide_img)
+    //   return res?.slide_img;
+    // }));
   }
 
   getHeight():string {
@@ -186,6 +190,11 @@ export class AboutUsComponent implements OnInit {
           }));
         }
       })
+      this.aboutImgs = this.httpClient.get<any>(this.url).pipe(map(res => {
+        this.show = true;
+        this.id ='Sqik4Dn5ldo'
+        return res?.slide_img;
+      }));
       if (this.showContainer7) {
         console.log($('.youtube youtube-player iframe'))
         $('youtube-player iframe').attr('style','height: 27vh !important')
@@ -193,6 +202,15 @@ export class AboutUsComponent implements OnInit {
     },500)
   }
 
-  slickInit($event: { event: any; slick: any }) {
+  breakpoint($event: { event: any; slick: any; breakpoint: any }) {
+    
+  }
+
+  afterChange($event: { event: any; slick: any; currentSlide: number; first: boolean; last: boolean }) {
+    
+  }
+
+  beforeChange($event: { event: any; slick: any; currentSlide: number; nextSlide: number }) {
+    
   }
 }

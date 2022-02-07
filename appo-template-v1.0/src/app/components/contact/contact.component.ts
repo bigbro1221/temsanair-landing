@@ -56,4 +56,19 @@ export class ContactComponent implements OnInit {
     }))
   }
 
+  ngAfterViewInit() {
+    setTimeout(()=> {
+      $('.temsan-office-uz.owl-carousel').owlCarousel({
+        loop: true,
+        margin: 20,
+        nav: false,
+        dots: false,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        smartSpeed: 1000,
+        items: 1,
+      });
+    },500)
+  }
+
 }
