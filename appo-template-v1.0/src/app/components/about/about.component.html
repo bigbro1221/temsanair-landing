@@ -2,12 +2,12 @@
     <div class="shapes-container">
         <div class="shape-1"></div>
     </div>
-    <div class="container" style="position: relative;z-index: 11111;">
+    <div class="container" style="position: relative;z-index: 1;">
         <ng-container *ngIf="showContainer1">
-            <h2 class="text-capitalize text-white text-center mb-4">{{'about_title'| translate}}<span class="ml-2 text-color-green">{{'company' | translate}}</span> </h2>
+            <h2 class="text-capitalize text-white text-center mb-4">{{'about_title'| translate}}<span class="ml-2 text-color-green text-capitalize">{{'company' | translate}}</span> </h2>
         </ng-container>
         <ng-container *ngIf="showContainer2 || showContainer3 || showContainer4 || showContainer5 || showContainer6">
-            <h2 class="text-capitalize text-white text-center mb-4">{{'about_title'| translate}}<span class="ml-2 text-color-green">{{'company' | translate}}</span></h2>
+            <h2 class="text-capitalize text-white text-center mb-4">{{'about_title'| translate}}<span class="ml-2 text-color-green text-capitalize">{{'company' | translate}}</span></h2>
         </ng-container>
         <div class="row">
             <div class="col-4 wow fadeInUp">
