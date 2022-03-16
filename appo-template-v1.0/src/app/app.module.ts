@@ -79,9 +79,8 @@ import { FaqPageComponent } from './components/inner-pages/faq-page/faq-page.com
 import { MapComponent } from './components/map/map.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import {MatButtonModule} from "@angular/material/button";
-import { NgxParallaxScrollModule } from 'ngx-parallax-scroll';
 import {Products} from "./components/products/products";
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import {MatSelectModule} from "@angular/material/select";
 import {FormsModule} from "@angular/forms";
@@ -100,6 +99,11 @@ import {ProductImgZoom} from "./components/products/product-img-zoom";
 import {Projects} from "./components/projects/projects";
 import {NgxYoutubePlayerModule} from "ngx-youtube-player";
 import { OwlModule } from 'ngx-owl-carousel';
+import {MatTableModule} from "@angular/material/table";
+import {MatMenuModule} from "@angular/material/menu";
+import {MatTooltipModule} from "@angular/material/tooltip";
+import {TranslateModule, TranslateLoader} from "@ngx-translate/core";
+import { HttpLoaderFactory } from './configs/common.configs';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   bgsColor: "yellow",
@@ -112,6 +116,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   pbThickness: 5, // progress bar thickness
 };
 
+//   @Injectable()  comment this code
 @NgModule({
   declarations: [
     AppComponent,
@@ -202,17 +207,20 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     NgwWowModule,
     HttpClientModule,
     // NgSelectModule,
-    NgxParallaxScrollModule,
     SlickCarouselModule,
     NgxYoutubePlayerModule.forRoot(),
     MatButtonModule,
     MatSelectModule,
+    TranslateModule.forRoot({loader: {provide: TranslateLoader, useFactory: (HttpLoaderFactory), deps: [HttpClient]}}),
     MatDialogModule,
     FormsModule,
     MatIconModule,
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
     NgxUiLoaderRouterModule,
-    OwlModule
+    OwlModule,
+    MatTableModule,
+    MatMenuModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

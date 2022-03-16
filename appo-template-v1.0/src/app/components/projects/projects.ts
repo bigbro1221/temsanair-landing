@@ -2,8 +2,6 @@ import { Component, OnInit} from '@angular/core';
 import {Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 import {map} from "rxjs/operators";
-import {MatDialog} from "@angular/material/dialog";
-import {RouterService} from "../../services/router.service";
 declare let $:any;
 
 @Component({
@@ -11,11 +9,10 @@ declare let $:any;
 })
 export class Projects implements OnInit {
 
-  products$: Observable<any>;
-  productsList$: Observable<any>;
+  projects$: Observable<any>;
   img: Observable<any>;
-  url: string = "assets/data/products.json";
-  http: string = './assets/temsanair/products/';
+  url: string = "assets/data/projects.json";
+  http: string = './assets/images/';
   currList = '';
   time:number = 0;
   showContainer1:boolean =false;
@@ -25,36 +22,10 @@ export class Projects implements OnInit {
   showContainer5:boolean =false;
   showContainer6:boolean = false;
   showContainer7:boolean = false;
-  slideConfig = {
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    dots: false,
-    infinite: false,
-    arrows: true,
-    autoplay: false,
-    speed: 500,
-    adaptiveHeight: true,
-    autoplaySpeed: 2000,
-    draggable:true,
-    cssEase: 'ease-out',
-    centerPadding: '160px',
-    swipeToSlide: true,
-    swipe: true,
-    mouseWheelMove: true,
-    easing: 'ease',
-    lazyLoad: 'ondemand',
-    // variableWidth: true,
-    "responsive": [
-    ]
-  };
-  constructor(private httpClient: HttpClient,
-              private routerSer: RouterService) {
+  constructor(private httpClient: HttpClient) {
     this.img = this.httpClient.get<any>(this.url).pipe(map(res => res?.main_img));
-    this.products$ = this.httpClient.get<any>(this.url).pipe(map(res => {
-      for (let d of res?.data) {
-        d.count = d?.text.length + d?.detail1.length + d?.detail2.length + d?.detail3.length + d?.detail4.length;
-      }
-      return res?.data;
+    this.projects$ = this.httpClient.get<any>(this.url).pipe(map(res => {
+      return res;
     }));
     if ($(window).width() >= 1280) {
       this.showContainer1 = true;
@@ -71,71 +42,54 @@ export class Projects implements OnInit {
     } else if ($(window).width() >= 414) {
       this.showContainer7 = true;
     }
-    this.productsList$ = this.httpClient.get<any>(this.url).pipe(map(res => res?.productList));
   }
 
   ngOnInit(){
-    if (this.showContainer1 || this.showContainer2) {
-      this.slideConfig.responsive = [{
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-        }
-      }]
-    }
-    if (this.showContainer3 || this.showContainer4 || this.showContainer5 || this.showContainer6) {
-      this.slideConfig.responsive = [{
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-        }
-      }]
-    }
-    if (this.showContainer7) {
-      this.slideConfig.responsive = [{
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        }
-      }]
-    }
     window.scrollTo(0, 0);
   }
 
-  getWidth():string {
-    if (this.showContainer1) {
-      return '80px';
-    } else if (this.showContainer2 || this.showContainer3 || this.showContainer4 || this.showContainer5) {
-      return '60px';
-    } else if (this.showContainer6 || this.showContainer7) {
-      return '50px';
-    }
-  }
-
-  getRight():string {
-    if (this.showContainer1) {
-      return '50px';
-    } else if (this.showContainer2 || this.showContainer3 || this.showContainer4 || this.showContainer5) {
-      return '40px';
-    } else if (this.showContainer6 || this.showContainer7) {
-      return '0';
-    }
-  }
-
-  getFontSize():string {
-    if (this.showContainer1) {
-      return '14px'
-    } else if (this.showContainer2 || this.showContainer3 || this.showContainer4 || this.showContainer5 || this.showContainer6) {
-      return '13px';
-    } else if (this.showContainer7) {
-      return '12px';
-    }
-  }
-
   ngAfterViewInit() {
+    setTimeout(()=> {
+      $('.projects.owl-carousel').owlCarousel({
+        loop: true,
+        margin: 0,
+        nav: true,
+        dots: true,
+        autoplay: true,
+        autoplayTimeout: 6000,
+        smartSpeed: 12000,
+        items: 4,
+      });
+      $('.gallery a').lightbox({
+        minSize: 480
+      });
+    },500)
   }
 
+  identify(index) {
+    return index;
+  }
+
+  getWidth(elem):string {
+    if (elem.logo2=='global-textile.png') {
+      return '120px';
+    } else if (elem.logo2=='asaka-textile.png') {
+      return '150px';
+    } else {
+      return '250px';
+    }
+  }
+
+  onImage() {
+    // $('.lightbox__nav.lightbox__nav--next').click(function (e) {
+    //   setTimeout(()=> {
+    //   $(e.target).next().next().addClass('box-wipe-enter');
+    //   },100)
+    // })
+    // $('.lightbox__nav.lightbox__nav--prev').click(function (e) {
+    //   setTimeout(()=> {
+    //     $(e.target).next().next().next().addClass('box-wipe-leave');
+    //   },100)
+    // })
+  }
 }

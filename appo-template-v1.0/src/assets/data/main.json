@@ -28,5 +28,163 @@
     "img2":"icon_temper.png",
     "imgw3": "temper.webp",
     "img3": "temper.jpg"
-  }
+  },
+  "dataSource": [
+    {
+      "index": 1,
+      "logo": "roza-plastik1.png",
+      "link":"http://www.rozaplastik.com/en-index.html",
+      "files": [
+        {"id":1,"name": "Roza russian", "file":"roza russian (2).pdf","type":"roza"},
+        {"id":2,"name": "Roza english", "file":"roza-eu.pdf","type":"roza"},
+        {"id":3,"name": "Sampre roza", "file":"SAMPRE ROZA Catalogue .pdf","type":"roza"}
+      ]
+    },
+    {
+      "index": 2,
+      "logo": "sieger1.png",
+      "link":"https://www.siegerglobal.net/",
+      "files": [
+        {"id":1,"name": "Adof", "file":"ADOF V3.pdf","type":"sieger"},
+        {"id":2,"name": "Astor", "file":"ASTOR – Catalogue.pdf","type":"sieger"},
+        {"id":3,"name": "Atc new", "file":"ATC NEW.pdf","type":"sieger"},
+        {"id":4,"name": "Pallateze", "file":"Pallateze.pdf","type":"sieger"},
+        {"id":5,"name": "Reo", "file":"REO.pdf","type":"sieger"},
+        {"id":6,"name": "Rts", "file":"RTS.pdf","type":"sieger"},
+        {"id":7,"name": "Sieger en", "file":"Sieger All Products Catalogue.pdf","type":"sieger"},
+        {"id":8,"name": "Sieger ru", "file":"Sieger All Products Catalogue ru.pdf","type":"sieger"},
+        {"id":9,"name": "Ycp", "file":"YCP.pdf","type":"sieger"},
+        {"id":9,"name": "Ycp", "file":"YCP.pdf","type":"sieger"},
+        {"id":9,"name": "Ycp ng autoline", "file":"YCP NG Autoline.pdf","type":"sieger"},
+        {"id":9,"name": "Ycp ng cubical", "file":"YCP NG Cubical.pdf","type":"sieger"},
+        {"id":9,"name": "Ycp ng hi-cubical", "file":"YCP NG HI-Cubical.pdf","type":"sieger"},
+        {"id":9,"name": "Ycp ng uf pitless", "file":"YCP NG UF (Pitless).pdf","type":"sieger"}
+      ]
+    },
+    {
+      "index": 3,
+      "logo": "STE_CVS_CH_RGB_POS.png",
+      "link":"https://steinemann-cvs.ch/",
+      "files": [
+        {"id":1,"name": "Cvs-App-in-Spinning-rev3", "file":"CVS-Application-in-Spinning-rev3.pdf","type":"steinemann"},
+        {"id":2,"name": "Disposal-logistics-Air-Jet-Spinning-rev4", "file":"Disposal-logistics-Air-Jet-Spinning-rev4.pdf","type":"steinemann"},
+        {"id":3,"name": "Disposal-logistics-OE-Spinning-rev3", "file":"Disposal-logistics-OE-Spinning-rev3.pdf","type":"steinemann"},
+        {"id":4,"name": "Disposal-logistics-Winders-rev3", "file":"Disposal-logistics-Winders-rev3.pdf","type":"steinemann"},
+        {"id":5,"name": "Impressions&Details-Sin-Heng-Towel-(JQ-weaving)-TH-rev3", "file":"Impressions&Details-Sin-Heng-Towel-(JQ-weaving)-TH-rev3.pdf","type":"steinemann"},
+        {"id":6,"name": "Manual-Cleaning-in-Spinning-rev2", "file":"Manual-Cleaning-in-Spinning-rev2.pdf","type":"steinemann"},
+        {"id":7,"name": "Manual-Cleaning-Solution-at-a-Nonwoven-Production(FLAWA) rev3", "file":"Manual-Cleaning-Solution-at-a-Nonwoven-Production(FLAWA) rev3.pdf","type":"steinemann"},
+        {"id":8,"name": "Manual-Cleaning-Solution-at-a-Nonwoven-Production(K-C)-rev4", "file":"Manual-Cleaning-Solution-at-a-Nonwoven-Production(K-C)-rev4.pdf","type":"steinemann"},
+        {"id":9,"name": "Steinemann каталог на русском", "file":"Steinemann каталог на русском.pdf","type":"steinemann"}
+      ]
+    },
+    {
+      "index": 4,
+      "logo": "asteks1.png",
+      "link":"https://www.asteks.com/asteks-home-page",
+      "files": [
+        {"id":1,"name": "Asteks urun katalogu 021 web", "file":"ASTEKS_URUN_KATALOGU_2021_WEB.pdf","type":"asteks"},
+        {"id":2,"name": "Manson rektifiye dairesi makine ve techizatlari", "file":"MANŞON REKTİFİYE DAİRESİ MAKİNE VE TEÇHİZATLARI (2).pdf","type":"asteks"}
+      ]
+    },
+    {
+      "index": 5,
+      "logo": "rimtex1.png",
+      "link":"https://rimtex.com/",
+      "files": [
+        {"id":1,"name": "Rimtex cans booklet", "file":"Rimtex Cans Booklet.pdf","type":"rimtex"},
+        {"id":2,"name": "Rimtex trolley catalogue", "file":"Rimtex Trolley Catalogue.pdf","type":"rimtex"}
+      ]
+    },
+    {
+      "index": 6,
+      "logo": "arosa1.png",
+      "link":"https://arosasystems.com",
+      "files": [
+        {"id":1,"name": "AroSmoke russian email", "file":"AroSmoke_Russian email.pdf","type":"arosa"},
+        {"id":2,"name": "Feature & advantages - arosa systems russian", "file":"Feature & Advantages - AROSA SYSTEMS Russian.pdf","type":"arosa"},
+        {"id":3,"name": "Russian a4 email", "file":"Russian_A4_Email.pdf","type":"arosa"}
+      ]
+    },
+    {
+      "index": 7,
+      "logo": "fadis1.png",
+      "link":"https://www.fadis.it/",
+      "files": [
+
+      ]
+    },
+    {
+      "index": 8,
+      "logo": "balkan1.png",
+      "link":"http://www.balkan.com.tr/textile/",
+      "files": [
+
+      ]
+    },
+    {
+      "index": 9,
+      "logo": "lupamat.png",
+      "link":"https://lupamat.com/",
+      "files": [
+        {"id":1,"name": "Lupamat russian catalog", "file":"Lupamat Russian Catalog.pdf","type":"lupamat"},
+        {"id":2,"name": "Lupamat-en-katalog-rev6", "file":"Lupamat-EN-Katalog-rev6-web.pdf","type":"lupamat"}
+      ]
+    },
+    {
+      "index": 10,
+      "logo": "truetzschler.svg",
+      "link":"https://www.truetzschler.de/en/",
+      "files": [
+        {"id":1,"name": "Bro aktualisierung ru", "file":"AC6.2_Bro_Aktualisierung_RU_1215_Web.pdf","type":"truetzschler"},
+        {"id":2,"name": "Autocoro9 broschuere ru", "file":"Autocoro9_Broschuere_RU.pdf","type":"truetzschler"},
+        {"id":3,"name": "Broschuere ru 161007", "file":"BD 7 Broschuere_RU_V7_161007.pdf","type":"truetzschler"},
+        {"id":4,"name": "Broschuere ru 160722", "file":"BD_480_Broschuere_RU_160722.pdf","type":"truetzschler"},
+        {"id":5,"name": "Brochure zr 72xl zi 72XL en", "file":"Brochure ZR 72XL ZI 72XL EN (1).pdf","type":"truetzschler"},
+        {"id":6,"name": "Brochure autoconer-new 190524 en", "file":"Brochure_Autoconer-New_190524_E_EN.pdf","type":"truetzschler"},
+        {"id":7,"name": "Brochure zinser 72 ru", "file":"Brochure_Zinser_72_RU.pdf","type":"truetzschler"},
+        {"id":8,"name": "Complete brochure draw frame", "file":"Complete_Brochure (2) DRAW FRAME.pdf","type":"truetzschler"},
+        {"id":9,"name": "Complete brochure cards", "file":"Complete_Brochure CARDS.pdf","type":"truetzschler"},
+        {"id":10,"name": "Complete brochure blow room", "file":"Complete_Brochure_BLOW ROOM.pdf","type":"truetzschler"},
+        {"id":11,"name": "Complete brochure combing", "file":"Complete_Brochure_COMBING.pdf","type":"truetzschler"},
+        {"id":12,"name": "Karde ru", "file":"Karde_RU.pdf","type":"truetzschler"},
+        {"id":13,"name": "myDocs-ru-299184220", "file":"myDocs-ru-299184220.pdf","type":"truetzschler"},
+        {"id":14,"name": "myDocs-ru-212180193197", "file":"myDocs-ru-212180193197.pdf","type":"truetzschler"},
+        {"id":15,"name": "myDocs-ru-321278284287282275277272", "file":"myDocs-ru-321278284287282275277272.pdf","type":"truetzschler"},
+        {"id":16,"name": "Saurer autospeed 2019 en", "file":"Saurer Autospeed 2019 EN.pdf","type":"truetzschler"},
+        {"id":17,"name": "Teaserfolder autocoro 191028 en iPad", "file":"Teaserfolder_Autocoro_191028_EN_iPad (1).pdf","type":"truetzschler"},
+        {"id":18,"name": "Zinser autoflow ru", "file":"Zinser_Autoflow_RU.pdf","type":"truetzschler"},
+        {"id":19,"name": "Zinser flyer ru", "file":"Zinser_Flyer_RU.pdf","type":"truetzschler"},
+        {"id":20,"name": "Zinser roving frames ru", "file":"Zinser_Roving_Frames_ru.pdf","type":"truetzschler"}
+      ]
+    },
+    {
+      "index": 11,
+      "logo": "rieter.svg",
+      "link":"https://www.rieter.com/",
+      "files": [
+      ]
+    },
+    {
+      "index": 12,
+      "logo": "electrojet.png",
+      "link":"https://electro-jet.com/jet/",
+      "files": [
+      ]
+    },
+    {
+      "index": 13,
+      "logo": "logo.png",
+      "link":"http://www.temsanair.com/",
+      "files": [
+      ]
+    },
+    {
+      "index": 14,
+      "logo": "ekeler.png",
+      "link":"http://cooperation.uz/cooper/brands/view/21533",
+      "files": [
+        {"id":1,"name": "Petek separator va panel tanitimi", "file":"PETEK SEPERATÖR VE PANEL TANITIMI (1).pdf","type":"ekeler"}
+      ]
+    }
+  ]
 }

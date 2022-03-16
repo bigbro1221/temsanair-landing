@@ -26,6 +26,17 @@
                         </li>
                     </ul>
                 </div>
+                <button mat-icon-button [matMenuTriggerFor]="menu" (click)="onMenu()">
+                    <mat-icon style="color: #fff">more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button class="langbtn text-white" [id]="'langbtn_' + langImg.value.toLowerCase()" mat-menu-item *ngFor="let langImg of locale.langs;let idx = index"
+                            (click)="locale.switchLanguage(langImg.value)"
+                            [class.langBtn]="langImg.value==locale.defaultLang">
+                        <img [src]="'./assets/temsanair/lang/'+langImg.value.toLowerCase()+'.png'" style="width: 30px;vertical-align: middle;margin-right: 10px;" alt="">
+                        <span>{{ langImg.viewTranslate }}</span>
+                    </button>
+                </mat-menu>
             </nav>
         </div>
     </div>
