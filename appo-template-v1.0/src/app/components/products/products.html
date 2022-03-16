@@ -57,11 +57,11 @@
                             </div>
                             <div class="product-text-slide" [id]="'product' + i">
                                 <h5 class="text-center">
-                                    <span class="text-color-green text-uppercase">{{p?.title}}</span><br>
-                                    <span class="text-uppercase">{{p?.sub_title}}</span>
+                                    <span class="text-color-green text-uppercase text-white">{{p?.title}}</span><br>
+                                    <span class="text-uppercase text-white">{{p?.sub_title}}</span>
                                     <img [src]="http + 'bg_detail.png'" alt="">
                                 </h5>
-                                <p [style.font-size]="getFontSize()" class="px-2 m-0 product-text"
+                                <p [style.font-size]="getFontSize()" class="px-2 m-0 product-text text-white"
                                    style="line-height: 25px;overflow: auto;" [id]="'text' + i">
                                     {{p?.text}}
                                     <span *ngIf="p?.detail1 != ''"> <br>{{p?.detail1}} <br></span>

@@ -75,38 +75,26 @@
     </div>-->
     <div class="row mb-3">
         <div class="col-6 m-auto">
-            <h4 class="text-uppercase text-color-green text-center mb-3">Temsan Uzbekistan Office</h4>
+<!--            <h4 class="text-uppercase text-color-green text-center mb-3">Temsan Uzbekistan Office</h4>-->
             <div class="wow fadeInLeft">
-                <img class="set-1" src="./assets/temsanair/uz.svg   " usemap="#adult-image-1">
-                <map name="adult-image-1">
-                    <area class="teeth-1"  id="set1-0"  data-maphilight='{"stroke":false,"fillColor":"F57899","fillOpacity":0.6}' coords="29,222,38,223,45,224,47,233,47,245,47,251,38,254,29,254,21,251,16,241,14,233,16,224,21,222" shape="poly">
-                    <area class="teeth-1"  id="set1-1"  data-maphilight='{"stroke":false,"fillColor":"F57899F57899","fillOpacity":0.6}' coords="33,187,42,187,48,190,49,199,48,206,46,215,39,219,28,217,19,217,14,209,15,199,17,191,22,184" shape="poly">
-                    <area class="teeth-1"  id="set1-2"  data-maphilight='{"stroke":false,"fillColor":"F57899","fillOpacity":0.6}' coords="47,152,55,155,60,159,57,168,54,176,52,183,44,183,33,182,26,178,25,168,28,160,30,155,37,151" shape="poly">
-                    <area class="teeth-1"  id="set1-3"  data-maphilight='{"stroke":false,"fillColor":"F57899","fillOpacity":0.6}' coords="40,137,44,129,48,123,54,118,60,118,66,123,70,129,72,132,68,146,62,151,53,151,44,146,40,141" shape="poly">
-                    <area class="teeth-1"  id="set1-4"  data-maphilight='{"stroke":false,"fillColor":"F57899","fillOpacity":0.6}' coords="79,96,86,101,91,108,85,117,78,121,71,123,63,117,58,109,61,101,66,96,72,93" shape="poly">
-                    <area class="teeth-1"  id="set1-5"  data-maphilight='{"stroke":false,"fillColor":"F57899","fillOpacity":0.6}' coords="81,73,89,73,96,76,101,82,103,89,102,97,94,100,86,96,79,89,78,79" shape="poly">
-                    <area class="teeth-1"  id="set1-6"  data-maphilight='{"stroke":false,"fillColor":"F57899","fillOpacity":0.6}' coords="97,59,104,54,112,55,118,58,120,65,120,71,120,78,118,86,110,83,102,76,94,70,93,66" shape="poly">
-                    <area class="teeth-1"  id="set1-7"  data-maphilight='{"stroke":false,"fillColor":"F57899","fillOpacity":0.6}' coords="124,46,132,45,141,43,149,50,147,58,144,67,140,75,133,78,127,69,122,60,119,49" shape="poly">
-                    <area class="teeth-1"  id="set1-8"  data-maphilight='{"stroke":false,"fillColor":"F57899","fillOpacity":0.6}' coords="158,77,165,76,172,70,177,63,180,53,179,47,170,44,160,44,152,47,150,55,152,67,154,71" shape="poly">
-                    <area class="teeth-1"  id="set1-9"  data-maphilight='{"stroke":false,"fillColor":"F57899","fillOpacity":0.6}' coords="181,84,189,83,197,77,203,73,205,67,201,59,193,54,182,55,178,63,177,71" shape="poly">
-                    <area class="teeth-1"  id="set1-10" data-maphilight='{"stroke":false,"fillColor":"F57899","fillOpacity":0.6}' coords="206,74,216,73,221,78,220,86,217,93,212,100,202,100,196,96,197,86,201,77" shape="poly">
-                    <area class="teeth-1"  id="set1-11" data-maphilight='{"stroke":false,"fillColor":"F57899","fillOpacity":0.6}' coords="218,94,225,93,232,94,236,98,240,105,240,114,236,120,229,124,221,124,213,120,209,113,207,105,211,100" shape="poly">
-                    <area class="teeth-1"  id="set1-12" data-maphilight='{"stroke":false,"fillColor":"F57899","fillOpacity":0.6}' coords="243,120,250,121,256,128,260,136,259,143,253,148,244,151,235,151,227,144,225,136,227,129,230,123,236,121" shape="poly">
-                </map>
+                <img src="./assets/temsanair/uz.svg" alt="">
             </div>
         </div>
     </div>
-    <div class="container-fluid">
+    <h2 class="text-color-green text-center">{{'our_partners' | translate}}</h2>
+    <div class="container">
         <table mat-table [dataSource]="dataSource" style="background-color: #343A40;" class="mat-elevation-z8 w-100">
-            <!-- Position Column -->
-            <ng-container matColumnDef="index">
-                <th mat-header-cell *matHeaderCellDef style="text-align: center;"> No. </th>
-                <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element.index}} </td>
+<!--             Position Column -->
+            <ng-container >
+                <ng-container matColumnDef="index">
+                    <th mat-header-cell [hidden]="true" *matHeaderCellDef style="text-align: center;"> No. </th>
+                    <td mat-cell [hidden]="true" *matCellDef="let element" style="text-align: center;"> {{element.index}} </td>
+                </ng-container>
             </ng-container>
 
             <!-- Name Column -->
             <ng-container matColumnDef="logo">
-                <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Logo </th>
+                <th mat-header-cell *matHeaderCellDef style="text-align: center;width: 200px;"> {{'logo' | translate}} </th>
                 <td mat-cell *matCellDef="let element" style="text-align: center;">
                     <img [src]="'./assets/temsanair/partners/'+element.logo"
                          [ngStyle]="{'width':element.logo.includes('ekeler') ? '40px' : '100px','background':element.logo.includes('logo') ? '#30353C': '#fff'}"
@@ -116,13 +104,13 @@
 
             <!-- Weight Column -->
             <ng-container matColumnDef="link">
-                <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Link </th>
+                <th mat-header-cell *matHeaderCellDef style="text-align: center;"> {{'link' | translate}} </th>
                 <td mat-cell *matCellDef="let element"><a target="_blank" href="{{element.link}}">{{element.link}}</a></td>
             </ng-container>
 
             <!-- Symbol Column -->
             <ng-container matColumnDef="files">
-                <th mat-header-cell *matHeaderCellDef style="text-align: center;width: 70px;"> Files </th>
+                <th mat-header-cell *matHeaderCellDef style="text-align: center;width: 70px;"> {{'files' | translate}} </th>
                 <td mat-cell *matCellDef="let element" style="text-align: center;">
                     <button mat-icon-button class="w-100" [matMenuTriggerFor]="menu" matTooltip="{{'files' | translate}}"><mat-icon class="text-color-green">folder</mat-icon></button>
                     <mat-menu #menu="matMenu">

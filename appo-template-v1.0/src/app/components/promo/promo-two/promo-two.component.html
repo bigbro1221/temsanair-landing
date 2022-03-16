@@ -6,23 +6,23 @@
                 <div class="welcome-intro">
                     <div class="mt-4" >
                         <ng-container *ngIf="showContainer1 || showContainer2">
-                            <h2 class="text-white text-uppercase" style="">Welcome to</h2>
-                            <h2 class="text-color-green text-uppercase" style="">Temsan universe</h2>
+                            <h2 class="text-white text-uppercase" style="">{{'welcome_to' | translate}}</h2>
+                            <h2 class="text-color-green text-uppercase" style="">{{'temsan_universe' | translate}}</h2>
                         </ng-container>
                         <ng-container *ngIf="showContainer3 || showContainer4 || showContainer5 || showContainer6">
-                            <h3 class="text-white text-uppercase" style="">Welcome to</h3>
-                            <h3 class="text-color-green text-uppercase" style="">Temsan universe</h3>
+                            <h3 class="text-white text-uppercase" style="">{{'welcome_to' | translate}}</h3>
+                            <h3 class="text-color-green text-uppercase" style="">{{'temsan_universe' | translate}}</h3>
                         </ng-container>
                         <ng-container *ngIf="showContainer7 || showContainer8">
-                            <h6 class="text-white text-uppercase" style="">Welcome to</h6>
-                            <h6 class="text-color-green text-uppercase" style="">Temsan universe</h6>
+                            <h6 class="text-white text-uppercase" style="">{{'welcome_to' | translate}}</h6>
+                            <h6 class="text-color-green text-uppercase" style="">{{'temsan_universe' | translate}}</h6>
                         </ng-container>
                     </div>
                     <div [ngClass]="{'mb-4': showContainer1 || showContainer2 || showContainer3 || showContainer4|| showContainer5,'m-0': showContainer6}"
                          class="text text-white" >
                         <div>
                             <p style="">
-                                We are going to develop more technologies while finding
+                                {{'we_are_going_to_develop_more_technologies_while_finding' | translate}}
                             </p>
                             <p style="">much efficient ways to design, produce, install and run.</p>
                             <p style="" class="text-color-green">Long live the universe!</p>

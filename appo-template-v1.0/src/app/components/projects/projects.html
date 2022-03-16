@@ -2,7 +2,8 @@
     <app-scrollup></app-scrollup>
     <div class="all-area">
         <app-header-two></app-header-two>
-        <div *ngIf="projects$ | async as project">
+        <h2 class="text-center text-color-green" style="margin-top: 160px">{{'our_projects' | translate}}</h2>
+        <div *ngIf="projects$ | async as project" style="margin-top: -130px;">
             <div class="projects owl-carousel container" style="margin-top: 250px">
                 <div *ngFor="let p of project.projects;let i = index;">
                     <div>
@@ -20,7 +21,7 @@
                 </div>
             </div>
             <div style="margin-top: 60px;">
-                <h2 class="text-center text-color-green">Project gallery</h2>
+                <h2 class="text-center text-color-green mb-4">{{'project_gallery' | translate}}</h2>
                 <div class="row container-fluid gallery" style="">
                     <div class="col-3 mb-3 img-container" (click)="onImage()" *ngFor="let img of project.data;let idx=index;trackBy: identify">
                         <figure class="effect-honey position-relative" *ngIf="img !=''">
@@ -29,7 +30,7 @@
                                 <img class="mat-elevation-z4" style="width: 100%;border-radius: 5px;" [src]="'./assets/images/'+img" alt="Image">
                               </div>
                               <div class="hover-image-caption">
-                                 <span style="color: #fff;opacity: 0;"><mat-icon style="vertical-align: middle;">search</mat-icon> Click me!</span>
+                                 <span style="color: #fff;opacity: 0;"><mat-icon style="vertical-align: middle;">search</mat-icon> {{'click_me' | translate}}!</span>
                               </div>
                           </a>
                         </figure>

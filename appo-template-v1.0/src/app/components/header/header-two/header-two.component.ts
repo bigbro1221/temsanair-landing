@@ -12,10 +12,10 @@ export class HeaderTwoComponent implements OnInit {
 
   urls = [
     {name:'Home', url:''},
-    {name:'About', url:'/about'},
     {name:'Product Range', url:'/product-range'},
-    {name:'Automation solutions', url:'/automation-solutions'},
-    {name:'Our Projects', url:'/our-projects'}
+    // {name:'Automation solutions', url:'/automation-solutions'},
+    {name:'Our Projects', url:'/our-projects'},
+    {name:'Temsanair', url:'/about'},
   ];
   showContainer1:boolean =false;
   showContainer2:boolean =false;
