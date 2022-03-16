@@ -54,7 +54,7 @@ export class Projects implements OnInit {
         loop: true,
         margin: 0,
         nav: true,
-        dots: true,
+        dots: false,
         autoplay: true,
         autoplayTimeout: 6000,
         smartSpeed: 12000,

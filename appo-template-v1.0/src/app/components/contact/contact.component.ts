@@ -58,14 +58,19 @@ export class ContactComponent implements OnInit {
   ngOnInit(): void {
     this.ngw.init();
     this.img = this.httpClient.get<any>(this.url).pipe(map(res=> {
-      this.dataSource.data = res.dataSource;
+      let data = [];
+      for (let d of res.dataSource) {
+        data.push({logo:d.logo, link: d.link, files: d.files})
+      }
+      this.dataSource.data = data;
+      console.log(this.dataSource.data)
       return res.image6;
     }))
-    for(let i=0; i<1; i++) {
-      for(let j=0; j<12; j++) {
-        this.sets[i].map.push({code:j, flag:false})
-      }
-    }
+    // for(let i=0; i<1; i++) {
+    //   for(let j=0; j<12; j++) {
+    //     this.sets[i].map.push({code:j, flag:false})
+    //   }
+    // }
     console.log(this.sets)
   }
 
@@ -92,22 +97,26 @@ export class ContactComponent implements OnInit {
           ang.sets[0].map[id].flag = data.alwaysOn;
           $(this).data('maphilight', data).trigger('alwaysOn.maphilight');
         })
-      ang.setTeethValues();
-    },5000)
+      $('.mat-table').find('.mat-header-row').find('.mat-column-index').remove()
+      $('.mat-table').find('.mat-row').find('.mat-column-index').remove()
+      // console.log($('.mat-table').find('.mat-row').find('.mat-column-index').remove())
+      // $('.mat-table').find('.mat-row').remove()
+      // ang.setTeethValues();
+    },500)
   }
 
-  setTeethValues() {
-    for(let i=1; i<12; i++) {
-      $('.set-'+i).maphilight();
-      for(let m of this.sets[i].map) {
-        if(m.flag == true) {
-          let data = $('#set' + i + '-' + m.code).mouseout().data('maphilight') || {};
-          data.alwaysOn = !data.alwaysOn;
-          $('#set' + i + '-' + m.code).data('maphilight', data).trigger('alwaysOn.maphilight');
-        }
-      }
-    }
-  }
+  // setTeethValues() {
+  //   for(let i=1; i<12; i++) {
+  //     $('.set-'+i).maphilight();
+  //     for(let m of this.sets[i].map) {
+  //       if(m.flag == true) {
+  //         let data = $('#set' + i + '-' + m.code).mouseout().data('maphilight') || {};
+  //         data.alwaysOn = !data.alwaysOn;
+  //         $('#set' + i + '-' + m.code).data('maphilight', data).trigger('alwaysOn.maphilight');
+  //       }
+  //     }
+  //   }
+  // }
 
   onFile(e) {
     $('.bg-logo').addClass('overlay-bg-logo');

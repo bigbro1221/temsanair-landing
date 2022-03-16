@@ -7,7 +7,7 @@
                     <!-- Footer Items -->
                     <div class="footer-items">
                         <!-- Logo -->
-                        <a class="navbar-brand" target="_blank" href="http://www.temsanair.com/">
+                        <a class="navbar-brand" routerLink="/about">
                             <img class="logo" src="./assets/temsanair/logo1.png" alt="">
                         </a>
                         <h2 *ngIf="showContainer1 || showContainer2 || showContainer3" class="text-uppercase text-color-green mt-2 mb-3">All In One</h2>
@@ -39,27 +39,27 @@
                     <div class="footer-items">
                         <div class="row">
                             <div class="col-12">
-                                <h3 *ngIf="showContainer1 || showContainer2 || showContainer3" class="footer-title text-white mb-2">Our partners</h3>
-                                <h4 *ngIf="showContainer4 || showContainer5" class="footer-title text-white mb-2">Our partners</h4>
-                                <h6 *ngIf="showContainer6 || showContainer7 || showContainer8" class="footer-title text-white mb-2">Our partners</h6>
+                                <h3 *ngIf="showContainer1 || showContainer2 || showContainer3" class="footer-title text-white mb-2">{{'our_partners' | translate}}</h3>
+                                <h4 *ngIf="showContainer4 || showContainer5" class="footer-title text-white mb-2">{{'our_partners' | translate}}</h4>
+                                <h6 *ngIf="showContainer6 || showContainer7 || showContainer8" class="footer-title text-white mb-2">{{'our_partners' | translate}}</h6>
                             </div>
                             <div class="col-6">
                                 <ul>
-                                    <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" href="#">Roza Plastic</a></li>
-                                    <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" href="#">Sieger</a></li>
-                                    <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" href="#">Steinemann</a></li>
-                                    <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" href="#">Asteks</a></li>
-                                    <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" href="#">Rimtex</a></li>
-                                    <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" href="#">Arosa</a></li>
+                                    <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" target="_blank" href="http://www.rozaplastik.com/en-index.html">Roza Plastic</a></li>
+                                    <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" target="_blank" href="https://www.siegerglobal.net/">Sieger</a></li>
+                                    <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" target="_blank" href="https://steinemann-cvs.ch/">Steinemann</a></li>
+                                    <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" target="_blank" href="https://www.asteks.com/asteks-home-page">Asteks</a></li>
+                                    <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" target="_blank" href="https://rimtex.com/">Rimtex</a></li>
+                                    <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" target="_blank" href="https://arosasystems.com">Arosa</a></li>
                                 </ul>
                             </div>
                             <div class="col-6">
                                 <ul>
-                                    <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" href="#">Fadis</a></li>
-                                    <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" href="#">Balkan</a></li>
-                                    <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" href="#">Lumapat</a></li>
-                                    <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" href="#">Trutschler</a></li>
-                                    <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" href="#">Rieter</a></li>
+                                    <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" target="_blank" href="https://www.fadis.it/">Fadis</a></li>
+                                    <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" target="_blank" href="http://www.balkan.com.tr/textile/">Balkan</a></li>
+                                    <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" target="_blank" href="https://lupamat.com/">Lumapat</a></li>
+                                    <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" target="_blank" href="https://www.truetzschler.de/en/">Trutschler</a></li>
+                                    <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" target="_blank" href="https://www.rieter.com/">Rieter</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -70,18 +70,18 @@
                     <!-- Footer Items -->
                     <div class="footer-items">
                         <!-- Footer Title -->
-                        <h3 *ngIf="showContainer1 || showContainer2 || showContainer3" class="footer-title text-white mb-2">Contacts</h3>
-                        <h4 *ngIf="showContainer4 || showContainer5" class="footer-title text-white mb-2">Contacts</h4>
-                        <h6 *ngIf="showContainer6 || showContainer7 || showContainer8" class="footer-title text-white mb-2">Contacts</h6>
+                        <h3 *ngIf="showContainer1 || showContainer2 || showContainer3" class="footer-title text-white mb-2">{{'contacts' | translate}}</h3>
+                        <h4 *ngIf="showContainer4 || showContainer5" class="footer-title text-white mb-2">{{'contacts' | translate}}</h4>
+                        <h6 *ngIf="showContainer6 || showContainer7 || showContainer8" class="footer-title text-white mb-2">{{'contacts' | translate}}</h6>
                         <ng-container *ngIf="!showContainer7 && !showContainer8">
                             <ul>
                                 <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><span class="text-white-50">Uzbekistan Republic</span></li>
                                 <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><span class="text-white-50">Tashkent City</span></li>
                                 <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><span class="text-white-50">100000, Lashkatbegi str., 29.</span></li>
                                 <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><span class="text-white-50">Tel: (+99871) 2374519</span></li>
-                                <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" href="#">info@temsanair.uz</a></li>
-                                <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" href="#">khusan@temsanair.uz</a></li>
-                                <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" href="#">m.anvar@temsanair.uz</a></li>
+                                <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" target="_blank" href="mailto:info@temsanair.uz">info@temsanair.uz</a></li>
+                                <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" target="_blank" href="mailto:khusan@temsanair.uz">khusan@temsanair.uz</a></li>
+                                <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" target="_blank" href="mailto:m.anvar@temsanair.uz">m.anvar@temsanair.uz</a></li>
                             </ul>
                         </ng-container>
                         <ng-container *ngIf="showContainer7 || showContainer8">
@@ -96,9 +96,9 @@
                                 <div class="col-6">
                                     <ul>
                                         <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><span class="text-white-50">Tel: (+99871) 2374519</span></li>
-                                        <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" href="#">info@temsanair.uz</a></li>
-                                        <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" href="#">khusan@temsanair.uz</a></li>
-                                        <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" href="#">m.anvar@temsanair.uz</a></li>
+                                        <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" target="_blank" href="mailto: info@temsanair.uz">info@temsanair.uz</a></li>
+                                        <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" target="_blank" href="mailto: khusan@temsanair.uz">khusan@temsanair.uz</a></li>
+                                        <li [ngClass]="{'py-2':!showContainer7 && !showContainer8}" class=""><a class="text-white-50" target="_blank" href="mailto: m.anvar@temsanair.uz">m.anvar@temsanair.uz</a></li>
                                     </ul>
                                 </div>
                             </div>
