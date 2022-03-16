@@ -2428,7 +2428,7 @@ a,
 }
 
 .london h1, .london h2, .london h3, .london h4, .london h5, .london h6, .london p, .london span, .london .btn, .london i, .london svg, .london .blog-area, .london .blog-area a {
-	color: #fff;
+	/*color: #fff;*/
 }
 
 .london .contact-area {

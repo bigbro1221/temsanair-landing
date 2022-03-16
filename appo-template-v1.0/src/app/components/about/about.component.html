@@ -2,37 +2,69 @@
     <div class="shapes-container">
         <div class="shape-1"></div>
     </div>
-    <div class="container wow fadeInUp slow" >
-        <div class="row align-items-center">
-            <div class="col-12 col-sm-6 col-lg-6">
-                <!-- About Text -->
-                <div class="about-text">
-                    <!-- Headings -->
-                    <div class="headings d-flex align-items-center mb-4">
-                        <span class="text-uppercase d-none d-sm-block">About</span>
-                        <ng-container *ngIf="showContainer1">
-                            <h2 class="text-capitalize">WHAT <span class="ml-2 text-color-green"> TEMSAN IS? </span> WHAT <span class="ml-2 text-color-green"> TEMSAN IS NOT?</span></h2>
-                        </ng-container>
-                        <ng-container *ngIf="showContainer2 || showContainer3 || showContainer4 || showContainer5 || showContainer6">
-                            <h3 class="text-capitalize">WHAT <span class="ml-2 text-color-green"> TEMSAN IS? </span> WHAT <span class="ml-2 text-color-green"> TEMSAN IS NOT?</span></h3>
-                        </ng-container>
-                    </div>
-                    <p class="my-3">The major aim is to ensure that your textile mill produces at the highest efficiency. As one of the biggest manufacturers we offer complete process solution in textile humidification system, highest reliability for efficiently performance, energy saving and quality of your mill.</p>
-                    <p class="d-none d-sm-block my-3">Since 1960 we combine the Know-How concept and dedication to follow the cutting edge technologies to provide flawless humidification systems. Thanks to our agencies all over the world, we are just next to you, resulting with effective and quick service solutions.</p>
-                    <button mat-button (click)="onLink()" class="text-color-green">click to read more..</button>
-                    <!-- Store Buttons -->
+    <div class="container" style="position: relative;z-index: 11111;">
+        <ng-container *ngIf="showContainer1">
+            <h2 class="text-capitalize text-white text-center mb-4">О нашей компании <span class="ml-2 text-color-green"> TEMSAN? </span> </h2>
+        </ng-container>
+        <ng-container *ngIf="showContainer2 || showContainer3 || showContainer4 || showContainer5 || showContainer6">
+            <h2 class="text-capitalize text-white text-center mb-4">О нашей компании <span class="ml-2 text-color-green"> TEMSAN? </span> </h2>
+        </ng-container>
+        <div class="row">
+            <div class="col-4 wow fadeInUp">
+                <div class="mat-elevation-z4 p-4" style="color: #fff; background-color: #1B1A1E">
+                    ООО “Temsanair” была основана в 2016 году и зарекомендовала себя как надежного партнера в сфере проектирования, поставки, монтажа и пусконаладке климатических систем “Temsan İç ve Dış Ticaret Ltd. Şti” (Турция). Компания ООО “Temsanair” является официальным партнером и сервисным центром компании “Temsan İç ve Dış Ticaret Ltd. Şti” (Турция) в Узбекистане.
+                    После создания компании ООО “Temsanair” до настоящего времени было введено в эксплуатацию более 400 проектов по все республике, которые успешно функционирует и развивается из-за профессионализма наших сотрудников.
                 </div>
             </div>
-            <div class="col-12 col-sm-6 col-lg-6">
-                <!-- About Thumb -->
-                <div class="about-thumb text-center" *ngIf="img | async as i">
-                    <picture>
-                        <source type="image/webp" [srcset]="http + i.imgw1">
-                        <source type="image/jpg" [srcset]="http + i.img1">
-                        <img [src]="i.img1" class="mat-elevation-z4" alt="">
-                    </picture>
+            <div class="col-4 wow fadeInDown">
+                <div class="mat-elevation-z4 p-4" style="color: #fff; background-color: #1B1A1E">
+                    Наша команда способна реализовать самые сложные проекты, обеспечивая заказчиков намеченных результатов по их проектам.
+                    Основная цель состоит в том, чтобы Ваша текстильная фабрика работала с максимальной эффективностью.
+                    Как один из ведущих инжеринговой компании, мы предлагаем комплексное технологическое решение в системе увлажнения пряжи и текстиля, высочайшую надежность для эффективной работы, энергосбережения и качества вашей фабрики.
+                </div>
+            </div>
+            <div class="col-4 wow fadeInUp">
+                <div class="mat-elevation-z4 p-4" style="color: #fff; background-color: #1B1A1E">
+                    Вы можете доверять профессионалам своего дела, которые сотрудничает с ведущими производителями промышленных текстильных машин и к ним аксессуары, таких как “Trützschler group”, “Rieter Group”, текстильных оборудование “Electro Jet” (Испания), текстильные аксессуары - Roza Plastic (Турция), Asteks (Турция), компрессоры – Lupamat (Турция), Прядильные тазы – “Rimtex”, запарочное оборудование - Sieger (Индия), система пожаротушение “Arosa” и другие.
                 </div>
             </div>
         </div>
+<!--        <div style="color: #fff">-->
+<!--            -->
+<!--            Вы можете доверять профессионалам своего дела, которые сотрудничает с ведущими производителями промышленных текстильных машин и к ним аксессуары, таких как “Trützschler group”, “Rieter Group”, текстильных оборудование “Electro Jet” (Испания), текстильные аксессуары - Roza Plastic (Турция), Asteks (Турция), компрессоры – Lupamat (Турция), Прядильные тазы – “Rimtex”, запарочное оборудование - Sieger (Индия), система пожаротушение “Arosa” и другие.-->
+<!--        </div>-->
     </div>
+<!--    <div class="container wow fadeInUp slow" >-->
+<!--        <div class="row align-items-center">-->
+<!--            <div class="col-12 col-sm-6 col-lg-6">-->
+<!--                &lt;!&ndash; About Text &ndash;&gt;-->
+<!--                <div class="about-text">-->
+<!--                    &lt;!&ndash; Headings &ndash;&gt;-->
+<!--                    <div class="headings d-flex align-items-center mb-4">-->
+<!--                        <span class="text-uppercase d-none d-sm-block">About</span>-->
+<!--                        <ng-container *ngIf="showContainer1">-->
+<!--                            <h2 class="text-capitalize">WHAT <span class="ml-2 text-color-green"> TEMSAN IS? </span> WHAT <span class="ml-2 text-color-green"> TEMSAN IS NOT?</span></h2>-->
+<!--                        </ng-container>-->
+<!--                        <ng-container *ngIf="showContainer2 || showContainer3 || showContainer4 || showContainer5 || showContainer6">-->
+<!--                            <h3 class="text-capitalize">WHAT <span class="ml-2 text-color-green"> TEMSAN IS? </span> WHAT <span class="ml-2 text-color-green"> TEMSAN IS NOT?</span></h3>-->
+<!--                        </ng-container>-->
+<!--                    </div>-->
+<!--                    <p class="my-3">The major aim is to ensure that your textile mill produces at the highest efficiency. As one of the biggest manufacturers we offer complete process solution in textile humidification system, highest reliability for efficiently performance, energy saving and quality of your mill.</p>-->
+<!--                    <p class="d-none d-sm-block my-3">Since 1960 we combine the Know-How concept and dedication to follow the cutting edge technologies to provide flawless humidification systems. Thanks to our agencies all over the world, we are just next to you, resulting with effective and quick service solutions.</p>-->
+<!--                    <button mat-button (click)="onLink()" class="text-color-green">click to read more..</button>-->
+<!--                    &lt;!&ndash; Store Buttons &ndash;&gt;-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-12 col-sm-6 col-lg-6">-->
+<!--                &lt;!&ndash; About Thumb &ndash;&gt;-->
+<!--                <div class="about-thumb text-center" *ngIf="img | async as i">-->
+<!--                    <picture>-->
+<!--                        <source type="image/webp" [srcset]="http + i.imgw1">-->
+<!--                        <source type="image/jpg" [srcset]="http + i.img1">-->
+<!--                        <img [src]="i.img1" class="mat-elevation-z4" alt="">-->
+<!--                    </picture>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 </section>

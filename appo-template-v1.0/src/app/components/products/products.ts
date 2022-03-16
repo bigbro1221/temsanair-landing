@@ -5,8 +5,6 @@ import {map} from "rxjs/operators";
 import {MatDialog} from "@angular/material/dialog";
 import {ProductDialog} from "./product-dialog";
 import {RouterService} from "../../services/router.service";
-import {ProductImgZoom} from "./product-img-zoom";
-import {BreakpointObserver, BreakpointState} from "@angular/cdk/layout";
 declare let $:any;
 
 @Component({

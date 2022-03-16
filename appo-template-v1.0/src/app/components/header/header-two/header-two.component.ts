@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import {RouterService} from "../../../services/router.service";
+import {LocService} from "../../../services/locale.service";
 declare let $:any;
 @Component({
   selector: 'app-header-two',
@@ -25,7 +26,8 @@ export class HeaderTwoComponent implements OnInit {
   showContainer7:boolean = false;
   showContainer8:boolean = false;
 
-  constructor(private router: Router,private routerSer: RouterService) {
+  constructor(private router: Router,private routerSer: RouterService,
+              public locale: LocService,) {
     if ($(window).width() >= 1280) {
       this.showContainer1 = true;
     } else if ($(window).width() >= 1024) {
@@ -58,5 +60,9 @@ export class HeaderTwoComponent implements OnInit {
         scrollTop: (document.getElementById('about-app').offsetTop)
       }, 1000);
     }
+  }
+
+  onMenu() {
+    $('#langbtn_'+localStorage.getItem('lang')).addClass('active-lang');
   }
 }

@@ -2,7 +2,41 @@
     <app-scrollup></app-scrollup>
     <div class="all-area">
         <app-header-two></app-header-two>
-        <h1 class="text-color-green text-center" style="margin: 200px 0">Our Projects</h1>
+        <div *ngIf="projects$ | async as project">
+            <div class="projects owl-carousel container" style="margin-top: 250px">
+                <div *ngFor="let p of project.projects;let i = index;">
+                    <div>
+                        <a target="_blank" [href]="p.link1" *ngIf="p.logo1!=''">
+                            <img [id]="'project-img'+i" class="m-auto project-img" [ngStyle]="{'width': p.logo1=='global-textile.png' ? '120px' : '250px'}"
+                                 [src]="'./assets/temsanair/projects/'+p.logo1" alt="">
+                        </a>
+                    </div>
+                    <div>
+                        <a target="_blank" [href]="p.link2" *ngIf="p.logo2!=''">
+                            <img class="m-auto project-img" [ngStyle]="{'width':getWidth(p)}"
+                                 [src]="'./assets/temsanair/projects/'+p.logo2" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 60px;">
+                <h2 class="text-center text-color-green">Project gallery</h2>
+                <div class="row container-fluid gallery" style="">
+                    <div class="col-3 mb-3 img-container" (click)="onImage()" *ngFor="let img of project.data;let idx=index;trackBy: identify">
+                        <figure class="effect-honey position-relative" *ngIf="img !=''">
+                          <a [href]="'./assets/images/'+img">
+                              <div class="image">
+                                <img class="mat-elevation-z4" style="width: 100%;border-radius: 5px;" [src]="'./assets/images/'+img" alt="Image">
+                              </div>
+                              <div class="hover-image-caption">
+                                 <span style="color: #fff;opacity: 0;"><mat-icon style="vertical-align: middle;">search</mat-icon> Click me!</span>
+                              </div>
+                          </a>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
         <app-footer></app-footer>
     </div>
 </div>

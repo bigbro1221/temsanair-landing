@@ -33,6 +33,7 @@
             ],
             "scripts": [
               "src/assets/js/plugins.min.js",
+              "src/assets/js/jquery.maphilight.js",
               "src/assets/js/popper.min.js",
               "src/assets/js/jquery.elevatezoom.js",
               "node_modules/owl.carousel/dist/owl.carousel.js",
