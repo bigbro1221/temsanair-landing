@@ -55,7 +55,7 @@ export class Projects implements OnInit {
         margin: 0,
         nav: true,
         dots: false,
-        autoplay: true,
+        autoplay: false,
         autoplayTimeout: 6000,
         smartSpeed: 12000,
         items: 4,
@@ -76,7 +76,29 @@ export class Projects implements OnInit {
     } else if (elem.logo1=='realtex-white.jpg') {
       return '150px';
     } else {
-      return '250px';
+      return '210px';
+    }
+  }
+
+  getTranslate(elem):string {
+    if (elem.logo1=='asaka-textile.png') {
+      return 'translate(0,15%)';
+    } else if (elem.logo1=='polytext1.png' || elem.logo1 == 'khantex.svg') {
+      return 'translate(0,40%)';
+    } else if (elem.logo1=='uztex1.png' || elem.logo1 == 'anteks1.png') {
+      return 'translate(0,10%)';
+    } else if (elem.logo1 == 'anteks1.png') {
+      return 'translate(0,20%)';
+    } else if (elem.logo1 == 'uztextgroup1.png') {
+      return 'translate(0,120%)';
+    } else if (elem.logo1 == 'ostex1.png') {
+      return 'translate(0,80%)';
+    } else if (elem.logo1 == 'bakantex1.png') {
+      return 'translate(0,90%)';
+    } else if (elem.logo1 == 'wbm-romitex1.png') {
+      return 'translate(0,165%)';
+    } else {
+      return '';
     }
   }
 

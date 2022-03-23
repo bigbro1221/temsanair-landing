@@ -4,26 +4,26 @@
         <app-header-two></app-header-two>
         <h2 class="text-center text-color-green" style="margin-top: 160px">{{'our_projects' | translate}}</h2>
         <div *ngIf="projects$ | async as project" style="margin-top: -130px;">
-            <div class="projects owl-carousel container" style="margin-top: 250px">
-                <div *ngFor="let p of project.projects;let i = index;">
-                    <div>
-                        <a target="_blank" [href]="p.link1" *ngIf="p.logo1!=''">
-                            <img [id]="'project-img'+i" class="m-auto project-img" [ngStyle]="{'width': getWidth(p)}"
-                                 [src]="'./assets/temsanair/projects/'+p.logo1" alt="">
-                        </a>
-<!--                        <a target="_blank" [href]="p.link2" *ngIf="p.logo2!=''">-->
-<!--                            <img class="m-auto project-img" [ngStyle]="{'width':getWidth(p)}"-->
-<!--                                 [src]="'./assets/temsanair/projects/'+p.logo2" alt="">-->
-<!--                        </a>-->
-                    </div>
-<!--                    <div>-->
-<!--                        <a target="_blank" [href]="p.link2" *ngIf="p.logo2!=''">-->
-<!--                            <img class="m-auto project-img" [ngStyle]="{'width':getWidth(p)}"-->
-<!--                                 [src]="'./assets/temsanair/projects/'+p.logo2" alt="">-->
-<!--                        </a>-->
-<!--                    </div>-->
-                </div>
-            </div>
+         <div class="container">
+             <div class="row align-items-center">
+                 <div class="col-12">
+                     <div class="projects owl-carousel" style="margin-top: 250px">
+                         <div *ngFor="let p of project.projects;let i = index;">
+                             <div>
+                                 <a target="_blank" [href]="p.link1" *ngIf="p.logo1!=''">
+                                     <img [id]="'project-img'+i" class="m-auto project-img" [ngStyle]="{'width': getWidth(p),'transform':getTranslate(p)}"
+                                          [src]="'./assets/temsanair/projects/'+p.logo1" alt="">
+                                 </a>
+                                 <!--                        <a target="_blank" [href]="p.link2" *ngIf="p.logo2!=''">-->
+                                 <!--                            <img class="m-auto project-img" [ngStyle]="{'width':getWidth(p)}"-->
+                                 <!--                                 [src]="'./assets/temsanair/projects/'+p.logo2" alt="">-->
+                                 <!--                        </a>-->
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
             <div style="margin-top: 60px;">
                 <h2 class="text-center text-color-green mb-4">{{'project_gallery' | translate}}</h2>
                 <div class="row container-fluid gallery" style="">
