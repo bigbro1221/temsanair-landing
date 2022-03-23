@@ -14,7 +14,7 @@ declare let $:any;
 export class ContactComponent implements OnInit {
 
   img: Observable<any>;
-  url: string = "assets/data/main.json";
+  url: string = "./assets/data/main.json";
   http: string = './assets/temsanair/';
   showContainer1 = false;
   showContainer2 = false;
@@ -57,21 +57,19 @@ export class ContactComponent implements OnInit {
 
   ngOnInit(): void {
     this.ngw.init();
-    this.img = this.httpClient.get<any>(this.url).pipe(map(res=> {
-      let data = [];
-      for (let d of res.dataSource) {
-        data.push({logo:d.logo, link: d.link, files: d.files})
-      }
-      this.dataSource.data = data;
-      console.log(this.dataSource.data)
-      return res.image6;
-    }))
     // for(let i=0; i<1; i++) {
     //   for(let j=0; j<12; j++) {
     //     this.sets[i].map.push({code:j, flag:false})
     //   }
     // }
-    console.log(this.sets)
+    this.img = this.httpClient.get<any>(this.url).pipe(map(res=> {
+      let data = [];
+      for (let d of res.dataSource) {
+        data.push({logo:d.logo, logo1:d.logo1, link: d.link, files: d.files})
+      }
+      this.dataSource.data = data;
+      return res;
+    }))
   }
 
   ngAfterViewInit() {
@@ -102,7 +100,16 @@ export class ContactComponent implements OnInit {
       // console.log($('.mat-table').find('.mat-row').find('.mat-column-index').remove())
       // $('.mat-table').find('.mat-row').remove()
       // ang.setTeethValues();
-    },500)
+    },100)
+  }
+
+  getWidth(e) {
+    if (e == 'ekeler.png' || e == 'steinemann-logo.png') {
+      return '40px';
+    }
+    else if (e == 'steinemann-text.png') {
+      return '60px';
+    } else return '100px';
   }
 
   // setTeethValues() {

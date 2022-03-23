@@ -8,16 +8,20 @@
                 <div *ngFor="let p of project.projects;let i = index;">
                     <div>
                         <a target="_blank" [href]="p.link1" *ngIf="p.logo1!=''">
-                            <img [id]="'project-img'+i" class="m-auto project-img" [ngStyle]="{'width': p.logo1=='global-textile.png' ? '120px' : '250px'}"
+                            <img [id]="'project-img'+i" class="m-auto project-img" [ngStyle]="{'width': getWidth(p)}"
                                  [src]="'./assets/temsanair/projects/'+p.logo1" alt="">
                         </a>
+<!--                        <a target="_blank" [href]="p.link2" *ngIf="p.logo2!=''">-->
+<!--                            <img class="m-auto project-img" [ngStyle]="{'width':getWidth(p)}"-->
+<!--                                 [src]="'./assets/temsanair/projects/'+p.logo2" alt="">-->
+<!--                        </a>-->
                     </div>
-                    <div>
-                        <a target="_blank" [href]="p.link2" *ngIf="p.logo2!=''">
-                            <img class="m-auto project-img" [ngStyle]="{'width':getWidth(p)}"
-                                 [src]="'./assets/temsanair/projects/'+p.logo2" alt="">
-                        </a>
-                    </div>
+<!--                    <div>-->
+<!--                        <a target="_blank" [href]="p.link2" *ngIf="p.logo2!=''">-->
+<!--                            <img class="m-auto project-img" [ngStyle]="{'width':getWidth(p)}"-->
+<!--                                 [src]="'./assets/temsanair/projects/'+p.logo2" alt="">-->
+<!--                        </a>-->
+<!--                    </div>-->
                 </div>
             </div>
             <div style="margin-top: 60px;">

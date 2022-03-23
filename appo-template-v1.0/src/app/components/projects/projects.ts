@@ -71,9 +71,9 @@ export class Projects implements OnInit {
   }
 
   getWidth(elem):string {
-    if (elem.logo2=='global-textile.png') {
+    if (elem.logo1=='global-textile.png') {
       return '120px';
-    } else if (elem.logo2=='asaka-textile.png') {
+    } else if (elem.logo1=='realtex-white.jpg') {
       return '150px';
     } else {
       return '250px';

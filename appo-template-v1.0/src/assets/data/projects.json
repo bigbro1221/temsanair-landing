@@ -3,46 +3,60 @@
 
   "projects": [
     {
-      "link1": "https://wbm-romitex.business.site/",
-      "link2": "https://bahtgroup.uz/",
-      "logo1": "wbm-romitex.png",
-      "logo2": "baht.svg"
-    },
-    {
-      "link1": "https://uztexgroup.uz/",
-      "link2": "https://global-textile.uz/ru/otkrytie-fabriki-fgt-v-fergane/",
-      "logo1": "uztextgroup.png",
-      "logo2": "global-textile.png"
+      "link1": "https://bahtgroup.uz/",
+      "logo1": "baht.svg"
     },
     {
       "link1": "https://global-textile.uz/",
-      "link2": "https://asakatextile.uz/",
-      "logo1": "global-textile.png",
-      "logo2": "asaka-textile.png"
+      "logo1": "global-textile.png"
+    },
+    {
+      "link1": "https://asakatextile.uz/",
+      "logo1": "asaka-textile.png"
     },
     {
       "link1": "http://www.polytex.uz/",
-      "link2": "https://www.uztex.uz/",
-      "logo1": "polytext.png",
-      "logo2": "uztex.png"
+      "logo1": "polytext1.png"
+    },
+    {
+      "link1": "https://www.uztex.uz/",
+      "logo1": "uztex1.png"
     },
     {
       "link1": "http://www.sultontex.uz/",
-      "link2": "https://ostex.uz/",
-      "logo1": "logo-sultan.png",
-      "logo2": "ostex.png"
+      "logo1": "logo-sultan.png"
     },
     {
-      "link1": "http://bakantex.com/",
-      "link2": "https://anteks.uz/",
-      "logo1": "bakantex.png",
-      "logo2": "anteks_group.png"
+      "link1": "https://global-textile.uz/ru/otkrytie-fabriki-fgt-v-fergane/",
+      "logo1": "global-textile.png"
+    },
+    {
+      "link1": "https://anteks.uz/",
+      "logo1": "anteks1.png"
     },
     {
       "link1": "https://www.khantex.uz/",
-      "link2": "https://realtex.uz/",
-      "logo1": "khantex.svg",
-      "logo2": ""
+      "logo1": "khantex.svg"
+    },
+    {
+      "link1": "https://realtex.uz/",
+      "logo1": "realtex-white.jpg"
+    },
+    {
+      "link1": "https://uztexgroup.uz/",
+      "logo1": "uztextgroup1.png"
+    },
+    {
+      "link1": "https://ostex.uz/",
+      "logo1": "ostex1.png"
+    },
+    {
+      "link1": "http://bakantex.com/",
+      "logo1": "bakantex1.png"
+    },
+    {
+      "link1": "https://wbm-romitex.business.site/",
+      "logo1": "wbm-romitex1.png"
     }
   ],
   "data":  [

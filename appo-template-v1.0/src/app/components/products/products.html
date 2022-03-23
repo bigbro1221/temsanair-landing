@@ -2,7 +2,6 @@
     <app-scrollup></app-scrollup>
     <div class="all-area">
         <app-header-two></app-header-two>
-<!--        <app-hero-six></app-hero-six>-->
         <div id="product-test" class="product-img wow fadeInUp" *ngIf="img | async as i">
             <picture>
                 <source type="image/webp" [srcset]="http + i.imgw">
@@ -12,10 +11,10 @@
         </div>
         <div class="d-flex justify-content-center mt-2 mb-4 wow fadeInUp">
             <mat-form-field class="mat-form-list" [ngStyle]="{'width': showContainer5 || showContainer6 || showContainer7 || showContainer8 ? '80%' : '30%'}" style="">
-                <mat-label style="color: #fff;">Select Product...</mat-label>
+                <mat-label style="color: #fff;">{{'select_product' | translate}}...</mat-label>
                 <mat-select [(ngModel)]="currList" (selectionChange)="productChange($event,slickModal)">
                     <mat-option style="color: #111;" *ngFor="let p of productsList$| async" [value]="p.value" >
-                        {{p.name.toUpperCase()}}
+                        {{p.name.toUpperCase() | translate}}
                     </mat-option>
                 </mat-select>
             </mat-form-field>
@@ -57,23 +56,20 @@
                             </div>
                             <div class="product-text-slide" [id]="'product' + i">
                                 <h5 class="text-center">
-                                    <span class="text-color-green text-uppercase text-white">{{p?.title}}</span><br>
+                                    <span class="text-color-green text-uppercase text-white">{{p?.title | translate}}</span><br>
                                     <span class="text-uppercase text-white">{{p?.sub_title}}</span>
                                     <img [src]="http + 'bg_detail.png'" alt="">
                                 </h5>
                                 <p [style.font-size]="getFontSize()" class="px-2 m-0 product-text text-white"
                                    style="line-height: 25px;overflow: auto;" [id]="'text' + i">
-                                    {{p?.text}}
-                                    <span *ngIf="p?.detail1 != ''"> <br>{{p?.detail1}} <br></span>
-                                    <span *ngIf="p?.detail2 != ''">{{p?.detail2}} <br></span>
-                                    <span *ngIf="p?.detail3 != ''">{{p?.detail3}} <br></span>
-                                    <span *ngIf="p?.detail4 != ''">{{p?.detail4}} <br></span>
+                                    {{p?.text | translate}}
+                                    <span *ngIf="p?.detail1 != ''"> <br>{{p?.detail1 | translate}} <br></span>
+                                    <span *ngIf="p?.detail2 != ''">{{p?.detail2 | translate}} <br></span>
+                                    <span *ngIf="p?.detail3 != ''">{{p?.detail3 | translate}} <br></span>
+                                    <span *ngIf="p?.detail4 != ''">{{p?.detail4 | translate}} <br></span>
                                 </p>
                             </div>
                         </div>
-<!--                        <button class="d-flex justify-content-end" style="color:#000; !important;background-color: #74C043 !important;position: absolute;bottom: 10px"-->
-<!--                                *ngIf="p?.count > 260" mat-raised-button (click)="onRead(products$, i)">Read more-->
-<!--                        </button>-->
                     </div>
                 </ngx-slick-carousel>
             </div>
