@@ -1709,6 +1709,7 @@ figure.effect-honey:hover span i {
 
 table.mat-table th.mat-header-cell,td.mat-cell {
     color: #fff !important;
+    padding-right: 0 !important;
 }
 
 .active-lang {
@@ -1716,6 +1717,42 @@ table.mat-table th.mat-header-cell,td.mat-cell {
 }
 .mat-menu-panel {
     background-color: #343A40 !important;
+}
+tr.mat-header-row {
+    height: 30px !important;
+    background-color: #292A2D;
+}
+.mat-header-cell:not(:last-child) {
+    font-size: 14px !important;
+    border-right: 1px solid #333;
+}
+.mat-cell:not(:last-child) {
+    font-size: 14px !important;
+    border-right: 1px solid #333;
+}
+.mat-cell {
+    background-color: #202124;
+    border-bottom: 1px solid #333 !important;
+}
+.mat-cell.mat-column-link {
+    padding-left: 15px !important;
+}
+.mat-menu-panel {
+    /*overflow: auto;*/
+    max-height: 300px !important;
+}
+.mat-menu-panel::-webkit-scrollbar {
+    width: 5px;
+}
+.mat-menu-panel::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, .1) !important;
+    border-radius: 5px;
+    transition: .1 .7s;
+}
+.mat-menu-panel::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, .3) !important;
+    border-radius: 5px;
+    transition: .1 .7s;
 }
 
 

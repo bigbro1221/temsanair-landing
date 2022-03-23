@@ -39,6 +39,7 @@
               "node_modules/owl.carousel/dist/owl.carousel.js",
               "node_modules/slick-carousel/slick/slick.min.js",
               "node_modules/xzoom/dist/xzoom.min.js",
+              "node_modules/chart.js/dist/chart.min.js",
               "src/assets/js/typed.js",
               "src/assets/js/active.js"
             ]

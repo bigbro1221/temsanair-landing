@@ -27,19 +27,22 @@
     "imgw2":"icon_temper.webp",
     "img2":"icon_temper.png",
     "imgw3": "temper.webp",
-    "img3": "temper.jpg"
+    "img3": "temper.jpg",
+    "img4": "uz.svg"
   },
   "dataSource": [
     {
       "index": 1,
       "logo": "logo.png",
+      "logo1": "",
       "link":"http://www.temsanair.com/",
       "files": [
       ]
     },
     {
       "index": 2,
-      "logo": "roza-plastik1.png",
+      "logo": "roza-plastik.png",
+      "logo1": "",
       "link":"http://www.rozaplastik.com/en-index.html",
       "files": [
         {"id":1,"name": "Roza russian", "file":"roza russian (2).pdf","type":"roza"},
@@ -49,7 +52,8 @@
     },
     {
       "index": 3,
-      "logo": "sieger1.png",
+      "logo": "sieger.svg",
+      "logo1": "",
       "link":"https://www.siegerglobal.net/",
       "files": [
         {"id":1,"name": "Adof", "file":"ADOF V3.pdf","type":"sieger"},
@@ -70,7 +74,8 @@
     },
     {
       "index": 4,
-      "logo": "STE_CVS_CH_RGB_POS.png",
+      "logo": "steinemann-logo.png",
+      "logo1": "steinemann-text.png",
       "link":"https://steinemann-cvs.ch/",
       "files": [
         {"id":1,"name": "Cvs-App-in-Spinning-rev3", "file":"CVS-Application-in-Spinning-rev3.pdf","type":"steinemann"},
@@ -87,6 +92,7 @@
     {
       "index": 5,
       "logo": "asteks1.png",
+      "logo1": "",
       "link":"https://www.asteks.com/asteks-home-page",
       "files": [
         {"id":1,"name": "Asteks urun katalogu 021 web", "file":"ASTEKS_URUN_KATALOGU_2021_WEB.pdf","type":"asteks"},
@@ -95,7 +101,8 @@
     },
     {
       "index": 6,
-      "logo": "rimtex1.png",
+      "logo": "rimtex.png",
+      "logo1": "",
       "link":"https://rimtex.com/",
       "files": [
         {"id":1,"name": "Rimtex cans booklet", "file":"Rimtex Cans Booklet.pdf","type":"rimtex"},
@@ -104,7 +111,8 @@
     },
     {
       "index": 7,
-      "logo": "arosa1.png",
+      "logo": "arosa.png",
+      "logo1": "",
       "link":"https://arosasystems.com",
       "files": [
         {"id":1,"name": "AroSmoke russian email", "file":"AroSmoke_Russian email.pdf","type":"arosa"},
@@ -115,6 +123,7 @@
     {
       "index": 8,
       "logo": "fadis1.png",
+      "logo1": "",
       "link":"https://www.fadis.it/",
       "files": [
 
@@ -122,7 +131,8 @@
     },
     {
       "index": 9,
-      "logo": "balkan1.png",
+      "logo": "balkan.png",
+      "logo1": "",
       "link":"http://www.balkan.com.tr/textile/",
       "files": [
 
@@ -131,6 +141,7 @@
     {
       "index": 10,
       "logo": "lupamat.png",
+      "logo1": "",
       "link":"https://lupamat.com/",
       "files": [
         {"id":1,"name": "Lupamat russian catalog", "file":"Lupamat Russian Catalog.pdf","type":"lupamat"},
@@ -140,6 +151,7 @@
     {
       "index": 11,
       "logo": "truetzschler.svg",
+      "logo1": "",
       "link":"https://www.truetzschler.de/en/",
       "files": [
         {"id":1,"name": "Bro aktualisierung ru", "file":"AC6.2_Bro_Aktualisierung_RU_1215_Web.pdf","type":"truetzschler"},
@@ -166,7 +178,8 @@
     },
     {
       "index": 12,
-      "logo": "rieter.svg",
+      "logo": "rieter1.svg",
+      "logo1": "",
       "link":"https://www.rieter.com/",
       "files": [
       ]
@@ -174,6 +187,7 @@
     {
       "index": 13,
       "logo": "electrojet.png",
+      "logo1": "",
       "link":"https://electro-jet.com/jet/",
       "files": [
       ]
@@ -181,6 +195,7 @@
     {
       "index": 14,
       "logo": "ekeler.png",
+      "logo1": "",
       "link":"http://cooperation.uz/cooper/brands/view/21533",
       "files": [
         {"id":1,"name": "Petek separator va panel tanitimi", "file":"PETEK SEPERATÖR VE PANEL TANITIMI (1).pdf","type":"ekeler"}

@@ -3,6 +3,7 @@ import {TranslateService} from '@ngx-translate/core';
 import {BehaviorSubject, Subscription} from 'rxjs';
 import {take} from 'rxjs/operators';
 import {HttpClient} from "@angular/common/http";
+import {Chart} from "chart.js";
 
 declare let $: any;
 
@@ -33,7 +34,7 @@ export class LocService implements OnInit, OnDestroy {
       this.translate.setDefaultLang('ru');
       this.translate.addLangs(['ru', 'en', 'uz']);
       this.defaultLang = this.translate.getBrowserLang();
-      this.translate.use(this.defaultLang.match(/ru|en|uz/) ? this.defaultLang : 'ru');
+      this.translate.use(localStorage.getItem('lang') != null ? localStorage.getItem('lang') : this.defaultLang);
     }));
   }
 
@@ -41,11 +42,66 @@ export class LocService implements OnInit, OnDestroy {
   }
 
   switchLanguage(language: string) {
+    let _this = this;
     this.current.next(language);
     $('.langbtn').removeClass('active-lang');
-    localStorage.setItem('lang',language)
+    localStorage.setItem('lang',language);
     $('#langbtn_'+language).addClass('active-lang');
     this.translate.use(language);
+    document.getElementById('myChart').parentElement.remove();
+    let div = document.createElement('div');
+    let canvas = document.createElement('canvas');
+    div.style.width = '100%';
+    div.style.height = '100%';
+    div.className = 'm-auto';
+    div.className = 'wow';
+    div.className = 'fadeInUp';
+    canvas.id = 'myChart';
+    div.append(canvas);
+    document.getElementById('chart').append(div);
+    setTimeout(()=> {
+      new Chart('myChart', {
+        type: 'doughnut',
+        data: {
+          labels: [
+            this.translate.instant('weaving_projects'),
+            this.translate.instant('spinning_projects'),
+          ],
+          datasets: [{
+            data: [30,70],
+            backgroundColor: [
+              "#FF6384",
+              "#FFCE56"
+            ],
+          }],
+        },
+        options: {
+          // legend: {
+          //   display: true,
+          //   labels: {
+          //     fontColor: 'rgb(255, 99, 132)'
+          //   }
+          // },
+          color:'#fff',
+          plugins: {
+            tooltip: {
+              callbacks: {
+                label: function(value) {
+                  let label = _this.translate.instant(value.label) || '';
+                  if (label) {
+                    label += ': ';
+                  }
+                  if (value.parsed !== null) {
+                    label += value.parsed + '%';
+                  }
+                  return label;
+                }
+              }
+            },
+          }
+        }
+      });
+    },100)
     this.defaultLang = language;
   }
 
