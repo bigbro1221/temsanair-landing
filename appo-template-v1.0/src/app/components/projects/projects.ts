@@ -22,6 +22,7 @@ export class Projects implements OnInit {
   showContainer5:boolean =false;
   showContainer6:boolean = false;
   showContainer7:boolean = false;
+  showContainer8:boolean = false;
   constructor(private httpClient: HttpClient) {
     this.img = this.httpClient.get<any>(this.url).pipe(map(res => res?.main_img));
     this.projects$ = this.httpClient.get<any>(this.url).pipe(map(res => {
@@ -41,6 +42,8 @@ export class Projects implements OnInit {
       this.showContainer6 = true;
     } else if ($(window).width() >= 414) {
       this.showContainer7 = true;
+    } else if ($(window).width() >= 375) {
+      this.showContainer8 = true;
     }
   }
 
@@ -55,7 +58,7 @@ export class Projects implements OnInit {
         margin: 0,
         nav: true,
         dots: false,
-        autoplay: false,
+        autoplay: true,
         autoplayTimeout: 6000,
         smartSpeed: 12000,
         items: 4,

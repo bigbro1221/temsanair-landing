@@ -32,10 +32,9 @@
                           <a [href]="'./assets/images/'+img">
                               <div class="image">
                                 <img class="mat-elevation-z4" style="width: 100%;border-radius: 5px;"
-                                     [ngStyle]="{'height': img=='4.jpg'? '264px' : ''}"
                                      [src]="'./assets/images/'+img" alt="Image">
                               </div>
-                              <div class="hover-image-caption">
+                              <div *ngIf="!showContainer7 && !showContainer8" class="hover-image-caption">
                                  <span style="color: #fff;opacity: 0;"><mat-icon style="vertical-align: middle;">search</mat-icon> {{'click_me' | translate}}!</span>
                               </div>
                           </a>

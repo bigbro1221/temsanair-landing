@@ -7,6 +7,7 @@
             </div>
         </div>
     </div>
+  <ng-container *ngIf="!showContainer6 && !showContainer7">
     <h2 class="text-color-green text-center">{{'our_partners' | translate}}</h2>
     <div class="container" >
         <table mat-table [dataSource]="i.dataSource" style="background-color: #343A40;" class="mat-elevation-z8 w-100">
@@ -53,4 +54,6 @@
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
     </div>
+
+  </ng-container>
 </section>
