@@ -57,11 +57,11 @@ export class ContactComponent implements OnInit {
 
   ngOnInit(): void {
     this.ngw.init();
-    // for(let i=0; i<1; i++) {
-    //   for(let j=0; j<12; j++) {
-    //     this.sets[i].map.push({code:j, flag:false})
-    //   }
-    // }
+    for(let i=0; i<1; i++) {
+      for(let j=0; j<12; j++) {
+        this.sets[i]?.map.push({code:j, flag:false})
+      }
+    }
     this.img = this.httpClient.get<any>(this.url).pipe(map(res=> {
       let data = [];
       for (let d of res.dataSource) {
@@ -73,7 +73,21 @@ export class ContactComponent implements OnInit {
   }
 
   ngAfterViewInit() {
+    let ang = this;
     setTimeout(()=> {
+      $(function() {
+        $('.set-1').maphilight();
+        $('.teeth-1').on('click', function(e) {
+          // console.log(e)
+          e.preventDefault();
+          let id = +e.target.id.split('-')[1];
+          console.log(id)
+          let data = $(this).mouseout().data('maphilight') || {};  // Default is true which means it is selected
+          data.alwaysOn = !data.alwaysOn;
+          ang.sets[0].map[id].flag = data.alwaysOn;
+          $(this).data('maphilight', data).trigger('alwaysOn.maphilight');
+        })
+      });
       $('.temsan-office-uz.owl-carousel').owlCarousel({
         loop: true,
         margin: 20,
@@ -84,23 +98,10 @@ export class ContactComponent implements OnInit {
         smartSpeed: 1000,
         items: 3,
       });
-      let ang = this;
-        // adult teeth image 1 functions
-        $('.set-1').maphilight();
-        $('.teeth-1').on('click', function(e) {
-          e.preventDefault();
-          let id = +e.target.id.split('-')[1];
-          let data = $(this).mouseout().data('maphilight') || {};  // Default is true which means it is selected
-          data.alwaysOn = !data.alwaysOn;
-          ang.sets[0].map[id].flag = data.alwaysOn;
-          $(this).data('maphilight', data).trigger('alwaysOn.maphilight');
-        })
       $('.mat-table').find('.mat-header-row').find('.mat-column-index').remove()
       $('.mat-table').find('.mat-row').find('.mat-column-index').remove()
-      // console.log($('.mat-table').find('.mat-row').find('.mat-column-index').remove())
-      // $('.mat-table').find('.mat-row').remove()
-      // ang.setTeethValues();
-    },100)
+      ang.setTeethValues();
+    },10000)
   }
 
   getWidth(e) {
@@ -112,18 +113,17 @@ export class ContactComponent implements OnInit {
     } else return '100px';
   }
 
-  // setTeethValues() {
-  //   for(let i=1; i<12; i++) {
-  //     $('.set-'+i).maphilight();
-  //     for(let m of this.sets[i].map) {
-  //       if(m.flag == true) {
-  //         let data = $('#set' + i + '-' + m.code).mouseout().data('maphilight') || {};
-  //         data.alwaysOn = !data.alwaysOn;
-  //         $('#set' + i + '-' + m.code).data('maphilight', data).trigger('alwaysOn.maphilight');
-  //       }
-  //     }
-  //   }
-  // }
+  setTeethValues() {
+    $('.set-1').maphilight();
+    for(let m of this.sets[0].map) {
+      console.log(m)
+      if(m.flag == true) {
+        let data = $('#set1-' + m.code).mouseout().data('maphilight') || {};
+        data.alwaysOn = !data.alwaysOn;
+        $('#set1-' + m.code).data('maphilight', data).trigger('alwaysOn.maphilight');
+      }
+    }
+  }
 
   onFile(e) {
     $('.bg-logo').addClass('overlay-bg-logo');
