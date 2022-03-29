@@ -10,17 +10,17 @@
             <h2 class="text-capitalize text-white text-center mb-4">{{'about_title'| translate}}<span class="ml-2 text-color-green text-capitalize">{{'company' | translate}}</span></h2>
         </ng-container>
         <div class="row">
-            <div class="col-md-4 col-6 wow fadeInUp mb-3">
+            <div [ngClass]="{'col-6':showContainer4 || showContainer3,'col-4':showContainer2 || showContainer1,'col-12':showContainer5 || showContainer6}" class="wow fadeInUp mb-3">
                 <div class="mat-elevation-z4 p-4" style="color: #fff; background-color: #1B1A1E">
                     <div>{{'text' | translate}}</div>
                 </div>
             </div>
-            <div class="col-md-4 col-6 wow fadeInDown mb-3">
+            <div [ngClass]="{'col-6':showContainer4 || showContainer3,'col-4':showContainer2 || showContainer1,'col-12':showContainer5 || showContainer6}" class="wow fadeInDown mb-3">
                 <div class="mat-elevation-z4 p-4" style="color: #fff; background-color: #1B1A1E">
                     <div>{{'text1' | translate}}</div>
                 </div>
             </div>
-            <div class="col-md-4 col-12 wow fadeInUp">
+            <div [ngClass]="{'col-12':showContainer4 || showContainer3 || showContainer5 || showContainer6,'col-4':showContainer2 || showContainer1}" class="wow fadeInUp">
                 <div class="mat-elevation-z4 p-4" style="color: #fff; background-color: #1B1A1E">
                     <div>{{'text2' | translate}}</div>
                 </div>
@@ -28,16 +28,70 @@
         </div>
     </div>
 </section>
-<div class="container">
+<div class="container" *ngIf="!showContainer8">
     <div class="row align-items-center">
-        <div class="col-6">
-            <h2 class="text-color-green text-uppercase">{{'6_years_of_work' | translate}},</h2>
-            <h2 class="text-color-green text-uppercase">{{'140_factories_team_of_30_ins'| translate}}</h2>
+        <div class="info-chart m-auto wow fadeInUp"
+             [ngStyle]="{'width': getWidth(),'height': getHeight()}"
+             style="border-radius: 50%;border: 1px solid orange;position: relative">
+            <div class="position-absolute" style="z-index: 1;"
+                 [ngStyle]="{'top': showContainer6 ? '-10%' : '-10%','left': getLeft1()}">
+                <span class="text-color-green d-block text-center"
+                      [ngStyle]="{'font-size': showContainer6 || showContainer7 ? '24px' : '40px'}"
+                >6</span>
+                <span class="text-white text-uppercase" style="">{{'years_work' | translate}}</span>
+            </div>
+            <div class="first-detail1 float-left"
+                 style="position: absolute;top: 10%; border-radius: 50%;background-color: #74BF44;left: 9%;"
+                 [ngStyle]="{'width': showContainer6 || showContainer7 || showContainer8 ? '30px' : '50px','height': showContainer6 || showContainer7 || showContainer8 ? '30px' : '50px'}"
+            ></div>
+
+            <div class="position-absolute" style="z-index: 1;" [ngStyle]="{'top': showContainer6 || showContainer7 ? '-10%' : '-10%','right': getRight(),'font-size': showContainer6 || showContainer7 ? '12px' : ''}">
+                <span class="text-color-green d-block text-center" [ngStyle]="{'font-size': showContainer6 || showContainer7 ? '24px' : '40px'}">140</span>
+                <span class="text-white text-uppercase" style="">{{'factories' | translate}}</span>
+            </div>
+            <div class="first-detail1 float-right"
+                 style="position: absolute;top: 10%;border-radius: 50%;background-color: #74BF44;left: 80%;"
+                 [ngStyle]="{'width': showContainer6 || showContainer7 || showContainer8 ? '30px' : '50px','height': showContainer6 || showContainer7 || showContainer8 ? '30px' : '50px'}"
+            ></div>
+
+            <div class="position-absolute" style="z-index: 1;" [ngStyle]="{'top': showContainer6 ? '30%' : '30%','right': getRight1(),'font-size': showContainer6 || showContainer7 ? '12px' : ''}">
+                <span class="text-color-green d-block text-center" [ngStyle]="{'font-size': showContainer6 || showContainer7 ? '24px' : '40px'}">30%</span>
+                <span class="text-white text-uppercase text-center" style="">{{'weaving' | translate}}</span>
+                <span class="text-white text-uppercase d-block text-center" style="">{{'projects' | translate}}</span>
+            </div>
+            <div class="first-detail1 float-right" style="position: absolute;top: 50%;border-radius: 50%;background-color: #74BF44;"
+                 [ngStyle]="{'width': showContainer6 || showContainer7 || showContainer8 || showContainer8 ? '30px' : '50px','height': showContainer6 || showContainer7 || showContainer8  ? '30px' : '50px','left': showContainer7 ? '93%' : '95%'}"
+            ></div>
+
+            <div class="position-absolute" style="z-index: 1;" [ngStyle]="{'top': showContainer6 ? '85%' : '85%','right': showContainer6 || showContainer7 ? '-20%' : '-15%','font-size': showContainer6 || showContainer7 ? '12px' : ''}">
+                <span class="text-color-green d-block text-center" [ngStyle]="{'font-size': showContainer6 || showContainer7 || showContainer8 ? '24px' : '40px'}">70%</span>
+                <span class="text-white text-uppercase text-center" style="">{{'spinning' | translate}}</span>
+                <span class="text-white text-uppercase d-block text-center" style="">{{'projects' | translate}}</span>
+            </div>
+            <div class="first-detail1 float-right" style="position: absolute;top: 80%;border-radius: 50%;background-color: #74BF44;"
+                 [ngStyle]="{'width': showContainer6 || showContainer7 || showContainer8 ? '30px' : '50px','height': showContainer6 || showContainer7 || showContainer8 ? '30px' : '50px','left': showContainer7 ? '77%' : '81%'}"></div>
+
+            <div class="position-absolute" style="z-index: 1;" [ngStyle]="{'top': showContainer6 ? '85%' : '85%','left': getLeft1(),'font-size': showContainer6 || showContainer7 ? '12px' : ''}">
+                <span class="text-color-green d-block text-center" [ngStyle]="{'font-size': showContainer6 || showContainer7 || showContainer8 ? '24px' : '40px'}">30</span>
+                <span class="text-white text-uppercase text-center" style="">{{'ins' | translate}}</span>
+                <span class="text-white text-uppercase d-block text-center" style="">{{'the_team' | translate}}</span>
+            </div>
+            <div class="first-detail1 float-right" style="position: absolute;top: 81%;border-radius: 50%;background-color: #74BF44;left: 10%;"
+                 [ngStyle]="{'width': showContainer6 || showContainer7 || showContainer8 ? '30px' : '50px','height': showContainer6 || showContainer7 || showContainer8 ? '30px' : '50px'}"></div>
+            <img src="./assets/temsanair/Mask group.png" matTooltip="{{'repair_work_factories' | translate}}"
+                 [ngStyle]="{'width': showContainer6 || showContainer7 || showContainer8 ? '50%' : '60%','left': showContainer6 ? '25%' : '20%'}"
+                 style="position:absolute;top: 20%;left: 20%;" alt="">
+<!--            <div class="center-detail" style="position: absolute;top: 50%;width: 200px; height: 200px; border-radius: 50%;background-color: orange;left: 50%;"></div>-->
         </div>
-        <div class="col-6" id="chart">
-<!--            <div class="m-auto wow fadeInUp" style="width: 600px !important;height: 600px !important;">-->
-<!--                <canvas id="myChart"></canvas>-->
-<!--            </div>-->
-        </div>
+<!--        <div class="col-6">-->
+<!--            <h2 class="text-color-green text-uppercase">{{'6_years_of_work' | translate}},</h2>-->
+<!--            <h2 class="text-color-green text-uppercase">{{'140_factories_team_of_30_ins'| translate}}</h2>-->
+<!--        </div>-->
+
+<!--        <div class="col-6" id="chart">-->
+<!--&lt;!&ndash;            <div class="m-auto wow fadeInUp" style="width: 600px !important;height: 600px !important;">&ndash;&gt;-->
+<!--&lt;!&ndash;                <canvas id="myChart"></canvas>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--        </div>-->
     </div>
 </div>

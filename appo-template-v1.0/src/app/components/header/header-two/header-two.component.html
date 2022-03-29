@@ -13,6 +13,17 @@
                       class="navbar-toggler" type="button" data-toggle="collapse" data-target="#appo-menu">
                         <span class="navbar-toggler-icon"></span>
                     </button>
+                    <button *ngIf="!showContainer1 && !showContainer2 && !showContainer3 && !showContainer4 && !showContainer5" mat-icon-button [matMenuTriggerFor]="menu" (click)="onMenu()">
+                        <mat-icon style="color: #fff">more_vert</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                        <button class="langbtn text-white" [id]="'langbtn_' + langImg.value.toLowerCase()" mat-menu-item *ngFor="let langImg of locale.langs;let idx = index"
+                                (click)="locale.switchLanguage(langImg.value)"
+                                [class.langBtn]="langImg.value==locale.defaultLang">
+                            <img [src]="'./assets/temsanair/lang/'+langImg.value.toLowerCase()+'.png'" style="width: 30px;vertical-align: middle;margin-right: 10px;" alt="">
+                            <span>{{ langImg.viewTranslate }}</span>
+                        </button>
+                    </mat-menu>
                 </div>
                 <div class="collapse navbar-collapse" id="appo-menu">
                     <ul class="navbar-nav header-items ml-auto">
@@ -26,17 +37,19 @@
                         </li>
                     </ul>
                 </div>
-                <button mat-icon-button [matMenuTriggerFor]="menu" (click)="onMenu()">
-                    <mat-icon style="color: #fff">more_vert</mat-icon>
-                </button>
-                <mat-menu #menu="matMenu">
-                    <button class="langbtn text-white" [id]="'langbtn_' + langImg.value.toLowerCase()" mat-menu-item *ngFor="let langImg of locale.langs;let idx = index"
-                            (click)="locale.switchLanguage(langImg.value)"
-                            [class.langBtn]="langImg.value==locale.defaultLang">
-                        <img [src]="'./assets/temsanair/lang/'+langImg.value.toLowerCase()+'.png'" style="width: 30px;vertical-align: middle;margin-right: 10px;" alt="">
-                        <span>{{ langImg.viewTranslate }}</span>
+                <ng-container *ngIf="!showContainer6 && !showContainer7 && !showContainer8">
+                    <button mat-icon-button [matMenuTriggerFor]="menu" (click)="onMenu()">
+                        <mat-icon style="color: #fff">more_vert</mat-icon>
                     </button>
-                </mat-menu>
+                    <mat-menu #menu="matMenu">
+                        <button class="langbtn text-white" [id]="'langbtn_' + langImg.value.toLowerCase()" mat-menu-item *ngFor="let langImg of locale.langs;let idx = index"
+                                (click)="locale.switchLanguage(langImg.value)"
+                                [class.langBtn]="langImg.value==locale.defaultLang">
+                            <img [src]="'./assets/temsanair/lang/'+langImg.value.toLowerCase()+'.png'" style="width: 30px;vertical-align: middle;margin-right: 10px;" alt="">
+                            <span>{{ langImg.viewTranslate }}</span>
+                        </button>
+                    </mat-menu>
+                </ng-container>
             </nav>
         </div>
     </div>
