@@ -58,7 +58,7 @@ export class ContactComponent implements OnInit {
   ngOnInit(): void {
     this.ngw.init();
     for(let i=0; i<1; i++) {
-      for(let j=0; j<12; j++) {
+      for(let j=0; j<=12; j++) {
         this.sets[i]?.map.push({code:j, flag:false})
       }
     }
@@ -78,7 +78,6 @@ export class ContactComponent implements OnInit {
       $(function() {
         $('.set-1').maphilight();
         $('.teeth-1').on('click', function(e) {
-          // console.log(e)
           e.preventDefault();
           let id = +e.target.id.split('-')[1];
           console.log(id)
@@ -101,7 +100,7 @@ export class ContactComponent implements OnInit {
       $('.mat-table').find('.mat-header-row').find('.mat-column-index').remove()
       $('.mat-table').find('.mat-row').find('.mat-column-index').remove()
       ang.setTeethValues();
-    },10000)
+    },1000);
   }
 
   getWidth(e) {
@@ -116,8 +115,8 @@ export class ContactComponent implements OnInit {
   setTeethValues() {
     $('.set-1').maphilight();
     for(let m of this.sets[0].map) {
-      console.log(m)
       if(m.flag == true) {
+        console.log(m)
         let data = $('#set1-' + m.code).mouseout().data('maphilight') || {};
         data.alwaysOn = !data.alwaysOn;
         $('#set1-' + m.code).data('maphilight', data).trigger('alwaysOn.maphilight');
