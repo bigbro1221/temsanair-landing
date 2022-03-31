@@ -48,60 +48,60 @@ export class LocService implements OnInit, OnDestroy {
     localStorage.setItem('lang',language);
     $('#langbtn_'+language).addClass('active-lang');
     this.translate.use(language);
-    document.getElementById('myChart').parentElement.remove();
-    let div = document.createElement('div');
-    let canvas = document.createElement('canvas');
-    div.style.width = '100%';
-    div.style.height = '100%';
-    div.className = 'm-auto';
-    div.className = 'wow';
-    div.className = 'fadeInUp';
-    canvas.id = 'myChart';
-    div.append(canvas);
-    document.getElementById('chart').append(div);
-    setTimeout(()=> {
-      new Chart('myChart', {
-        type: 'doughnut',
-        data: {
-          labels: [
-            this.translate.instant('weaving_projects'),
-            this.translate.instant('spinning_projects'),
-          ],
-          datasets: [{
-            data: [30,70],
-            backgroundColor: [
-              "#FF6384",
-              "#FFCE56"
-            ],
-          }],
-        },
-        options: {
-          // legend: {
-          //   display: true,
-          //   labels: {
-          //     fontColor: 'rgb(255, 99, 132)'
-          //   }
-          // },
-          color:'#fff',
-          plugins: {
-            tooltip: {
-              callbacks: {
-                label: function(value) {
-                  let label = _this.translate.instant(value.label) || '';
-                  if (label) {
-                    label += ': ';
-                  }
-                  if (value.parsed !== null) {
-                    label += value.parsed + '%';
-                  }
-                  return label;
-                }
-              }
-            },
-          }
-        }
-      });
-    },100)
+    // document.getElementById('myChart').parentElement.remove();
+    // let div = document.createElement('div');
+    // let canvas = document.createElement('canvas');
+    // div.style.width = '100%';
+    // div.style.height = '100%';
+    // div.className = 'm-auto';
+    // div.className = 'wow';
+    // div.className = 'fadeInUp';
+    // canvas.id = 'myChart';
+    // div.append(canvas);
+    // document.getElementById('chart').append(div);
+    // setTimeout(()=> {
+    //   new Chart('myChart', {
+    //     type: 'doughnut',
+    //     data: {
+    //       labels: [
+    //         this.translate.instant('weaving_projects'),
+    //         this.translate.instant('spinning_projects'),
+    //       ],
+    //       datasets: [{
+    //         data: [30,70],
+    //         backgroundColor: [
+    //           "#FF6384",
+    //           "#FFCE56"
+    //         ],
+    //       }],
+    //     },
+    //     options: {
+    //       // legend: {
+    //       //   display: true,
+    //       //   labels: {
+    //       //     fontColor: 'rgb(255, 99, 132)'
+    //       //   }
+    //       // },
+    //       color:'#fff',
+    //       plugins: {
+    //         tooltip: {
+    //           callbacks: {
+    //             label: function(value) {
+    //               let label = _this.translate.instant(value.label) || '';
+    //               if (label) {
+    //                 label += ': ';
+    //               }
+    //               if (value.parsed !== null) {
+    //                 label += value.parsed + '%';
+    //               }
+    //               return label;
+    //             }
+    //           }
+    //         },
+    //       }
+    //     }
+    //   });
+    // },100)
     this.defaultLang = language;
   }
 
