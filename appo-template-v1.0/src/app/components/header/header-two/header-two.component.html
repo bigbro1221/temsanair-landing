@@ -32,7 +32,7 @@
                                [routerLinkActiveOptions]="{exact: true}"
                                routerLinkActive="active-link" [routerLink]="u.url" (click)="onNavigate(u,i)"
                                class="wow fadeInUp nav-link scroll text-color-green" [id]="'url'+i">
-                                {{u.name}}
+                                {{u.name | translate}}
                             </a>
                         </li>
                     </ul>
