@@ -84,7 +84,7 @@ export class Projects implements OnInit {
   }
 
   getTranslate(elem):string {
-    if (elem.logo1=='asaka-textile.png') {
+    if (elem.logo1=='asaka1.png') {
       return 'translate(0,15%)';
     } else if (elem.logo1=='polytext1.png' || elem.logo1 == 'khantex.svg') {
       return 'translate(0,40%)';
