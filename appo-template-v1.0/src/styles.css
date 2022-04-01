@@ -807,6 +807,9 @@ iframe {
     .product-container {
         padding: 0 120px !important;
     }
+    .text-main-2 {
+        margin-left: 90px !important;
+    }
     .download-area .shape-2 {
         left: 18% !important;
     }
@@ -882,6 +885,14 @@ iframe {
     }
     .temsan-office-uz h4 {
         font-size: 17px !important;
+    }
+    .text-main-2 {
+        margin-left: 62px !important;
+        text-align: center;
+        font-size: 24px !important;
+    }
+    .main-text-hero {
+        top: -60px !important;
     }
     .automation-setting h4 {
         font-size: 20px;
@@ -1050,6 +1061,17 @@ iframe {
         width: 80vw;
         height: 31vh;
     }
+    .text-main-2 {
+        margin-left: 0 !important;
+        text-align: center;
+        font-size: 24px !important;
+    }
+    .text-features {
+        font-size: 18px !important;
+    }
+    .hero-main-text {
+        font-size: 30px !important;
+    }
     .benifits-item {
         padding: 0 !important;
     }
@@ -1150,6 +1172,9 @@ iframe {
     .product-container .slick-container {
         height: 35vh !important;
     }
+    .main-text-hero {
+        top: -40px !important;
+    }
 
     .product-container {
         padding: 0 150px !important;
@@ -1220,6 +1245,24 @@ iframe {
     }
     .logo-container {
         width: 30%;
+    }
+    .text-features {
+        display: none;
+    }
+    .hero-main-text {
+        font-size: 18px !important;
+    }
+    .main-text-hero {
+        top: 50px !important;
+    }
+    .shapes-container {
+        top: 114% !important;
+    }
+    .benifits-area {
+        margin-top: 80px !important;
+    }
+    .text-main-2 {
+        font-size: 18px !important;
     }
     p {
         font-size: 13px !important;

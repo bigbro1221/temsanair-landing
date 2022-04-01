@@ -41,48 +41,48 @@
                 </div>
             </div>
         </div>
-        <div class="row align-items-center wow fadeInUp slow">
-            <!-- Benifits Item -->
-            <div [ngClass]="{'col-6':showContainer6,'col-12': showContainer1 || showContainer2 || showContainer3 || showContainer4 || showContainer5}" class="col-sm-6 col-md-6">
-                <div class="benifits-item p-3" [ngClass]="{'mat-elevation-z4': showContainer6}">
-                    <!-- Benifits Text -->
-                    <div [ngClass]="{'float-left': showContainer1 || showContainer2 || showContainer3 || showContainer4 || showContainer5}"
-                         class="feature-icon">
-                        <picture>
-                            <source type="image/webp" [srcset]="http + i.imgw2">
-                            <source type="image/png" [srcset]="http + i.img2">
-                            <img style="width: 100px;margin-right: 10px;" [src]="http + i.img2" alt="">
-                        </picture>
-                    </div>
-                    <div [ngClass]="{'ml-3': !showContainer7 && !showContainer6 && !showContainer8}" class="benifits-text">
-                        <h3 [ngStyle]="{'font-size': showContainer7 || showContainer8 ? '16px' : ''}" class="mb-2 text-white"><span class="text-color-green text-uppercase">WASTE</span> <br>Collection</h3>
-                        <a href="#" class="text-color-green">{{'click_to_see_all_products' | translate}}</a>
-                        <p class="text-white">{{'in_waste_collection_process' | translate}}</p>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-            <!-- Benifits Item -->
-            <div [ngClass]="{'col-6':showContainer6,'col-12': showContainer1 || showContainer2 || showContainer3 || showContainer4 || showContainer5}"s
-              class="col-sm-6 col-md-6">
-                <div class="benifits-item p-3" [ngClass]="{'mat-elevation-z4': showContainer6}">
-                    <div class="feature-icon"
-                         [ngClass]="{'float-left': showContainer1 || showContainer2 || showContainer3 || showContainer4 || showContainer5}">
-                        <picture>
-                            <source typ e="image/webp" [srcset]="http + i.imgw3">
-                            <source type="image/png" [srcset]="http + i.img3">
-                            <img style="width: 100px;margin-right: 10px;" [src]="http + i.img3" alt="">
-                        </picture>
-                    </div>
-                    <!-- Benifits Text -->
-                    <div [ngClass]="{'ml-3': !showContainer7 && !showContainer8 && !showContainer6}" class="benifits-text">
-                        <h3 [ngStyle]="{'font-size': showContainer7 ? '16px' : ''}" class="mb-2 text-white"><span class="text-color-green text-uppercase">Dust</span> <br>Collection</h3>
-                        <a href="#" class="text-color-green">{{'click_to_see_all_products' | translate}}</a>
-                        <p class="text-white">{{'in_waste_collection_process' | translate}}</p>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-        </div>
+<!--        <div class="row align-items-center wow fadeInUp slow">-->
+<!--            &lt;!&ndash; Benifits Item &ndash;&gt;-->
+<!--            <div [ngClass]="{'col-6':showContainer6,'col-12': showContainer1 || showContainer2 || showContainer3 || showContainer4 || showContainer5}" class="col-sm-6 col-md-6">-->
+<!--                <div class="benifits-item p-3" [ngClass]="{'mat-elevation-z4': showContainer6}">-->
+<!--                    &lt;!&ndash; Benifits Text &ndash;&gt;-->
+<!--                    <div [ngClass]="{'float-left': showContainer1 || showContainer2 || showContainer3 || showContainer4 || showContainer5}"-->
+<!--                         class="feature-icon">-->
+<!--                        <picture>-->
+<!--                            <source type="image/webp" [srcset]="http + i.imgw2">-->
+<!--                            <source type="image/png" [srcset]="http + i.img2">-->
+<!--                            <img style="width: 100px;margin-right: 10px;" [src]="http + i.img2" alt="">-->
+<!--                        </picture>-->
+<!--                    </div>-->
+<!--                    <div [ngClass]="{'ml-3': !showContainer7 && !showContainer6 && !showContainer8}" class="benifits-text">-->
+<!--                        <h3 [ngStyle]="{'font-size': showContainer7 || showContainer8 ? '16px' : ''}" class="mb-2 text-white"><span class="text-color-green text-uppercase">WASTE</span> <br>Collection</h3>-->
+<!--                        <a href="#" class="text-color-green">{{'click_to_see_all_products' | translate}}</a>-->
+<!--                        <p class="text-white">{{'in_waste_collection_process' | translate}}</p>-->
+<!--                    </div>-->
+<!--                    <div class="clearfix"></div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            &lt;!&ndash; Benifits Item &ndash;&gt;-->
+<!--            <div [ngClass]="{'col-6':showContainer6,'col-12': showContainer1 || showContainer2 || showContainer3 || showContainer4 || showContainer5}"s-->
+<!--              class="col-sm-6 col-md-6">-->
+<!--                <div class="benifits-item p-3" [ngClass]="{'mat-elevation-z4': showContainer6}">-->
+<!--                    <div class="feature-icon"-->
+<!--                         [ngClass]="{'float-left': showContainer1 || showContainer2 || showContainer3 || showContainer4 || showContainer5}">-->
+<!--                        <picture>-->
+<!--                            <source type="image/webp" [srcset]="http + i.imgw3">-->
+<!--                            <source type="image/png" [srcset]="http + i.img3">-->
+<!--                            <img style="width: 100px;margin-right: 10px;" [src]="http + i.img3" alt="">-->
+<!--                        </picture>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash; Benifits Text &ndash;&gt;-->
+<!--                    <div [ngClass]="{'ml-3': !showContainer7 && !showContainer8 && !showContainer6}" class="benifits-text">-->
+<!--                        <h3 [ngStyle]="{'font-size': showContainer7 ? '16px' : ''}" class="mb-2 text-white"><span class="text-color-green text-uppercase">Dust</span> <br>Collection</h3>-->
+<!--                        <a href="#" class="text-color-green">{{'click_to_see_all_products' | translate}}</a>-->
+<!--                        <p class="text-white">{{'in_waste_collection_process' | translate}}</p>-->
+<!--                    </div>-->
+<!--                    <div class="clearfix"></div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
     </div>
 </section>
