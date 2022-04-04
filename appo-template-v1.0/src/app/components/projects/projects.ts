@@ -56,7 +56,7 @@ export class Projects implements OnInit {
       $('.projects.owl-carousel').owlCarousel({
         loop: true,
         margin: 0,
-        nav: true,
+        nav: false,
         dots: false,
         autoplay: true,
         autoplayTimeout: 6000,
@@ -66,6 +66,7 @@ export class Projects implements OnInit {
       $('.gallery a').lightbox({
         minSize: 480
       });
+      $('.owl-carousel .owl-stage').addClass('d-flex').addClass('align-items-center');
     },500)
   }
 
@@ -78,31 +79,33 @@ export class Projects implements OnInit {
       return '120px';
     } else if (elem.logo1=='realtex-white.jpg') {
       return '150px';
+    } else if (elem.logo1=='wbm-romitex1.png') {
+      return '450px';
     } else {
       return '210px';
     }
   }
 
-  getTranslate(elem):string {
-    if (elem.logo1=='asaka1.png') {
-      return 'translate(0,15%)';
-    } else if (elem.logo1=='polytext1.png' || elem.logo1 == 'khantex.svg') {
-      return 'translate(0,40%)';
-    } else if (elem.logo1=='uztex1.png' || elem.logo1 == 'anteks1.png') {
-      return 'translate(0,10%)';
-    } else if (elem.logo1 == 'anteks1.png') {
-      return 'translate(0,20%)';
-    } else if (elem.logo1 == 'uztextgroup1.png') {
-      return 'translate(0,120%)';
-    } else if (elem.logo1 == 'ostex1.png') {
-      return 'translate(0,80%)';
-    } else if (elem.logo1 == 'bakantex1.png') {
-      return 'translate(0,90%)';
-    } else if (elem.logo1 == 'wbm-romitex1.png') {
-      return 'translate(0,165%)';
-    } else {
-      return '';
-    }
+  getTranslate(elem) {
+    // if (elem.logo1=='asaka1.png') {
+    //   return 'translate(0,15%)';
+    // } else if (elem.logo1=='polytext1.png' || elem.logo1 == 'khantex.svg') {
+    //   return 'translate(0,40%)';
+    // } else if (elem.logo1=='uztex1.png' || elem.logo1 == 'anteks1.png') {
+    //   return 'translate(0,10%)';
+    // } else if (elem.logo1 == 'anteks1.png') {
+    //   return 'translate(0,20%)';
+    // } else if (elem.logo1 == 'uztextgroup1.png') {
+    //   return 'translate(0,120%)';
+    // } else if (elem.logo1 == 'ostex1.png') {
+    //   return 'translate(0,80%)';
+    // } else if (elem.logo1 == 'bakantex1.png') {
+    //   return 'translate(0,90%)';
+    // } else if (elem.logo1 == 'wbm-romitex1.png') {
+    //   return 'translate(0,165%)';
+    // } else {
+    //   return '';
+    // }
   }
 
   onImage() {

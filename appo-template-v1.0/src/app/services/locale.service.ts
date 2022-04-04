@@ -1,6 +1,6 @@
 import {Injectable, OnDestroy, OnInit} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
-import {BehaviorSubject, Subscription} from 'rxjs';
+import {BehaviorSubject, Subject, Subscription} from 'rxjs';
 import {take} from 'rxjs/operators';
 import {HttpClient} from "@angular/common/http";
 import {Chart} from "chart.js";
@@ -21,6 +21,7 @@ export class LocService implements OnInit, OnDestroy {
   public defaultLang: string = '';
   public current = new BehaviorSubject('');
   subs: Subscription = new Subscription();
+  subLang: Subject<any> = new Subject<any>();
   langs: Lang[] = [
     {value: 'ru', viewValue: 'RU', viewTranslate: 'Русский'},
     {value: 'en', viewValue: 'EN', viewTranslate: 'English'},
@@ -41,9 +42,14 @@ export class LocService implements OnInit, OnDestroy {
   ngOnInit() {
   }
 
+  getSubLang() {
+    return this.subLang;
+  }
+
   switchLanguage(language: string) {
     let _this = this;
     this.current.next(language);
+    this.subLang.next(language);
     $('.langbtn').removeClass('active-lang');
     localStorage.setItem('lang',language);
     $('#langbtn_'+language).addClass('active-lang');

@@ -1,8 +1,8 @@
 <section id="benifits" class="section benifits-area ptb_100"  style="background: rgba(52,58,64,1);">
-    <div class="container" *ngIf="img | async as i">
+    <div class="container-fluid mx-5" *ngIf="img | async as i">
         <div class="row align-items-center wow fadeInUp slow">
             <!-- Welcome Intro Start -->
-            <div [ngClass]="{'col-12': showContainer7 || showContainer8,'col-5': !showContainer7 && !showContainer8}" class="">
+            <div [ngClass]="{'col-12': showContainer7 || showContainer8,'col-4': !showContainer7 && !showContainer8}" class="">
                 <div class="welcome-intro">
                     <div class="mt-4" >
                         <ng-container *ngIf="showContainer1 || showContainer2">
@@ -21,7 +21,7 @@
                     <div [ngClass]="{'mb-4': showContainer1 || showContainer2 || showContainer3 || showContainer4|| showContainer5,'m-0': showContainer6}"
                          class="text text-white" >
                         <div>
-                            <p style="color: #fff;">
+                            <p style="color: #fff;margin-bottom: 0 !important;">
                                 {{'we_are_going_to_develop_more_technologies_while_finding' | translate}}
                             </p>
                             <p style="color: #fff;">{{'much_efficient_ways_to_design_produce_install_and_run' | translate}}</p>
@@ -30,7 +30,7 @@
                     </div>
                 </div>
             </div>
-            <div [ngClass]="{'col-12': showContainer7 || showContainer8,'col-7':!showContainer7 && !showContainer8}" class="mx-auto pt-md-0">
+            <div [ngClass]="{'col-12': showContainer7 || showContainer8,'col-8':!showContainer7 && !showContainer8}" class="mx-auto pt-md-0">
                 <!-- Welcome Thumb -->
                 <div class="welcome-thumb">
                     <picture>
