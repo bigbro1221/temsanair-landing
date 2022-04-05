@@ -5,6 +5,7 @@ import {map} from "rxjs/operators";
 import {MatDialog} from "@angular/material/dialog";
 import {ProductDialog} from "./product-dialog";
 import {RouterService} from "../../services/router.service";
+import {LocService} from "../../services/locale.service";
 declare let $:any;
 
 @Component({
@@ -104,8 +105,10 @@ export class Products implements OnInit {
       }
     ]
   };
+  isRight = false;
   constructor(private httpClient: HttpClient,
               private dialog: MatDialog,
+              private loc: LocService,
               private routerSer: RouterService) {
     this.img = this.httpClient.get<any>(this.url).pipe(map(res => res?.main_img));
     this.products$ = this.httpClient.get<any>(this.url).pipe(map(res => {
@@ -118,6 +121,10 @@ export class Products implements OnInit {
   }
 
   ngOnInit(){
+    this.isRight = localStorage.getItem('lang') == 'ru'
+    this.loc.getSubLang().subscribe(x=> {
+      this.isRight = x =='ru';
+    })
     let _this = this;
     if ($(window).width() >= 1600) {
       _this.showContainer = true
@@ -166,7 +173,7 @@ export class Products implements OnInit {
 
   getWidth():string {
     if (this.showContainer1) {
-      return '80px';
+      return '30px';
     } else if (this.showContainer2 || this.showContainer3 || this.showContainer4 || this.showContainer5) {
       return '60px';
     } else if (this.showContainer6 || this.showContainer7 || this.showContainer8) {
@@ -174,14 +181,14 @@ export class Products implements OnInit {
     }
   }
 
-  getRight():string {
-    if (this.showContainer1) {
-      return '50px';
-    } else if (this.showContainer2 || this.showContainer3 || this.showContainer4 || this.showContainer5) {
-      return '40px';
-    } else if (this.showContainer6 || this.showContainer7 || this.showContainer8) {
-      return '0';
-    }
+  getRight() {
+    // if (this.showContainer1) {
+    //   return '50px';
+    // } else if (this.showContainer2 || this.showContainer3 || this.showContainer4 || this.showContainer5) {
+    //   return '40px';
+    // } else if (this.showContainer6 || this.showContainer7 || this.showContainer8) {
+    //   return '0';
+    // }
   }
 
   getFontSize():string {
@@ -279,8 +286,8 @@ export class Products implements OnInit {
 
   }
 
-  productChange(e,slick) {
-    slick.slickGoTo(+this.currList - 1)
+  productChange(e, slick) {
+    slick.slickGoTo(+e.value - 2)
   }
 
   onMouse(e, i, p) {

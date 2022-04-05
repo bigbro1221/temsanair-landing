@@ -2,7 +2,7 @@
   "main_img": {"imgw":"title_product_range2.webp","img":"title_product_range2.png"},
   "data":  [
     {
-      "title": "Axial fan",
+      "title": "AXIAL FAN",
       "sub_title": "AKSTS160-03",
       "imgw":"axial_fan.webp",
       "img":"axial_fan.png",
@@ -15,7 +15,7 @@
       "type": 1
     },
     {
-      "title": "Radial fan (Down Direction)",
+      "title": "RADIAL FAN(DOWN DIRECTION)",
       "sub_title": "RDY50A-AŞAĞI BAKAN",
       "imgw":"radial-fan-down-direction.webp",
       "img":"radial-fan-down-direction.png",
@@ -28,7 +28,7 @@
       "type": 2
     },
     {
-      "title": "Radial FAN (Up Direction)",
+      "title": "RADIAL FAN(UP DIRECTION)",
       "sub_title": "RDY50Y-YUKARI BAKAN",
       "imgw":"radial-fan-up-direction.webp",
       "img":"radial-fan-up-direction.png",
@@ -41,7 +41,7 @@
       "type": 3
     },
     {
-      "title": "High capacity material transport fan",
+      "title": "HIGH CAPACITY MATERIAL TRANSPORT FAN",
       "sub_title": "PNF-01",
       "imgw":"1_high-capacity-material-transport-fan.webp",
       "img":"1_high-capacity-material-transport-fan.png",
@@ -54,7 +54,7 @@
       "type": 4
     },
     {
-      "title": "PRE-FILTER (Top Suction)",
+      "title": "PRE-FILTER (TOP SUCTION)",
       "sub_title": "OF200Y-04",
       "imgw":"prefilter-top-suction.webp",
       "img":"prefilter-top-suction.png",
@@ -93,7 +93,7 @@
       "type": 7
     },
     {
-      "title": "FIBRE COMPACTOR (Big)",
+      "title": "FIBRE COMPACTOR (BIG)",
       "sub_title": "KMP-01",
       "imgw":"fibre-compactor-big.webp",
       "img":"fibre-compactor-big.png",
@@ -150,7 +150,7 @@
       "imgw":"automatic-dust-collection-machine.webp",
       "img":"automatic-dust-collection-machine.png",
       "img_mini":"automatic-dust-collection-machine-mini.png",
-      "text":"To collect dust particles from dust room and compressed by the means of screw with gearbox. Working with Automation and Perfect cleaning with micro filter (without labor cost)",
+      "text":"To collect dust particles from dust room and compressed by the means of screw with gearbox Working with Automation and Perfect cleaning with micro filter (without labor cost)",
       "detail1": "",
       "detail2": "",
       "detail3": "",
@@ -223,7 +223,7 @@
       "type": 17
     },
     {
-      "title": "AIR WASHER (Prefabricated)",
+      "title": "AIR WASHER (PREFABRICATED)",
       "sub_title": "KRM-HVZ-01",
       "imgw":"air-washer-prefabricated.webp",
       "img":"air-washer-prefabricated.png",
@@ -288,7 +288,7 @@
       "type": 22
     },
     {
-      "title": "RADIAL FAN (Comber Fan)",
+      "title": "RADIAL FAN(COMBER FAN)",
       "sub_title": "RDY25-02",
       "imgw":"radial-fan-comber-fan.webp",
       "img":"radial-fan-comber-fan.png",
@@ -431,7 +431,7 @@
       "type": 33
     },
     {
-      "title": "BATCHING UNIT (Inclined)",
+      "title": "BATCHING UNIT (INCLINED)",
       "sub_title": "DS220E",
       "imgw":"batching-unit-inclined.webp",
       "img":"batching-unit-inclined.png",
