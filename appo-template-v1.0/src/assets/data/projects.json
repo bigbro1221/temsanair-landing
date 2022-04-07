@@ -3,6 +3,10 @@
 
   "projects": [
     {
+      "link1": "http://bakantex.com/",
+      "logo1": "bakantex1.png"
+    },
+    {
       "link1": "https://bahtgroup.uz/",
       "logo1": "baht.svg"
     },
@@ -45,10 +49,6 @@
     {
       "link1": "https://ostex.uz/",
       "logo1": "ostex1.png"
-    },
-    {
-      "link1": "http://bakantex.com/",
-      "logo1": "bakantex1.png"
     },
     {
       "link1": "https://wbm-romitex.business.site/",
