@@ -1,6 +1,6 @@
 {
   "welcome_to": "ДОБРО ПОЖАЛОВАТЬ В",
-  "contacts": "КОНТАКТЫ",
+  "contacts": "Контакты",
   "our_projects": "Наши проекты",
   "project_gallery": "Галерея проектов",
   "click_me": "Нажми на меня",
@@ -176,5 +176,8 @@
   "after":"после",
   "sales":"продажи",
   "materials":"материалы",
-  "and design":"и дизайн"
+  "and design":"и дизайн",
+  "web_site":"Веб сайт",
+  "email":"Почта",
+  "extra_contacts":"Дополнительный контакты"
 }
