@@ -181,5 +181,6 @@
   "email":"Email",
   "extra_contacts":"Extra contacts",
   "sales_department":"Sales department",
-  "department_for_work":"Department for work with partners"
+  "department_for_work":"Department for work with partners",
+  "contacts": "Contracts"
 }
