@@ -27,9 +27,28 @@ export class ContactComponent implements OnInit {
   displayedColumns = ['index','logo','link','files'];
   // showContainer8 = true;
   isDownload = false;
+  id: number = null;
   sets = [
     {map: []},
   ];
+  block:{[k:string]:any} = {};
+  isBlock = false;
+
+  arrs= [
+    // {id: 0, name: 'Nukus', city: 'nukus', address: 'Nukus'},
+    {id: 1, name: 'Uztex', city: 'urgench', address: 'city urganch, str. khorazmiy 22'},
+    {id: 2, name: 'Baht Group', city: 'navoi', address: 'city navoiy str. navoi 45'},
+    {id: 3, name: 'WBM Romitex', city: 'bukhoro', address: 'city bukhoro str. bukhoriy 33'},
+    {id: 4, name: 'Sulton Tex', name1:'Baht Group', name2:'Ostex', city: 'kashkadarya', address: 'city karshi str. afrasiyab 22'},
+    {id: 5, name: 'Uztex', city: 'surkhandarya', address: 'city termiz ulitsa farobiy 55'},
+    {id: 6, name: 'Baht Group', city: 'samarkand', address: 'city samarkand str. A.Temur 41'},
+    {id: 7, name: 'Baht Group', city: 'jizzakh', address: 'city jizzakh str. Jomiy 77'},
+    {id: 8, name: 'Poly Tex', city: 'sirdaryo', address: 'city gulistan str. beruni 89'},
+    {id: 9, name: 'Bakan',name1: 'Global Textile', city: 'tashkent', address: 'city tashkent str. A.Qodiri 21'},
+    {id: 10, name: 'Uztex', name1:'FT Textile', city: 'namangan', address: 'city namangan str. Cholpon 23'},
+    {id: 11, name: 'Asaka Textile',name1: 'Khantex', city: 'andijan', address: 'city andijan str. A.Avloni 54'},
+    {id: 12, name: 'Uztex', city: 'ferghana', address: 'city ferghana str. farobiy 44'},
+  ]
 
   constructor(private ngw: NgwWowService, private ui: TranslateService,
               private httpClient: HttpClient) {
@@ -52,7 +71,6 @@ export class ContactComponent implements OnInit {
     } else if ($(window).width() >= 375) {
       this.showContainer7 = true;
     }
-
   }
 
   ngOnInit(): void {
@@ -73,18 +91,31 @@ export class ContactComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    let ang = this;
+    let ang = this, data;
     setTimeout(()=> {
       $(function() {
         $('.set-1').maphilight();
         $('.teeth-1').on('click', function(e) {
+          // data.alwaysOn = false;
           e.preventDefault();
-          let id = +e.target.id.split('-')[1];
-          console.log(id)
-          let data = $(this).mouseout().data('maphilight') || {};  // Default is true which means it is selected
+          data = $(this).mouseenter().data('maphilight') || {};  // Default is true which means it is selected
           data.alwaysOn = !data.alwaysOn;
-          ang.sets[0].map[id].flag = data.alwaysOn;
+          ang.id = +e.target.id.split('-')[1];
+          if (ang.id == 0 || ang.id == 6) {
+            ang.block = {};
+            ang.isBlock = true;
+          } else {
+            ang.isBlock = false;
+            ang.block = ang.arrs.filter(val => ang.id == val.id)[0];
+          }
+          console.log(ang.id)
+          $('.text-block').addClass('d-block');
           $(this).data('maphilight', data).trigger('alwaysOn.maphilight');
+        })
+        $('.teeth-1').mouseout(function (evt) {
+          evt.preventDefault();
+          $('.text-block').removeClass('d-block');
+          console.log(ang.id)
         })
       });
       $('.temsan-office-uz.owl-carousel').owlCarousel({
@@ -97,9 +128,9 @@ export class ContactComponent implements OnInit {
         smartSpeed: 1000,
         items: 3,
       });
+      ang.setTeethValues();
       $('.mat-table').find('.mat-header-row').find('.mat-column-index').remove()
       $('.mat-table').find('.mat-row').find('.mat-column-index').remove()
-      ang.setTeethValues();
     },1000);
   }
 
@@ -115,8 +146,7 @@ export class ContactComponent implements OnInit {
   setTeethValues() {
     $('.set-1').maphilight();
     for(let m of this.sets[0].map) {
-      if(m.flag == true) {
-        console.log(m)
+      if(m.flag) {
         let data = $('#set1-' + m.code).mouseout().data('maphilight') || {};
         data.alwaysOn = !data.alwaysOn;
         $('#set1-' + m.code).data('maphilight', data).trigger('alwaysOn.maphilight');
