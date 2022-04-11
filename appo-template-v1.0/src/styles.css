@@ -1798,6 +1798,11 @@ tr.mat-header-row {
     transition: .1 .7s;
 }
 
+.ui-tooltip {
+    background-color: blue;
+    color: #fff;
+}
+
 
 
 
